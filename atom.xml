@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Running and Judging</title>
+  
+  <subtitle>Follow your Heart</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://stonebuddha.github.io/"/>
+  <updated>2020-03-26T16:06:52.010Z</updated>
+  <id>https://stonebuddha.github.io/</id>
+  
+  <author>
+    <name>Di Wang</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Risch&#39;s algorithm</title>
+    <link href="https://stonebuddha.github.io/2017/02/24/Risch-s-algorithm/"/>
+    <id>https://stonebuddha.github.io/2017/02/24/Risch-s-algorithm/</id>
+    <published>2017-02-24T05:50:57.000Z</published>
+    <updated>2020-03-26T16:06:52.010Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="Computer Algebra" scheme="https://stonebuddha.github.io/categories/Computer-Algebra/"/>
+    
+    
+      <category term="Integral" scheme="https://stonebuddha.github.io/tags/Integral/"/>
+    
+      <category term="Symbolic computation" scheme="https://stonebuddha.github.io/tags/Symbolic-computation/"/>
+    
+      <category term="Risch" scheme="https://stonebuddha.github.io/tags/Risch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Development environment for Standard ML</title>
+    <link href="https://stonebuddha.github.io/2017/01/11/Development-environment-for-Standard-ML/"/>
+    <id>https://stonebuddha.github.io/2017/01/11/Development-environment-for-Standard-ML/</id>
+    <published>2017-01-11T23:51:04.000Z</published>
+    <updated>2020-03-26T16:06:52.009Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="Development" scheme="https://stonebuddha.github.io/categories/Development/"/>
+    
+    
+      <category term="SML" scheme="https://stonebuddha.github.io/tags/SML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Type-directed synthesis</title>
+    <link href="https://stonebuddha.github.io/2016/12/14/Type-directed-synthesis/"/>
+    <id>https://stonebuddha.github.io/2016/12/14/Type-directed-synthesis/</id>
+    <published>2016-12-15T01:17:55.000Z</published>
+    <updated>2020-03-26T16:06:52.010Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="Synthesis" scheme="https://stonebuddha.github.io/categories/Synthesis/"/>
+    
+    
+      <category term="Refinement types" scheme="https://stonebuddha.github.io/tags/Refinement-types/"/>
+    
+      <category term="Inductive synthesis" scheme="https://stonebuddha.github.io/tags/Inductive-synthesis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Type-preserving compilation</title>
+    <link href="https://stonebuddha.github.io/2016/12/07/Type-preserving-compilation/"/>
+    <id>https://stonebuddha.github.io/2016/12/07/Type-preserving-compilation/</id>
+    <published>2016-12-07T16:13:25.000Z</published>
+    <updated>2020-03-26T16:06:52.010Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="Compilers" scheme="https://stonebuddha.github.io/categories/Compilers/"/>
+    
+    
+      <category term="Typed Assembly Language" scheme="https://stonebuddha.github.io/tags/Typed-Assembly-Language/"/>
+    
+      <category term="Proof translation" scheme="https://stonebuddha.github.io/tags/Proof-translation/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Implementing an interactive theorem prover for First Order Logic</title>
+    <link href="https://stonebuddha.github.io/2016/12/07/Implementing-an-interactive-theorem-prover-for-First-Order-Logic/"/>
+    <id>https://stonebuddha.github.io/2016/12/07/Implementing-an-interactive-theorem-prover-for-First-Order-Logic/</id>
+    <published>2016-12-07T16:06:44.000Z</published>
+    <updated>2020-03-26T16:40:31.028Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;ML-family languages, including OCaml and Haskell, are mainstream functional programming languages nowadays. You may know ML abbreviates
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Theorem Proving" scheme="https://stonebuddha.github.io/categories/Theorem-Proving/"/>
+    
+    
+      <category term="First Order Logic" scheme="https://stonebuddha.github.io/tags/First-Order-Logic/"/>
+    
+      <category term="Logic for Computable Functions" scheme="https://stonebuddha.github.io/tags/Logic-for-Computable-Functions/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Incorporating System F-omega with Liquid Types</title>
+    <link href="https://stonebuddha.github.io/2016/12/07/Incorporating-System-F-omega-with-Liquid-Types/"/>
+    <id>https://stonebuddha.github.io/2016/12/07/Incorporating-System-F-omega-with-Liquid-Types/</id>
+    <published>2016-12-07T16:03:57.000Z</published>
+    <updated>2020-03-26T16:06:52.009Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="Type Systems" scheme="https://stonebuddha.github.io/categories/Type-Systems/"/>
+    
+    
+      <category term="Liquid Types" scheme="https://stonebuddha.github.io/tags/Liquid-Types/"/>
+    
+      <category term="System F-omega" scheme="https://stonebuddha.github.io/tags/System-F-omega/"/>
+    
+  </entry>
+  
+</feed>
