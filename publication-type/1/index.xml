@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>1 | Di Wang</title>
+    <link>https://stonebuddha.github.io/publication-type/1/</link>
+      <atom:link href="https://stonebuddha.github.io/publication-type/1/index.xml" rel="self" type="application/rss+xml" />
+    <description>1</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 20 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png</url>
+      <title>1</title>
+      <link>https://stonebuddha.github.io/publication-type/1/</link>
+    </image>
+    
+    <item>
+      <title>Central Moment Analysis for Cost Accumulators in Probabilistic Programs</title>
+      <link>https://stonebuddha.github.io/publication/wanghr21a/</link>
+      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/wanghr21a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sound Probabilistic Inference via Guide Types</title>
+      <link>https://stonebuddha.github.io/publication/wanghr21b/</link>
+      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/wanghr21b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Liquid Resource Types</title>
+      <link>https://stonebuddha.github.io/publication/knothwr20/</link>
+      <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/knothwr20/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raising Expectations: Automating Expected Cost Analysis with Types</title>
+      <link>https://stonebuddha.github.io/publication/wangkh20/</link>
+      <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/wangkh20/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Resource-Guided Program Synthesis</title>
+      <link>https://stonebuddha.github.io/publication/knothwp19/</link>
+      <pubDate>Sat, 22 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/knothwp19/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Denotational Semantics for Low-Level Probabilistic Programs with Nondeterminism</title>
+      <link>https://stonebuddha.github.io/publication/wanghr19/</link>
+      <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/wanghr19/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Type-Guided Worst-Case Input Generation</title>
+      <link>https://stonebuddha.github.io/publication/wangh19/</link>
+      <pubDate>Sun, 13 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/wangh19/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PMAF: An Algebraic Framework for Static Analysis of Probabilistic Programs</title>
+      <link>https://stonebuddha.github.io/publication/wanghr18/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/wanghr18/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TiML: A Functional Language for Practical Complexity Analysis with Invariants</title>
+      <link>https://stonebuddha.github.io/publication/wangwc17/</link>
+      <pubDate>Wed, 25 Oct 2017 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/wangwc17/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Conditional Dyck-CFL Reachability Analysis for Complete and Efficient Library Summarization</title>
+      <link>https://stonebuddha.github.io/publication/tangwx17/</link>
+      <pubDate>Sat, 22 Apr 2017 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/tangwx17/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

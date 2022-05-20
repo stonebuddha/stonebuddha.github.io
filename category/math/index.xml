@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Math | Di Wang</title>
+    <link>https://stonebuddha.github.io/category/math/</link>
+      <atom:link href="https://stonebuddha.github.io/category/math/index.xml" rel="self" type="application/rss+xml" />
+    <description>Math</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 15 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png</url>
+      <title>Math</title>
+      <link>https://stonebuddha.github.io/category/math/</link>
+    </image>
+    
+    <item>
+      <title>Termination Analysis of Random Walks</title>
+      <link>https://stonebuddha.github.io/post/termination-analysis-of-random-walks/</link>
+      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/post/termination-analysis-of-random-walks/</guid>
+      <description>&lt;p&gt;In this post, we consider one-dimensional random walks:
+assume that $S_n = \sum_{i=1}^n X_i$ is a random walk on the integers with
+initial value $S_0 = 0$, where $X_i, i \in \mathbb{N}$ are independent and
+identically distributed random variables.
+For termination analysis, we introduce a &lt;i&gt;stopping time&lt;/i&gt;: a nonnegative
+integer-valued random variable $T$ such that for every integer $n \ge 0$, the
+indicator function of the event $\lbrace T = n \rbrace$ is a function of
+$S_1,S_2,\cdots,S_n$.&lt;/p&gt;
+&lt;h2 id=&#34;symmetric-random-walk&#34;&gt;Symmetric Random Walk&lt;/h2&gt;
+&lt;p&gt;For each $i \in \mathbb{N}$, we consider
+$X_i = \left\lbrace \begin{array}{ll}  1 &amp;amp; \text{with prob.}~0.5 \\ -1 &amp;amp; \text{with prob.}~0.5 \end{array} \right.$.
+Symmetric random walks are known to be &lt;em&gt;recurrent&lt;/em&gt;, i.e., with probability
+one, any state is visited infinitely often.
+Let us consider the case where the random walk terminates when it reaches the
+level $1$, i.e., $T := \min\lbrace n \ge 0 : S_n = 1 \rbrace$, and $T$ is
+clearly a stopping time.
+How do we establish the recurrence property for $T$, i.e., $\mathbb{P}[T &amp;lt; \infty] = 1$?
+Moreover, what can we say about $\mathbb{E}[T]$?&lt;/p&gt;
+&lt;p&gt;One method is to derive $T$&amp;rsquo;s &lt;em&gt;probability generating function&lt;/em&gt;
+$G(z) := \mathbb{E}[z^T] = \sum_{n=0}^{\infty} z^n \mathbb{P}[T=n]$,
+which is defined for all real values of $z$ less than $1$ in absolute value.
+The strategy for the derivation is to condition on the first step of the random
+walk to obtain a functional equation for $G$; there are two possibilities:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;if $X_1 = 1$, then $S_1 = 1$ and $T = 1$; or&lt;/li&gt;
+&lt;li&gt;if $X_1 = -1$, then $S_1 = -1$, and the random walk must first return to the
+origin, and the amount of time it takes to reach $0$ starting from $-1$ has the
+same distribution as&amp;mdash;and is conditionally independent of&amp;mdash;$T$ itself (i.e.,
+the amount of time to reach $1$ from $0$).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thus, $G(z) = 0.5z + 0.5z \cdot G(z) \cdot G(z) = (z + zG(z)^2) / 2$.
+This is a functional equation, whose solution is $G(z) = (1 \pm \sqrt{1 - z^2})/z$.
+Moreover, observing that $G(z)$ takes values between 0 and 1 when $z \in (0,1)$,
+we obtain the unique solution $G(z) = (1 - \sqrt{1- z ^2})/z$.&lt;/p&gt;
+&lt;p&gt;Then, by the monotone convergence theorem, we have
+$$
+\mathbb{P}[T &amp;lt; \infty] = \sum_{n=0}^\infty \mathbb{P}[T = n] = \lim_{z \to 1^-} G(z) = 1.
+$$
+Similarly, noting that $G&amp;rsquo;(z) = \sum_{n=1}^{\infty} n z^{n-1} \mathbb{P}[T=n]$,
+we can express $\mathbb{E}[T]$ as $G&amp;rsquo;(1^-)$.
+Because $G&amp;rsquo;(z) = (-1 + 1/\sqrt{1 - z^2})/z^2$,
+we have $\mathbb{E}[T] = G&amp;rsquo;(1^-) = \infty$, i.e., the expected termination time is infinity.&lt;/p&gt;
+&lt;h2 id=&#34;gamblers-ruin&#34;&gt;Gambler&amp;rsquo;s Ruin&lt;/h2&gt;
+&lt;p&gt;Let us consider another termination criterion for symmetric random walks:
+it is set up so that Alice and Bob bet one dollar against each other on the
+results of a fair coin flip until one play runs out of money. Suppose that Alice
+starts with $A$ dollars and Bob starts with $B$ dollars.
+We define a termination time to model the gamble:
+$T := \min\lbrace n \ge 0: S_n = -A \vee S_n = B\rbrace$, which is clearly a stopping time.
+By a similar argument, we can show both $\mathbb{P}[T_A &amp;lt; \infty] = 1$
+where $T_A := \min\lbrace n \ge 0: S_n = -A \rbrace$,
+and $\mathbb{P}[T_B &amp;lt; \infty] = 1$ where $T_B := \min\lbrace n \ge 0: S_n = B\rbrace$.
+Thus, we know that $\mathbb{P}[T &amp;lt; \infty] = 1$ as $T = \min(T_A,T_B)$.
+But what about $\mathbb{E}[T]$ in this case?&lt;/p&gt;
+&lt;p&gt;We use another technique called &lt;em&gt;Wald identities&lt;/em&gt;, two of which have the form below
+in a random-walk setting:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;If the step distribution has a finite first moment and the stopping
+time has a finite expectation, then $\mathbb{E}[S_T] = \mathbb{E}[X_1]\mathbb{E}[T]$.&lt;/li&gt;
+&lt;li&gt;If the step distribution has a finite second moment and the stopping
+time has a finite expectation, then $\mathbb{E}[(S_T-\mathbb{E}[X_1]T)^2]=\mathbb{E}[(X_1-\mathbb{E}[X_1])^2]\mathbb{E}[T]$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Let us assume $\mathbb{E}[T] &amp;lt; \infty$ first.
+By the definition of $X_1$, we know that $\mathbb{E}[X_1] = 0$ and $\mathbb{E}[X_1^2]=1$.
+By the first Wald identity, we have $\mathbb{E}[S_T]=0$.
+The random variable $S_T$ takes only two values, $-A$ and $B$, with probabilities
+$u$ and $1-u$ such that $u \cdot (-A) + (1-u) \cdot B = 0 \implies u = B/(A+B)$.
+By the second Wald identity, we know that $\mathbb{E}[S_T^2]=\mathbb{E}[T]$.
+Thus, we can compute $\mathbb{E}[T]$ from $S_T$&amp;rsquo;s distribution:
+$ \frac{B}{A+B} \cdot (-A)^2 + \frac{A}{A+B} \cdot B^2 = A \cdot B$.&lt;/p&gt;
+&lt;p&gt;To show $\mathbb{E}[T] &amp;lt; \infty$ at the first place, we observe that if at any
+time during the gamble Alice wins consecutive $A+B$ rounds, then Bob must run out
+of money and the gamble must terminate. Thus,
+$$
+\mathbb{P}[T &amp;gt; k(A+B)] \le (1 - \frac{1}{2^{A+B}})^k,
+$$
+and $\mathbb{E}[T] \le \sum_{k=0}^\infty (A+B)(1-\frac{1}{2^{A+B}})^k &amp;lt; \infty$.&lt;/p&gt;
+&lt;h2 id=&#34;asymmetric-random-walk-uneven-steps&#34;&gt;Asymmetric Random Walk (Uneven Steps)&lt;/h2&gt;
+&lt;p&gt;For each $i \in \mathbb{N}$, we consider
+$X_i = \left\lbrace \begin{array}{ll}  2 &amp;amp; \text{with prob.}~0.5 \\ -1 &amp;amp; \text{with prob.}~0.5 \end{array} \right.$.
+For the termination criterion, we define $T(m) := \min\lbrace n \ge 0 : S_n \ge m\rbrace$ for any positive integer $m$.
+Let us fixed an $m$ and write $T = T(m)$.
+This time, we do not argue that $\mathbb{P}[T &amp;lt; \infty] = 1$, but reason about $\mathbb{E}[T]$ directly.&lt;/p&gt;
+&lt;p&gt;We want to construct a &lt;em&gt;martingale&lt;/em&gt; $\lbrace Y_n \rbrace_{n \in \mathbb{N}_0}$,
+which is adapted to $\lbrace S_n \rbrace_{n \in \mathbb{N}_0}$, as follows:
+$$ Y_n := n + 2(m+1 - S_n), n \in \mathbb{N}_0. $$
+We can verify the martingale property by
+$$
+\begin{align}
+&amp;amp; \mathbb{E}[Y_{n+1} \mid S_0,S_1,\cdots,S_n] \\
+={} &amp;amp; n+1 + 2(m+1-S_n) - 2\mathbb{E}[X_{n+1} \mid S_0,S_1,\cdots,S_n] \\
+={} &amp;amp; n+1 + 2(m+1-S_n) - 1 \\
+={} &amp;amp; Y_n.
+\end{align}
+$$
+Then the stopped process $\lbrace Y_{T \wedge n} \rbrace_{n \in \mathbb{N}_0}$ is a nonnegative
+martingale, because $\mathbb{P}[S_n \le m + 1 \mid n \le T] = 1$.
+Therefore, by Doob&amp;rsquo;s martingale convergence theorem, $Y_T := \lim_{n \to \infty} Y_{T \wedge n}$
+is almost-surely well-defined and $\mathbb{E}[Y_T] \le \mathbb{E}[Y_0] = 2(m+1)$.
+On the other hand, the random variable $S_T$ takes only two values, $m$ and $(m+1)$, so
+we have $Y_T = T + 2(m+1-S_T) \ge T$, thus $\mathbb{E}[T] \le 2(m+1)$.&lt;/p&gt;
+&lt;p&gt;To obtain an exact result for $\mathbb{E}[T]$, we can reason about the distribution
+of $S_T$ (via recurrence solving) and apply the first Wald identity.
+The result is $\mathbb{E}[T] = 2(m+1 - \frac{2}{1+\sqrt{5}}( 1 - (\frac{1-\sqrt{5}}{2})^{m+1} ) )$.&lt;/p&gt;
+&lt;h2 id=&#34;asymmetric-random-walk-uneven-probabilities&#34;&gt;Asymmetric Random Walk (Uneven Probabilities)&lt;/h2&gt;
+&lt;p&gt;For each $i \in \mathbb{N}$, we consider
+$X_i = \left\lbrace \begin{array}{ll}  1 &amp;amp; \text{with prob.}~0.75 \\ -1 &amp;amp; \text{with prob.}~0.25 \end{array} \right.$.
+For the termination criterion, we define $T(m) := \min\lbrace n \ge 0 : S_n = m\rbrace$ for any positive integer $m$.
+This time, we want to reason about both $\mathbb{E}[T(m)]$ and $\mathbb{E}[T(m)^2]$.&lt;/p&gt;
+&lt;p&gt;We can use the techniques in previous sections to derive that $\mathbb{P}[T(m) &amp;lt; \infty] = 1$
+and $\mathbb{E}[T(m)] = 2m$.
+For second (or even higher) moments, we can again use probability generating functions
+$G_m(z) := \mathbb{E}[z^{T(m)}]$.
+Observing that a random walk with the target level $m$ can be decomposed into $m$
+independent random walks that reach $1$ starting from $0$,
+we have $G_m(z) = G_1(z)^m$.
+We follow the strategy that conditions on the first step of the random walk to obtain
+a functional equation for $G_1(z)$; there are two possibilities:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;if $X_1=1$, then $S_1=1$ and $T=1$; or&lt;/li&gt;
+&lt;li&gt;if $X_1=-1$, then $S_1=-1$ and the problem can be reduced to reaching $2$ starting from $0$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thus, $G_1(z) = 0.75z + 0.25z \cdot G_2(z) = 0.75z + 0.25zG_1(z)^2$.
+The solution is $G_1(z) = (2 \pm \sqrt{4 - 3z^2})/z$.
+Again, because $G_1(z)$ takes values between 0 and 1 when $z \in (0,1)$, we obtain the unique solution
+$G_1(z) = (2-\sqrt{4-3z^2})/z$.&lt;/p&gt;
+&lt;p&gt;Let us write $T = T(m)$.
+By the property of probability generating functions, we have $\mathbb{E}[T(T-1)] = G_m&amp;rsquo;&amp;rsquo;(1^-) = 4m^2+4m$.
+Therefore, $\mathbb{E}[T^2] = \mathbb{E}[T(T-1)] + \mathbb{E}[T] = 4m^2+6m$.&lt;/p&gt;
+&lt;h2 id=&#34;whats-more&#34;&gt;What&amp;rsquo;s More&lt;/h2&gt;
+&lt;p&gt;In &lt;a href=&#34;../../publication/wanghr21a&#34;&gt;our paper&lt;/a&gt;, we present a systematic and automated
+framework for upper- and lower-bounding higher moments of cost accumulators (e.g., termination time)
+in probabilistic programs (e.g., random walks).&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

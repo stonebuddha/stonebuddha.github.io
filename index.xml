@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Di Wang</title>
+    <link>https://stonebuddha.github.io/</link>
+      <atom:link href="https://stonebuddha.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <description>Di Wang</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 20 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png</url>
+      <title>Di Wang</title>
+      <link>https://stonebuddha.github.io/</link>
+    </image>
+    
+    <item>
+      <title>Central Moment Analysis for Cost Accumulators in Probabilistic Programs</title>
+      <link>https://stonebuddha.github.io/publication/wanghr21a/</link>
+      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/wanghr21a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sound Probabilistic Inference via Guide Types</title>
+      <link>https://stonebuddha.github.io/publication/wanghr21b/</link>
+      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/wanghr21b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Type-Guided Worst-Case Input Generation</title>
+      <link>https://stonebuddha.github.io/talk/type-guided-worst-case-input-generation/</link>
+      <pubDate>Thu, 03 Jun 2021 10:00:00 -0400</pubDate>
+      <guid>https://stonebuddha.github.io/talk/type-guided-worst-case-input-generation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Expected-Cost Analysis for Probabilistic Programs and Semantics-Level Adaption of Optional Stopping Theorems</title>
+      <link>https://stonebuddha.github.io/publication/wanghr21c/</link>
+      <pubDate>Tue, 30 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/wanghr21c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Termination Analysis of Random Walks</title>
+      <link>https://stonebuddha.github.io/post/termination-analysis-of-random-walks/</link>
+      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/post/termination-analysis-of-random-walks/</guid>
+      <description>&lt;p&gt;In this post, we consider one-dimensional random walks:
+assume that $S_n = \sum_{i=1}^n X_i$ is a random walk on the integers with
+initial value $S_0 = 0$, where $X_i, i \in \mathbb{N}$ are independent and
+identically distributed random variables.
+For termination analysis, we introduce a &lt;i&gt;stopping time&lt;/i&gt;: a nonnegative
+integer-valued random variable $T$ such that for every integer $n \ge 0$, the
+indicator function of the event $\lbrace T = n \rbrace$ is a function of
+$S_1,S_2,\cdots,S_n$.&lt;/p&gt;
+&lt;h2 id=&#34;symmetric-random-walk&#34;&gt;Symmetric Random Walk&lt;/h2&gt;
+&lt;p&gt;For each $i \in \mathbb{N}$, we consider
+$X_i = \left\lbrace \begin{array}{ll}  1 &amp;amp; \text{with prob.}~0.5 \\ -1 &amp;amp; \text{with prob.}~0.5 \end{array} \right.$.
+Symmetric random walks are known to be &lt;em&gt;recurrent&lt;/em&gt;, i.e., with probability
+one, any state is visited infinitely often.
+Let us consider the case where the random walk terminates when it reaches the
+level $1$, i.e., $T := \min\lbrace n \ge 0 : S_n = 1 \rbrace$, and $T$ is
+clearly a stopping time.
+How do we establish the recurrence property for $T$, i.e., $\mathbb{P}[T &amp;lt; \infty] = 1$?
+Moreover, what can we say about $\mathbb{E}[T]$?&lt;/p&gt;
+&lt;p&gt;One method is to derive $T$&amp;rsquo;s &lt;em&gt;probability generating function&lt;/em&gt;
+$G(z) := \mathbb{E}[z^T] = \sum_{n=0}^{\infty} z^n \mathbb{P}[T=n]$,
+which is defined for all real values of $z$ less than $1$ in absolute value.
+The strategy for the derivation is to condition on the first step of the random
+walk to obtain a functional equation for $G$; there are two possibilities:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;if $X_1 = 1$, then $S_1 = 1$ and $T = 1$; or&lt;/li&gt;
+&lt;li&gt;if $X_1 = -1$, then $S_1 = -1$, and the random walk must first return to the
+origin, and the amount of time it takes to reach $0$ starting from $-1$ has the
+same distribution as&amp;mdash;and is conditionally independent of&amp;mdash;$T$ itself (i.e.,
+the amount of time to reach $1$ from $0$).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thus, $G(z) = 0.5z + 0.5z \cdot G(z) \cdot G(z) = (z + zG(z)^2) / 2$.
+This is a functional equation, whose solution is $G(z) = (1 \pm \sqrt{1 - z^2})/z$.
+Moreover, observing that $G(z)$ takes values between 0 and 1 when $z \in (0,1)$,
+we obtain the unique solution $G(z) = (1 - \sqrt{1- z ^2})/z$.&lt;/p&gt;
+&lt;p&gt;Then, by the monotone convergence theorem, we have
+$$
+\mathbb{P}[T &amp;lt; \infty] = \sum_{n=0}^\infty \mathbb{P}[T = n] = \lim_{z \to 1^-} G(z) = 1.
+$$
+Similarly, noting that $G&amp;rsquo;(z) = \sum_{n=1}^{\infty} n z^{n-1} \mathbb{P}[T=n]$,
+we can express $\mathbb{E}[T]$ as $G&amp;rsquo;(1^-)$.
+Because $G&amp;rsquo;(z) = (-1 + 1/\sqrt{1 - z^2})/z^2$,
+we have $\mathbb{E}[T] = G&amp;rsquo;(1^-) = \infty$, i.e., the expected termination time is infinity.&lt;/p&gt;
+&lt;h2 id=&#34;gamblers-ruin&#34;&gt;Gambler&amp;rsquo;s Ruin&lt;/h2&gt;
+&lt;p&gt;Let us consider another termination criterion for symmetric random walks:
+it is set up so that Alice and Bob bet one dollar against each other on the
+results of a fair coin flip until one play runs out of money. Suppose that Alice
+starts with $A$ dollars and Bob starts with $B$ dollars.
+We define a termination time to model the gamble:
+$T := \min\lbrace n \ge 0: S_n = -A \vee S_n = B\rbrace$, which is clearly a stopping time.
+By a similar argument, we can show both $\mathbb{P}[T_A &amp;lt; \infty] = 1$
+where $T_A := \min\lbrace n \ge 0: S_n = -A \rbrace$,
+and $\mathbb{P}[T_B &amp;lt; \infty] = 1$ where $T_B := \min\lbrace n \ge 0: S_n = B\rbrace$.
+Thus, we know that $\mathbb{P}[T &amp;lt; \infty] = 1$ as $T = \min(T_A,T_B)$.
+But what about $\mathbb{E}[T]$ in this case?&lt;/p&gt;
+&lt;p&gt;We use another technique called &lt;em&gt;Wald identities&lt;/em&gt;, two of which have the form below
+in a random-walk setting:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;If the step distribution has a finite first moment and the stopping
+time has a finite expectation, then $\mathbb{E}[S_T] = \mathbb{E}[X_1]\mathbb{E}[T]$.&lt;/li&gt;
+&lt;li&gt;If the step distribution has a finite second moment and the stopping
+time has a finite expectation, then $\mathbb{E}[(S_T-\mathbb{E}[X_1]T)^2]=\mathbb{E}[(X_1-\mathbb{E}[X_1])^2]\mathbb{E}[T]$.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Let us assume $\mathbb{E}[T] &amp;lt; \infty$ first.
+By the definition of $X_1$, we know that $\mathbb{E}[X_1] = 0$ and $\mathbb{E}[X_1^2]=1$.
+By the first Wald identity, we have $\mathbb{E}[S_T]=0$.
+The random variable $S_T$ takes only two values, $-A$ and $B$, with probabilities
+$u$ and $1-u$ such that $u \cdot (-A) + (1-u) \cdot B = 0 \implies u = B/(A+B)$.
+By the second Wald identity, we know that $\mathbb{E}[S_T^2]=\mathbb{E}[T]$.
+Thus, we can compute $\mathbb{E}[T]$ from $S_T$&amp;rsquo;s distribution:
+$ \frac{B}{A+B} \cdot (-A)^2 + \frac{A}{A+B} \cdot B^2 = A \cdot B$.&lt;/p&gt;
+&lt;p&gt;To show $\mathbb{E}[T] &amp;lt; \infty$ at the first place, we observe that if at any
+time during the gamble Alice wins consecutive $A+B$ rounds, then Bob must run out
+of money and the gamble must terminate. Thus,
+$$
+\mathbb{P}[T &amp;gt; k(A+B)] \le (1 - \frac{1}{2^{A+B}})^k,
+$$
+and $\mathbb{E}[T] \le \sum_{k=0}^\infty (A+B)(1-\frac{1}{2^{A+B}})^k &amp;lt; \infty$.&lt;/p&gt;
+&lt;h2 id=&#34;asymmetric-random-walk-uneven-steps&#34;&gt;Asymmetric Random Walk (Uneven Steps)&lt;/h2&gt;
+&lt;p&gt;For each $i \in \mathbb{N}$, we consider
+$X_i = \left\lbrace \begin{array}{ll}  2 &amp;amp; \text{with prob.}~0.5 \\ -1 &amp;amp; \text{with prob.}~0.5 \end{array} \right.$.
+For the termination criterion, we define $T(m) := \min\lbrace n \ge 0 : S_n \ge m\rbrace$ for any positive integer $m$.
+Let us fixed an $m$ and write $T = T(m)$.
+This time, we do not argue that $\mathbb{P}[T &amp;lt; \infty] = 1$, but reason about $\mathbb{E}[T]$ directly.&lt;/p&gt;
+&lt;p&gt;We want to construct a &lt;em&gt;martingale&lt;/em&gt; $\lbrace Y_n \rbrace_{n \in \mathbb{N}_0}$,
+which is adapted to $\lbrace S_n \rbrace_{n \in \mathbb{N}_0}$, as follows:
+$$ Y_n := n + 2(m+1 - S_n), n \in \mathbb{N}_0. $$
+We can verify the martingale property by
+$$
+\begin{align}
+&amp;amp; \mathbb{E}[Y_{n+1} \mid S_0,S_1,\cdots,S_n] \\
+={} &amp;amp; n+1 + 2(m+1-S_n) - 2\mathbb{E}[X_{n+1} \mid S_0,S_1,\cdots,S_n] \\
+={} &amp;amp; n+1 + 2(m+1-S_n) - 1 \\
+={} &amp;amp; Y_n.
+\end{align}
+$$
+Then the stopped process $\lbrace Y_{T \wedge n} \rbrace_{n \in \mathbb{N}_0}$ is a nonnegative
+martingale, because $\mathbb{P}[S_n \le m + 1 \mid n \le T] = 1$.
+Therefore, by Doob&amp;rsquo;s martingale convergence theorem, $Y_T := \lim_{n \to \infty} Y_{T \wedge n}$
+is almost-surely well-defined and $\mathbb{E}[Y_T] \le \mathbb{E}[Y_0] = 2(m+1)$.
+On the other hand, the random variable $S_T$ takes only two values, $m$ and $(m+1)$, so
+we have $Y_T = T + 2(m+1-S_T) \ge T$, thus $\mathbb{E}[T] \le 2(m+1)$.&lt;/p&gt;
+&lt;p&gt;To obtain an exact result for $\mathbb{E}[T]$, we can reason about the distribution
+of $S_T$ (via recurrence solving) and apply the first Wald identity.
+The result is $\mathbb{E}[T] = 2(m+1 - \frac{2}{1+\sqrt{5}}( 1 - (\frac{1-\sqrt{5}}{2})^{m+1} ) )$.&lt;/p&gt;
+&lt;h2 id=&#34;asymmetric-random-walk-uneven-probabilities&#34;&gt;Asymmetric Random Walk (Uneven Probabilities)&lt;/h2&gt;
+&lt;p&gt;For each $i \in \mathbb{N}$, we consider
+$X_i = \left\lbrace \begin{array}{ll}  1 &amp;amp; \text{with prob.}~0.75 \\ -1 &amp;amp; \text{with prob.}~0.25 \end{array} \right.$.
+For the termination criterion, we define $T(m) := \min\lbrace n \ge 0 : S_n = m\rbrace$ for any positive integer $m$.
+This time, we want to reason about both $\mathbb{E}[T(m)]$ and $\mathbb{E}[T(m)^2]$.&lt;/p&gt;
+&lt;p&gt;We can use the techniques in previous sections to derive that $\mathbb{P}[T(m) &amp;lt; \infty] = 1$
+and $\mathbb{E}[T(m)] = 2m$.
+For second (or even higher) moments, we can again use probability generating functions
+$G_m(z) := \mathbb{E}[z^{T(m)}]$.
+Observing that a random walk with the target level $m$ can be decomposed into $m$
+independent random walks that reach $1$ starting from $0$,
+we have $G_m(z) = G_1(z)^m$.
+We follow the strategy that conditions on the first step of the random walk to obtain
+a functional equation for $G_1(z)$; there are two possibilities:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;if $X_1=1$, then $S_1=1$ and $T=1$; or&lt;/li&gt;
+&lt;li&gt;if $X_1=-1$, then $S_1=-1$ and the problem can be reduced to reaching $2$ starting from $0$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Thus, $G_1(z) = 0.75z + 0.25z \cdot G_2(z) = 0.75z + 0.25zG_1(z)^2$.
+The solution is $G_1(z) = (2 \pm \sqrt{4 - 3z^2})/z$.
+Again, because $G_1(z)$ takes values between 0 and 1 when $z \in (0,1)$, we obtain the unique solution
+$G_1(z) = (2-\sqrt{4-3z^2})/z$.&lt;/p&gt;
+&lt;p&gt;Let us write $T = T(m)$.
+By the property of probability generating functions, we have $\mathbb{E}[T(T-1)] = G_m&amp;rsquo;&amp;rsquo;(1^-) = 4m^2+4m$.
+Therefore, $\mathbb{E}[T^2] = \mathbb{E}[T(T-1)] + \mathbb{E}[T] = 4m^2+6m$.&lt;/p&gt;
+&lt;h2 id=&#34;whats-more&#34;&gt;What&amp;rsquo;s More&lt;/h2&gt;
+&lt;p&gt;In &lt;a href=&#34;../../publication/wanghr21a&#34;&gt;our paper&lt;/a&gt;, we present a systematic and automated
+framework for upper- and lower-bounding higher moments of cost accumulators (e.g., termination time)
+in probabilistic programs (e.g., random walks).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Probabilistic Resource-Aware Session Types</title>
+      <link>https://stonebuddha.github.io/publication/daswh20/</link>
+      <pubDate>Wed, 18 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/daswh20/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Type-Based Resource-Guided Search</title>
+      <link>https://stonebuddha.github.io/talk/type-based-resource-guided-search/</link>
+      <pubDate>Fri, 16 Oct 2020 12:00:00 -0400</pubDate>
+      <guid>https://stonebuddha.github.io/talk/type-based-resource-guided-search/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Liquid Resource Types</title>
+      <link>https://stonebuddha.github.io/publication/knothwr20/</link>
+      <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/knothwr20/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raising Expectations: Automating Expected Cost Analysis with Types</title>
+      <link>https://stonebuddha.github.io/publication/wangkh20/</link>
+      <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/wangkh20/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Resource-Guided Program Synthesis</title>
+      <link>https://stonebuddha.github.io/talk/resource-guided-program-synthesis/</link>
+      <pubDate>Fri, 22 Nov 2019 12:00:00 -0500</pubDate>
+      <guid>https://stonebuddha.github.io/talk/resource-guided-program-synthesis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Resource-Guided Program Synthesis</title>
+      <link>https://stonebuddha.github.io/publication/knothwp19/</link>
+      <pubDate>Sat, 22 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/knothwp19/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Denotational Semantics for Low-Level Probabilistic Programs with Nondeterminism</title>
+      <link>https://stonebuddha.github.io/publication/wanghr19/</link>
+      <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/wanghr19/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Type-Guided Worst-Case Input Generation</title>
+      <link>https://stonebuddha.github.io/publication/wangh19/</link>
+      <pubDate>Sun, 13 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/wangh19/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Using FFT to Speed Up DP</title>
+      <link>https://stonebuddha.github.io/post/using-fft-to-speed-up-dp/</link>
+      <pubDate>Sat, 03 Nov 2018 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/post/using-fft-to-speed-up-dp/</guid>
+      <description>&lt;p&gt;Problem link: &lt;a href=&#34;https://www.hackerrank.com/challenges/counting-road-networks&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Counting Road Networks | HackerRank&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You are supposed to count the number of connected undirected labeled graphs with $n$ vertices.
+Algorithms with $O(n \log^2 n)$ time complexity are preferable.&lt;/p&gt;
+&lt;h2 id=&#34;a-dynamic-programming-algorithm&#34;&gt;A Dynamic-Programming Algorithm&lt;/h2&gt;
+&lt;p&gt;Let $f(n)$ be the answer for $n$.
+The first idea to compute $f(n)$ is subtracting the number of disconnected graphs from the total number.
+The total number of size-$n$ graphs is $g(n) := 2^{\binom{n}{2}}$.
+How to count the disconnected graphs?
+Let&amp;rsquo;s consider the size $m$ of the connected component containing the vertex labeled with 1.
+Since the graph is disconnected, $m$ cannot be $n$.
+Then the number of disconnected graphs where the connected component containing vertex 1 is a certain one with size $m$ is exactly $f(m) \cdot g(n-m)$.
+Now we have an $O(n^2)$-time dynamic-programming algorithm as follows.
+$$
+f(n) = g(n) - \sum_{m=1}^{n-1} \binom{n-1}{m-1} \cdot f(m) \cdot g(n - m)
+$$&lt;/p&gt;
+&lt;h2 id=&#34;expression-rearrangement&#34;&gt;Expression Rearrangement&lt;/h2&gt;
+&lt;p&gt;If we unfold the binomial coefficients, we will have
+$$
+\frac{f(n)}{(n-1)!} = n \cdot \frac{g(n)}{n!} - \sum_{m=1}^{n-1} \frac{f(m)}{(m-1)!} \cdot \frac{g(n-m)}{(n-m)!}
+$$
+Let $F(n) := \frac{f(n)}{(n-1)!}$ and $G(n) := \frac{g(n)}{n!}$.
+Moreover, let&amp;rsquo;s set $F(0)$ to $0$ and then we have
+$$
+F(n) = n \cdot G(n) - \sum_{m=0}^{n-1} F(m) \cdot G(n-m)
+$$
+Note that we already have a convolution-like term in the formula.&lt;/p&gt;
+&lt;h2 id=&#34;an-optimization-based-on-fft&#34;&gt;An Optimization Based on FFT&lt;/h2&gt;
+&lt;p&gt;We will use &lt;a href=&#34;https://en.wikipedia.org/wiki/Fast_Fourier_transform&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Fast Fourier transform&lt;/a&gt; (FFT) as an $O(n \log n)$-time algorithm to compute convolution of length $n$.&lt;/p&gt;
+&lt;p&gt;First of all, $G(n)$ are easy to compute so we can pre-process them.
+Now we are going to use a divide-and-conquer scheme.
+Let $solve(l,r)$ be a procedure that computes $F(n)$ for all $n \in [l,r)$.
+In addition, we add the following invariant to this procedure:&lt;/p&gt;
+&lt;p&gt;When invoking $solve(l,r)$, we already compute for each $n \in [l,r)$, the partial convolution $\sum_{m=0}^{l-1} F(m) \cdot G(n-m)$, and store them in $H(n)$.&lt;/p&gt;
+&lt;p&gt;Then our algorithm proceeds as follows.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If $l+1=r$, we set $F(l)$ to $l \cdot G(l) - H(l)$.&lt;/li&gt;
+&lt;li&gt;Otherwise, let&amp;rsquo;s invoke $solve(l,k)$ first where $k = \frac{l+r}{2}$, i.e., the middle point.
+Now we already solve the first half of the problem.
+To become able to invoke $solve(k,r)$ to complete the second half, we need to do something to maintain the invariant above.
+In essence, we need to update
+$$
+H(n) \gets H(n) + \sum_{m=l}^{k-1} F(m) \cdot G(n-m)
+$$
+for each $n \in [k,r)$.
+Here comes the chance for optimization.
+What we really want to compute is the convolution of $F[l,k)$ and $G[0,r-l)$!
+Let the convolution result be $C$ and indeed we have
+$$
+C(n) = \sum_{m=l}^{k-1}  F(m) \cdot G(n-m)
+$$
+for each $n \in [k,r)$.
+After performing $H(n) \gets H(n) + C(n)$ for each $n \in [k,r)$, we reestablish the invariant and we can recurse to $solve(k,r)$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Finally, let&amp;rsquo;s estimate the time complexity of the algorithm above.
+Let $T(n)$ be the running time of $solve(l,r)$ with $n=r-l$.
+By using FFT to compute the convolution, we can establish the following
+$$
+T(n) = 2T(\frac{n}{2}) + O(n \log n)
+$$
+Then by the Master Theorem we derive that $T(n) = O(n \log^2 n)$.&lt;/p&gt;
+&lt;h2 id=&#34;whats-more&#34;&gt;What&amp;rsquo;s More&lt;/h2&gt;
+&lt;p&gt;For those who could read Chinese, &lt;a href=&#34;https://www.cs.princeton.edu/~danqic/misc/divide-and-conquer.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CDQ&amp;rsquo;s divide-and-conquer&lt;/a&gt; is a good reference about applications of the divide-and-conquer scheme in this post.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>PMAF: An Algebraic Framework for Static Analysis of Probabilistic Programs</title>
+      <link>https://stonebuddha.github.io/publication/wanghr18/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/wanghr18/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PMAF: An Algebraic Framework for Static Analysis of Probabilistic Programs</title>
+      <link>https://stonebuddha.github.io/talk/pmaf-an-algebraic-framework-for-static-analysis-of-probabilistic-programs/</link>
+      <pubDate>Fri, 20 Apr 2018 12:00:00 -0400</pubDate>
+      <guid>https://stonebuddha.github.io/talk/pmaf-an-algebraic-framework-for-static-analysis-of-probabilistic-programs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TiML: A Functional Language for Practical Complexity Analysis with Invariants</title>
+      <link>https://stonebuddha.github.io/talk/timl-a-functional-language-for-practical-complexity-analysis-with-invariants/</link>
+      <pubDate>Fri, 09 Feb 2018 12:00:00 -0500</pubDate>
+      <guid>https://stonebuddha.github.io/talk/timl-a-functional-language-for-practical-complexity-analysis-with-invariants/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nondeterministic Interpretation</title>
+      <link>https://stonebuddha.github.io/post/nondeterministic-interpretation/</link>
+      <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/post/nondeterministic-interpretation/</guid>
+      <description>&lt;p&gt;Suppose you have a toy specification with built-in nondeterminism, and you want to generate answers with respect to the specification:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ocaml&#34; data-lang=&#34;ocaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;exp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;EInt&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;of&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;EPair&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;of&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;exp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;exp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;ENdet&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;of&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;exp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;exp&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ans&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;VInt&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;of&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;VPair&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;of&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ans&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ans&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For example, from the following specification&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ocaml&#34; data-lang=&#34;ocaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nc&#34;&gt;EPair&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;ENdet&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;EInt&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;EInt&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;ENdet&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;EInt&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;EInt&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;you might want to generate a bunch of possible answers:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ocaml&#34; data-lang=&#34;ocaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nc&#34;&gt;VPair&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;VInt&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;VInt&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nc&#34;&gt;VPair&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;VInt&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;VInt&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nc&#34;&gt;VPair&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;VInt&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;VInt&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nc&#34;&gt;VPair&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;VInt&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;VInt&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The scene might be where you want to specify something with multiple sites of nondeterminism, ask the generator to come up with an answer, and successively give you other answers until you are satisfied.&lt;/p&gt;
+&lt;p&gt;The basic methodology is search.
+We want to construct a recursive procedure on the structure of a specification.
+For a sub-specification, it should know two sorts of computation:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the computation that completes a whole answer and constructs a procedure for next whole answers, given the current sub-answer for the sub-specification and a procedure for next whole answers if the current sub-answer would leads to a subsequent unsatisfactoriness; and&lt;/li&gt;
+&lt;li&gt;the computation to find next whole answers.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In this sense, the first computation has type $\mathsf{ans} \to \mathsf{next} \to \mathsf{ans} \times \mathsf{next}$, and the second one should be typed $\mathsf{next}$.
+A computation of type $\mathsf{next}$ is supposed to (i) either fail, or (ii) take no arguments, and when invoked it should return the next whole answer as well as a new $\mathsf{next}$ computation.
+Thus we have $\mathsf{next} \equiv \mathbf{1} + \mathbf{1} \to (\mathsf{ans} \times \mathsf{next})$.
+Therefore we use recursive types to model this mechanism.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ocaml&#34; data-lang=&#34;ocaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;next&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;NFail&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;NCont&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;of&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;unit&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ans&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;next&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then it is straightforward to implement an interpreter:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ocaml&#34; data-lang=&#34;ocaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;rec&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;interp&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;exp&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cont&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fail&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;match&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;exp&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;with&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;EInt&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cont&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;VInt&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fail&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;EPair&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;e&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;interp&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;e&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fun&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;v&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fail&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;interp&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;e&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fun&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;v&amp;#39;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fail&amp;#39;&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cont&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;VPair&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;v&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fail&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fail&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fail&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;ENdet&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;e1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;e2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;interp&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;e1&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cont&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;NCont&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fun&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;interp&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;e2&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cont&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fail&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The execution should be the following:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ocaml&#34; data-lang=&#34;ocaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ans1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;next1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;interp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;EPair&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;ENdet&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;EInt&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;EInt&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;ENdet&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;EInt&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nc&#34;&gt;EInt&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)))&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;fun&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;v&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fail&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fail&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;NFail&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;(* val ans1 : ans = VPair (VInt 5, VInt 7) *)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;(* val next1 : next = NCont &amp;lt;fun&amp;gt; *)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ans2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;next2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;match&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;next1&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;with&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;NCont&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;(* val ans2 : ans = VPair (VInt 5, VInt 8) *)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;(* val next2 : next = NCont &amp;lt;fun&amp;gt; *)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ans3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;next3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;match&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;next2&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;with&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;NCont&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;(* val ans3 : ans = VPair (VInt 6, VInt 7) *)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;(* val next3 : next = NCont &amp;lt;fun&amp;gt; *)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ans4&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;next4&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;match&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;next3&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;with&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;NCont&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;(* val ans4 : ans = VPair (VInt 6, VInt 8) *)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;(* val next4 : next = NFail *)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>TiML: A Functional Language for Practical Complexity Analysis with Invariants</title>
+      <link>https://stonebuddha.github.io/publication/wangwc17/</link>
+      <pubDate>Wed, 25 Oct 2017 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/wangwc17/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Conditional Dyck-CFL Reachability Analysis for Complete and Efficient Library Summarization</title>
+      <link>https://stonebuddha.github.io/publication/tangwx17/</link>
+      <pubDate>Sat, 22 Apr 2017 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/tangwx17/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://stonebuddha.github.io/admin/config.yml</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/admin/config.yml</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
