@@ -4,15 +4,19 @@
   
   
   <url>
-    <loc></loc><lastmod>2021-09-14T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
+    <loc></loc><lastmod>2022-07-12T04:56:22+08:00</lastmod><changefreq>weekly</changefreq></url>
+  <url>
+    <loc>https://stonebuddha.github.io/</loc><lastmod>2022-07-12T04:56:22+08:00</lastmod><changefreq>weekly</changefreq></url>
+  <url>
+    <loc></loc><lastmod>2022-07-12T04:56:22+08:00</lastmod><changefreq>weekly</changefreq></url>
+  <url>
+    <loc>https://stonebuddha.github.io/post/easy-syntax-highlighting-for-latex/</loc><lastmod>2022-07-12T04:56:22+08:00</lastmod><changefreq>weekly</changefreq></url>
+  <url>
+    <loc>https://stonebuddha.github.io/post/</loc><lastmod>2022-07-12T04:56:22+08:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
     <loc>https://stonebuddha.github.io/publication-type/1/</loc><lastmod>2021-06-20T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
     <loc>https://stonebuddha.github.io/publication/wanghr21a/</loc><lastmod>2021-06-20T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
-  <url>
-    <loc>https://stonebuddha.github.io/</loc><lastmod>2021-09-14T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
-  <url>
-    <loc></loc><lastmod>2021-09-14T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
     <loc></loc><lastmod>2021-06-20T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
@@ -31,12 +35,6 @@
     <loc>https://stonebuddha.github.io/publication-type/3/</loc><lastmod>2021-03-30T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
     <loc>https://stonebuddha.github.io/publication/wanghr21c/</loc><lastmod>2021-03-30T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
-  <url>
-    <loc>https://stonebuddha.github.io/categories/</loc><lastmod>2021-09-14T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
-  <url>
-    <loc>https://stonebuddha.github.io/category/math/</loc><lastmod>2021-09-14T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
-  <url>
-    <loc>https://stonebuddha.github.io/post/</loc><lastmod>2021-09-14T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
     <loc>https://stonebuddha.github.io/post/termination-analysis-of-random-walks/</loc><lastmod>2021-09-14T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
@@ -66,8 +64,6 @@
   <url>
     <loc>https://stonebuddha.github.io/publication/wangh19/</loc><lastmod>2019-01-13T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
-    <loc>https://stonebuddha.github.io/category/problem-solving/</loc><lastmod>2018-11-03T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
-  <url>
     <loc>https://stonebuddha.github.io/post/using-fft-to-speed-up-dp/</loc><lastmod>2018-11-03T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
     <loc>https://stonebuddha.github.io/publication/wanghr18/</loc><lastmod>2018-06-20T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
@@ -77,8 +73,6 @@
     <loc>https://stonebuddha.github.io/talk/timl-a-functional-language-for-practical-complexity-analysis-with-invariants/</loc><lastmod>2018-02-09T12:00:00-05:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
     <loc>https://stonebuddha.github.io/post/nondeterministic-interpretation/</loc><lastmod>2018-02-08T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
-  <url>
-    <loc>https://stonebuddha.github.io/category/programming/</loc><lastmod>2018-02-08T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
     <loc></loc><lastmod>2017-10-25T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
@@ -97,5 +91,7 @@
     <loc></loc><lastmod>2017-04-22T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
     <loc></loc><lastmod>2017-04-22T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
+  <url>
+    <loc>https://stonebuddha.github.io/categories/</loc><changefreq>weekly</changefreq></url>
   <url>
     <loc>https://stonebuddha.github.io/tags/</loc><changefreq>weekly</changefreq></url></urlset>
