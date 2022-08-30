@@ -1,0 +1,1416 @@
+<!DOCTYPE html><html lang="en-us" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.5.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Alegreya&family=Alegreya+Sans:ital,wght@0,400;0,700;1,400&family=Overpass+Mono&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya&family=Alegreya+Sans:ital,wght@0,400;0,700;1,400&family=Overpass+Mono&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Di Wang" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="I am generally interested in the intersection of programming languages and software engineering (especially static analysis, type systems, and verification), as well as the intersection of programming languages and artificial intelligence (especially program synthesis and probabilistic programming)." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://stonebuddha.github.io/prospective-students/" />
+
+  
+  
+  
+    <meta name="theme-color" content="#435c85" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.c7b8d9abd591ba2253ea42747e3ac3f5.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css" integrity="" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.3e2eaa6fd06c912bbe9408ac70e50f22.css" />
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/manifest.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://stonebuddha.github.io/prospective-students/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="Di Wang" />
+  <meta property="og:url" content="https://stonebuddha.github.io/prospective-students/" />
+  <meta property="og:title" content="Resources for Prospective Students | Di Wang" />
+  <meta property="og:description" content="I am generally interested in the intersection of programming languages and software engineering (especially static analysis, type systems, and verification), as well as the intersection of programming languages and artificial intelligence (especially program synthesis and probabilistic programming)." /><meta property="og:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" />
+    <meta property="twitter:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+  
+    
+    
+  
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Resources for Prospective Students | Di Wang</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="38459eac7fde56de6ea768a018e5a32d" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.14a0ed61c6dbd594b9c75193b25be179.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Di Wang</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Di Wang</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Home</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#publications"><span>Publications</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#talks"><span>Talks</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Posts</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#contact"><span>Contact</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Resources for Prospective Students</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      Di Wang</span>
+  </div>
+  
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p>I am generally interested in the intersection of programming languages and
+software engineering (especially static analysis, type systems, and verification),
+as well as the intersection of programming languages and artificial intelligence
+(especially program synthesis and probabilistic programming).</p>
+<ul>
+<li>If you want to learn about possible projects and research directions that I
+would like to advise or collaborate on at the moment, check out the <a href="#current-research-directions">list</a> below.</li>
+<li>If you want to know more about my long-term perspectives of <strong>incorporating randomness</strong>
+in software systems, check out my <a href="/files/research.pdf" target="_blank">research statement</a> that I wrote
+for my faculty applications.</li>
+<li>If you care about teaching and mentoring, check out my <a href="/files/teaching.pdf" target="_blank">teaching statement</a>.</li>
+<li>If you have concrete questions about me or Peking University, check out the
+<a href="#qa">Q&amp;A</a> below, and send me an email if your question is not covered there.</li>
+</ul>
+<h1 id="qa">Q&amp;A</h1>
+<details open class="spoiler">
+  <summary>Are you recruiting students?</summary>
+  <div style="display:inline-block;margin-left:1.5em;">
+  <b>Yes</b>! I am just getting started and planning to ramp up slowly (one PhD student a year).
+  I am also looking for self-motivated master and undergraduate students.
+  </div>
+</details>
+<details open class="spoiler">
+  <summary>Do I need to have a <em>specific</em> research background? Do I need to know a <em>specific</em> problem to work on?</summary>
+  <div style="display:inline-block;margin-left:1.5em;">
+  The short answer is "<b>no</b>."
+  Programming-languages or software-engineering research experience would be a plus but <b>not a requisite</b>.
+  It is more important to know what you are interested in and be passionate enough about
+  a broad area of problems to spend about 5 years to work on.
+  </div>
+</details>
+<details open class="spoiler">
+  <summary>Can I do machine learning / operating systems / database / ...?</summary>
+  <div style="display:inline-block;margin-left:1.5em;">
+  <b>Yes</b>, if you are interested in the intersection of programming languages and the other field.
+  Check out these interdisciplinary workshops: <a href="https://pldi22.sigplan.org/home/maps-2022">Symposium on Machine Programming</a>,
+  <a href="https://popl22.sigplan.org/home/lafi-2022">Workshop on Languages for Inference</a>,
+  <a href="https://plos-workshop.org/2021/">Workshop on Programming Languages and Operating Systems</a>,
+  and <a href="https://sites.google.com/view/dbpl2021">Symposium on Database Programming Languages</a>!
+  </div>
+</details>
+<details open class="spoiler">
+  <summary>Why should I consider Peking University? Who else could I work with at Peking University?</summary>
+  <div style="display:inline-block;margin-left:1.5em;">
+  Peking University has a world-class Computer Science Department (#13 according to <a href="https://csrankings.org/#/index?all&world">CSRankings</a>
+  and #24 according to <a href="https://www.topuniversities.com/university-rankings/university-subject-rankings/2022/computer-science-information-systems">QS Rankings</a>).
+  We have a large department with many amazing faculty and students working on software
+  engineering, programming languages, systems, and other areas.
+  Check out the following professors and their students, in last-name alphabetical order:
+  <a href="http://sei.pku.edu.cn/~haod">Hao, Dan</a>;
+  <a href="https://zhenjiang888.github.io/">Hu, Zhenjiang</a>;
+  <a href="https://taoxiease.github.io/">Xie, Tao</a>;
+  <a href="https://xiongyingfei.github.io/">Xiong, Yingfei</a>;
+  <a href="http://sei.pku.edu.cn/~zhanglu">Zhang, Lu</a>; and
+  <a href="https://xinpl.github.io/">Zhang, Xin</a>.
+  </div>
+</details>
+<details open class="spoiler">
+  <summary>You did not reply to my email!</summary>
+  <div style="display:inline-block;margin-left:1.5em;">
+  <b>Please wait for one week, then resend it.</b>
+  </div>
+</details>
+<h1 id="current-research-directions">Current Research Directions</h1>
+<p>I always welcome new collaborators on the following (incomprehensive) list of research topics.
+Please contact me if you are interested in working on one of those directions.</p>
+<h3 id="resource-aware-programming-languages">Resource Aware Programming Languages</h3>
+<p>Resource usage (e.g., time, memory, and energy) of a program is one of the central
+subjects of computer science. However, resource usage usually does not play a central
+role in programming language theory such as formal semantics, static analysis,
+type systems, and program logics. I am generally interested in most resource-analysis
+projects, including both verification (e.g., of software implemented in an existing
+programming language) and language design (e.g., for easier and more precise resource analysis).
+Below is a sample of medium- to long-term projects:</p>
+<ul>
+<li>Resource analysis of Rust: Can the fine-grained memory model improve the precision
+and efficiency of resource analysis?</li>
+<li>Statistical worst-case analysis: Maximum-a-Posteriori (MAP) estimation has a very
+similar problem statement to Worst-Case Analysis (WCA). Can we use the connection to
+transfer techniques back and forth?</li>
+<li>Foundations of weighted programming: Composition of resource usage can be easily
+extended to other kinds of weights. Can we develop a general (computational) theory
+for such weighted programming?</li>
+</ul>
+<p>At the moment, my favored approach is Automatic Amortized Resource Analysis (AARA<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>)
+but I am open to other approaches such as recurrence solving, sized types, ranking functions,
+symbolic resource analysis, etc.</p>
+<h3 id="programmable-bayesian-inference">Programmable Bayesian Inference</h3>
+<p>In contrast to frequentist methods like deep learning, Bayesian learning accounts
+for the probability distribution of hypotheses that produce the observed data and thus
+naturally quantifies the uncertainty that is present in the learned models.
+In addition, Bayesian learning enables the straightforward incorporation of domain
+knowledge and generalizes well to unseen data. These advantages of Bayesian learning
+are realized by probabilistic programming languages (PPLs) like <a href="https://mc-stan.org/" target="_blank" rel="noopener">Stan</a> and <a href="http://pyro.ai/" target="_blank" rel="noopener">Pyro</a>,
+which provide an interface that separates model development from various built-in
+Bayesian inference algorithms.</p>
+<p>The main downside of Bayesian learning is that probabilistic inference is computationally hard
+and not even the most advanced inference algorithms work well for all models.
+To make probabilistic inference for Bayesian learning feasible for more models and larger data sets,
+some PPLs have there forgone the strict separation of modeling and inference by enabling users to customize
+specific Bayesian inference algorithms through so-called <strong>programmable inference</strong><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.
+However, it is all too easy for users to incorrectly program inference in a way that
+breaks convergence and leads to unsound learned models. Such a mistake can even go unnoticed.</p>
+<p>I am interested in dissipating the tension between soundness and flexibility of
+probabilistic inference by applying programming language techniques such as type
+systems and static analysis. The vision is that new programming abstractions and
+type systems ensure the soundness of programmable inference while static analysis
+and program synthesis assist users by automating the customization of inference
+with to goal of improving efficiency.</p>
+<h3 id="foundations-of-randomness-in-software-systems">Foundations of Randomness in Software Systems</h3>
+<p>Randomness in software systems can show up in two ways: external randomness (e.g.,
+uncertainty from the environment) and internal randomness (e.g., randomized algorithms).
+As the Kleene algebra becomes an algebraic foundation for verification of non-probabilistic programs,
+I am interested in developing an algebraic framework for verification of probabilistic programs.
+To this end, we need to formulate an axiom system, prove soundness and completeness,
+and develop a decision procedure for the algebra of randomness.</p>
+<p>One fundamental difference between non-probabilistic and probabilistic programs
+is that an execution of a non-probabilistic program is a <strong>chain</strong>, but an execution
+of a probabilistic program is a <strong>tree</strong>.
+To see the point, consider that our program model allows nondeterminism.
+A non-probabilistic program then corresponds to a collection of possible execution chains,
+but a probabilistic program should be interpreted as a collection of <strong>distributions</strong>,
+each of which can be encoded as an execution tree, where each rooted path (annotated with
+a probability) is a concrete run of the program.</p>
+<p>Moreover, quantum programs also exhibit probabilistic behaviors.
+It would also be interesting to apply the reasoning framework of randomness to
+quantum computation.</p>
+<h1 id="other-projects">Other Projects</h1>
+<p>I am always open to new directions, including interdisciplinary ones.
+Below is a sample of initial ideas that I am interested in exploring in the
+short (or medium) term.
+The list is not complete, and be aware that most of the thoughts are not
+matured at all; in fact, I would expect some of them will quickly lead to
+negative results.</p>
+<h3 id="static-analysis">Static Analysis</h3>
+<details class="spoiler">
+  <summary>Library Summarization via Tensor Products</summary>
+  <span style="display:inline-block;margin-left:1.5em;">
+<p><strong>Problem</strong>: Library summarization is an effective way to accelerate the
+analysis of client code. However, information about the client is unknown
+at the library summarization, preventing complete summarization of the library.
+A state-of-the-art approach is Conditional Dyck-CFL Reachability Analysis (ConCRA),
+which targets graph-reachability-like static analyses and uses hypothetical summaries.</p>
+<p><strong>Proposal</strong>: Lal et al.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> proposed a tensor-product principle: Tensor products
+with an appropriate detensor operation allow computations to be rearranged in
+certain ways; for example, they can be used to delay a multiplication in a chain
+of multiplications. This principle may allow us to generalize, in the summarization framework,
+Dyck-CFL-reachability-based analyses to algebraic semiring-based analysis.</p>
+  </span>
+</details>
+<details class="spoiler">
+  <summary>NPA-TP for Non-idempotent Semirings</summary>
+  <span style="display:inline-block;margin-left:1.5em;">
+<p><strong>Problem</strong>: Esparza et al. generalized Newton&rsquo;s method to a method for finding
+fixed-points of systems of equations over semirings, leading to a new algorithm
+to solve interprocedural dataflow analysis.
+Reps et al.<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> developed NPA-TP, which extended Esparza&rsquo;s framework with an improved
+algorithm for solving linear-context-free-language (LCFL) sub-problems.
+However, NPA-TP assumes the underlying abstract domain admits an idempotent semiring;
+such an assumption rules out interesting analysis domains, especially for numerical
+properties, e.g., the reaching probability.</p>
+<p><strong>Proposal</strong>: Esparza&rsquo;s original framework does support non-idempotent semirings,
+so it would be a good starting point. The NPA-TP framework features tensor products
+to solve LCFL sub-problems, and from the perspective of algebras, the principle of
+tensor products does not require idempotence.</p>
+<p><strong>Follow-up</strong>: Some recent work shows that quantum computation also needs
+non-idempotent semirings. Can the idea of NPA-TP be generalized to analyze
+quantum programs?</p>
+  </span>
+</details>
+<details class="spoiler">
+  <summary>Fraction Bounds for Expected Cost Analysis</summary>
+  <span style="display:inline-block;margin-left:1.5em;">
+<p><strong>Problem</strong>: Most of current resource-analysis techniques derive linear, polynomial,
+or exponential bounds. However, when analyzing probabilistic programs, we often
+encounter bounds that involve fractions. For example, the simple loop <code>while (prob(p)) tick(1);</code>
+has an expected cost of $\frac{p}{1-p}$, where $p$ is a program variable that denotes
+a non-trivial probability.</p>
+<p><strong>Proposal</strong>: In many cases, a fraction bound can be expressed as a polynomial
+over another polynomial. So it should be possible to extend current template-based
+resource-analysis techniques (e.g., AARA) that derive polynomial bounds, by using
+a template for the denominator to reduce fraction-bound inference to polynomial-bound
+inference.</p>
+  </span>
+</details>
+<details class="spoiler">
+  <summary>Complicated Probability Manipulation</summary>
+  <span style="display:inline-block;margin-left:1.5em;">
+<p><strong>Problem</strong>: In many programs, the manipulation of probability is very complicated
+and even manual analysis of their correctness is difficult. Consider the problem below:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="n">prob</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>We want to verify that at the end of the loop, the probability of the event $x \ge \frac{1}{2}$
+is exactly $p$.</p>
+<p><strong>Proposal</strong>: <a href="https://en.wikipedia.org/wiki/Probability-generating_function" target="_blank" rel="noopener">Probability-generating functions</a> provide a succinct
+way to describe probability distributions of discrete random variables.
+We might try to derive the probability-generating function of a probabilistic program to
+reason about the resulting distribution of the program.</p>
+<p><strong>Follow-up</strong>: There is a connection between derivatives of the probability-generating function of
+a random variable $X$ and the moments of $X$. Can we use the fact to perform moment analysis?</p>
+  </span>
+</details>
+<details class="spoiler">
+  <summary>Fine-grained Heap Abstraction via Regular Patterns</summary>
+  <span style="display:inline-block;margin-left:1.5em;">
+<p><strong>Problem</strong>: Static analysis of heap-manipulation programs often involves
+heap sensitivity. In the simplest case, all memory allocations with the same
+program location are treated as a single allocation (thus in a context-insensitive way).
+Advanced techniques include three-value-logic for shape analysis, $k$-CFA, $m$-CFA, etc.
+However, they seem insufficient when we want to analyze recursive programs.
+(Imagine that in functional programming, iterating over a list is usually implemented as a
+recursive function.)</p>
+<p><strong>Proposal</strong>: We can treat the set of all call-strings as a language, then
+different strategies for handling sensitivity are essentially different ways of
+defining equivalence classes on the language. A presumably good proposal is to use
+regular patterns to classify equivalence classes.
+For example, $(ff)^*$ indicates calling a function $f$ for an even number of times,
+$f(ff)^*$ for an odd number.</p>
+<p><strong>Follow-up</strong>: In fact, this approach should generalize to all sensitivities that
+use call strings. Is it meaningful to develop a general framework with regular-pattern-sensitivity?</p>
+  </span>
+</details>
+<h3 id="formal-semantics">Formal Semantics</h3>
+<details class="spoiler">
+  <summary>Combination of Continuous Distributions and Nondeterminism-first</summary>
+  <span style="display:inline-block;margin-left:1.5em;">
+<p><strong>Problem</strong>: Nondeterminism-first means that we resolve nondeterminism prior to
+program inputs when defining denotational semantics. For example, suppose that a
+deterministic function has the signature $A \to B$, then a standard resolution of
+nondeterminism gives us $A \to \wp(B)$, but nondeterminism-first suggests $\wp(A \to B)$.
+Nondeterminism-first can be useful for e.g., compile-time nondeterminism.
+A recent study proposed a denotational semantics for probabilistic programs
+that combines discrete distributions (on a countable state space) and nondeterminism-first.
+However, it remains open if the semantics can be extended to support continuous distributions.</p>
+<p><strong>Proposal</strong>: In fact, I do not have any ideas yet.</p>
+<p><strong>Follow-up</strong>: What about a computational theory for such a combination?</p>
+  </span>
+</details>
+<details class="spoiler">
+  <summary>Combination of Probability and Message-passing Concurrency</summary>
+  <span style="display:inline-block;margin-left:1.5em;">
+<p><strong>Problem</strong>: The common treatment of a probabilistic flip in the semantics
+is to &ldquo;split&rdquo; the current program configuration into two, one for the &ldquo;world&rdquo; where
+the flip shows heads and the other for tails. When we need to deal with multiple
+concurrent processes, such a treatment means a local flip in a process results in
+duplicating all other processes. Such a non-local (thus non-compositional) behavior has been shown to be
+problematic for proving soundness of formal methods (e.g., type systems, which are usually compositional).</p>
+<p><strong>Proposal</strong>: The result of a probabilistic flip should remain as local as possible.
+I have developed an operational semantics with the desirable locality, but I feel that
+a more algebraic representation is better. For example, we might want to rearrange
+the operational semantics to reduction rules and congruence rules. Furthermore, we
+should prove an equivalence result to the ordinary probabilistic semantics (e.g., Markov chains).</p>
+<p><strong>Follow-up</strong>: I can always imagine that adding nondeterminism causes a lot of troubles.</p>
+  </span>
+</details>
+<h3 id="type-systems">Type Systems</h3>
+<details class="spoiler">
+  <summary>Safe Interaction between Typed Domain Specific Languages</summary>
+  <span style="display:inline-block;margin-left:1.5em;">
+<p><strong>Problem</strong>: Consider we have a typed programming language that is suitable for developing
+embedded Domain Specific Languages (eDSLs).
+Every eDSL can directly use the base type system from the host language, but it can
+also have its own advanced domain-specific type system.
+Languages such as <a href="https://okmij.org/ftp/ML/MetaOCaml.html" target="_blank" rel="noopener">MetaOCaml</a> have already supported
+such a mechanism, but the interaction between the host language and the eDSL,
+or maybe even between different eDSLs, is not very convenient yet.
+It would be nice to have a simple and safe interaction scheme among eDSLs on
+a same host language.</p>
+<p><strong>Proposal</strong>: In fact, I do not have any ideas yet.</p>
+  </span>
+</details>
+<details class="spoiler">
+  <summary>Lightweight Shape Check for Array Programming</summary>
+  <span style="display:inline-block;margin-left:1.5em;">
+<p><strong>Problem</strong>: Array programming (or tensor programming) is pervasive nowadays because of machine learning.
+Many machine-learning frameworks lack the ability to statically check tensor shapes are always consistent
+during program execution. Approaches based on dependent/refinement/indexed types all seem too heavy to
+become practical.</p>
+<p><strong>Proposal</strong>: In many (really?) cases, when the input of an array program is fixed,
+the shapes of all intermediate arrays are also fixed. So we can perform a static shape check
+after the input is given, but before we execute the program, by propagating the concrete shape information
+from the given input.</p>
+<p><strong>Follow-up</strong>: Is it possible to automatically learn the shape-related effects of library functions (e.g., <code>broadcast_tensor</code>)?</p>
+  </span>
+</details>
+<h3 id="program-synthesis">Program Synthesis</h3>
+<details class="spoiler">
+  <summary>Interface Synthesis for Database Tables</summary>
+  <span style="display:inline-block;margin-left:1.5em;">
+<p><strong>Problem</strong>: One central function of low-code programming platforms is to
+automatically generate usable interface for manipulating database tables.
+In an application, the developers might want to customize a specific way to
+organize the interface, and they want to reuse the customization across the
+application.</p>
+<p><strong>Proposal</strong>: The customization can be thought as a functor that takes a
+database-table module as its input and outputs an inference module for that table.
+For low-code programming, it would be useful to have a mechanism where
+the developers customize a table interactively and the platform automatically
+synthesize the code of the customization functor.</p>
+<p><strong>Follow-up</strong>: Low-code programming involves many UI-related customization.
+Is there a more general principle?</p>
+  </span>
+</details>
+<!-- <details class="spoiler">
+  <summary>Synthesis of Generative Programs</summary>
+  <span style="display:inline-block;margin-left:1.5em;">
+
+  </span>
+</details> -->
+<!-- <details class="spoiler">
+  <summary>Procedural Design by Program Synthesis</summary>
+  <span style="display:inline-block;margin-left:1.5em;">
+
+  </span>
+</details> -->
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Jan Hoffmann and Steffen Jost. Two Decades of Automatic Amortized Resource Analysis. <em>Math. Struct. Comput. Sci.</em> (2022). <a href="https://doi.org/10.1017/S0960129521000487" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Vikash K. Mansinghka, Ulrich Schaechtle, Shivam Handa, Alexey Radul, Yutian Chen, and Martin Rinard.
+Probabilistic Programming with Programmable Inference. <em>Prog. Lang. Design and Impl.</em> (2018). <a href="https://doi.org/10.1145/3192366.3192409" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>Akash Lal, Tayssir Touili, Nicholas Kidd, and Thomas Reps. Interprocedural Analysis of Concurrent Programs Under a Context Bound. <em>Tools and Algor. for the Constr. and Anal. of Syst.</em> (2008). <a href="https://doi.org/10.1007/978-3-540-78800-3_20" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>Thomas Reps, Emma Turetsky, and  Prathmesh Prabhu. Newtonian Program Analysis via Tensor Product. <em>Princ. of Prog. Lang.</em> (2016). <a href="https://doi.org/10.1145/2837614.2837659" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://stonebuddha.github.io/prospective-students/&amp;text=Resources%20for%20Prospective%20Students" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://stonebuddha.github.io/prospective-students/&amp;t=Resources%20for%20Prospective%20Students" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Resources%20for%20Prospective%20Students&amp;body=https://stonebuddha.github.io/prospective-students/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://stonebuddha.github.io/prospective-students/&amp;title=Resources%20for%20Prospective%20Students" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Resources%20for%20Prospective%20Students%20https://stonebuddha.github.io/prospective-students/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://stonebuddha.github.io/prospective-students/&amp;title=Resources%20for%20Prospective%20Students" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+    
+  
+  
+    
+  
+
+  
+
+  
+  <p class="powered-by copyright-license-text">
+    © 2022 Di Wang. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
+  </p>
+  
+
+  <p class="powered-by footer-license-icons">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
+      <i class="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
+      <i class="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
+      
+        <i class="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
+      
+      
+        <i class="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>
+      
+    </a>
+  </p>
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+      
+
+    
+    <script src="/js/vendor-bundle.min.d26509351aa0ff874abbee824e982e9b.js"></script>
+
+    
+    
+    
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js" integrity="sha512-Ypjm0o7jOxAd4hpdoppSEN0TQOC19UtPAqD+4s5AlXmUvbmmS/YMxYqAqarQYyxTnB6/rqip9qcxlNB/3U9Wdg==" crossorigin="anonymous"></script>
+        
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/ocaml.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/lisp.min.js" crossorigin="anonymous"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.js" integrity="" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+
+    
+    
+    
+    <script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+    
+    
+      <script src="/js/wowchemy-headroom.c251366b4128fd5e6b046d4c97a62a51.js" type="module"></script>
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.43c8f7a4851160885a7d8069dfa86538.js"></script>
+
+    
+    
+      <script src="/js/wowchemy-map.a26e9d2f7238ba5b868384f1c5bc6477.js" type="module"></script>
+    
+    
+    
+    
+      
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+</body>
+</html>
