@@ -64,10 +64,10 @@
   
     
   
-  <meta name="description" content="" />
+  <meta name="description" content="简单地说，程序的资源分析（Resource Analysis）" />
 
   
-  <link rel="alternate" hreflang="en-us" href="https://stonebuddha.github.io/talk/type-based-resource-guided-search/" />
+  <link rel="alternate" hreflang="en-us" href="https://stonebuddha.github.io/post/introduction-to-static-resource-analysis/" />
 
   
   
@@ -76,6 +76,9 @@
   
 
   
+  
+    
+    <script src="/js/mathjax-config.js"></script>
   
 
   
@@ -226,9 +229,9 @@
 
       
       
-        
-      
 
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
       
     
       
@@ -284,7 +287,7 @@
   <link rel="icon" type="image/png" href="/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="https://stonebuddha.github.io/talk/type-based-resource-guided-search/" />
+  <link rel="canonical" href="https://stonebuddha.github.io/post/introduction-to-static-resource-analysis/" />
 
   
   
@@ -307,26 +310,31 @@
   <meta property="twitter:card" content="summary" />
   
   <meta property="og:site_name" content="Di Wang" />
-  <meta property="og:url" content="https://stonebuddha.github.io/talk/type-based-resource-guided-search/" />
-  <meta property="og:title" content="Type-Based Resource-Guided Search | Di Wang" />
-  <meta property="og:description" content="" /><meta property="og:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" />
+  <meta property="og:url" content="https://stonebuddha.github.io/post/introduction-to-static-resource-analysis/" />
+  <meta property="og:title" content="随便聊聊：静态资源分析 | Di Wang" />
+  <meta property="og:description" content="简单地说，程序的资源分析（Resource Analysis）" /><meta property="og:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" />
     <meta property="twitter:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
       <meta
         property="article:published_time"
-        content="2021-09-15T13:03:49&#43;08:00"
+        content="2022-09-10T15:32:19&#43;08:00"
       />
     
-    <meta property="article:modified_time" content="2020-10-16T12:00:00-04:00">
+    <meta property="article:modified_time" content="2022-09-10T15:32:19&#43;08:00">
   
 
   
 
 
-
-  
     
+
+
+
+
+
+
+  
 
 
 
@@ -334,39 +342,30 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Event",
+  "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://stonebuddha.github.io/talk/type-based-resource-guided-search/"
+    "@id": "https://stonebuddha.github.io/post/introduction-to-static-resource-analysis/"
   },
-  "name": "Type-Based Resource-Guided Search",
+  "headline": "随便聊聊：静态资源分析",
   
-  "location": {
-    "@type": "Place",
-    "name": "Virtual",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "",
-      "addressLocality": "",
-      "postalCode": "",
-      "addressRegion": "",
-      "addressCountry": ""
-    }
-    
-  },
+  "datePublished": "2022-09-10T15:32:19+08:00",
+  "dateModified": "2022-09-10T15:32:19+08:00",
   
-  
-  "startDate": "2020-10-16T12:00:00-04:00",
-  
-  "endDate": "2020-10-16T13:00:00-04:00",
-  
-  
-  "performer": {
+  "author": {
     "@type": "Person",
     "name": "Di Wang"
   },
   
-  "description": ""
+  "publisher": {
+    "@type": "Organization",
+    "name": "Di Wang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "简单地说，程序的资源分析（Resource Analysis）"
 }
 </script>
 
@@ -376,15 +375,17 @@
 
   
 
+  
 
 
 
 
-  <title>Type-Based Resource-Guided Search | Di Wang</title>
+
+  <title>随便聊聊：静态资源分析 | Di Wang</title>
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="f2f943e9b90569b648b57b0e28659d20" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="ecc5d483fca4ca39896af5aa4d67d9db" >
 
   
   
@@ -710,7 +711,7 @@
     
     
 
-    <div class="pub">
+    <article class="article">
 
   
 
@@ -731,7 +732,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>Type-Based Resource-Guided Search</h1>
+  <h1>随便聊聊：静态资源分析</h1>
 
   
 
@@ -743,11 +744,34 @@
 
   
   
+  
+  
+  <div>
+    
 
+  <span class="author-highlighted">
+      Di Wang</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Sep 10, 2022
+  </span>
   
 
   
 
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 min read
+  </span>
   
 
   
@@ -764,47 +788,6 @@
 
 
 
-
-<div class="btn-links mb-3">
-  
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header" href="/talks/tbrgs.pdf" target="_blank" rel="noopener">
-  Slides
-</a>
-
-
-
-
-
-
-
-</div>
 
 
   
@@ -814,64 +797,78 @@
 
   <div class="article-container">
 
-    
-      <br>
-    
-
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Date</div>
-          <div class="col-12 col-md-9">
-            Oct 16, 2020 12:00 PM &mdash; 1:00 PM
-          </div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="d-md-none space-below"></div>
-
-    
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Event</div>
-          <div class="col-12 col-md-9">
-            
-            PLunch
-            
-          </div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="d-md-none space-below"></div>
-    
-
-    
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Location</div>
-          <div class="col-12 col-md-9">Virtual</div>
-          
-            <div class="col-md-3"></div>
-            <div class="col-12 col-md-9"></div>
-          
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="d-md-none space-below"></div>
-    
-
-    <div class="space-below"></div>
-
     <div class="article-style">
-      
+      <p>简单地说，程序的<strong>资源分析</strong>（Resource Analysis）指的是把该程序的资源消耗表示成一个关于程序输入的函数。
+这里的<strong>资源</strong>可以是运行时间、内存使用、能源消耗，或别的什么数值指标。
+高德纳（Donald Knuth）在《计算机程序设计的艺术》（<em>The Art of Computer Programming</em>）中就基于 MIX 汇编语言的语义讨论了一些资源分析的问题。
+在计算机科学的课程中，资源分析通常以<strong>分析算法、数据结构的时间、空间复杂度</strong>的形式出现，而这里面最常见的又通常是<strong>渐近分析</strong>，即忽略常数、假定输入规模充分大时的复杂度，例如对长度为 $n$ 的数组进行归并排序时间复杂度为 $O(n \log n)$。
+在这篇文章中，我们考虑一个稍微困难点的情况，即我们希望得到的分析结果是带有常数信息的<strong>非渐近</strong>复杂度：从非渐近分析可以容易得出渐近分析的结果，而且前者还可以用来精细地比较渐近复杂度相同的算法、数据结构。</p>
+<p><strong>静态</strong>资源分析即在不实际运行程序的情况下对其进行资源分析。
+Facebook 出品的 Infer 工具提供了函数级的静态运行时间分析，其宗旨是在软件开发的过程中更早地指出性能问题（比方说，在 Code Review 阶段由工具自动反馈，而不是等到后面的性能回归测试）。
+下面这个例子来源于 Infer 的官方文档<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">loop</span><span class="o">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++){</span>
+</span></span><span class="line"><span class="cl">  <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>Infer 通过静态分析对上面这个函数得出一个描述其运行时间的多项式（比如 $8|list|+16$），从而知道这个函数的时间复杂度和其输入列表的长度呈线性关系。
+如果某一次代码修改把这个函数更新为：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">loop</span><span class="o">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++){</span>
+</span></span><span class="line"><span class="cl">    <span class="n">foo</span><span class="o">(</span><span class="n">i</span><span class="o">);</span> <span class="c1">// newly added function call
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>而此处的 <code>foo</code> 函数的时间复杂度也是与输入呈线性关系，那么 Infer 可以检测到 <code>loop</code> 函数的复杂度从 $O(|list|)$ 增长到了 $O(|list|^2)$，并向开发者发出警报。
+（如果想要更深入了解 Infer 中的资源分析，可以参考<a href="https://youtu.be/-sqdJbvqeNQ" target="_blank" rel="noopener">这个视频</a>。）</p>
+<p>笼统地说，Infer 中的资源分析可以大致理解为对循环次数进行计数，从而将资源分析问题转化为程序变量数值关系的分析；这也是很多静态资源分析（比如 SPEED<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>）背后的原理。
+在这篇文章中，我们来聊另一种颇为有趣的静态资源分析：<strong>自动均摊资源分析</strong>（Automatic Amortized Resource Analysis，AARA）。
+这种方法衍生自 Robert Tarjan 在 1985 年的一篇论文<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>，文中给出了一种推导序列操作的<strong>最坏</strong>情况资源消耗的方法。
+该方法的思路可以概括为：对于很多数据结构来说，一个操作消耗的资源很大程度上是由数据结构的状态决定的，而且有可能会根据状态有很大的不同；但是比较高的资源消耗（例如重新组织整个数据结构）往往会以一种可以预测的频率出现，也就是说，这些消耗在时间轴上<strong>均摊</strong>了。
+均摊资源分析即利用了这种思想：我们可以把程序的执行看做是一个操作序列 $s_1,s_2,s_3,\cdots$，这里的每个 $s_i \in \mathrm{State}$ 都表示一个程序状态，而我们用一个函数 $cost(s_i,s_{i+1})$ 来描述资源的消耗；然后我们设计一个<strong>势能函数</strong> $\Phi : \mathrm{State} \to \mathbb{Q}^+$ 把程序状态映射为非负数，使得对任意的 $i$，我们有
+$$
+\Phi(s_{i}) \ge cost(s_{i}, s_{i+1}) + \Phi(s_{i+1}),
+$$
+即一个状态的势能要足以支付当前程序操作的资源消耗以及下一个程序状态的势能（思考题：$cost$ 为负时意味着什么？）。
+如此以来，$\Phi(s_0)$ 给出了程序的总资源消耗的一个<strong>上界</strong>，而我们需要做的是定义一个势能函数，并证明在每个程序执行的<strong>局部</strong>，上述表达式成立。
+这意味着均摊资源分析的 Compositionality 是很好的！</p>
+<p>我们知道，类型系统的一大特点也是 Compositionality；所以，设计一个<strong>用于均摊资源分析的类型系统</strong>是非常自然的想法。
+考虑下面这段 OCaml 代码，它是连接两个列表的简单实现，而我们想要分析它递归调用的次数（这也是一种资源消耗）：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ocaml" data-lang="ocaml"><span class="line"><span class="cl"><span class="k">let</span> <span class="k">rec</span> <span class="n">append</span> <span class="o">(</span><span class="n">l1</span><span class="o">,</span> <span class="n">l2</span><span class="o">)</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">  <span class="k">match</span> <span class="n">l1</span> <span class="k">with</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span> <span class="bp">[]</span> <span class="o">-&gt;</span> <span class="n">l2</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|</span> <span class="n">x</span> <span class="o">::</span> <span class="n">xs</span> <span class="o">-&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">let</span> <span class="n">rest</span> <span class="o">=</span> <span class="n">append</span> <span class="o">(</span><span class="n">xs</span><span class="o">,</span> <span class="n">l2</span><span class="o">)</span> <span class="k">in</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">::</span> <span class="n">rest</span>
+</span></span></code></pre></div><p>我们能够很容易地看出 <code>append</code> 函数递归调用的次数是 $|l_1|$。
+假定这个 <code>append</code> 函数的类型为 $L(\alpha) \times L(\alpha) \to L(\alpha)$，这里的 $L$ 即表示列表类型。
+均摊分析要求我们给程序状态赋予势能，在这个例子中，我们则需要把我们的势能放在 <code>append</code> 的参数 $l_1$ 和 $l_2$ 里。
+让我们给列表类型增加一个数值标注：用 $L^q(\alpha)$ 表示一个列表类型，其中的<strong>每个元素都携带了 $q$ 单位的势能</strong>，并假定所有程序操作的资源消耗都是 $0$，除了递归调用的消耗为 $1$ 单位。
+所以，<code>append</code> 的带资源标注的类型可以写为 $L^1(\alpha) \times L^0(\alpha) \to L^0(\alpha)$：如果我们计算参数和结果之间的势能差，我们就能发现那恰好是 $|l_1|$。
+但是，我们如何通过类型系统来检查这个类型是不是正确的呢？
+还记得 Compositionality 吗——我们只需要对局部操作验证一下势能不等式：比如，在模式匹配时，如果 $l_1$ 非空，那么我们把它解构为 $x$ 和 $xs$，其中 $xs$ 的类型与 $l_1$ 相同，为 $L^1(\alpha)$，但是 $xs$ 的长度比 $l_1$ 少 $1$，所以这一步解构给了我们 $1$ 单位的自由势能，我们可以用它来支付紧接着的这个递归调用。
+接着我们检查 $xs$ 和 $l_2$ 的类型是否符合 <code>append</code> 的类型签名（当然！）。
+最后，类型签名告诉我们 $rest$ 的类型为 $L^0(\alpha)$，所以构建最终返回结果 $x :: rest$ 也不需要往这个数据结构里面存势能了。</p>
+<p>我在<a href="demo.pdf">这份胶片</a>里更详细地展示了这个带资源标注的类型系统。
+需要特别提出的是，<strong>自动推导</strong>这些数值标注并不困难：我们用变量来表示这些类型标注，那么类型检查就成为了生成关于这些变量的约束（通常是线性的）的过程，最后再解这些约束就好了。
+在<a href="https://www.raml.co/interface/" target="_blank" rel="noopener">这个页面</a>上你可以和一个实现了自动均摊资源分析的工具（Resource-aware ML，RaML）玩耍，其主要贡献者也在今年发表了一篇还不错的综述<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>。
+祝大家玩得愉快！</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://fbinfer.com/docs/checker-cost#examples" target="_blank" rel="noopener">https://fbinfer.com/docs/checker-cost#examples</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://www.microsoft.com/en-us/research/publication/speed-precise-and-efficient-static-estimation-of-program-computational-complexity-2/" target="_blank" rel="noopener">https://www.microsoft.com/en-us/research/publication/speed-precise-and-efficient-static-estimation-of-program-computational-complexity-2/</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>Robert Tarjan. Amortized Computational Complexity. <a href="https://doi.org/10.1137/0606031" target="_blank" rel="noopener">https://doi.org/10.1137/0606031</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>Jan Hoffmann and Steffen Jost. Two decades of automatic amortized resource analysis. <a href="https://doi.org/10.1017/S0960129521000487" target="_blank" rel="noopener">https://doi.org/10.1017/S0960129521000487</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
     </div>
 
     
@@ -892,7 +889,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://stonebuddha.github.io/talk/type-based-resource-guided-search/&amp;text=Type-Based%20Resource-Guided%20Search" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://stonebuddha.github.io/post/introduction-to-static-resource-analysis/&amp;text=%e9%9a%8f%e4%be%bf%e8%81%8a%e8%81%8a%ef%bc%9a%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%88%86%e6%9e%90" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -905,7 +902,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://stonebuddha.github.io/talk/type-based-resource-guided-search/&amp;t=Type-Based%20Resource-Guided%20Search" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://stonebuddha.github.io/post/introduction-to-static-resource-analysis/&amp;t=%e9%9a%8f%e4%be%bf%e8%81%8a%e8%81%8a%ef%bc%9a%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%88%86%e6%9e%90" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -918,7 +915,7 @@
       
       
       <li>
-        <a href="mailto:?subject=Type-Based%20Resource-Guided%20Search&amp;body=https://stonebuddha.github.io/talk/type-based-resource-guided-search/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+        <a href="mailto:?subject=%e9%9a%8f%e4%be%bf%e8%81%8a%e8%81%8a%ef%bc%9a%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%88%86%e6%9e%90&amp;body=https://stonebuddha.github.io/post/introduction-to-static-resource-analysis/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -931,7 +928,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://stonebuddha.github.io/talk/type-based-resource-guided-search/&amp;title=Type-Based%20Resource-Guided%20Search" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+        <a href="https://www.linkedin.com/shareArticle?url=https://stonebuddha.github.io/post/introduction-to-static-resource-analysis/&amp;title=%e9%9a%8f%e4%be%bf%e8%81%8a%e8%81%8a%ef%bc%9a%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%88%86%e6%9e%90" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -944,7 +941,7 @@
       
       
       <li>
-        <a href="whatsapp://send?text=Type-Based%20Resource-Guided%20Search%20https://stonebuddha.github.io/talk/type-based-resource-guided-search/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+        <a href="whatsapp://send?text=%e9%9a%8f%e4%be%bf%e8%81%8a%e8%81%8a%ef%bc%9a%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%88%86%e6%9e%90%20https://stonebuddha.github.io/post/introduction-to-static-resource-analysis/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -957,7 +954,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://stonebuddha.github.io/talk/type-based-resource-guided-search/&amp;title=Type-Based%20Resource-Guided%20Search" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://stonebuddha.github.io/post/introduction-to-static-resource-analysis/&amp;title=%e9%9a%8f%e4%be%bf%e8%81%8a%e8%81%8a%ef%bc%9a%e9%9d%99%e6%80%81%e8%b5%84%e6%ba%90%e5%88%86%e6%9e%90" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -977,6 +974,7 @@
 
   
   
+    
 
 
 
@@ -1071,6 +1069,7 @@
   </div>
 
 
+  
 
 
 
@@ -1088,7 +1087,7 @@
 
 
   </div>
-</div>
+</article>
   </div>
 
   <div class="page-footer">
