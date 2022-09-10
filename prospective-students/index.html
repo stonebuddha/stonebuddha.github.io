@@ -765,7 +765,7 @@ for my faculty applications.</li>
   The short answer is "<b>no</b>."
   Programming-languages or software-engineering research experience would be a plus but <b>not a requisite</b>.
   It is more important to know what you are interested in and be passionate enough about
-  a broad area of problems to spend about 5 years to work on.
+  a broad area of problems to spend about five years to work on.
   </div>
 </details>
 <details open class="spoiler">
@@ -819,9 +819,9 @@ similar problem statement to Worst-Case Analysis (WCA). Can we use the connectio
 transfer techniques back and forth?</li>
 <li>Foundations of weighted programming: Composition of resource usage can be easily
 extended to other kinds of weights. Can we develop a general (computational) theory
-for such weighted programming?</li>
+for such weighted programming<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>?</li>
 </ul>
-<p>At the moment, my favored approach is Automatic Amortized Resource Analysis (AARA<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>)
+<p>At the moment, my favored approach is Automatic Amortized Resource Analysis (AARA<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>)
 but I am open to other approaches such as recurrence solving, sized types, ranking functions,
 symbolic resource analysis, etc.</p>
 <h3 id="programmable-bayesian-inference">Programmable Bayesian Inference</h3>
@@ -837,7 +837,7 @@ Bayesian inference algorithms.</p>
 and not even the most advanced inference algorithms work well for all models.
 To make probabilistic inference for Bayesian learning feasible for more models and larger data sets,
 some PPLs have there forgone the strict separation of modeling and inference by enabling users to customize
-specific Bayesian inference algorithms through so-called <strong>programmable inference</strong><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.
+specific Bayesian inference algorithms through so-called <strong>programmable inference</strong><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.
 However, it is all too easy for users to incorrectly program inference in a way that
 breaks convergence and leads to unsound learned models. Such a mistake can even go unnoticed.</p>
 <p>I am interested in dissipating the tension between soundness and flexibility of
@@ -845,7 +845,8 @@ probabilistic inference by applying programming language techniques such as type
 systems and static analysis. The vision is that new programming abstractions and
 type systems ensure the soundness of programmable inference while static analysis
 and program synthesis assist users by automating the customization of inference
-with to goal of improving efficiency.</p>
+with to goal of improving efficiency. Our <a href="/publication/wanghr21b" target="_blank">recent paper</a>
+is a concrete demonstration of this research direction.</p>
 <h3 id="foundations-of-randomness-in-software-systems">Foundations of Randomness in Software Systems</h3>
 <p>Randomness in software systems can show up in two ways: external randomness (e.g.,
 uncertainty from the environment) and internal randomness (e.g., randomized algorithms).
@@ -860,7 +861,9 @@ To see the point, consider that our program model allows nondeterminism.
 A non-probabilistic program then corresponds to a collection of possible execution chains,
 but a probabilistic program should be interpreted as a collection of <strong>distributions</strong>,
 each of which can be encoded as an execution tree, where each rooted path (annotated with
-a probability) is a concrete run of the program.</p>
+a probability) is a concrete run of the program.
+See our <a href="/publication/wanghr19" target="_blank">MFPS paper</a> for
+a more formal presentation based on hyper graphs.</p>
 <p>Moreover, quantum programs also exhibit probabilistic behaviors.
 It would also be interesting to apply the reasoning framework of randomness to
 quantum computation.</p>
@@ -878,22 +881,24 @@ negative results.</p>
 <p><strong>Problem</strong>: Library summarization is an effective way to accelerate the
 analysis of client code. However, information about the client is unknown
 at the library summarization, preventing complete summarization of the library.
-A state-of-the-art approach is Conditional Dyck-CFL Reachability Analysis (ConCRA),
+A state-of-the-art approach is <a href="/publication/tangwx17" target="_blank">Conditional Dyck-CFL Reachability Analysis (ConCRA)</a>,
 which targets graph-reachability-like static analyses and uses hypothetical summaries.</p>
-<p><strong>Proposal</strong>: Lal et al.<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> proposed a tensor-product principle: Tensor products
+<p><strong>Proposal</strong>: Lal et al.<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> proposed a tensor-product principle: Tensor products
 with an appropriate detensor operation allow computations to be rearranged in
 certain ways; for example, they can be used to delay a multiplication in a chain
 of multiplications. This principle may allow us to generalize, in the summarization framework,
 Dyck-CFL-reachability-based analyses to algebraic semiring-based analysis.</p>
+<p><strong>Follow-up</strong>: The library summarization problem can be generalized to partially solving
+an equation system for a static analysis. Any thoughts on partial evaluation?</p>
   </span>
 </details>
 <details class="spoiler">
   <summary>NPA-TP for Non-idempotent Semirings</summary>
   <span style="display:inline-block;margin-left:1.5em;">
-<p><strong>Problem</strong>: Esparza et al. generalized Newton&rsquo;s method to a method for finding
+<p><strong>Problem</strong>: Esparza et al.<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> generalized Newton&rsquo;s method to a method for finding
 fixed-points of systems of equations over semirings, leading to a new algorithm
 to solve interprocedural dataflow analysis.
-Reps et al.<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> developed NPA-TP, which extended Esparza&rsquo;s framework with an improved
+Reps et al.<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> developed NPA-TP, which extended Esparza&rsquo;s framework with an improved
 algorithm for solving linear-context-free-language (LCFL) sub-problems.
 However, NPA-TP assumes the underlying abstract domain admits an idempotent semiring;
 such an assumption rules out interesting analysis domains, especially for numerical
@@ -905,21 +910,6 @@ tensor products does not require idempotence.</p>
 <p><strong>Follow-up</strong>: Some recent work shows that quantum computation also needs
 non-idempotent semirings. Can the idea of NPA-TP be generalized to analyze
 quantum programs?</p>
-  </span>
-</details>
-<details class="spoiler">
-  <summary>Fraction Bounds for Expected Cost Analysis</summary>
-  <span style="display:inline-block;margin-left:1.5em;">
-<p><strong>Problem</strong>: Most of current resource-analysis techniques derive linear, polynomial,
-or exponential bounds. However, when analyzing probabilistic programs, we often
-encounter bounds that involve fractions. For example, the simple loop <code>while (prob(p)) tick(1);</code>
-has an expected cost of $\frac{p}{1-p}$, where $p$ is a program variable that denotes
-a non-trivial probability.</p>
-<p><strong>Proposal</strong>: In many cases, a fraction bound can be expressed as a polynomial
-over another polynomial. So it should be possible to extend current template-based
-resource-analysis techniques (e.g., AARA) that derive polynomial bounds, by using
-a template for the denominator to reduce fraction-bound inference to polynomial-bound
-inference.</p>
   </span>
 </details>
 <details class="spoiler">
@@ -939,7 +929,8 @@ is exactly $p$.</p>
 <p><strong>Proposal</strong>: <a href="https://en.wikipedia.org/wiki/Probability-generating_function" target="_blank" rel="noopener">Probability-generating functions</a> provide a succinct
 way to describe probability distributions of discrete random variables.
 We might try to derive the probability-generating function of a probabilistic program to
-reason about the resulting distribution of the program.</p>
+reason about the resulting distribution of the program.
+A recent paper<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> is on this direction.</p>
 <p><strong>Follow-up</strong>: There is a connection between derivatives of the probability-generating function of
 a random variable $X$ and the moments of $X$. Can we use the fact to perform moment analysis?</p>
   </span>
@@ -950,7 +941,7 @@ a random variable $X$ and the moments of $X$. Can we use the fact to perform mom
 <p><strong>Problem</strong>: Static analysis of heap-manipulation programs often involves
 heap sensitivity. In the simplest case, all memory allocations with the same
 program location are treated as a single allocation (thus in a context-insensitive way).
-Advanced techniques include three-value-logic for shape analysis, $k$-CFA, $m$-CFA, etc.
+Advanced techniques include three-value-logic for shape analysis, $k$-CFA, $m$-CFA<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>, etc.
 However, they seem insufficient when we want to analyze recursive programs.
 (Imagine that in functional programming, iterating over a list is usually implemented as a
 recursive function.)</p>
@@ -968,7 +959,7 @@ use call strings. Is it meaningful to develop a general framework with regular-p
 <details class="spoiler">
   <summary>Combination of Continuous Distributions and Nondeterminism-first</summary>
   <span style="display:inline-block;margin-left:1.5em;">
-<p><strong>Problem</strong>: Nondeterminism-first means that we resolve nondeterminism prior to
+<p><strong>Problem</strong>: <a href="/publication/wanghr19" target="_blank">Nondeterminism-first</a> means that we resolve nondeterminism prior to
 program inputs when defining denotational semantics. For example, suppose that a
 deterministic function has the signature $A \to B$, then a standard resolution of
 nondeterminism gives us $A \to \wp(B)$, but nondeterminism-first suggests $\wp(A \to B)$.
@@ -990,7 +981,7 @@ concurrent processes, such a treatment means a local flip in a process results i
 duplicating all other processes. Such a non-local (thus non-compositional) behavior has been shown to be
 problematic for proving soundness of formal methods (e.g., type systems, which are usually compositional).</p>
 <p><strong>Proposal</strong>: The result of a probabilistic flip should remain as local as possible.
-I have developed an operational semantics with the desirable locality, but I feel that
+We have recently developed <a href="/publication/daswh20" target="_blank">an operational semantics with the desirable locality</a>, but I feel that
 a more algebraic representation is better. For example, we might want to rearrange
 the operational semantics to reduction rules and congruence rules. Furthermore, we
 should prove an equivalence result to the ordinary probabilistic semantics (e.g., Markov chains).</p>
@@ -1011,6 +1002,8 @@ or maybe even between different eDSLs, is not very convenient yet.
 It would be nice to have a simple and safe interaction scheme among eDSLs on
 a same host language.</p>
 <p><strong>Proposal</strong>: In fact, I do not have any ideas yet.</p>
+<p><strong>Follow-up</strong>: What else should we have for such a flexible eDSL framework? For example,
+we might want to consider multi-stage compilation, debugger, mixed paradigm, etc.</p>
   </span>
 </details>
 <details class="spoiler">
@@ -1025,6 +1018,84 @@ the shapes of all intermediate arrays are also fixed. So we can perform a static
 after the input is given, but before we execute the program, by propagating the concrete shape information
 from the given input.</p>
 <p><strong>Follow-up</strong>: Is it possible to automatically learn the shape-related effects of library functions (e.g., <code>broadcast_tensor</code>)?</p>
+  </span>
+</details>
+<h3 id="resource-analysis">Resource Analysis</h3>
+<details class="spoiler">
+  <summary>Fraction Bounds for Expected Cost Analysis</summary>
+  <span style="display:inline-block;margin-left:1.5em;">
+<p><strong>Problem</strong>: Most of current resource-analysis techniques derive linear, polynomial,
+or exponential bounds. However, when analyzing probabilistic programs, we often
+encounter bounds that involve fractions. For example, the simple loop <code>while (prob(p)) tick(1);</code>
+has an expected cost of $\frac{p}{1-p}$, where $p$ is a program variable that denotes
+a non-trivial probability.</p>
+<p><strong>Proposal</strong>: In many cases, a fraction bound can be expressed as a polynomial
+over another polynomial. So it should be possible to extend current template-based
+resource-analysis techniques (e.g., AARA) that derive polynomial bounds, by using
+a template for the denominator to reduce fraction-bound inference to polynomial-bound
+inference.</p>
+<p><strong>Follow-up</strong>: A random thought: how can we apply such resource-analysis technique
+to Bayesian inference (like a recent paper by Beutner et al.<sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup>)?</p>
+  </span>
+</details>
+<details class="spoiler">
+  <summary>AARA for Probabilistic Functional Programs with Non-monotone Resources</summary>
+  <span style="display:inline-block;margin-left:1.5em;">
+<p><strong>Problem</strong>: Our <a href="/publication/wangkh20" target="_blank">ICFP paper</a> presents
+an extension of AARA that infers upper bounds on the expected cost of probabilistic functional
+programs with monotone resources (such as time). In general, combining probability
+and non-monotone resources (such as memory) is unreasonably complex<sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup>. Applying optional stopping
+theorems, people have successfully developed techniques for analyzing arithmetic programs.
+It would be interesting to see if the whole methodology applies to functional programming,
+where we have inductive data structures (that can hold potential) instead of numbers.</p>
+<p><strong>Proposal</strong>: One version of optional stopping theorems states that the expected change
+in one evaluation step should be &ldquo;bounded.&rdquo; This should intuitively hold for
+functional programming (I mean, in most cases) because one step should change the
+size of a data structure by at most one (consider the case of <code>cons</code>).
+By constructing a suitable Markov chain, we might be able to reason about
+probabilistic functional programs with non-monotone resources.</p>
+<p><strong>Follow-up</strong>: Optional stopping theorems always talk about &ldquo;expected change&rdquo;
+and &ldquo;expected termination time.&rdquo; Why them?!</p>
+  </span>
+</details>
+<h3 id="probabilistic-programming">Probabilistic Programming</h3>
+<details class="spoiler">
+  <summary>Domain-specific Procedural Design</summary>
+  <span style="display:inline-block;margin-left:1.5em;">
+<p><strong>Problem</strong>: <a href="https://dritchie.github.io/" target="_blank" rel="noopener">Daniel Ritchie</a> suggested generative
+probabilistic programming for procedural modeling and design (the use of random programs
+to generate visual content with respect to aesthetic or functional constraints).
+Such an approach has been rediscovered in several individual developments, such as
+Scenic<sup id="fnref:11"><a href="#fn:11" class="footnote-ref" role="doc-noteref">11</a></sup> and Picture<sup id="fnref:12"><a href="#fn:12" class="footnote-ref" role="doc-noteref">12</a></sup>. So instead of separate developments,
+we want to develop a framework to ease such domain-specific procedural design.</p>
+<p><strong>Proposal</strong>: This has something to do with the eDSL framework.</p>
+<p><strong>Follow-up</strong>: It might be interesting to see how such <strong>static</strong> procedural design
+evolves to <strong>dynamic</strong> procedural design (e.g., synthesis of an environment).
+Another direction is interative refinement (e.g., incorporating feedbacks from users)
+of the generated designs.</p>
+  </span>
+</details>
+<details class="spoiler">
+  <summary>Languge Design for Sound Involutive MCMC</summary>
+  <span style="display:inline-block;margin-left:1.5em;">
+<p><strong>Problem</strong>: A recent paper by Cusumano-Towner et al.<sup id="fnref:13"><a href="#fn:13" class="footnote-ref" role="doc-noteref">13</a></sup> studies
+how to ease the burden of implementing involutive MCMC by combining probabilistic
+programming and differentiable programming. It still remains a challenge (emm, you have to double check)
+to statically verify the correctness of a concrete implementation in their framework.</p>
+<p><strong>Proposal</strong>: I would try to combine type systems for sound programmable inference
+and sound differentiable programming.</p>
+<p><strong>Follow-up</strong>: I am thinking of <em>The Next XXX MCMC Algorithms</em>.</p>
+  </span>
+</details>
+<details class="spoiler">
+  <summary>Quantum Probability and Bayesian Inference</summary>
+  <span style="display:inline-block;margin-left:1.5em;">
+<p><strong>Problem</strong>: Quantum physics uses a form of complex probability. People have been
+thinking of it as a serious probability theory (see <a href="https://arxiv.org/abs/hep-th/9307019" target="_blank" rel="noopener">this</a> and <a href="https://en.wikipedia.org/wiki/Quantum_Bayesianism" target="_blank" rel="noopener">this</a>).
+There are even quantum analogs of Bayesian inference (<a href="https://link.springer.com/chapter/10.1007/978-3-642-00834-4_5" target="_blank" rel="noopener">one</a> and <a href="https://arxiv.org/abs/2006.02256" target="_blank" rel="noopener">the other</a>). Does it make sense to incorporate some of those ideas in current probabilistic programming systems?</p>
+<p><strong>Proposal</strong>: I still have to learn quantum physics (emm, not really).</p>
+<p><strong>Follow-up</strong>: Some people are trying to add quantum features
+to standard Bayesian models (check out <a href="https://www.informatyka.agh.edu.pl/media/uploads/qis_presentation12.pdf" target="_blank" rel="noopener">this</a>).</p>
   </span>
 </details>
 <h3 id="program-synthesis">Program Synthesis</h3>
@@ -1042,36 +1113,53 @@ For low-code programming, it would be useful to have a mechanism where
 the developers customize a table interactively and the platform automatically
 synthesize the code of the customization functor.</p>
 <p><strong>Follow-up</strong>: Low-code programming involves many UI-related customization.
-Is there a more general principle?</p>
+Is there a more general principle? For example, it might be interesting to
+investigate <a href="https://www.cs.cmu.edu/~NatProg/index.html" target="_blank" rel="noopener">Natural Programming</a></p>
   </span>
 </details>
-<!-- <details class="spoiler">
-  <summary>Synthesis of Generative Programs</summary>
-  <span style="display:inline-block;margin-left:1.5em;">
-
-  </span>
-</details> -->
-<!-- <details class="spoiler">
-  <summary>Procedural Design by Program Synthesis</summary>
-  <span style="display:inline-block;margin-left:1.5em;">
-
-  </span>
-</details> -->
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1">
-<p>Jan Hoffmann and Steffen Jost. Two Decades of Automatic Amortized Resource Analysis. <em>Math. Struct. Comput. Sci.</em> (2022). <a href="https://doi.org/10.1017/S0960129521000487" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Kevin Batz, Adrian Gallus, Benjamin Lucien Kaminski, Joost-Pieter Katoen, and Tobias Winkler. Weighted Programming: A Programming Paradigm for Specifying Mathematical Models. <em>Object-Oriented Prog., Syst., Lang., and Applications</em> (2022). <a href="https://doi.org/10.1145/3527310" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2">
-<p>Vikash K. Mansinghka, Ulrich Schaechtle, Shivam Handa, Alexey Radul, Yutian Chen, and Martin Rinard.
-Probabilistic Programming with Programmable Inference. <em>Prog. Lang. Design and Impl.</em> (2018). <a href="https://doi.org/10.1145/3192366.3192409" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Jan Hoffmann and Steffen Jost. Two Decades of Automatic Amortized Resource Analysis. <em>Math. Struct. Comput. Sci.</em> (2022). <a href="https://doi.org/10.1017/S0960129521000487" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3">
-<p>Akash Lal, Tayssir Touili, Nicholas Kidd, and Thomas Reps. Interprocedural Analysis of Concurrent Programs Under a Context Bound. <em>Tools and Algor. for the Constr. and Anal. of Syst.</em> (2008). <a href="https://doi.org/10.1007/978-3-540-78800-3_20" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Vikash K. Mansinghka, Ulrich Schaechtle, Shivam Handa, Alexey Radul, Yutian Chen, and Martin Rinard.
+Probabilistic Programming with Programmable Inference. <em>Prog. Lang. Design and Impl.</em> (2018). <a href="https://doi.org/10.1145/3192366.3192409" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4">
-<p>Thomas Reps, Emma Turetsky, and  Prathmesh Prabhu. Newtonian Program Analysis via Tensor Product. <em>Princ. of Prog. Lang.</em> (2016). <a href="https://doi.org/10.1145/2837614.2837659" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Akash Lal, Tayssir Touili, Nicholas Kidd, and Thomas Reps. Interprocedural Analysis of Concurrent Programs Under a Context Bound. <em>Tools and Algor. for the Constr. and Anal. of Syst.</em> (2008). <a href="https://doi.org/10.1007/978-3-540-78800-3_20" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>Javier Esparza, Stefan Kiefer, and Michael Luttenberger. Newtonian Program Analysis. <em>J. ACM</em> (2010). <a href="https://doi.org/10.1145/1857914.1857917" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p>Thomas Reps, Emma Turetsky, and  Prathmesh Prabhu. Newtonian Program Analysis via Tensor Product. <em>Princ. of Prog. Lang.</em> (2016). <a href="https://doi.org/10.1145/2837614.2837659" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p>Mingshuai Chen, Joost-Pieter Katoen, Lutz Klinkenberg, and Tobias Winkler. Does a Program Yield the Right Distribution?. <em>Computer Aided Verif.</em> (2022). <a href="https://doi.org/10.1007/978-3-031-13185-1_5" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:8">
+<p>Matthew Might, Yannis Smaragdakis, and David Van Horn. Resolving and Exploiting the $k$-CFA Paradox: Illuminating Functional vs. Object-Oriented Program Analysis. <em>Prog. Lang. Design and Impl.</em> (2010). <a href="https://doi.org/10.1145/1806596.1806631" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:9">
+<p>Raven Beutner, Luke Ong, and Fabian Zaiser. Guaranteed Bounds for Posterior Inference in Universal Probabilistic Programming. <em>Prog. Lang. Design and Impl.</em> (2022). <a href="https://doi.org/10.1145/3519939.3523721" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:9" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:10">
+<p>Marcel Hark, Benjamin Lucien Kaminski, Jürgen Giesl, and Joost-Pieter Katoen. Aiming Low Is Harder: Induction for Lower Bounds in Probabilistic Program Verification. <em>Princ. of Prog. Lang.</em> (2020). <a href="https://doi.org/10.1145/3371105" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:10" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:11">
+<p>Daniel J. Fremont, Tommaso Dreossi, Shromona Ghosh, Xiangyu Yue, Alberto L. Sangiovanni-Vincentelli, and Sanjit A. Seshia. Scenic: A Language for Scenario Specification and Scene Generation. <em>Prog. Lang. Design and Impl.</em> (2019). <a href="https://doi.org/10.1145/3314221.3314633" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:11" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:12">
+<p>Tejas D. Kulkarni, Pushmeet Kohli, Joshua B. Tenenbaum, and Vikash Mansinghka. Picture: A Probabilistic Programming Language for Scene Perception. <em>Comp. Vision and Pattern Recognition</em> (2015). <a href="https://doi.org/10.1109/CVPR.2015.7299068" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:12" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:13">
+<p>Marco Cusumano-Towner, Alexander K. Lew, and Vikash K. Mansinghka. Automating Involutive MCMC using Probabilistic and
+Differentiable Programming. <a href="https://arxiv.org/abs/2007.09871" target="_blank" rel="noopener">arXiv</a>&#160;<a href="#fnref:13" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
