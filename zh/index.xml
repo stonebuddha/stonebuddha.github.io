@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>王迪</title>
+    <link>https://stonebuddha.github.io/zh/</link>
+      <atom:link href="https://stonebuddha.github.io/zh/index.xml" rel="self" type="application/rss+xml" />
+    <description>王迪</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Sun, 30 Oct 2022 17:49:57 +0800</lastBuildDate>
+    <image>
+      <url>https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png</url>
+      <title>王迪</title>
+      <link>https://stonebuddha.github.io/zh/</link>
+    </image>
+    
+    <item>
+      <title>随便聊聊：贝叶斯概率编程</title>
+      <link>https://stonebuddha.github.io/zh/post/introduction-to-probabilistic-programming/</link>
+      <pubDate>Sun, 30 Oct 2022 17:49:57 +0800</pubDate>
+      <guid>https://stonebuddha.github.io/zh/post/introduction-to-probabilistic-programming/</guid>
+      <description>&lt;p&gt;人们近年来在人工智能领域取得的进展，除了层出不穷的新算法，也仰仗硬件算力的提升并得益于编程语言层面对自动微分和张量运算的支持。
+基于神经网络的机器学习在很多应用中取得了成功，但在一些方面也尚存不足，例如对预测结果信度的评估&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;，纳入领域知识的方法&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;，以及在观测数据的分布发生改变时的鲁棒性&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;。
+&lt;strong&gt;贝叶斯推断&lt;/strong&gt;（Bayesian Inference）是一种历史悠久的、基于&lt;strong&gt;概率&lt;/strong&gt;的贝叶斯解释（而非频率解释）的、在上述三个方面有一些优势的机器学习方法，其核心在于通过观测数据来估计模型假设空间的概率分布，而非选择出单个“最优”假设：设 $\Theta$ 为假设空间、$x$ 为观测数据，每个假设 $\theta \in \Theta$ 具有一个先验概率 $\mathbb{P}(\theta)$，而一个贝叶斯模型则描述了观测数据在给定假设下的条件概率 $\mathbb{P}(x \mid \theta)$，那么由贝叶斯法则，我们可用观测数据更新模型假设的后验概率：
+$$
+\mathbb{P}(\theta \mid x) = \frac{ \mathbb{P}(x \mid \theta) \mathbb{P}(\theta) }{ \sum_{\theta&amp;rsquo; \in \Theta} \mathbb{P}(x \mid \theta&amp;rsquo;) \mathbb{P}(\theta&amp;rsquo;) } \qquad (\theta \in \Theta).
+$$
+基于贝叶斯推断的机器学习也被称为&lt;strong&gt;贝叶斯机器学习&lt;/strong&gt;&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;。
+然而，相比基于梯度下降等算法的机器学习方法，贝叶斯推断的计算复杂度更高，这阻挡了贝叶斯机器学习在更多领域、更大模型上的应用。&lt;/p&gt;
+&lt;p&gt;为了更快更好地进行贝叶斯推断，&lt;strong&gt;概率编程&lt;/strong&gt;&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;逐渐成为一个活跃的研究领域。
+概率编程旨在分离描述概率模型和进行贝叶斯推断这两个步骤，通过良好的编程语言设计来支持丰富的模型种类，通过编程语言的各类技术（如编译优化、动态分析、元编程等）来自动、高效地进行贝叶斯推断。
+人们已经设计、开发了多个概率编程语言（如 Stan、Pyro、Gen.jl 等），但如何平衡&lt;strong&gt;正确性&lt;/strong&gt;和&lt;strong&gt;灵活性&lt;/strong&gt;仍然是该领域的一个重要研究问题。
+一方面，设计有语义限制的概率编程语言并提供特化的推断算法，可以保证正确性和高效性，但是语言可表达的模型种类受限，也难以重用已有的非概率的计算模块；另一方面，使用通用编程语言来描述概率模型，并允许用户对通用推断算法进行定制，可以满足灵活性和一定程度上的高效性&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:8&#34;&gt;&lt;a href=&#34;#fn:8&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;8&lt;/a&gt;&lt;/sup&gt;，但是用户定制会使得正确性的保证变得困难。
+正如自动微分框架驱动了基于神经网络的机器学习的发展，我们期待一个&lt;strong&gt;正确而灵活的概率编程框架&lt;/strong&gt;能驱动贝叶斯机器学习的进一步发展和流行。&lt;/p&gt;
+&lt;p&gt;在这里，我们看一个使用概率编程来进行时间序列的在线学习的例子&lt;sup id=&#34;fnref:9&#34;&gt;&lt;a href=&#34;#fn:9&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;9&lt;/a&gt;&lt;/sup&gt;。
+该例子希望学习并预测美国的月度民航总里程数的走势（&lt;a href=&#34;https://fred.stlouisfed.org/series/RPM&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;数据来源&lt;/a&gt;）。下图为 2009 年 1 月至 2020 年 2 月的数据：
+&lt;a href=&#34;airline.png&#34;&gt;&lt;img src=&#34;airline.png&#34; width=&#34;500&#34;/&gt;&lt;/a&gt;
+在贝叶斯机器学习中，高斯过程回归（Gaussian Process Regression）是一种灵活的算法，该方法允许我们使用核函数（Kernel Function）来定制多元高斯分布的的协方差矩阵。
+通过概率编程，我们可以不用预先指定使用什么形式的核函数，而是写一段程序来声明核函数形式的先验概率分布（换句话说，我们可以把&lt;strong&gt;结构&lt;/strong&gt;的选择也纳入模型假设 $\theta$ 中）。
+下面的代码通过概率上下文无关文法（Probabilistic Context-Free Grammar）的方式实现了这样的一个先验概率分布：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ocaml&#34; data-lang=&#34;ocaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;kernel&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Constant&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;of&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;float&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Linear&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;of&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;float&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;...&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Plus&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;of&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;kernel&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;kernel&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;rec&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;kernel_prior&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;kernel_type&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;categorical&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;in&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;match&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;kernel_type&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;with&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Constant&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;rand&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c&#34;&gt;(* Constant (C): k(x, x&amp;#39;) = C *)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Linear&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;rand&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c&#34;&gt;(* Linear (C): k(x, x&amp;#39;) = (x - C) * (x&amp;#39; - C) *)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;o&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;4&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Plus&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;kernel_prior&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;kernel_prior&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c&#34;&gt;(* Plus (k1, k2): k(x, x&amp;#39;) = k1(x, x&amp;#39;) + k2(x, x&amp;#39;) *)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;o&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;结合序列蒙特卡洛（Sequential Monte Carlo）方法，我们可以实现一个基于高斯过程的时间序列的在线学习算法，该算法可以估计预测的不确定性，并在数据分布发生改变时即时响应。
+下面这个动画展示了在线学习的效果，其中灰色的区域为使用 100 个对后验概率分布的采样做出的 95% 置信度预测区间的叠加：
+&lt;a href=&#34;airline1.gif&#34;&gt;&lt;img src=&#34;airline1.gif&#34; width=&#34;500&#34;/&gt;&lt;/a&gt;
+可以看出，在数据比较多的时候，算法已经对整个趋势的掌握已经非常不错了。而下面的动画则展示在 2020 年 2 月之后的数据上的效果：
+&lt;a href=&#34;airline2.gif&#34;&gt;&lt;img src=&#34;airline2.gif&#34; width=&#34;500&#34;/&gt;&lt;/a&gt;
+很明显，新冠疫情导致了民航数据的突变，而基于贝叶斯推断的在线学习可以及时对这种变化进行响应并调整之后的预测。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Chuan Guo, Geoff Pleiss, Yu Sun, and Kilian Q. Weinberger. 2017. On Calibration of Modern Neural Networks. &lt;em&gt;ICML&#39;17&lt;/em&gt;.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;Nikhil Muralidhar, Mohammad Raihanul Islam, Manish Marwah, Anuj Karpatne, and Naren Ramakrishnan. 2018. Incorporating Prior Domain Knowledge into Deep Neural Networks. &lt;em&gt;ICBD&#39;18&lt;/em&gt;.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;Dario Amodei, Chris Olah, Jacob Steinhardt, Paul Christiano, John Schulman,and Dan Mané. 2016. Concrete Problems in AI Safety. &lt;a href=&#34;https://arxiv.org/abs/1606.06565&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://arxiv.org/abs/1606.06565&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;Zoubin Ghahramani. 2015. Probabilistic machine learning and artiicial intelligence. &lt;em&gt;Nature&lt;/em&gt;, 521.&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;Joshua B. Tenenbaum, Charles Kemp, Thomas L. Grifiths, and Noah D. Goodman. 2011. How to Grow a Mind: Statistics, Structure, and Abstraction. &lt;em&gt;Science&lt;/em&gt;, 331, 6022.&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34;&gt;
+&lt;p&gt;Jan Willem van de Meent, Brooks Paige, Hongseok Yang, and Frank Wood. 2018. An Introduction to Probabilistic Programming. &lt;a href=&#34;https://arxiv.org/abs/1809.10756&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://arxiv.org/abs/1809.10756&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:7&#34;&gt;
+&lt;p&gt;Vikash K. Mansinghka, Ulrich Schaechtle, Shivam Handa, Alexey Radul, Yutian Chen, and Martin C. Rinard. 2018. Probabilistic Programming with Programmable Inference. &lt;em&gt;PLDI&#39;18&lt;/em&gt;.&amp;#160;&lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:8&#34;&gt;
+&lt;p&gt;Eli Bingham, Jonathan P. Chen, Martin Jankowiak, Fritz Obermeyer, Neeraj Pradhan, Theofanis Karaletsos, Rishabh Singh, Paul Szerlip, Paul Horsfall, and Noah D. Goodman. 2018. Pyro: Deep Universal Probabilistic Programming. &lt;em&gt;J. Machine Learning Research&lt;/em&gt;, 20, 1.&amp;#160;&lt;a href=&#34;#fnref:8&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:9&#34;&gt;
+&lt;p&gt;Feras A. Saad, Marco F. Cusumano-Towner, Ulrich Schaechtle, Martin C. Rinard, and Vikash K. Mansinghka. 2019. Bayesian Synthesis of Probabilistic Programs for Automatic Data. &lt;em&gt;POPL&#39;19&lt;/em&gt;.&amp;#160;&lt;a href=&#34;#fnref:9&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>随便聊聊：代数程序分析</title>
+      <link>https://stonebuddha.github.io/zh/post/introduction-to-algebraic-program-analysis/</link>
+      <pubDate>Sun, 02 Oct 2022 22:51:11 +0800</pubDate>
+      <guid>https://stonebuddha.github.io/zh/post/introduction-to-algebraic-program-analysis/</guid>
+      <description>&lt;p&gt;本文参考了 Zachary Kincaid 和 Thomas Reps 在 CAV 2021 上的关于&lt;strong&gt;代数程序分析&lt;/strong&gt;（Algebraic Program Analysis）的教程&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
+&lt;p&gt;代数程序分析简单来说就是一种基于&lt;strong&gt;代数结构&lt;/strong&gt;来设计程序分析的方法论：某种代数结构中的元素代表了程序的含义，而其上的运算则代表组合程序含义的方式。
+这其实跟我们在程序语法树上用结构递归定义指称语义（Denotational Semantics）的方式类似：
+$$
+\begin{align}
+\mathcal{A}[{-}] &amp;amp; : \mathit{Program} \to \mathit{Meaning} \\
+\mathcal{A}[S_1;S_2] &amp;amp; = \mathcal{A}[S_1] \cdot \mathcal{A}[S_2] \\
+\mathcal{A}[\mathbf{if}(*)\{S_1\}\mathbf{else}\{S_2\}] &amp;amp; = \mathcal{A}[S_1] + \mathcal{A}[S_2] \\
+\mathcal{A}[\mathbf{while}(*)\{S_0\}] &amp;amp; = (\mathcal{A}[S_0])^*
+\end{align}
+$$
+而上面式子中的 $\cdot$、$+$ 和 $^*$ 就可以视作某种代数结构所支持的运算。
+这种方式具有良好的 Compositionality：&lt;strong&gt;一个程序的含义总是由该程序的组成部分的含义结合而来&lt;/strong&gt;。
+例如，如果上面的 $\mathcal{A}$ 代表了一个程序分析，那么我们需要指定如何实现连接（$\cdot$）、分支（$+$）和循环（$^*$）这三种运算。
+注意，这里出现了一个与传统基于&lt;strong&gt;迭代&lt;/strong&gt;的程序分析的重要不同：一个循环语句的含义并不是由反复迭代循环体直到不动点来获得，而是通过一个&lt;strong&gt;显式&lt;/strong&gt;的 $^*$ 运算来获得。
+换句话说，代数程序分析允许我们使用别的（非迭代的）方式来分析循环，这就为我们设计新的程序分析技术提供了可能性。&lt;/p&gt;
+&lt;p&gt;在本文中，我们考虑通过&lt;strong&gt;状态转移公式代数&lt;/strong&gt;（Transition Formula Alegebras）来分析程序变量间的数值关系。
+一个状态转移公式$F(X,X&amp;rsquo;)$是一个逻辑公式，它描述了程序状态上的转移关系：$X$ 集合表示前状态（pre-state）的变量，$X&amp;rsquo;$ 集合表示后状态（post-state）的变量。
+比如我们考虑变量有 $x,y$，那么程序语句 &lt;code&gt;x = x + 1;&lt;/code&gt; 的状态转移公式就是 $x&amp;rsquo; = x + 1 \wedge y&amp;rsquo; = y$。
+对于一个固定的变量集合 $X$，我们考虑在所有可能的状态转移公式 $F(X,X&amp;rsquo;)$ 上建立一个适用于程序分析的代数结构。
+在传统程序分析中，我们往往需要预先对可能的公式&lt;strong&gt;进行限制&lt;/strong&gt;来使得迭代算法可以收敛：例如，只考虑变量间的线性不等式。
+在代数程序分析中，我们不需要这种预先的限制，而是可以在实现循环运算（$^*$）时以即插即用的方式使用不同的近似方法。
+在状态转移公式代数中，我们定义常数 $0$ 为 $\mathit{false}$，常数 $1$ 为 $\bigwedge_{x \in X} (x&amp;rsquo; = x)$，分支运算为 $F + G = F \vee G$，连接运算为 $F \cdot G = \exists X&amp;rsquo;&amp;rsquo;. F(X,X&amp;rsquo;&amp;rsquo;) \wedge G(X&amp;rsquo;&amp;rsquo;,X&amp;rsquo;)$（即用 $X&amp;rsquo;&amp;rsquo;$ 来表示中间状态）。
+而对于循环运算 $({-})^* : \mathit{TransitionFormula} \to \mathit{TransitionFormula}$，我们只需考虑在转移公式这一层面进行计算，并不用考虑循环语句本身可能有的嵌套循环结构！
+换句话说，我们可以借鉴已有的各种 Loop Summarization / Acceleration 技术。&lt;/p&gt;
+&lt;p&gt;在这里，我们只讨论一种基于&lt;strong&gt;区间分析&lt;/strong&gt;的循环运算实现方法（本文开头提到的参考材料中有更多的例子）。
+在区间分析中，我们一般考虑形如 $\bigwedge_{x \in X} (a_x \le x \le b_x)$ 的状态公式，其中 $a_x,b_x$ 为常数。
+例如，对于下面这个程序中的循环而言，$0 \le i \le 10 \wedge 0 \le j \le 20$ 是一个区间不变量，但是 $0 \le i \le 10 \wedge 0 \le j \le 10$ 并不是：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;20&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;传统的基于区间的程序分析会使用 widening / narrowing 等技术来确保迭代分析可以收敛，但这会影响分析的精度。
+在代数程序分析的框架中，我们则拥有更好的自由度来设计对于循环的分析：考虑循环体的转移公式为 $F(X,X&amp;rsquo;)$，那么断言“$A = \{ a_x \mid x \in X \}$ 和 $B = \{ b_x \mid x \in X \}$构成一个区间不变量”可以表述为下面的公式：
+$$
+\forall X, X&amp;rsquo;. \left(\left(\bigwedge_{x \in X}(a_x \le x \le b_x)\right) \wedge F(X,X&amp;rsquo;)\right) \implies \bigwedge_{x \in X} (a_x \le x&amp;rsquo; \le b_x)
+$$
+令 $Inv(A,B)$ 为上面这个式子。那么循环运算 $F^{*}$ 可以定义为：
+$$
+\forall A, B. \left( Inv(A,B) \wedge \bigwedge_{x \in X} (a_x \le x \le b_x) \right) \implies \bigwedge_{x \in X} (a_x \le x&amp;rsquo; \le b_x)
+$$
+这种循环运算的实现蕴含了&lt;strong&gt;所有&lt;/strong&gt;可以由循环体转移公式 $F$ 得出的区间不变量！&lt;/p&gt;
+&lt;p&gt;前面我们提到，代数程序分析要求在程序语法树上进行&lt;strong&gt;结构&lt;/strong&gt;递归，那么在&lt;strong&gt;非结构&lt;/strong&gt;的程序上（例如有 &lt;code&gt;break&lt;/code&gt; 和 &lt;code&gt;continue&lt;/code&gt;），我们是否还能进行代数程序分析呢？
+答案再次由 Robert Tarjan 给出：&lt;strong&gt;Yes&lt;/strong&gt;！（至于为什么用“再”可以看我&lt;a href=&#34;../introduction-to-static-resource-analysis&#34;&gt;上次的分享&lt;/a&gt;。)
+Tarjan 的两篇文章 &lt;a href=&#34;https://doi.org/10.1145/322261.322273&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Fast Algorithms for Solving Path Problems&lt;/a&gt; 和 &lt;a href=&#34;https://doi.org/10.1145/322261.322272&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;A Unified Approach to Path Problems&lt;/a&gt; 中提出了一种高效的基于代数的在图上解决路径问题的算法：这里的路径问题指的是图中的边上有权值，一条路径的权值为其中边权相&lt;strong&gt;乘&lt;/strong&gt;，然后我们想要计算符合某种条件的所有路径的权值&lt;strong&gt;和&lt;/strong&gt;（这里的&lt;strong&gt;乘&lt;/strong&gt;和&lt;strong&gt;和&lt;/strong&gt;都是抽象的，例如如果权值为非负数，&lt;strong&gt;乘&lt;/strong&gt;为加，&lt;strong&gt;和&lt;/strong&gt;为取最小值，那么路径问题描述的则是最短路问题）。
+Tarjan 提出了一种可以计算图上两点间所有路径的集合的高效算法，其关键点在于这个（可能无穷的）路径集合可以表述为一个有限的&lt;strong&gt;正则表达式&lt;/strong&gt;，其后解路径问题就可以转化为在一个描述问题的代数结构中解释正则表达式：这与我们上文描述的三种运算（连接 $\cdot$，分支 $+$，循环 $^*$）正好是符合的！
+所以，对于非结构的程序，我们可以把它表示成一个控制流图，然后通过 Tarjan 的算法计算出描述所有可能的程序执行路径的正则表达式，最后在描述程序分析的代数结构中解释该正则表达式。
+例如，以下程序&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;中的所有可能路径的集合可以表述为下面的正则表达式：
+$$\small
+\left(\fbox{m=0} \cdot \left(\fbox{m&amp;lt;8} \cdot \fbox{n&amp;gt;=0} \cdot \fbox{m=m+1} \cdot \fbox{n=n-1}\right)^* \cdot \fbox{m&amp;gt;=8}\right)^* \cdot \fbox{m=0} \cdot \fbox{m&amp;lt;8} \cdot \fbox{n&amp;lt;0}
+$$&lt;/p&gt;
+&lt;p&gt;在文章的最后，我们聊一聊代数程序分析的不足。
+最明显的不足在于，尽管 Compositionality 是个好性质，它也意味着我们在程序分析中丢失了&lt;strong&gt;上下文&lt;/strong&gt;信息。
+一方面，由于在分析某个程序组成部分时不能依赖其上下文，我们在分析时需要追踪更多的信息（例如上文的状态转移公式代数需要同时记录 $X$ 和 $X&amp;rsquo;$）；另一方面，我们可能会由于缺乏上下文信息而对某个程序组成部分进行过于保守的分析（这取决于程序分析状态空间设计得好不好）。&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Zachary Kincaid, Thomas Reps, and John Cyphert. Algebraic Program Analysis. &lt;a href=&#34;https://doi.org/10.1007/978-3-030-81685-8_3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://doi.org/10.1007/978-3-030-81685-8_3&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;Zachary Kincaid and Thomas Reps. Introduction to Algebraic Program Analysis. &lt;a href=&#34;https://www.cs.wisc.edu/wpis/talks/CAV21-Algebraic-Part1-regular.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Part 1&lt;/a&gt;, &lt;a href=&#34;https://www.cs.wisc.edu/wpis/talks/CAV21-Algebraic-Part2-foundations.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Part 2&lt;/a&gt;, &lt;a href=&#34;https://www.cs.wisc.edu/wpis/talks/CAV21-Algebraic-Part3-InterproceduralAnalysis.pptx&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Part 3&lt;/a&gt;, &lt;a href=&#34;https://www.cs.wisc.edu/wpis/talks/CAV21-Algebraic-Part4-termination.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Part 4&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>随便聊聊：静态资源分析</title>
+      <link>https://stonebuddha.github.io/zh/post/introduction-to-static-resource-analysis/</link>
+      <pubDate>Sat, 10 Sep 2022 15:32:19 +0800</pubDate>
+      <guid>https://stonebuddha.github.io/zh/post/introduction-to-static-resource-analysis/</guid>
+      <description>&lt;p&gt;简单地说，程序的&lt;strong&gt;资源分析&lt;/strong&gt;（Resource Analysis）指的是把该程序的资源消耗表示成一个关于程序输入的函数。
+这里的&lt;strong&gt;资源&lt;/strong&gt;可以是运行时间、内存使用、能源消耗，或别的什么数值指标。
+高德纳（Donald Knuth）在《计算机程序设计的艺术》（&lt;em&gt;The Art of Computer Programming&lt;/em&gt;）中就基于 MIX 汇编语言的语义讨论了一些资源分析的问题。
+在计算机科学的课程中，资源分析通常以&lt;strong&gt;分析算法、数据结构的时间、空间复杂度&lt;/strong&gt;的形式出现，而这里面最常见的又通常是&lt;strong&gt;渐近分析&lt;/strong&gt;，即忽略常数、假定输入规模充分大时的复杂度，例如对长度为 $n$ 的数组进行归并排序时间复杂度为 $O(n \log n)$。
+在这篇文章中，我们考虑一个稍微困难点的情况，即我们希望得到的分析结果是带有常数信息的&lt;strong&gt;非渐近&lt;/strong&gt;复杂度：从非渐近分析可以容易得出渐近分析的结果，而且前者还可以用来精细地比较渐近复杂度相同的算法、数据结构。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;静态&lt;/strong&gt;资源分析即在不实际运行程序的情况下对其进行资源分析。
+Facebook 出品的 Infer 工具提供了函数级的静态运行时间分析，其宗旨是在软件开发的过程中更早地指出性能问题（比方说，在 Code Review 阶段由工具自动反馈，而不是等到后面的性能回归测试）。
+下面这个例子来源于 Infer 的官方文档&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;loop&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ArrayList&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Integer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;list&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;list&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Infer 通过静态分析对上面这个函数得出一个描述其运行时间的多项式（比如 $8|list|+16$），从而知道这个函数的时间复杂度和其输入列表的长度呈线性关系。
+如果某一次代码修改把这个函数更新为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;loop&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ArrayList&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Integer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;list&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;list&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;foo&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// newly added function call
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;而此处的 &lt;code&gt;foo&lt;/code&gt; 函数的时间复杂度也是与输入呈线性关系，那么 Infer 可以检测到 &lt;code&gt;loop&lt;/code&gt; 函数的复杂度从 $O(|list|)$ 增长到了 $O(|list|^2)$，并向开发者发出警报。
+（如果想要更深入了解 Infer 中的资源分析，可以参考&lt;a href=&#34;https://youtu.be/-sqdJbvqeNQ&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;这个视频&lt;/a&gt;。）&lt;/p&gt;
+&lt;p&gt;笼统地说，Infer 中的资源分析可以大致理解为对循环次数进行计数，从而将资源分析问题转化为程序变量数值关系的分析；这也是很多静态资源分析（比如 SPEED&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;）背后的原理。
+在这篇文章中，我们来聊另一种颇为有趣的静态资源分析：&lt;strong&gt;自动均摊资源分析&lt;/strong&gt;（Automatic Amortized Resource Analysis，AARA）。
+这种方法衍生自 Robert Tarjan 在 1985 年的一篇论文&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;，文中给出了一种推导序列操作的&lt;strong&gt;最坏&lt;/strong&gt;情况资源消耗的方法。
+该方法的思路可以概括为：对于很多数据结构来说，一个操作消耗的资源很大程度上是由数据结构的状态决定的，而且有可能会根据状态有很大的不同；但是比较高的资源消耗（例如重新组织整个数据结构）往往会以一种可以预测的频率出现，也就是说，这些消耗在时间轴上&lt;strong&gt;均摊&lt;/strong&gt;了。
+均摊资源分析即利用了这种思想：我们可以把程序的执行看做是一个操作序列 $s_1,s_2,s_3,\cdots$，这里的每个 $s_i \in \mathrm{State}$ 都表示一个程序状态，而我们用一个函数 $cost(s_i,s_{i+1})$ 来描述资源的消耗；然后我们设计一个&lt;strong&gt;势能函数&lt;/strong&gt; $\Phi : \mathrm{State} \to \mathbb{Q}^+$ 把程序状态映射为非负数，使得对任意的 $i$，我们有
+$$
+\Phi(s_{i}) \ge cost(s_{i}, s_{i+1}) + \Phi(s_{i+1}),
+$$
+即一个状态的势能要足以支付当前程序操作的资源消耗以及下一个程序状态的势能（思考题：$cost$ 为负时意味着什么？）。
+如此以来，$\Phi(s_0)$ 给出了程序的总资源消耗的一个&lt;strong&gt;上界&lt;/strong&gt;，而我们需要做的是定义一个势能函数，并证明在每个程序执行的&lt;strong&gt;局部&lt;/strong&gt;，上述表达式成立。
+这意味着均摊资源分析的 Compositionality 是很好的！&lt;/p&gt;
+&lt;p&gt;我们知道，类型系统的一大特点也是 Compositionality；所以，设计一个&lt;strong&gt;用于均摊资源分析的类型系统&lt;/strong&gt;是非常自然的想法。
+考虑下面这段 OCaml 代码，它是连接两个列表的简单实现，而我们想要分析它递归调用的次数（这也是一种资源消耗）：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-ocaml&#34; data-lang=&#34;ocaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;rec&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;append&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;l1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;l2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;match&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;l1&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;with&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;bp&#34;&gt;[]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;l2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;::&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;xs&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;rest&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;append&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;xs&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;l2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;in&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;::&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;rest&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;我们能够很容易地看出 &lt;code&gt;append&lt;/code&gt; 函数递归调用的次数是 $|l_1|$。
+假定这个 &lt;code&gt;append&lt;/code&gt; 函数的类型为 $L(\alpha) \times L(\alpha) \to L(\alpha)$，这里的 $L$ 即表示列表类型。
+均摊分析要求我们给程序状态赋予势能，在这个例子中，我们则需要把我们的势能放在 &lt;code&gt;append&lt;/code&gt; 的参数 $l_1$ 和 $l_2$ 里。
+让我们给列表类型增加一个数值标注：用 $L^q(\alpha)$ 表示一个列表类型，其中的&lt;strong&gt;每个元素都携带了 $q$ 单位的势能&lt;/strong&gt;，并假定所有程序操作的资源消耗都是 $0$，除了递归调用的消耗为 $1$ 单位。
+所以，&lt;code&gt;append&lt;/code&gt; 的带资源标注的类型可以写为 $L^1(\alpha) \times L^0(\alpha) \to L^0(\alpha)$：如果我们计算参数和结果之间的势能差，我们就能发现那恰好是 $|l_1|$。
+但是，我们如何通过类型系统来检查这个类型是不是正确的呢？
+还记得 Compositionality 吗——我们只需要对局部操作验证一下势能不等式：比如，在模式匹配时，如果 $l_1$ 非空，那么我们把它解构为 $x$ 和 $xs$，其中 $xs$ 的类型与 $l_1$ 相同，为 $L^1(\alpha)$，但是 $xs$ 的长度比 $l_1$ 少 $1$，所以这一步解构给了我们 $1$ 单位的自由势能，我们可以用它来支付紧接着的这个递归调用。
+接着我们检查 $xs$ 和 $l_2$ 的类型是否符合 &lt;code&gt;append&lt;/code&gt; 的类型签名（当然！）。
+最后，类型签名告诉我们 $rest$ 的类型为 $L^0(\alpha)$，所以构建最终返回结果 $x :: rest$ 也不需要往这个数据结构里面存势能了。&lt;/p&gt;
+&lt;p&gt;我在&lt;a href=&#34;demo.pdf&#34;&gt;这份胶片&lt;/a&gt;里更详细地展示了这个带资源标注的类型系统。
+需要特别提出的是，&lt;strong&gt;自动推导&lt;/strong&gt;这些数值标注并不困难：我们用变量来表示这些类型标注，那么类型检查就成为了生成关于这些变量的约束（通常是线性的）的过程，最后再解这些约束就好了。
+在&lt;a href=&#34;https://www.raml.co/interface/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;这个页面&lt;/a&gt;上你可以和一个实现了自动均摊资源分析的工具（Resource-aware ML，RaML）玩耍，其主要贡献者也在今年发表了一篇还不错的综述&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;。
+祝大家玩得愉快！&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://fbinfer.com/docs/checker-cost#examples&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://fbinfer.com/docs/checker-cost#examples&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.microsoft.com/en-us/research/publication/speed-precise-and-efficient-static-estimation-of-program-computational-complexity-2/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.microsoft.com/en-us/research/publication/speed-precise-and-efficient-static-estimation-of-program-computational-complexity-2/&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;Robert Tarjan. Amortized Computational Complexity. &lt;a href=&#34;https://doi.org/10.1137/0606031&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://doi.org/10.1137/0606031&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;Jan Hoffmann and Steffen Jost. Two decades of automatic amortized resource analysis. &lt;a href=&#34;https://doi.org/10.1017/S0960129521000487&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://doi.org/10.1017/S0960129521000487&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Central Moment Analysis for Cost Accumulators in Probabilistic Programs</title>
+      <link>https://stonebuddha.github.io/zh/publication/wanghr21a/</link>
+      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/wanghr21a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sound Probabilistic Inference via Guide Types</title>
+      <link>https://stonebuddha.github.io/zh/publication/wanghr21b/</link>
+      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/wanghr21b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Expected-Cost Analysis for Probabilistic Programs and Semantics-Level Adaption of Optional Stopping Theorems</title>
+      <link>https://stonebuddha.github.io/zh/publication/wanghr21c/</link>
+      <pubDate>Tue, 30 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/wanghr21c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Probabilistic Resource-Aware Session Types</title>
+      <link>https://stonebuddha.github.io/zh/publication/daswh20/</link>
+      <pubDate>Wed, 18 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/daswh20/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Liquid Resource Types</title>
+      <link>https://stonebuddha.github.io/zh/publication/knothwr20/</link>
+      <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/knothwr20/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raising Expectations: Automating Expected Cost Analysis with Types</title>
+      <link>https://stonebuddha.github.io/zh/publication/wangkh20/</link>
+      <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/wangkh20/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Resource-Guided Program Synthesis</title>
+      <link>https://stonebuddha.github.io/zh/publication/knothwp19/</link>
+      <pubDate>Sat, 22 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/knothwp19/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Denotational Semantics for Low-Level Probabilistic Programs with Nondeterminism</title>
+      <link>https://stonebuddha.github.io/zh/publication/wanghr19/</link>
+      <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/wanghr19/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Type-Guided Worst-Case Input Generation</title>
+      <link>https://stonebuddha.github.io/zh/publication/wangh19/</link>
+      <pubDate>Sun, 13 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/wangh19/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PMAF: An Algebraic Framework for Static Analysis of Probabilistic Programs</title>
+      <link>https://stonebuddha.github.io/zh/publication/wanghr18/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/wanghr18/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TiML: A Functional Language for Practical Complexity Analysis with Invariants</title>
+      <link>https://stonebuddha.github.io/zh/publication/wangwc17/</link>
+      <pubDate>Wed, 25 Oct 2017 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/wangwc17/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Conditional Dyck-CFL Reachability Analysis for Complete and Efficient Library Summarization</title>
+      <link>https://stonebuddha.github.io/zh/publication/tangwx17/</link>
+      <pubDate>Sat, 22 Apr 2017 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/tangwx17/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>新闻归档</title>
+      <link>https://stonebuddha.github.io/zh/news_archive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/news_archive/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;[Nov 2020]&lt;/strong&gt; 预印本 &lt;a href=&#34;../publication/daswh20&#34;&gt;Probabilistic Resource-Aware Session Types&lt;/a&gt; 已上传至 arXiv。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Jun 2020]&lt;/strong&gt; 两篇论文 &lt;a href=&#34;../publication/knothwr20&#34;&gt;Liquid Resource Types&lt;/a&gt; 和 &lt;a href=&#34;../publication/wangkh20&#34;&gt;Raising Expectations: Automating Expected Cost Analysis with Types&lt;/a&gt; 被 ICFP 2020 接收。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[May 2019]&lt;/strong&gt; 论文 &lt;a href=&#34;../publication/wanghr19&#34;&gt;A Denotational Semantics for Low-Level Probabilistic Programs with Nondeterminism&lt;/a&gt; 被 MFPS 接收。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Feb 2019]&lt;/strong&gt; &lt;a href=&#34;../publication/knothwp19&#34;&gt;Resource-Guided Program Synthesis&lt;/a&gt; 被 PLDI 2019 接收。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Nov 2018]&lt;/strong&gt; &lt;a href=&#34;../publication/wangh19&#34;&gt;Type-Guided Worst-Case Input Generation&lt;/a&gt; 被 POPL 2019 接收。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Mar 2018]&lt;/strong&gt; 这是我在 SCS Day 2018 上的表演：&lt;a href=&#34;https://www.youtube.com/watch?v=zNxltZhPIG0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chengdu&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Feb 2018]&lt;/strong&gt; &lt;a href=&#34;../publication/wanghr18&#34;&gt;PMAF: An Algebraic Framework for Static Analysis of Probabilistic Programs&lt;/a&gt; 被 PLDI 2018 接收。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>3 | 王迪</title>
+    <link>https://stonebuddha.github.io/zh/publication-type/3/</link>
+      <atom:link href="https://stonebuddha.github.io/zh/publication-type/3/index.xml" rel="self" type="application/rss+xml" />
+    <description>3</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Tue, 30 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png</url>
+      <title>3</title>
+      <link>https://stonebuddha.github.io/zh/publication-type/3/</link>
+    </image>
+    
+    <item>
+      <title>Expected-Cost Analysis for Probabilistic Programs and Semantics-Level Adaption of Optional Stopping Theorems</title>
+      <link>https://stonebuddha.github.io/zh/publication/wanghr21c/</link>
+      <pubDate>Tue, 30 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/wanghr21c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Probabilistic Resource-Aware Session Types</title>
+      <link>https://stonebuddha.github.io/zh/publication/daswh20/</link>
+      <pubDate>Wed, 18 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/daswh20/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

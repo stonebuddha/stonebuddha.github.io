@@ -21,10 +21,26 @@
     </item>
     
     <item>
+      <title>Central Moment Analysis for Cost Accumulators in Probabilistic Programs</title>
+      <link>https://stonebuddha.github.io/zh/publication/wanghr21a/</link>
+      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/wanghr21a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Sound Probabilistic Inference via Guide Types</title>
       <link>https://stonebuddha.github.io/publication/wanghr21b/</link>
       <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
       <guid>https://stonebuddha.github.io/publication/wanghr21b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sound Probabilistic Inference via Guide Types</title>
+      <link>https://stonebuddha.github.io/zh/publication/wanghr21b/</link>
+      <pubDate>Sun, 20 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/wanghr21b/</guid>
       <description></description>
     </item>
     
@@ -37,10 +53,26 @@
     </item>
     
     <item>
+      <title>Liquid Resource Types</title>
+      <link>https://stonebuddha.github.io/zh/publication/knothwr20/</link>
+      <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/knothwr20/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Raising Expectations: Automating Expected Cost Analysis with Types</title>
       <link>https://stonebuddha.github.io/publication/wangkh20/</link>
       <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
       <guid>https://stonebuddha.github.io/publication/wangkh20/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raising Expectations: Automating Expected Cost Analysis with Types</title>
+      <link>https://stonebuddha.github.io/zh/publication/wangkh20/</link>
+      <pubDate>Sun, 23 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/wangkh20/</guid>
       <description></description>
     </item>
     
@@ -53,10 +85,26 @@
     </item>
     
     <item>
+      <title>Resource-Guided Program Synthesis</title>
+      <link>https://stonebuddha.github.io/zh/publication/knothwp19/</link>
+      <pubDate>Sat, 22 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/knothwp19/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>A Denotational Semantics for Low-Level Probabilistic Programs with Nondeterminism</title>
       <link>https://stonebuddha.github.io/publication/wanghr19/</link>
       <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
       <guid>https://stonebuddha.github.io/publication/wanghr19/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Denotational Semantics for Low-Level Probabilistic Programs with Nondeterminism</title>
+      <link>https://stonebuddha.github.io/zh/publication/wanghr19/</link>
+      <pubDate>Mon, 03 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/wanghr19/</guid>
       <description></description>
     </item>
     
@@ -69,10 +117,26 @@
     </item>
     
     <item>
+      <title>Type-Guided Worst-Case Input Generation</title>
+      <link>https://stonebuddha.github.io/zh/publication/wangh19/</link>
+      <pubDate>Sun, 13 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/wangh19/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>PMAF: An Algebraic Framework for Static Analysis of Probabilistic Programs</title>
       <link>https://stonebuddha.github.io/publication/wanghr18/</link>
       <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
       <guid>https://stonebuddha.github.io/publication/wanghr18/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PMAF: An Algebraic Framework for Static Analysis of Probabilistic Programs</title>
+      <link>https://stonebuddha.github.io/zh/publication/wanghr18/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/wanghr18/</guid>
       <description></description>
     </item>
     
@@ -85,10 +149,26 @@
     </item>
     
     <item>
+      <title>TiML: A Functional Language for Practical Complexity Analysis with Invariants</title>
+      <link>https://stonebuddha.github.io/zh/publication/wangwc17/</link>
+      <pubDate>Wed, 25 Oct 2017 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/wangwc17/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Conditional Dyck-CFL Reachability Analysis for Complete and Efficient Library Summarization</title>
       <link>https://stonebuddha.github.io/publication/tangwx17/</link>
       <pubDate>Sat, 22 Apr 2017 00:00:00 +0000</pubDate>
       <guid>https://stonebuddha.github.io/publication/tangwx17/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Conditional Dyck-CFL Reachability Analysis for Complete and Efficient Library Summarization</title>
+      <link>https://stonebuddha.github.io/zh/publication/tangwx17/</link>
+      <pubDate>Sat, 22 Apr 2017 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/tangwx17/</guid>
       <description></description>
     </item>
     
