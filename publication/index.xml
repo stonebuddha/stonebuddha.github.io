@@ -5,12 +5,20 @@
     <link>https://stonebuddha.github.io/publication/</link>
       <atom:link href="https://stonebuddha.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 20 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 15 Jan 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png</url>
       <title>Publications</title>
       <link>https://stonebuddha.github.io/publication/</link>
     </image>
+    
+    <item>
+      <title>Probabilistic Resource-Aware Session Types</title>
+      <link>https://stonebuddha.github.io/publication/daswh23/</link>
+      <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/daswh23/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Central Moment Analysis for Cost Accumulators in Probabilistic Programs</title>
@@ -33,14 +41,6 @@
       <link>https://stonebuddha.github.io/publication/wanghr21c/</link>
       <pubDate>Tue, 30 Mar 2021 00:00:00 +0000</pubDate>
       <guid>https://stonebuddha.github.io/publication/wanghr21c/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Probabilistic Resource-Aware Session Types</title>
-      <link>https://stonebuddha.github.io/publication/daswh20/</link>
-      <pubDate>Wed, 18 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>https://stonebuddha.github.io/publication/daswh20/</guid>
       <description></description>
     </item>
     

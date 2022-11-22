@@ -5,12 +5,20 @@
     <link>https://stonebuddha.github.io/zh/publication-type/1/</link>
       <atom:link href="https://stonebuddha.github.io/zh/publication-type/1/index.xml" rel="self" type="application/rss+xml" />
     <description>1</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Sun, 20 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh-Hans</language><lastBuildDate>Sun, 15 Jan 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png</url>
       <title>1</title>
       <link>https://stonebuddha.github.io/zh/publication-type/1/</link>
     </image>
+    
+    <item>
+      <title>Probabilistic Resource-Aware Session Types</title>
+      <link>https://stonebuddha.github.io/zh/publication/daswh23/</link>
+      <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/daswh23/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Central Moment Analysis for Cost Accumulators in Probabilistic Programs</title>

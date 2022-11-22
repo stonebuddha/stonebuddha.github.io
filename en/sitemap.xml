@@ -4,7 +4,7 @@
   
   
   <url>
-    <loc></loc><lastmod>2022-10-30T17:49:57+08:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+    <loc></loc><lastmod>2023-01-15T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
       rel="alternate"
       hreflang="zh"
       href=""
@@ -14,7 +14,27 @@
       href=""
     /></url>
   <url>
-    <loc>https://stonebuddha.github.io/</loc><lastmod>2022-10-30T17:49:57+08:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+    <loc>https://stonebuddha.github.io/publication-type/1/</loc><lastmod>2023-01-15T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://stonebuddha.github.io/zh/publication-type/1/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://stonebuddha.github.io/publication-type/1/"
+    /></url>
+  <url>
+    <loc></loc><lastmod>2023-01-15T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href=""
+    /><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href=""
+    /></url>
+  <url>
+    <loc>https://stonebuddha.github.io/</loc><lastmod>2023-01-15T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
       rel="alternate"
       hreflang="zh"
       href="https://stonebuddha.github.io/zh/"
@@ -24,7 +44,7 @@
       href="https://stonebuddha.github.io/"
     /></url>
   <url>
-    <loc></loc><lastmod>2022-10-30T17:49:57+08:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+    <loc></loc><lastmod>2023-01-15T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
       rel="alternate"
       hreflang="zh"
       href=""
@@ -34,7 +54,51 @@
       href=""
     /></url>
   <url>
-    <loc>https://stonebuddha.github.io/zh/</loc><lastmod>2022-10-30T17:49:57+08:00</lastmod><changefreq>weekly</changefreq></url>
+    <loc></loc><lastmod>2023-01-15T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href=""
+    /><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href=""
+    /></url>
+  <url>
+    <loc>https://stonebuddha.github.io/publication/daswh23/</loc><lastmod>2023-01-15T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://stonebuddha.github.io/zh/publication/daswh23/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://stonebuddha.github.io/publication/daswh23/"
+    /></url>
+  <url>
+    <loc>https://stonebuddha.github.io/zh/publication/daswh23/</loc><lastmod>2023-01-15T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
+  <url>
+    <loc>https://stonebuddha.github.io/publication_types/</loc><lastmod>2023-01-15T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://stonebuddha.github.io/zh/publication_types/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://stonebuddha.github.io/publication_types/"
+    /></url>
+  <url>
+    <loc>https://stonebuddha.github.io/publication/</loc><lastmod>2023-01-15T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://stonebuddha.github.io/zh/publication/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://stonebuddha.github.io/publication/"
+    /></url>
+  <url>
+    <loc>https://stonebuddha.github.io/zh/</loc><lastmod>2023-01-15T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
+  <url>
+    <loc>https://stonebuddha.github.io/zh/publication/</loc><lastmod>2023-01-15T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
     <loc>https://stonebuddha.github.io/zh/post/introduction-to-probabilistic-programming/</loc><lastmod>2022-10-30T17:49:57+08:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
@@ -54,16 +118,6 @@
       href="https://stonebuddha.github.io/post/"
     /></url>
   <url>
-    <loc>https://stonebuddha.github.io/publication-type/1/</loc><lastmod>2021-06-20T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
-      rel="alternate"
-      hreflang="zh"
-      href="https://stonebuddha.github.io/zh/publication-type/1/"
-    /><xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://stonebuddha.github.io/publication-type/1/"
-    /></url>
-  <url>
     <loc>https://stonebuddha.github.io/publication/wanghr21a/</loc><lastmod>2021-06-20T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
       rel="alternate"
       hreflang="zh"
@@ -75,36 +129,6 @@
     /></url>
   <url>
     <loc>https://stonebuddha.github.io/zh/publication/wanghr21a/</loc><lastmod>2021-06-20T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
-  <url>
-    <loc></loc><lastmod>2021-06-20T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
-      rel="alternate"
-      hreflang="zh"
-      href=""
-    /><xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href=""
-    /></url>
-  <url>
-    <loc>https://stonebuddha.github.io/publication_types/</loc><lastmod>2021-06-20T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
-      rel="alternate"
-      hreflang="zh"
-      href="https://stonebuddha.github.io/zh/publication_types/"
-    /><xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://stonebuddha.github.io/publication_types/"
-    /></url>
-  <url>
-    <loc>https://stonebuddha.github.io/publication/</loc><lastmod>2021-06-20T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
-      rel="alternate"
-      hreflang="zh"
-      href="https://stonebuddha.github.io/zh/publication/"
-    /><xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://stonebuddha.github.io/publication/"
-    /></url>
   <url>
     <loc>https://stonebuddha.github.io/publication/wanghr21b/</loc><lastmod>2021-06-20T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
       rel="alternate"
@@ -127,8 +151,6 @@
       hreflang="en"
       href=""
     /></url>
-  <url>
-    <loc>https://stonebuddha.github.io/zh/publication/</loc><lastmod>2021-06-20T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
     <loc>https://stonebuddha.github.io/event/</loc><lastmod>2021-06-03T10:00:00-04:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
@@ -157,28 +179,6 @@
     <loc>https://stonebuddha.github.io/zh/publication/wanghr21c/</loc><lastmod>2021-03-30T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
     <loc>https://stonebuddha.github.io/post/termination-analysis-of-random-walks/</loc><lastmod>2021-09-14T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
-  <url>
-    <loc></loc><lastmod>2020-11-18T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
-      rel="alternate"
-      hreflang="zh"
-      href=""
-    /><xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href=""
-    /></url>
-  <url>
-    <loc>https://stonebuddha.github.io/publication/daswh20/</loc><lastmod>2020-11-18T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
-      rel="alternate"
-      hreflang="zh"
-      href="https://stonebuddha.github.io/zh/publication/daswh20/"
-    /><xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://stonebuddha.github.io/publication/daswh20/"
-    /></url>
-  <url>
-    <loc>https://stonebuddha.github.io/zh/publication/daswh20/</loc><lastmod>2020-11-18T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
     <loc>https://stonebuddha.github.io/talk/type-based-resource-guided-search/</loc><lastmod>2020-10-16T12:00:00-04:00</lastmod><changefreq>weekly</changefreq></url>
   <url>

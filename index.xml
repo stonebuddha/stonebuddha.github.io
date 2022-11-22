@@ -5,12 +5,28 @@
     <link>https://stonebuddha.github.io/</link>
       <atom:link href="https://stonebuddha.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Di Wang</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 30 Oct 2022 17:49:57 +0800</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 15 Jan 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png</url>
       <title>Di Wang</title>
       <link>https://stonebuddha.github.io/</link>
     </image>
+    
+    <item>
+      <title>Probabilistic Resource-Aware Session Types</title>
+      <link>https://stonebuddha.github.io/publication/daswh23/</link>
+      <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/daswh23/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Probabilistic Resource-Aware Session Types</title>
+      <link>https://stonebuddha.github.io/zh/publication/daswh23/</link>
+      <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/daswh23/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>随便聊聊：贝叶斯概率编程</title>
@@ -554,22 +570,6 @@ Therefore, $\mathbb{E}[T^2] = \mathbb{E}[T(T-1)] + \mathbb{E}[T] = 4m^2+6m$.&lt;
 framework for upper- and lower-bounding higher moments of cost accumulators (e.g., termination time)
 in probabilistic programs (e.g., random walks).&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Probabilistic Resource-Aware Session Types</title>
-      <link>https://stonebuddha.github.io/publication/daswh20/</link>
-      <pubDate>Wed, 18 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>https://stonebuddha.github.io/publication/daswh20/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Probabilistic Resource-Aware Session Types</title>
-      <link>https://stonebuddha.github.io/zh/publication/daswh20/</link>
-      <pubDate>Wed, 18 Nov 2020 00:00:00 +0000</pubDate>
-      <guid>https://stonebuddha.github.io/zh/publication/daswh20/</guid>
-      <description></description>
     </item>
     
     <item>
