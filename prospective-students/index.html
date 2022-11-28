@@ -918,7 +918,7 @@ quantum programs?</p>
 <p><strong>Problem</strong>: In many programs, the manipulation of probability is very complicated
 and even manual analysis of their correctness is difficult. Consider the problem below:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="n">prob</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="nf">prob</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
