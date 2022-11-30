@@ -100,15 +100,9 @@
   <url>
     <loc>https://stonebuddha.github.io/zh/publication/</loc><lastmod>2023-01-15T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
-    <loc>https://stonebuddha.github.io/zh/post/introduction-to-probabilistic-programming/</loc><lastmod>2022-10-30T17:49:57+08:00</lastmod><changefreq>weekly</changefreq></url>
+    <loc>https://stonebuddha.github.io/post/bayesian-synthesis-in-ocaml/</loc><lastmod>2022-11-30T09:38:59+08:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
-    <loc>https://stonebuddha.github.io/zh/post/introduction-to-algebraic-program-analysis/</loc><lastmod>2022-10-02T22:51:11+08:00</lastmod><changefreq>weekly</changefreq></url>
-  <url>
-    <loc>https://stonebuddha.github.io/zh/post/introduction-to-static-resource-analysis/</loc><lastmod>2022-09-10T15:32:19+08:00</lastmod><changefreq>weekly</changefreq></url>
-  <url>
-    <loc>https://stonebuddha.github.io/post/easy-syntax-highlighting-for-latex/</loc><lastmod>2022-07-12T04:56:22+08:00</lastmod><changefreq>weekly</changefreq></url>
-  <url>
-    <loc>https://stonebuddha.github.io/post/</loc><lastmod>2022-07-12T04:56:22+08:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+    <loc>https://stonebuddha.github.io/post/</loc><lastmod>2022-11-30T09:38:59+08:00</lastmod><changefreq>weekly</changefreq><xhtml:link
       rel="alternate"
       hreflang="zh"
       href="https://stonebuddha.github.io/zh/post/"
@@ -117,6 +111,14 @@
       hreflang="en"
       href="https://stonebuddha.github.io/post/"
     /></url>
+  <url>
+    <loc>https://stonebuddha.github.io/zh/post/introduction-to-probabilistic-programming/</loc><lastmod>2022-10-30T17:49:57+08:00</lastmod><changefreq>weekly</changefreq></url>
+  <url>
+    <loc>https://stonebuddha.github.io/zh/post/introduction-to-algebraic-program-analysis/</loc><lastmod>2022-10-02T22:51:11+08:00</lastmod><changefreq>weekly</changefreq></url>
+  <url>
+    <loc>https://stonebuddha.github.io/zh/post/introduction-to-static-resource-analysis/</loc><lastmod>2022-09-10T15:32:19+08:00</lastmod><changefreq>weekly</changefreq></url>
+  <url>
+    <loc>https://stonebuddha.github.io/post/easy-syntax-highlighting-for-latex/</loc><lastmod>2022-07-12T04:56:22+08:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
     <loc>https://stonebuddha.github.io/publication/wanghr21a/</loc><lastmod>2021-06-20T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
       rel="alternate"
