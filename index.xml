@@ -34,7 +34,8 @@
       <pubDate>Wed, 30 Nov 2022 09:38:59 +0800</pubDate>
       <guid>https://stonebuddha.github.io/post/bayesian-synthesis-in-ocaml/</guid>
       <description>&lt;p&gt;This post aims at reproducing some results from Saad et al.&amp;rsquo;s paper on Bayesian synthesis&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; in &lt;a href=&#34;https://dev.realworldocaml.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OCaml&lt;/a&gt;, an industrial strength functional programming language.
-A complete notebook for the code in this post can be found &lt;a href=&#34;notebook.html&#34;&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+A complete notebook for the code in this post can be found &lt;a href=&#34;notebook.html&#34;&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/a&gt;.
+The data used for a Bayesian-style time-series analysis can be found &lt;a href=&#34;airline.csv&#34;&gt;&lt;strong&gt;here&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;environment-setup&#34;&gt;Environment Setup&lt;/h2&gt;
 &lt;p&gt;The code in this post is tested under OCaml 4.14.0 on macOS 12.6.1 with an M2 chip.
 The environment is supposed to contain a Python distribution with &lt;a href=&#34;https://jupyter.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;jupyter&lt;/a&gt; and &lt;a href=&#34;https://matplotlib.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;matplotlib&lt;/a&gt; installed.
@@ -57,11 +58,88 @@ For M1/M2 users, you may need to refer to this &lt;a href=&#34;https://github.co
 For example, I need to add the following environment variable before invoking &lt;code&gt;ocaml-jupyter-kernel&lt;/code&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;DYLD_LIBRARY_PATH=/opt/homebrew/anaconda3/lib:$DYLD_LIBRARY_PATH
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Now you should be able to create and run an OCaml notebook in jupyter.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;The rest of this post is under construction. The &lt;a href=&#34;notebook.html&#34;&gt;&lt;strong&gt;notebook&lt;/strong&gt;&lt;/a&gt; and the &lt;a href=&#34;airline.csv&#34;&gt;&lt;strong&gt;data&lt;/strong&gt;&lt;/a&gt; should be a good starting point if you want to take a look at how to build data-science applications in OCaml.&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ocaml-torch-basics&#34;&gt;OCaml Torch Basics&lt;/h2&gt;
+&lt;p&gt;Here is the &lt;a href=&#34;https://github.com/LaurentMazare/ocaml-torch/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt; to the official introduction of the &lt;code&gt;ocaml-torch&lt;/code&gt; package.
+Most APIs are directly generated from &lt;code&gt;libtorch&lt;/code&gt;, and thus similar to the APIs of PyTorch, but in a more functional way.
+Tensors are of type &lt;code&gt;Tensor.t&lt;/code&gt; and scalars are of type &lt;code&gt;Scalar.t&lt;/code&gt;.
+Because OCaml is statically and strongly typed, we cannot directly multiply a tensor with a floating-point number; instead, we need to first embed a floating-point number as a scalar via &lt;code&gt;Scalar.f : float -&amp;gt; Scalar.t&lt;/code&gt; and then perform the tensor-scalar multiplication via &lt;code&gt;Tensor.mul_scalar : Tensor.t -&amp;gt; Scalar.t -&amp;gt; Tensor.t&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;One benefit of this programming style is that it removes many runtime checks because we know the type information at compile time.
+However, this style is not very succinct compared to Python.
+Even worse, lack of ad-hoc polymorphism (e.g., operator overloading) makes programming in OCaml more inconvenient than Haskell.
+One workaround is that OCaml supports &lt;em&gt;scoped function calls&lt;/em&gt; (operators are also functions).
+For example, if &lt;code&gt;t1 : Tensor.t&lt;/code&gt; and &lt;code&gt;t2 : Tensor.t&lt;/code&gt; are two tensors of the same shape,
+we can write &lt;code&gt;Tensor.(t1 + t2)&lt;/code&gt; for pointwise addition of the two tensors.&lt;/p&gt;
 &lt;h2 id=&#34;gaussian-process-regression&#34;&gt;Gaussian Process Regression&lt;/h2&gt;
-&lt;h2 id=&#34;kernel-synthesis-via-mcmc&#34;&gt;Kernel Synthesis via MCMC&lt;/h2&gt;
+&lt;p&gt;Readers can refer to the textbook &lt;a href=&#34;https://direct.mit.edu/books/book/2320/Gaussian-Processes-for-Machine-Learning&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gaussian Processes for Machine Learning&lt;/a&gt; for more details on Gaussian Processes.
+In this post, we focus on a Bayesian-style time-series analysis based on Gaussian Process Regression.
+Let $\mathbb{T}$ be an index set and $X \triangleq \{ X(t) \mid t \in \mathbb{T} \}$ be a collection of real-valued random variables.
+We say $X$ is a &lt;em&gt;Gaussian Process&lt;/em&gt; if for any $\mathbf{t} = [t_1, t_2, \cdots, t_n]$ of distinct indexes, the random vector $X(\mathbf{t}) \triangleq [X(t_1), X(t_2), \cdots, X(t_n)]$ has a joint Gaussian distribution.&lt;/p&gt;
+&lt;p&gt;We can represent a Gaussian Process by its &lt;em&gt;mean function&lt;/em&gt; $m : \mathbb{T} \to \mathbb{R}$ and &lt;em&gt;covariance function&lt;/em&gt; $k : \mathbb{T} \times \mathbb{T} \to \mathbb{R}$ that satisfy for all $t,t&amp;rsquo; \in \mathbb{T}$, it holds that $m(t) = \mathbb{E}[X(t)]$ and $k(t,t&amp;rsquo;) = \mathbb{E}[ (X(t) - m(t)) (X(t&amp;rsquo;) - m(t&amp;rsquo;))]$.
+Let $m(\mathbf{t})$ denote the mean vector $[m(t_1), m(t_2), \cdots, m(t_n)]$.
+Let $k(\mathbf{t}, \mathbf{t})$ denote the covariance matrix whose $i j$ entry is $k(t_i, t_j)$.
+We denote by $X \sim \mathrm{GP}(m,k)$ a Gaussian Process $X$ with mean $m$ and covariance $k$.
+For one-dimensional continuous time series (which we consider in this post), we can assume that $\mathbb{T} = \mathbb{R}$.&lt;/p&gt;
+&lt;p&gt;The joint probability density of $X(\mathbf{t})$ at a real vector $x(\mathbf{t}) \triangleq [x(t_1), x(t_2), \cdots, x(t_n)]$ is
+$$
+\begin{align}
+\log p(x(\mathbf{t})) &amp;amp; = -\frac{1}{2} \biggl[ (x(\mathbf{t}) - m(\mathbf{t}))^\mathsf{T} k(\mathbf{t}, \mathbf{t})^{-1} ( x(\mathbf{t}) - m(\mathbf{t}) ) \\
+&amp;amp; \qquad\qquad {} - \log (\det k(\mathbf{t}, \mathbf{t})) \\
+&amp;amp; \qquad\qquad {} - n \log (2\pi) \biggr] .
+\end{align}
+$$
+Multivariate Gaussian distributions are closed under conditioning, thus the posterior distribution of $X(\mathbf{t}&amp;rsquo;)$ at new time indexes $\mathbf{t}&amp;rsquo;$ is also a multivariate Gaussian:
+$$
+\begin{align}
+X(\mathbf{t}&amp;rsquo;) \mid X(\mathbf{t}) = x(\mathbf{t}) &amp;amp; \sim \mathrm{MultivariateGaussian}(m_{post}(\mathbf{t}&amp;rsquo;), k_{post}(\mathbf{t}&amp;rsquo;, \mathbf{t}&amp;rsquo;)), \\
+m_{post}(\mathbf{t&amp;rsquo;}) &amp;amp; \triangleq k(\mathbf{t}&amp;rsquo;, \mathbf{t}) k(\mathbf{t}, \mathbf{t})^{-1} x(\mathbf{t}), \\
+k_{post}(\mathbf{t&amp;rsquo;}, \mathbf{t}&amp;rsquo;) &amp;amp; \triangleq k(\mathbf{t}&amp;rsquo;, \mathbf{t}&amp;rsquo;) - k(\mathbf{t}&amp;rsquo;, \mathbf{t}) k(\mathbf{t}, \mathbf{t})^{-1} k(\mathbf{t}, \mathbf{t}&amp;rsquo;).
+\end{align}
+$$&lt;/p&gt;
+&lt;p&gt;One can easily add i.i.d. noises to a Gaussian Process.
+Consider $Z \sim \mathrm{GP}(m, k)$ and $X(t) \triangleq Z(t) + \gamma(t)$ where $\gamma(t) \sim \mathrm{Gaussian}(0, \varepsilon)$ for any $t \in \mathbb{T}$.
+We then say $X$ is a Gaussian Process &lt;em&gt;with output noise $\varepsilon$&lt;/em&gt;, written $X \sim \mathrm{NoisyGP}(m,k,\varepsilon)$.
+One can show that $X$ itself is indeed a Gaussian Process $X \sim \mathrm{GP}(m,k&amp;rsquo;)$ where $k&amp;rsquo;$ is defined as $k&amp;rsquo;(t,t&amp;rsquo;) \triangleq k(t,t&amp;rsquo;) + [t=t&amp;rsquo;] \cdot \varepsilon$ for all $t,t&amp;rsquo; \in \mathbb{T}$.&lt;/p&gt;
+&lt;p&gt;See the &lt;code&gt;compute_log_likelihood&lt;/code&gt; function and the &lt;code&gt;get_conditional_mu_cov&lt;/code&gt; function in the notebook for computing likelihoods and posterior parameters.&lt;/p&gt;
+&lt;h2 id=&#34;gp-synthesis-via-mcmc&#34;&gt;GP Synthesis via MCMC&lt;/h2&gt;
+&lt;p&gt;There have been many methods for defining the covariance function of a Gaussian Process.
+The grammar below shows one method using a &lt;em&gt;domain-specific language&lt;/em&gt; (DSL), thus enabling an expressive set of (possibly very complex) covariance functions:
+$$
+\begin{align}
+E &amp;amp; ::= \texttt{NoisyGP}(0, K, \varepsilon) \\
+K &amp;amp; ::= \texttt{Constant}(\varphi) \mid \texttt{Linear}(\theta) \mid \texttt{Squared_exponential}(\varphi) \\
+&amp;amp; \mid \texttt{Periodic}(\varphi_1, \varphi_2) \mid K_1 + K_2 \mid K_1 * K_2 \\
+&amp;amp; \varepsilon \in \mathbb{R}_{&amp;gt; 0} \qquad \theta \in \mathbb{R} \qquad \varphi \in \mathbb{R}_{&amp;gt; 0}
+\end{align}
+$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\texttt{Constant}(\varphi)$: the parameter $\varphi$ means the variance of a constant process around $0$.&lt;/li&gt;
+&lt;li&gt;$\texttt{Linear}(\theta)$: the parameter $\theta$ means the time intercept of a linear process, i.e., $X(\theta) = 0$ with probability one.&lt;/li&gt;
+&lt;li&gt;$\texttt{Squared_exponential}(\varphi)$: the parameter $\varphi$ means the length scale of a stationary smooth process.&lt;/li&gt;
+&lt;li&gt;$\texttt{Periodic}(\varphi_1, \varphi_2)$: the parameter $\varphi_1$ means the length scale of a periodic process, and the parameter $\varphi_2$ represents the frequency of the process.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In a Bayesian-style time-series analysis, we model unknown quantities as random variables and known data as generated observations.
+For any $n &amp;gt; 0$ and distinct time indexes $\mathbf{t} = [t_1, t_2, \cdots, t_n]$, the generative model is&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Sample a noise level $\varepsilon \sim P(\varepsilon)$ (e.g., a Gamma prior).&lt;/li&gt;
+&lt;li&gt;Sample a covariance expression $K \sim P(K)$ (e.g., the &lt;code&gt;covariance_prior&lt;/code&gt; function in the notebook, which implements a probabilistic context-free grammar).&lt;/li&gt;
+&lt;li&gt;Sample time-series data $X(\mathbf{t}) \sim \mathrm{NoisyGP}(0, K, \varepsilon)$. (See the &lt;code&gt;eval_cov_mat&lt;/code&gt; function in the notebook for how to translate an expression in the DSL to a covariance function.)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Running Bayesian inference on the generative model above with the real vector $x(\mathbf{t}) = [x(t_1), x(t_2), \cdots, x(t_n)]$ essentially performs a &lt;em&gt;Bayesian synthesis&lt;/em&gt; of the covariance expression $K$.
+Markov-chain Monte Carlo (MCMC) is a popular sampling-based method for Bayesian inference; it allows us to sample from the posterior distribution $P(\varepsilon, K \mid X(\mathbf{t}) = x(\mathbf{t}))$.
+MCMC works by constructing a Markov chain over latent random variables ($\varepsilon$ and $K$ in this case),
+and the chain is usually generated from a &lt;em&gt;proposal&lt;/em&gt; kernel that generates new candidates for latent variables from their current values.
+The proposed new values are accepted with respect to the &lt;a href=&#34;https://en.wikipedia.org/wiki/Metropolis%e2%80%93Hastings_algorithm&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;Metropolis-Hastings&lt;/em&gt; criterion&lt;/a&gt;.
+The &lt;code&gt;mh_resample_noise&lt;/code&gt; function in the notebook simply generates a fresh noise level from a Gamma distribution.
+The &lt;code&gt;mh_resample_subtree_unbiased&lt;/code&gt; function implements a more involved mechanism that unbiasedly selects a node in the AST of the covariance expression $K$
+and replaces the subtree rooted at that node with a freshly generated sub-expression.
+The &lt;code&gt;run_mcmc&lt;/code&gt; function then runs an epoch of the MCMC method by resampling repeatedly for a few times.
+The last cell of the notebook demonstrates the effectiveness of the Bayesian-synthesis approach on a time-series analysis of revenue passenger miles for US air carrier domestic flights.&lt;/p&gt;
 &lt;h2 id=&#34;next-steps&#34;&gt;Next Steps&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;How to write tensor-manipulation code more easily in a statically and strongly typed language like OCaml?&lt;/li&gt;
+&lt;li&gt;How to develop a lightweight mechanism that checks tensor shape compatibility at compile time?&lt;/li&gt;
+&lt;li&gt;The plotting functionality provided in this post largely depends on the Python ecosystem. How to design a plotting library with APIs that are more suitable for typed functional programming?&lt;/li&gt;
+&lt;/ul&gt;
 &lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
