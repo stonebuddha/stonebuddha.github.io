@@ -49,7 +49,7 @@ Tensors are of type &lt;code&gt;Tensor.t&lt;/code&gt; and scalars are of type &l
 Because OCaml is statically and strongly typed, we cannot directly multiply a tensor with a floating-point number; instead, we need to first embed a floating-point number as a scalar via &lt;code&gt;Scalar.f : float -&amp;gt; Scalar.t&lt;/code&gt; and then perform the tensor-scalar multiplication via &lt;code&gt;Tensor.mul_scalar : Tensor.t -&amp;gt; Scalar.t -&amp;gt; Tensor.t&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;One benefit of this programming style is that it removes many runtime checks because we know the type information at compile time.
 However, this style is not very succinct compared to Python.
-Even worse, lack of ad-hoc polymorphism (e.g., operator overloading) makes programming in OCaml more inconvenient than Haskell.
+Even worse, lack of ad-hoc polymorphism (e.g., operator overloading) makes programming in OCaml more inconvenient than Haskell in this setting.
 One workaround is that OCaml supports &lt;em&gt;scoped function calls&lt;/em&gt; (operators are also functions).
 For example, if &lt;code&gt;t1 : Tensor.t&lt;/code&gt; and &lt;code&gt;t2 : Tensor.t&lt;/code&gt; are two tensors of the same shape,
 we can write &lt;code&gt;Tensor.(t1 + t2)&lt;/code&gt; for pointwise addition of the two tensors.&lt;/p&gt;
