@@ -358,7 +358,7 @@ $$
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://stonebuddha.github.io/zh/news_archive/</guid>
       <description>&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;[Nov 2020]&lt;/strong&gt; 预印本 &lt;a href=&#34;../publication/daswh20&#34;&gt;Probabilistic Resource-Aware Session Types&lt;/a&gt; 已上传至 arXiv。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Nov 2020]&lt;/strong&gt; 预印本 &lt;a href=&#34;https://arxiv.org/pdf/2011.09037.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Probabilistic Resource-Aware Session Types&lt;/a&gt; 已上传至 arXiv。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;[Jun 2020]&lt;/strong&gt; 两篇论文 &lt;a href=&#34;../publication/knothwr20&#34;&gt;Liquid Resource Types&lt;/a&gt; 和 &lt;a href=&#34;../publication/wangkh20&#34;&gt;Raising Expectations: Automating Expected Cost Analysis with Types&lt;/a&gt; 被 ICFP 2020 接收。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;[May 2019]&lt;/strong&gt; 论文 &lt;a href=&#34;../publication/wanghr19&#34;&gt;A Denotational Semantics for Low-Level Probabilistic Programs with Nondeterminism&lt;/a&gt; 被 MFPS 接收。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;[Feb 2019]&lt;/strong&gt; &lt;a href=&#34;../publication/knothwp19&#34;&gt;Resource-Guided Program Synthesis&lt;/a&gt; 被 PLDI 2019 接收。&lt;/li&gt;
