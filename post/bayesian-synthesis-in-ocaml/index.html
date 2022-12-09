@@ -822,6 +822,9 @@ For M1/M2 users, you may need to refer to this <a href="https://github.com/owlba
 </span></span></code></pre></div><p>For Anaconda-based Python distributions, or for Python distributions that are not linked to standard paths for looking for runtime libraries, you might need to update the <code>kernels/ocaml-jupyter/kernel.json</code> file located in your jupyter installation.
 For example, I need to add the following environment variable before invoking <code>ocaml-jupyter-kernel</code>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">DYLD_LIBRARY_PATH=/opt/homebrew/anaconda3/lib:$DYLD_LIBRARY_PATH
+</span></span></code></pre></div><p>Finally, we need to add the following code to the <code>.ocamlinit</code> file (which should be located in your home folder):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ocaml" data-lang="ocaml"><span class="line"><span class="cl"><span class="o">#</span><span class="n">use</span> <span class="s2">&#34;topfind&#34;</span><span class="o">;;</span>
+</span></span><span class="line"><span class="cl"><span class="nn">Topfind</span><span class="p">.</span><span class="n">log</span> <span class="o">:=</span> <span class="n">ignore</span><span class="o">;;</span>
 </span></span></code></pre></div><p>Now you should be able to create and run an OCaml notebook in jupyter.</p>
 <h2 id="ocaml-torch-basics">OCaml Torch Basics</h2>
 <p>Here is the <a href="https://github.com/LaurentMazare/ocaml-torch/" target="_blank" rel="noopener">link</a> to the official introduction of the <code>ocaml-torch</code> package.
