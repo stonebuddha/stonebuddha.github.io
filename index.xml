@@ -648,9 +648,10 @@ Therefore we use recursive types to model this mechanism.&lt;/p&gt;
 &lt;li&gt;&lt;strong&gt;[Jun 2020]&lt;/strong&gt; Our articles &lt;a href=&#34;../publication/knothwr20&#34;&gt;Liquid Resource Types&lt;/a&gt; and &lt;a href=&#34;../publication/wangkh20&#34;&gt;Raising Expectations: Automating Expected Cost Analysis with Types&lt;/a&gt; have been accepted to ICFP 2020.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;[May 2019]&lt;/strong&gt; Check out our recent MFPS paper on &lt;a href=&#34;../publication/wanghr19&#34;&gt;A Denotational Semantics for Low-Level Probabilistic Programs with Nondeterminism&lt;/a&gt; with Jan and Tom.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;[Feb 2019]&lt;/strong&gt; Great news: Our paper on &lt;a href=&#34;../publication/knothwp19&#34;&gt;Resource-Guided Program Synthesis&lt;/a&gt; has been conditionally accepted to PLDI 2019.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;[Nov 2018]&lt;/strong&gt; I am excited that our paper &lt;a href=&#34;../publication/wangh19&#34;&gt;Type-Guided Worst-Case Input Generation&lt;/a&gt; with Jan Hoffmann has benn accepted to POPL 2019.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Nov 2018]&lt;/strong&gt; I am excited that our paper &lt;a href=&#34;../publication/wangh19&#34;&gt;Type-Guided Worst-Case Input Generation&lt;/a&gt; with Jan Hoffmann has been accepted to POPL 2019.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;[Mar 2018]&lt;/strong&gt; Check out my talent show &lt;a href=&#34;https://www.youtube.com/watch?v=zNxltZhPIG0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chengdu&lt;/a&gt; on SCS Day 2018!&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;[Feb 2018]&lt;/strong&gt; I am excited that our paper &lt;a href=&#34;../publication/wanghr18&#34;&gt;PMAF: An Algebraic Framework for Static Analysis of Probabilistic Programs&lt;/a&gt; (with Jan Hoffmann and Tom Reps) has been conditionally accepted to PLDI 2018.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Jun 2017]&lt;/strong&gt; I graduated from Peking University! My diploma thesis is about &lt;a href=&#34;../files/wang17thesis.pdf&#34;&gt;Accelerating Program Analyses by Conditional Summarization with Datalog&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -994,12 +995,12 @@ we want to develop a framework to ease such domain-specific procedural design.&l
 &lt;p&gt;&lt;strong&gt;Proposal&lt;/strong&gt;: This has something to do with the eDSL framework.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Follow-up&lt;/strong&gt;: It might be interesting to see how such &lt;strong&gt;static&lt;/strong&gt; procedural design
 evolves to &lt;strong&gt;dynamic&lt;/strong&gt; procedural design (e.g., synthesis of an environment).
-Another direction is interative refinement (e.g., incorporating feedbacks from users)
+Another direction is interactive refinement (e.g., incorporating feedbacks from users)
 of the generated designs.&lt;/p&gt;
   &lt;/span&gt;
 &lt;/details&gt;
 &lt;details class=&#34;spoiler&#34;&gt;
-  &lt;summary&gt;Languge Design for Sound Involutive MCMC&lt;/summary&gt;
+  &lt;summary&gt;Language Design for Sound Involutive MCMC&lt;/summary&gt;
   &lt;span style=&#34;display:inline-block;margin-left:1.5em;&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Problem&lt;/strong&gt;: A recent paper by Cusumano-Towner et al.&lt;sup id=&#34;fnref:13&#34;&gt;&lt;a href=&#34;#fn:13&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;13&lt;/a&gt;&lt;/sup&gt; studies
 how to ease the burden of implementing involutive MCMC by combining probabilistic
