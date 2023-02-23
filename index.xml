@@ -839,7 +839,7 @@ technology transfer between probabilistic analysis and resource analysis; for ex
 Maximum-a-Posteriori (MAP) estimation has a very
 similar problem statement to Worst-Case Analysis (WCA), so it would be interesting to
 use the observation to build new statistical resource analysis techniques.&lt;/p&gt;
-&lt;h3 id=&#34;proof-oriented-programming-languages&#34;&gt;Proof-Oriented Programming Languages&lt;/h3&gt;
+&lt;!-- ### Proof-Oriented Programming Languages --&gt;
 &lt;h1 id=&#34;other-projects&#34;&gt;Other Projects&lt;/h1&gt;
 &lt;p&gt;I am always open to new directions, including interdisciplinary ones.
 Below is a sample of initial ideas that I am interested in exploring in the
