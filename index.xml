@@ -661,7 +661,8 @@ Therefore we use recursive types to model this mechanism.&lt;/p&gt;
       <link>https://stonebuddha.github.io/prospective-students/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://stonebuddha.github.io/prospective-students/</guid>
-      <description>&lt;p&gt;I am broadly interested in topics related to programming languages, especially
+      <description>&lt;p&gt;&lt;strong&gt;(Last updated on Feb 23, 2023)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I am broadly interested in topics related to programming languages, especially
 formal verification, program analysis, and probabilistic programming.
 I am currently working on resource-safe system programming, programmable
 Bayesian inference, quantitative program analysis, and proof-oriented
