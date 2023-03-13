@@ -258,7 +258,15 @@
       href="https://stonebuddha.github.io/news_archive/"
     /></url>
   <url>
-    <loc>https://stonebuddha.github.io/prospective-students/</loc><changefreq>weekly</changefreq></url>
+    <loc>https://stonebuddha.github.io/prospective-students/</loc><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://stonebuddha.github.io/zh/prospective-students/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://stonebuddha.github.io/prospective-students/"
+    /></url>
   <url>
     <loc>https://stonebuddha.github.io/tags/</loc><changefreq>weekly</changefreq><xhtml:link
       rel="alternate"

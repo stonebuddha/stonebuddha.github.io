@@ -232,6 +232,16 @@
       href="https://stonebuddha.github.io/zh/categories/"
     /></url>
   <url>
+    <loc>https://stonebuddha.github.io/zh/prospective-students/</loc><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://stonebuddha.github.io/prospective-students/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://stonebuddha.github.io/zh/prospective-students/"
+    /></url>
+  <url>
     <loc>https://stonebuddha.github.io/zh/tags/</loc><changefreq>weekly</changefreq><xhtml:link
       rel="alternate"
       hreflang="en"

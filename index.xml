@@ -754,7 +754,7 @@ mostly via runtime mechanisms (such as garbage collection), and those mechanisms
 result in unsatisfactory performance, especially in system software.
 Rust, by proposing a memory-safety type system, reduces runtime resource consumption
 and thus achieves high performance.
-&lt;strong&gt;The performance of system software does not only involve memory management, thought.&lt;/strong&gt;
+&lt;strong&gt;The performance of system software does not only involve memory management, though.&lt;/strong&gt;
 I am interested in proposing a paradigm of &lt;strong&gt;resource-safe programming&lt;/strong&gt;, where
 resource consumption of programs are statically verified to meet developers&amp;rsquo; expectation,
 and the programs do not exhibit multiple kinds of resource-related vulnerabilities,
@@ -1102,7 +1102,7 @@ investigate &lt;a href=&#34;https://www.cs.cmu.edu/~NatProg/index.html&#34; targ
 Probabilistic Programming with Programmable Inference. &lt;em&gt;Prog. Lang. Design and Impl.&lt;/em&gt; (2018). &lt;a href=&#34;https://doi.org/10.1145/3192366.3192409&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:3&#34;&gt;
-&lt;p&gt;Zachary Kincaid, Thomas Reps, and John Cyphert. Algebraic Program Analysis. &lt;a href=&#34;https://doi.org/10.1007/978-3-030-81685-8_3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://doi.org/10.1007/978-3-030-81685-8_3&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Zachary Kincaid, Thomas Reps, and John Cyphert. Algebraic Program Analysis. &lt;a href=&#34;https://doi.org/10.1007/978-3-030-81685-8_3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:4&#34;&gt;
 &lt;p&gt;Javier Esparza, Stefan Kiefer, and Michael Luttenberger. Newtonian Program Analysis. &lt;em&gt;J. ACM&lt;/em&gt; (2010). &lt;a href=&#34;https://doi.org/10.1145/1857914.1857917&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref1:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
