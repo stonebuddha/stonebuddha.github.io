@@ -5,12 +5,20 @@
     <link>https://stonebuddha.github.io/publication-type/3/</link>
       <atom:link href="https://stonebuddha.github.io/publication-type/3/index.xml" rel="self" type="application/rss+xml" />
     <description>3</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 30 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 29 Jul 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png</url>
       <title>3</title>
       <link>https://stonebuddha.github.io/publication-type/3/</link>
     </image>
+    
+    <item>
+      <title>Newtonian Program Analysis of Probabilistic Programs</title>
+      <link>https://stonebuddha.github.io/publication/wangr23/</link>
+      <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/wangr23/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Expected-Cost Analysis for Probabilistic Programs and Semantics-Level Adaption of Optional Stopping Theorems</title>

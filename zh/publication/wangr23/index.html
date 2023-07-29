@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en-us" >
+<!DOCTYPE html><html lang="zh" >
 
 
 <head>
@@ -57,17 +57,21 @@
   
   
 
-  <meta name="author" content="Di Wang" />
+  <meta name="author" content="王迪" />
 
   
   
   
     
   
-  <meta name="description" content="" />
+  <meta name="description" content="Due to their *quantitative* nature, probabilistic programs pose non-trivial challenges for designing compositional and efficient program analyses. Many analyses for probabilistic programs rely on *iterative* approximation. This article presents an interprocedural dataflow-analysis framework, called *NPA-PMA*, for designing and implementing (partially) *non-iterative* program analyses of probabilistic programs with unstructured control-flow, nondeterminism, and general recursion. NPA-PMA is based on Newtonian Program Analysis (NPA), a generalization of Newton&#39;s method to solve equation systems over semirings. The key challenge for developing NPA-PMA is to handle multiple kinds of *confluences* in both the algebraic structures that specify analyses and the equation systems that encode control flow: semirings support a single confluence operation, whereas NPA-PMA involves three confluence operations (conditional, probabilistic, and nondeterministic).
+
+ Our work introduces *$\omega$-continuous pre-Markov algebras* ( $\omega$PMAs) to factor out common parts of different analyses; adopts *regular infinite-tree expressions* to encode program-execution paths in control-flow hyper-graphs; and presents a *linearization* method that makes Newton&#39;s method applicable to the setting of regular-infinite-tree equations over $\omega$PMAs. NPA-PMA allows analyses to supply a non-iterative strategy to solve linearized equations. Our experimental evaluation demonstrates that (i) NPA-PMA holds considerable promise for outperforming Kleene iteration, and (ii) provides great generality for designing program analyses." />
 
   
-  <link rel="alternate" hreflang="en-us" href="https://stonebuddha.github.io/talk/type-based-resource-guided-search/" />
+    <link rel="alternate" hreflang="en" href="https://stonebuddha.github.io/publication/wangr23/" />
+  
+  <link rel="alternate" hreflang="zh" href="https://stonebuddha.github.io/zh/publication/wangr23/" />
 
   
   
@@ -76,6 +80,9 @@
   
 
   
+  
+    
+    <script src="/js/mathjax-config.js"></script>
   
 
   
@@ -226,9 +233,9 @@
 
       
       
-        
-      
 
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
       
     
       
@@ -278,13 +285,13 @@
   
 
   
-    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="manifest" href="/zh/manifest.webmanifest" />
   
 
   <link rel="icon" type="image/png" href="/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="https://stonebuddha.github.io/talk/type-based-resource-guided-search/" />
+  <link rel="canonical" href="https://stonebuddha.github.io/zh/publication/wangr23/" />
 
   
   
@@ -306,27 +313,32 @@
   
   <meta property="twitter:card" content="summary" />
   
-  <meta property="og:site_name" content="Di Wang" />
-  <meta property="og:url" content="https://stonebuddha.github.io/talk/type-based-resource-guided-search/" />
-  <meta property="og:title" content="Type-Based Resource-Guided Search | Di Wang" />
-  <meta property="og:description" content="" /><meta property="og:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" />
-    <meta property="twitter:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+  <meta property="og:site_name" content="王迪" />
+  <meta property="og:url" content="https://stonebuddha.github.io/zh/publication/wangr23/" />
+  <meta property="og:title" content="Newtonian Program Analysis of Probabilistic Programs | 王迪" />
+  <meta property="og:description" content="Due to their *quantitative* nature, probabilistic programs pose non-trivial challenges for designing compositional and efficient program analyses. Many analyses for probabilistic programs rely on *iterative* approximation. This article presents an interprocedural dataflow-analysis framework, called *NPA-PMA*, for designing and implementing (partially) *non-iterative* program analyses of probabilistic programs with unstructured control-flow, nondeterminism, and general recursion. NPA-PMA is based on Newtonian Program Analysis (NPA), a generalization of Newton&#39;s method to solve equation systems over semirings. The key challenge for developing NPA-PMA is to handle multiple kinds of *confluences* in both the algebraic structures that specify analyses and the equation systems that encode control flow: semirings support a single confluence operation, whereas NPA-PMA involves three confluence operations (conditional, probabilistic, and nondeterministic).
+
+ Our work introduces *$\omega$-continuous pre-Markov algebras* ( $\omega$PMAs) to factor out common parts of different analyses; adopts *regular infinite-tree expressions* to encode program-execution paths in control-flow hyper-graphs; and presents a *linearization* method that makes Newton&#39;s method applicable to the setting of regular-infinite-tree equations over $\omega$PMAs. NPA-PMA allows analyses to supply a non-iterative strategy to solve linearized equations. Our experimental evaluation demonstrates that (i) NPA-PMA holds considerable promise for outperforming Kleene iteration, and (ii) provides great generality for designing program analyses." /><meta property="og:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" />
+    <meta property="twitter:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="zh" />
   
     
       <meta
         property="article:published_time"
-        content="2021-09-15T13:03:49&#43;08:00"
+        content="2023-07-29T11:57:39&#43;08:00"
       />
     
-    <meta property="article:modified_time" content="2020-10-16T12:00:00-04:00">
+    <meta property="article:modified_time" content="2023-07-29T00:00:00&#43;00:00">
   
 
   
 
 
-
-  
     
+
+
+
+
+
 
 
 
@@ -334,39 +346,30 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Event",
+  "@type": "Article",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://stonebuddha.github.io/talk/type-based-resource-guided-search/"
+    "@id": "https://stonebuddha.github.io/zh/publication/wangr23/"
   },
-  "name": "Type-Based Resource-Guided Search",
+  "headline": "Newtonian Program Analysis of Probabilistic Programs",
   
-  "location": {
-    "@type": "Place",
-    "name": "Virtual",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "",
-      "addressLocality": "",
-      "postalCode": "",
-      "addressRegion": "",
-      "addressCountry": ""
-    }
-    
-  },
+  "datePublished": "2023-07-29T11:57:39+08:00",
+  "dateModified": "2023-07-29T00:00:00Z",
   
-  
-  "startDate": "2020-10-16T12:00:00-04:00",
-  
-  "endDate": "2020-10-16T13:00:00-04:00",
-  
-  
-  "performer": {
+  "author": {
     "@type": "Person",
-    "name": "Di Wang"
+    "name": "王迪"
   },
   
-  "description": ""
+  "publisher": {
+    "@type": "Organization",
+    "name": "王迪",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "Due to their *quantitative* nature, probabilistic programs pose non-trivial challenges for designing compositional and efficient program analyses. Many analyses for probabilistic programs rely on *iterative* approximation. This article presents an interprocedural dataflow-analysis framework, called *NPA-PMA*, for designing and implementing (partially) *non-iterative* program analyses of probabilistic programs with unstructured control-flow, nondeterminism, and general recursion. NPA-PMA is based on Newtonian Program Analysis (NPA), a generalization of Newton's method to solve equation systems over semirings. The key challenge for developing NPA-PMA is to handle multiple kinds of *confluences* in both the algebraic structures that specify analyses and the equation systems that encode control flow: semirings support a single confluence operation, whereas NPA-PMA involves three confluence operations (conditional, probabilistic, and nondeterministic).\n\n Our work introduces *$\\omega$-continuous pre-Markov algebras* ( $\\omega$PMAs) to factor out common parts of different analyses; adopts *regular infinite-tree expressions* to encode program-execution paths in control-flow hyper-graphs; and presents a *linearization* method that makes Newton's method applicable to the setting of regular-infinite-tree equations over $\\omega$PMAs. NPA-PMA allows analyses to supply a non-iterative strategy to solve linearized equations. Our experimental evaluation demonstrates that (i) NPA-PMA holds considerable promise for outperforming Kleene iteration, and (ii) provides great generality for designing program analyses."
 }
 </script>
 
@@ -376,15 +379,17 @@
 
   
 
+  
 
 
 
 
-  <title>Type-Based Resource-Guided Search | Di Wang</title>
+
+  <title>Newtonian Program Analysis of Probabilistic Programs | 王迪</title>
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="f2f943e9b90569b648b57b0e28659d20" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="82d3777049f5cebd2c43b877f3deef1d" >
 
   
   
@@ -406,7 +411,7 @@
 
       <div class="row no-gutters justify-content-between mb-3">
         <div class="col-6">
-          <h1>Search</h1>
+          <h1>搜索</h1>
         </div>
         <div class="col-6 col-search-close">
           <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
@@ -415,9 +420,9 @@
 
       <div id="search-box">
         
-        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
         autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
-        aria-label="Search...">
+        aria-label="搜索...">
         
       </div>
 
@@ -459,20 +464,20 @@
 
       
       <div class="d-none d-lg-inline-flex">
-        <a class="navbar-brand" href="/">Di Wang</a>
+        <a class="navbar-brand" href="/zh/">王迪</a>
       </div>
       
 
       
       <button type="button" class="navbar-toggler" data-toggle="collapse"
-              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="切换导航">
       <span><i class="fas fa-bars"></i></span>
       </button>
       
 
       
       <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-        <a class="navbar-brand" href="/">Di Wang</a>
+        <a class="navbar-brand" href="/zh/">王迪</a>
       </div>
       
 
@@ -515,7 +520,7 @@
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#about"><span>Home</span></a>
+            <a class="nav-link " href="/zh/#about"><span>关于</span></a>
           </li>
 
           
@@ -552,7 +557,7 @@
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#publications"><span>Publications</span></a>
+            <a class="nav-link " href="/zh/#publications"><span>论文</span></a>
           </li>
 
           
@@ -589,7 +594,7 @@
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#talks"><span>Talks</span></a>
+            <a class="nav-link " href="/zh/#posts"><span>博客</span></a>
           </li>
 
           
@@ -626,44 +631,7 @@
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#posts"><span>Posts</span></a>
-          </li>
-
-          
-          
-
-          
-
-          
-          
-          
-            
-          
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
-            <a class="nav-link " href="/#contact"><span>Contact</span></a>
+            <a class="nav-link " href="/zh/#contact"><span>联系</span></a>
           </li>
 
           
@@ -685,7 +653,7 @@
         
         
         <li class="nav-item">
-          <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+          <a class="nav-link js-search" href="#" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></a>
         </li>
         
 
@@ -694,6 +662,22 @@
         
 
         
+        
+        <li class="nav-item dropdown i18n-dropdown">
+          <a href="#" class="nav-link " data-toggle="dropdown"
+             aria-haspopup="true" aria-label="语言">
+            <i class="fas fa-globe mr-1" aria-hidden="true"></i></a>
+          <div class="dropdown-menu">
+            <div class="dropdown-item dropdown-item-active">
+              <span>中文 (简体)</span>
+            </div>
+            
+            <a class="dropdown-item" href="https://stonebuddha.github.io/publication/wangr23/">
+              <span>English</span>
+            </a>
+            
+          </div>
+        </li>
         
 
       </ul>
@@ -710,7 +694,16 @@
     
     
 
-    <div class="pub">
+    
+
+
+
+
+
+
+
+
+<div class="pub">
 
   
 
@@ -731,7 +724,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>Type-Based Resource-Guided Search</h1>
+  <h1>Newtonian Program Analysis of Probabilistic Programs</h1>
 
   
 
@@ -743,7 +736,27 @@
 
   
   
+  
+  
+  <div>
+    
 
+  <span class="author-highlighted">
+      王迪</span>, <span >
+      Jan Hoffmann</span>, <span >
+      Thomas Reps</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    七月, 2023
+  </span>
   
 
   
@@ -777,26 +790,24 @@
 
 
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
     
   
-<a class="btn btn-outline-primary btn-page-header" href="/talks/tbrgs.pdf" target="_blank" rel="noopener">
-  Slides
+
+
+
+<a class="btn btn-outline-primary btn-page-header" href="https://arxiv.org/pdf/2307.09064" target="_blank" rel="noopener">
+  技术报告
 </a>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -815,33 +826,23 @@
   <div class="article-container">
 
     
-      <br>
+    <h3>摘要</h3>
+    <p class="pub-abstract"><p>Due to their <em>quantitative</em> nature, probabilistic programs pose non-trivial challenges for designing compositional and efficient program analyses. Many analyses for probabilistic programs rely on <em>iterative</em> approximation. This article presents an interprocedural dataflow-analysis framework, called <em>NPA-PMA</em>, for designing and implementing (partially) <em>non-iterative</em> program analyses of probabilistic programs with unstructured control-flow, nondeterminism, and general recursion. NPA-PMA is based on Newtonian Program Analysis (NPA), a generalization of Newton&rsquo;s method to solve equation systems over semirings. The key challenge for developing NPA-PMA is to handle multiple kinds of <em>confluences</em> in both the algebraic structures that specify analyses and the equation systems that encode control flow: semirings support a single confluence operation, whereas NPA-PMA involves three confluence operations (conditional, probabilistic, and nondeterministic).</p>
+<p>Our work introduces <em>$\omega$-continuous pre-Markov algebras</em> ( $\omega$PMAs) to factor out common parts of different analyses; adopts <em>regular infinite-tree expressions</em> to encode program-execution paths in control-flow hyper-graphs; and presents a <em>linearization</em> method that makes Newton&rsquo;s method applicable to the setting of regular-infinite-tree equations over $\omega$PMAs. NPA-PMA allows analyses to supply a non-iterative strategy to solve linearized equations. Our experimental evaluation demonstrates that (i) NPA-PMA holds considerable promise for outperforming Kleene iteration, and (ii) provides great generality for designing program analyses.</p>
+</p>
     
 
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Date</div>
-          <div class="col-12 col-md-9">
-            Oct 16, 2020 12:00 PM &mdash; 1:00 PM
-          </div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="d-md-none space-below"></div>
-
+    
     
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-10">
         <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Event</div>
+          <div class="col-12 col-md-3 pub-row-heading">类型</div>
           <div class="col-12 col-md-9">
-            
-            PLunch
-            
+            <a href="/zh/publication/#3">
+              进行中的工作
+            </a>
           </div>
         </div>
       </div>
@@ -850,29 +851,11 @@
     <div class="d-md-none space-below"></div>
     
 
-    
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Location</div>
-          <div class="col-12 col-md-9">Virtual</div>
-          
-            <div class="col-md-3"></div>
-            <div class="col-12 col-md-9"></div>
-          
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="d-md-none space-below"></div>
     
 
     <div class="space-below"></div>
 
-    <div class="article-style">
-      
-    </div>
+    <div class="article-style"></div>
 
     
 
@@ -892,7 +875,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://stonebuddha.github.io/talk/type-based-resource-guided-search/&amp;text=Type-Based%20Resource-Guided%20Search" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://stonebuddha.github.io/zh/publication/wangr23/&amp;text=Newtonian%20Program%20Analysis%20of%20Probabilistic%20Programs" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -905,7 +888,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://stonebuddha.github.io/talk/type-based-resource-guided-search/&amp;t=Type-Based%20Resource-Guided%20Search" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://stonebuddha.github.io/zh/publication/wangr23/&amp;t=Newtonian%20Program%20Analysis%20of%20Probabilistic%20Programs" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -918,7 +901,7 @@
       
       
       <li>
-        <a href="mailto:?subject=Type-Based%20Resource-Guided%20Search&amp;body=https://stonebuddha.github.io/talk/type-based-resource-guided-search/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+        <a href="mailto:?subject=Newtonian%20Program%20Analysis%20of%20Probabilistic%20Programs&amp;body=https://stonebuddha.github.io/zh/publication/wangr23/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -931,7 +914,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://stonebuddha.github.io/talk/type-based-resource-guided-search/&amp;title=Type-Based%20Resource-Guided%20Search" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+        <a href="https://www.linkedin.com/shareArticle?url=https://stonebuddha.github.io/zh/publication/wangr23/&amp;title=Newtonian%20Program%20Analysis%20of%20Probabilistic%20Programs" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -944,7 +927,7 @@
       
       
       <li>
-        <a href="whatsapp://send?text=Type-Based%20Resource-Guided%20Search%20https://stonebuddha.github.io/talk/type-based-resource-guided-search/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+        <a href="whatsapp://send?text=Newtonian%20Program%20Analysis%20of%20Probabilistic%20Programs%20https://stonebuddha.github.io/zh/publication/wangr23/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -957,7 +940,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://stonebuddha.github.io/talk/type-based-resource-guided-search/&amp;title=Type-Based%20Resource-Guided%20Search" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://stonebuddha.github.io/zh/publication/wangr23/&amp;title=Newtonian%20Program%20Analysis%20of%20Probabilistic%20Programs" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -977,6 +960,7 @@
 
   
   
+    
 
 
 
@@ -990,13 +974,13 @@
   <div class="media author-card content-widget-hr">
     
       
-      <a href="https://stonebuddha.github.io/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu9d530a7d46346135a5b497cb498a0a1a_1639432_270x270_fill_q75_lanczos_center.jpg" alt="Di Wang"></a>
+      <a href="https://stonebuddha.github.io/"><img class="avatar mr-3 avatar-circle" src="/zh/authors/admin/avatar_hu9d530a7d46346135a5b497cb498a0a1a_1639432_270x270_fill_q75_lanczos_center.jpg" alt="王迪"></a>
     
 
     <div class="media-body">
-      <h5 class="card-title"><a href="https://stonebuddha.github.io/">Di Wang</a></h5>
-      <h6 class="card-subtitle">Assistant Professor</h6>
-      <p class="card-text">My heart is in the Principles of Programming.</p>
+      <h5 class="card-title"><a href="https://stonebuddha.github.io/">王迪</a></h5>
+      <h6 class="card-subtitle">助理教授</h6>
+      <p class="card-text">朝着思想自由、兼容并包的计算机科学前进！</p>
       <ul class="network-icon" aria-hidden="true">
   
     
@@ -1011,7 +995,7 @@
       
     
     <li>
-      <a href="/#contact" >
+      <a href="/zh/#contact" >
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -1084,6 +1068,19 @@
   </div>
 
 
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
 
 
 
@@ -1174,7 +1171,7 @@
       
       
       
-      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+      由<a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a>支持发布——免费<a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">开源</a>网站，为创作者赋能。
     
   </p>
 </footer>
@@ -1285,7 +1282,7 @@
       
     
     
-    <script src="/en/js/wowchemy.min.d66c8b3b4ad0f66a62428f6bc7cf477d.js"></script>
+    <script src="/zh/js/wowchemy.min.b648f9dc35d49ef6719fbd6dc04d0743.js"></script>
 
     
     
@@ -1299,7 +1296,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Cite</h5>
+        <h5 class="modal-title">引用</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -1309,10 +1306,10 @@
       </div>
       <div class="modal-footer">
         <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> Copy
+          <i class="fas fa-copy"></i> 复制
         </a>
         <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
-          <i class="fas fa-download"></i> Download
+          <i class="fas fa-download"></i> 下载
         </a>
         <div id="modal-error"></div>
       </div>
