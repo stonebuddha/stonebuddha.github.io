@@ -365,7 +365,7 @@ $$
       <link>https://stonebuddha.github.io/zh/prospective-students/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://stonebuddha.github.io/zh/prospective-students/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;（最后更新：2023 年 2 月 23 日）&lt;/strong&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;（最后更新：2023 年 10 月 2 日）&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;我对编程语言的多个研究话题都很有兴趣，尤其是形式化验证、程序分析以及概率编程。
 我目前的研究项目主要涉及资源安全的系统编程、可编程贝叶斯推断、量化程序分析以及面向证明的编程语言。&lt;/p&gt;
 &lt;ul&gt;
@@ -397,16 +397,16 @@ $$
   &lt;div style=&#34;display:inline-block;margin-left:1.5em;&#34;&gt;
   &lt;b&gt;没问题&lt;/b&gt;，这些领域与编程语言都有相关的交叉领域。
   以下是一些跨领域的研讨会，仅作参考：
-  &lt;a href=&#34;https://pldi22.sigplan.org/home/maps-2022&#34;&gt;Symposium on Machine Programming&lt;/a&gt;，
-  &lt;a href=&#34;https://popl22.sigplan.org/home/lafi-2022&#34;&gt;Workshop on Languages for Inference&lt;/a&gt;，
-  &lt;a href=&#34;https://plos-workshop.org/2021/&#34;&gt;Workshop on Programming Languages and Operating Systems&lt;/a&gt;，
+  &lt;a href=&#34;https://mapsworkshop.github.io/&#34;&gt;Symposium on Machine Programming&lt;/a&gt;，
+  &lt;a href=&#34;https://popl23.sigplan.org/home/lafi-2023&#34;&gt;Workshop on Languages for Inference&lt;/a&gt;，
+  &lt;a href=&#34;https://plos-workshop.org/2023/&#34;&gt;Workshop on Programming Languages and Operating Systems&lt;/a&gt;，
   &lt;a href=&#34;https://sites.google.com/view/dbpl2021&#34;&gt;Symposium on Database Programming Languages&lt;/a&gt;。
   &lt;/div&gt;
 &lt;/details&gt;
 &lt;details open class=&#34;spoiler&#34;&gt;
   &lt;summary&gt;“北京大学有什么优势？在那儿可以跟哪些老师合作？”&lt;/summary&gt;
   &lt;div style=&#34;display:inline-block;margin-left:1.5em;&#34;&gt;
-  北京大学拥有世界一流的计算机学院（&lt;a href=&#34;https://csrankings.org/#/index?all&amp;world&#34;&gt;CSRankings&lt;/a&gt; 排名 13，&lt;a href=&#34;https://www.topuniversities.com/university-rankings/university-subject-rankings/2022/computer-science-information-systems&#34;&gt;QS Rankings&lt;/a&gt; 排名 24）。
+  北京大学拥有世界一流的计算机学院（&lt;a href=&#34;https://csrankings.org/#/index?all&amp;world&#34;&gt;CSRankings (2013-2023)&lt;/a&gt; 排名 14，&lt;a href=&#34;https://www.topuniversities.com/university-rankings/university-subject-rankings/2023/computer-science-information-systems&#34;&gt;QS Rankings (2023)&lt;/a&gt; 排名 19）。
   计算机学院拥有很多很厉害的老师和学生，他们的研究包括软件工程、编程语言、操作系统等诸多领域。
   以下是软件工程、编程语言领域的一些老师，按照姓氏字典序排列，仅供参考：
   &lt;a href=&#34;http://sei.pku.edu.cn/~haod&#34;&gt;郝丹&lt;/a&gt;，
@@ -456,7 +456,7 @@ Rust 语言设计了一个保障内存安全的类型系统，降低了运行时
 然而，用户定制推断算法时是比较容易出错的，这些错误会影响贝叶斯推断的收敛性和正确性，甚至很多时候这些错误在开发和模型迭代的过程中难以被察觉。&lt;/p&gt;
 &lt;p&gt;为了平衡可编程贝叶斯推断的可靠性和灵活性，我希望在概率编程中应用编程语言技术，比如类型系统、静态分析、程序合成等。
 通过新的编程抽象和类型系统，我们可以保证推断的可靠性（包括收敛性和正确性），而通过静态分析和程序合成，我们可以为用户提供辅助来自动化推断自定义的过程，从而提高开发效率。
-我们&lt;a href=&#34;https://stonebuddha.github.io/zh/publication/wanghr21b&#34; target=&#34;_blank&#34;&gt;最近的论文&lt;/a&gt;可以看作这个研究项目的第一步。&lt;/p&gt;
+我们的 &lt;a href=&#34;https://stonebuddha.github.io/zh/publication/wanghr21b&#34; target=&#34;_blank&#34;&gt;PLDI 论文&lt;/a&gt;可以看作这个研究项目的第一步。&lt;/p&gt;
 &lt;h3 id=&#34;量化程序分析&#34;&gt;量化程序分析&lt;/h3&gt;
 &lt;p&gt;程序中的随机性可以表现为两方面：外部随机性（比如运行环境中的不确定性）和内部随机性（比如随机化算法）。
 正如 Kleene 代数可作为非概率程序的代数程序分析的理论基础&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;，我希望建立一个适用于概率程序的代数程序分析的理论框架。
@@ -595,6 +595,21 @@ should prove an equivalence result to the ordinary probabilistic semantics (e.g.
 &lt;p&gt;&lt;strong&gt;Follow-up&lt;/strong&gt;: I can always imagine that adding nondeterminism causes a lot of troubles.&lt;/p&gt;
   &lt;/span&gt;
 &lt;/details&gt;
+&lt;details class=&#34;spoiler&#34;&gt;
+  &lt;summary&gt;Building a Framework for Nondeterminism-as-refinement&lt;/summary&gt;
+  &lt;span style=&#34;display:inline-block;margin-left:1.5em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Problem&lt;/strong&gt;: Nondeterminism is often referred to as the basis of
+abstraction and refinement in the setting of stepwise developement&lt;sup id=&#34;fnref:10&#34;&gt;&lt;a href=&#34;#fn:10&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;10&lt;/a&gt;&lt;/sup&gt;.
+However, such a pattern has not been popular in modern programming languages.
+What is the main obstable for developing such a framework? Also, people have
+developed many kinds of semantics for nondeterminism. Which semantics should be the
+most suitable one for refinement-based programming and reasoning?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proposal&lt;/strong&gt;: I guess this has something to do with relational Hoare Logics&lt;sup id=&#34;fnref:11&#34;&gt;&lt;a href=&#34;#fn:11&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;11&lt;/a&gt;&lt;/sup&gt;.
+At least they provide a way to use nondeterminism in a formal framework of proving
+program properties.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Follow-up&lt;/strong&gt;: How to devise a language design for it?&lt;/p&gt;
+  &lt;/span&gt;
+&lt;/details&gt;
 &lt;h3 id=&#34;类型系统&#34;&gt;类型系统&lt;/h3&gt;
 &lt;details class=&#34;spoiler&#34;&gt;
   &lt;summary&gt;Safe Interaction between Typed Domain Specific Languages&lt;/summary&gt;
@@ -627,6 +642,38 @@ from the given input.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Follow-up&lt;/strong&gt;: Is it possible to automatically learn the shape-related effects of library functions (e.g., &lt;code&gt;broadcast_tensor&lt;/code&gt;)?&lt;/p&gt;
   &lt;/span&gt;
 &lt;/details&gt;
+&lt;details class=&#34;spoiler&#34;&gt;
+  &lt;summary&gt;Integration of Refinement Types and Separation Logic&lt;/summary&gt;
+  &lt;span style=&#34;display:inline-block;margin-left:1.5em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Problem&lt;/strong&gt;: Recently, people have developed verification systems, e.g., CN&lt;sup id=&#34;fnref:12&#34;&gt;&lt;a href=&#34;#fn:12&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;12&lt;/a&gt;&lt;/sup&gt; and RefinedC&lt;sup id=&#34;fnref:13&#34;&gt;&lt;a href=&#34;#fn:13&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;13&lt;/a&gt;&lt;/sup&gt;,
+which integrate refinement types and separtion logic to reason about low-level
+programs. In those systems, refinements seem to still encode purely functional
+properties (really?). How about enabling type refinements to be separation-logic
+propositions? To that end, such refined types are not structural any more and
+we need to work with substructural refinemend types. Does the integration make sense?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proposal&lt;/strong&gt;: It seems that we can start from linear refinement types.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Follow-up&lt;/strong&gt;: Linear typing and separation logic share a lot of similarities.
+Are both rooted back in linear logic? If not, what is the fundamental difference?&lt;/p&gt;
+  &lt;/span&gt;
+&lt;/details&gt;
+&lt;details class=&#34;spoiler&#34;&gt;
+  &lt;summary&gt;Liquid-type-style Dijkstra Monads&lt;/summary&gt;
+  &lt;span style=&#34;display:inline-block;margin-left:1.5em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Problem&lt;/strong&gt;: Dijkstra monads&lt;sup id=&#34;fnref:14&#34;&gt;&lt;a href=&#34;#fn:14&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;14&lt;/a&gt;&lt;/sup&gt; were originally proposed to automate
+the verification-condition-generation (VCG) routine for analyzing effectful higher-order
+programs. They later form the basis of F*, a proof-oriented programming language&lt;sup id=&#34;fnref:15&#34;&gt;&lt;a href=&#34;#fn:15&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;15&lt;/a&gt;&lt;/sup&gt;.
+One feature of F* is that it supports proof-irrelevant refinement types.
+Liquid types&lt;sup id=&#34;fnref:16&#34;&gt;&lt;a href=&#34;#fn:16&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;16&lt;/a&gt;&lt;/sup&gt; provide another method of balancing between automatic
+type inference and dependent typing.
+One main idea of liquid types is to separately design a language for specification.
+Can we combine Dijkstra monads and liquid types? What are the benefits&amp;mdash;if there are&amp;mdash;to do this?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proposal&lt;/strong&gt;: So the system is basically a comination of liquid-style language design
+and an F*-style type inference.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Follow-up&lt;/strong&gt;: Dijkstra monads support multi-monadic effects in a systematic way.
+This means we might have a method to extend our &lt;a href=&#34;https://stonebuddha.github.io/publication/knothwr20&#34; target=&#34;_blank&#34;&gt;ICFP paper&lt;/a&gt;
+to include the value interpretation as in the language itself.&lt;/p&gt;
+  &lt;/span&gt;
+&lt;/details&gt;
 &lt;h3 id=&#34;资源分析&#34;&gt;资源分析&lt;/h3&gt;
 &lt;details class=&#34;spoiler&#34;&gt;
   &lt;summary&gt;Fraction Bounds for Expected Cost Analysis&lt;/summary&gt;
@@ -642,7 +689,7 @@ resource-analysis techniques (e.g., AARA) that derive polynomial bounds, by usin
 a template for the denominator to reduce fraction-bound inference to polynomial-bound
 inference.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Follow-up&lt;/strong&gt;: A random thought: how can we apply such resource-analysis technique
-to Bayesian inference (like a recent paper by Beutner et al.&lt;sup id=&#34;fnref:10&#34;&gt;&lt;a href=&#34;#fn:10&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;10&lt;/a&gt;&lt;/sup&gt;)?&lt;/p&gt;
+to Bayesian inference (like a recent paper by Beutner et al.&lt;sup id=&#34;fnref:17&#34;&gt;&lt;a href=&#34;#fn:17&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;17&lt;/a&gt;&lt;/sup&gt;)?&lt;/p&gt;
   &lt;/span&gt;
 &lt;/details&gt;
 &lt;details class=&#34;spoiler&#34;&gt;
@@ -651,7 +698,7 @@ to Bayesian inference (like a recent paper by Beutner et al.&lt;sup id=&#34;fnre
 &lt;p&gt;&lt;strong&gt;Problem&lt;/strong&gt;: Our &lt;a href=&#34;https://stonebuddha.github.io/publication/wangkh20&#34; target=&#34;_blank&#34;&gt;ICFP paper&lt;/a&gt; presents
 an extension of AARA that infers upper bounds on the expected cost of probabilistic functional
 programs with monotone resources (such as time). In general, combining probability
-and non-monotone resources (such as memory) is unreasonably complex&lt;sup id=&#34;fnref:11&#34;&gt;&lt;a href=&#34;#fn:11&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;11&lt;/a&gt;&lt;/sup&gt;. Applying optional stopping
+and non-monotone resources (such as memory) is unreasonably complex&lt;sup id=&#34;fnref:18&#34;&gt;&lt;a href=&#34;#fn:18&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;18&lt;/a&gt;&lt;/sup&gt;. Applying optional stopping
 theorems, people have successfully developed techniques for analyzing arithmetic programs.
 It would be interesting to see if the whole methodology applies to functional programming,
 where we have inductive data structures (that can hold potential) instead of numbers.&lt;/p&gt;
@@ -665,6 +712,21 @@ probabilistic functional programs with non-monotone resources.&lt;/p&gt;
 and &amp;ldquo;expected termination time.&amp;rdquo; Why them?!&lt;/p&gt;
   &lt;/span&gt;
 &lt;/details&gt;
+&lt;details class=&#34;spoiler&#34;&gt;
+  &lt;summary&gt;Newtonian Resource Analysis&lt;/summary&gt;
+  &lt;span style=&#34;display:inline-block;margin-left:1.5em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Problem&lt;/strong&gt;: Apply the Newtonian Program Analysis (NPA) framework&lt;sup id=&#34;fnref2:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt; and its extension&lt;sup id=&#34;fnref1:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;
+to carray out resource analysis.
+Existing work has shown the possibility to perform recurrence-based analysis&lt;sup id=&#34;fnref:19&#34;&gt;&lt;a href=&#34;#fn:19&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;19&lt;/a&gt;&lt;/sup&gt;.
+How about other kinds of resource analysis, like AARA?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proposal&lt;/strong&gt;: Because amortized analysis is naturally two-vocabulary, it seems possible
+to recast AARA as a two-vocabulary abstract domain. The gap is that AARA is constraint-based,
+which differs from the general NPA framework.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Follow-up&lt;/strong&gt;: NPA basically provides a framework for analyzing non-linear-recursive
+programs by iteratively analyzing linear-recursive programs. Can we combine this idea
+to iteratively use AARA to solve linear recursion?&lt;/p&gt;
+  &lt;/span&gt;
+&lt;/details&gt;
 &lt;h3 id=&#34;概率编程&#34;&gt;概率编程&lt;/h3&gt;
 &lt;details class=&#34;spoiler&#34;&gt;
   &lt;summary&gt;Domain-specific Procedural Design&lt;/summary&gt;
@@ -673,7 +735,7 @@ and &amp;ldquo;expected termination time.&amp;rdquo; Why them?!&lt;/p&gt;
 probabilistic programming for procedural modeling and design (the use of random programs
 to generate visual content with respect to aesthetic or functional constraints).
 Such an approach has been rediscovered in several individual developments, such as
-Scenic&lt;sup id=&#34;fnref:12&#34;&gt;&lt;a href=&#34;#fn:12&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;12&lt;/a&gt;&lt;/sup&gt; and Picture&lt;sup id=&#34;fnref:13&#34;&gt;&lt;a href=&#34;#fn:13&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;13&lt;/a&gt;&lt;/sup&gt;. So instead of separate developments,
+Scenic&lt;sup id=&#34;fnref:20&#34;&gt;&lt;a href=&#34;#fn:20&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;20&lt;/a&gt;&lt;/sup&gt; and Picture&lt;sup id=&#34;fnref:21&#34;&gt;&lt;a href=&#34;#fn:21&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;21&lt;/a&gt;&lt;/sup&gt;. So instead of separate developments,
 we want to develop a framework to ease such domain-specific procedural design.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Proposal&lt;/strong&gt;: This has something to do with the eDSL framework.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Follow-up&lt;/strong&gt;: It might be interesting to see how such &lt;strong&gt;static&lt;/strong&gt; procedural design
@@ -685,7 +747,7 @@ of the generated designs.&lt;/p&gt;
 &lt;details class=&#34;spoiler&#34;&gt;
   &lt;summary&gt;Language Design for Sound Involutive MCMC&lt;/summary&gt;
   &lt;span style=&#34;display:inline-block;margin-left:1.5em;&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Problem&lt;/strong&gt;: A recent paper by Cusumano-Towner et al.&lt;sup id=&#34;fnref:14&#34;&gt;&lt;a href=&#34;#fn:14&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;14&lt;/a&gt;&lt;/sup&gt; studies
+&lt;p&gt;&lt;strong&gt;Problem&lt;/strong&gt;: A recent paper by Cusumano-Towner et al.&lt;sup id=&#34;fnref:22&#34;&gt;&lt;a href=&#34;#fn:22&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;22&lt;/a&gt;&lt;/sup&gt; studies
 how to ease the burden of implementing involutive MCMC by combining probabilistic
 programming and differentiable programming. It still remains a challenge (emm, you have to double check)
 to statically verify the correctness of a concrete implementation in their framework.&lt;/p&gt;
@@ -724,6 +786,53 @@ Is there a more general principle? For example, it might be interesting to
 investigate &lt;a href=&#34;https://www.cs.cmu.edu/~NatProg/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Natural Programming&lt;/a&gt;.&lt;/p&gt;
   &lt;/span&gt;
 &lt;/details&gt;
+&lt;details class=&#34;spoiler&#34;&gt;
+  &lt;summary&gt;Resource-guided Synthesis and Implicit Computational Complexity&lt;/summary&gt;
+  &lt;span style=&#34;display:inline-block;margin-left:1.5em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Problem&lt;/strong&gt;: Recently, resource-guided synthesis and algorithm synthesis have
+received considerable attention&lt;sup id=&#34;fnref:23&#34;&gt;&lt;a href=&#34;#fn:23&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;23&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:24&#34;&gt;&lt;a href=&#34;#fn:24&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;24&lt;/a&gt;&lt;/sup&gt;.
+We also had published a related &lt;a href=&#34;https://stonebuddha.github.io/publication/knothwp19&#34; target=&#34;_blank&#34;&gt;PLDI paper&lt;/a&gt;.
+Those approaches can be categorized into two sorts: one develops a complex
+type system of program logic to enforce resource guarantees, the other proposes
+algorithmic templates that ensure resource guarantees.
+The latter is somewhat related to &lt;a href=&#34;https://en.wikipedia.org/wiki/Implicit_computational_complexity&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Implicit Computational Complexity&lt;/a&gt; (ICC),
+which characterizes algorithms by constraints on the way in which they are constructed.
+In other words, an ICC research usually provides a non-standard programming language,
+in which every legal program is guaranteed to have certain complexity.
+Can we generalize the template-based approach to ICC-based approach?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proposal&lt;/strong&gt;: A starting point could be non-size-increasing computaion&lt;sup id=&#34;fnref:25&#34;&gt;&lt;a href=&#34;#fn:25&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;25&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Follow-up&lt;/strong&gt;: ICC seems to be not so fine-grained, e.g., usually researchers
+focus on whether the complexity is polynomial or not. How to make them finer-grained?
+For example, would it be possible to develop an ICC class for $O(n \log n)$ algorithms?&lt;/p&gt;
+  &lt;/span&gt;
+&lt;/details&gt;
+&lt;h3 id=&#34;程序验证&#34;&gt;程序验证&lt;/h3&gt;
+&lt;details class=&#34;spoiler&#34;&gt;
+  &lt;summary&gt;Verifying Time/Memory Complexities in VST&lt;/summary&gt;
+  &lt;span style=&#34;display:inline-block;margin-left:1.5em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Problem&lt;/strong&gt;: &lt;a href=&#34;https://vst.cs.princeton.edu/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Verified Software Toolchain&lt;/a&gt; (VST) is a set of verified tools that formally verify the
+functional correctness of C programs using Hoare logic and separation logic.
+I wonder if it is also convenient to verify resource-usage properties of C programs,
+like their time or memory complexities.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proposal&lt;/strong&gt;: It has been shown that separation logic naturally supports
+resource verification based on time credits&lt;sup id=&#34;fnref:26&#34;&gt;&lt;a href=&#34;#fn:26&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;26&lt;/a&gt;&lt;/sup&gt;. So conceptually it should
+be possible to have that in VST.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Follow-up&lt;/strong&gt;: Can we develop some general reasoning libraries for resource
+verification?&lt;/p&gt;
+  &lt;/span&gt;
+&lt;/details&gt;
+&lt;details class=&#34;spoiler&#34;&gt;
+  &lt;summary&gt;Backward Proving in Coq&lt;/summary&gt;
+  &lt;span style=&#34;display:inline-block;margin-left:1.5em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Problem&lt;/strong&gt;: Coq proofs are organized in a forward, tactic-based manner, which is
+not very readable. In contrast, Isabelle (and some other theorem provers) provides
+a backward mode, where the intermediate goals are stated explicitly, so that improves
+readability. Is it possible to use a backward pattern in Coq proofs? If not, would
+it be possible to have a backward-proof DSL that can be translated to Coq?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proposal&lt;/strong&gt;: Isabelle&amp;rsquo;s &lt;a href=&#34;https://isabelle.in.tum.de/Isar/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Isar&lt;/a&gt; might be a good starting point.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Follow-up&lt;/strong&gt;: What is the best proof interface for system programmers?&lt;/p&gt;
+  &lt;/span&gt;
+&lt;/details&gt;
 &lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
@@ -738,7 +847,7 @@ Probabilistic Programming with Programmable Inference. &lt;em&gt;Prog. Lang. Des
 &lt;p&gt;Zachary Kincaid, Thomas Reps, and John Cyphert. Algebraic Program Analysis. &lt;a href=&#34;https://doi.org/10.1007/978-3-030-81685-8_3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:4&#34;&gt;
-&lt;p&gt;Javier Esparza, Stefan Kiefer, and Michael Luttenberger. Newtonian Program Analysis. &lt;em&gt;J. ACM&lt;/em&gt; (2010). &lt;a href=&#34;https://doi.org/10.1145/1857914.1857917&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref1:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Javier Esparza, Stefan Kiefer, and Michael Luttenberger. Newtonian Program Analysis. &lt;em&gt;J. ACM&lt;/em&gt; (2010). &lt;a href=&#34;https://doi.org/10.1145/1857914.1857917&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref1:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref2:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:5&#34;&gt;
 &lt;p&gt;Kevin Batz, Adrian Gallus, Benjamin Lucien Kaminski, Joost-Pieter Katoen, and Tobias Winkler. Weighted Programming: A Programming Paradigm for Specifying Mathematical Models. &lt;em&gt;Object-Oriented Prog., Syst., Lang., and Applications&lt;/em&gt; (2022). &lt;a href=&#34;https://doi.org/10.1145/3527310&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
@@ -747,7 +856,7 @@ Probabilistic Programming with Programmable Inference. &lt;em&gt;Prog. Lang. Des
 &lt;p&gt;Akash Lal, Tayssir Touili, Nicholas Kidd, and Thomas Reps. Interprocedural Analysis of Concurrent Programs Under a Context Bound. &lt;em&gt;Tools and Algor. for the Constr. and Anal. of Syst.&lt;/em&gt; (2008). &lt;a href=&#34;https://doi.org/10.1007/978-3-540-78800-3_20&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:7&#34;&gt;
-&lt;p&gt;Thomas Reps, Emma Turetsky, and  Prathmesh Prabhu. Newtonian Program Analysis via Tensor Product. &lt;em&gt;Princ. of Prog. Lang.&lt;/em&gt; (2016). &lt;a href=&#34;https://doi.org/10.1145/2837614.2837659&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Thomas Reps, Emma Turetsky, and  Prathmesh Prabhu. Newtonian Program Analysis via Tensor Product. &lt;em&gt;Princ. of Prog. Lang.&lt;/em&gt; (2016). &lt;a href=&#34;https://doi.org/10.1145/2837614.2837659&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref1:7&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:8&#34;&gt;
 &lt;p&gt;Mingshuai Chen, Joost-Pieter Katoen, Lutz Klinkenberg, and Tobias Winkler. Does a Program Yield the Right Distribution?. &lt;em&gt;Computer Aided Verif.&lt;/em&gt; (2022). &lt;a href=&#34;https://doi.org/10.1007/978-3-031-13185-1_5&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:8&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
@@ -756,20 +865,56 @@ Probabilistic Programming with Programmable Inference. &lt;em&gt;Prog. Lang. Des
 &lt;p&gt;Matthew Might, Yannis Smaragdakis, and David Van Horn. Resolving and Exploiting the $k$-CFA Paradox: Illuminating Functional vs. Object-Oriented Program Analysis. &lt;em&gt;Prog. Lang. Design and Impl.&lt;/em&gt; (2010). &lt;a href=&#34;https://doi.org/10.1145/1806596.1806631&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:9&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:10&#34;&gt;
-&lt;p&gt;Raven Beutner, Luke Ong, and Fabian Zaiser. Guaranteed Bounds for Posterior Inference in Universal Probabilistic Programming. &lt;em&gt;Prog. Lang. Design and Impl.&lt;/em&gt; (2022). &lt;a href=&#34;https://doi.org/10.1145/3519939.3523721&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:10&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Edsger W. Dijkstra. A Discipline of Programming. &lt;em&gt;Prentice Hall PTR&lt;/em&gt; (1997). &lt;a href=&#34;https://dl.acm.org/doi/book/10.5555/550359&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:10&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:11&#34;&gt;
-&lt;p&gt;Marcel Hark, Benjamin Lucien Kaminski, Jürgen Giesl, and Joost-Pieter Katoen. Aiming Low Is Harder: Induction for Lower Bounds in Probabilistic Program Verification. &lt;em&gt;Princ. of Prog. Lang.&lt;/em&gt; (2020). &lt;a href=&#34;https://doi.org/10.1145/3371105&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:11&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Nick Benton. Simple Relational Correctness Proofs for Static Analyses and Program Transformations. &lt;em&gt;Princ. of Prog. Lang.&lt;/em&gt; (2004). &lt;a href=&#34;https://doi.org/10.1145/982962.964003&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:11&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:12&#34;&gt;
-&lt;p&gt;Daniel J. Fremont, Tommaso Dreossi, Shromona Ghosh, Xiangyu Yue, Alberto L. Sangiovanni-Vincentelli, and Sanjit A. Seshia. Scenic: A Language for Scenario Specification and Scene Generation. &lt;em&gt;Prog. Lang. Design and Impl.&lt;/em&gt; (2019). &lt;a href=&#34;https://doi.org/10.1145/3314221.3314633&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:12&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Christopher Pulte, Dhruv C. Makwana, Thomas Sewell, Kayvan Memarian, Peter Sewell, and Neel Krishnaswami. CN: Verifying Systems C Code with Separation-Logic Refinement Types. &lt;em&gt;Princ. of Prog. Lang.&lt;/em&gt; (2023). &lt;a href=&#34;https://doi.org/10.1145/3571194&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:12&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:13&#34;&gt;
-&lt;p&gt;Tejas D. Kulkarni, Pushmeet Kohli, Joshua B. Tenenbaum, and Vikash Mansinghka. Picture: A Probabilistic Programming Language for Scene Perception. &lt;em&gt;Comp. Vision and Pattern Recognition&lt;/em&gt; (2015). &lt;a href=&#34;https://doi.org/10.1109/CVPR.2015.7299068&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:13&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Michael Sammler, Rodolphe Lepigre, Robbert Krebbers, Kayvan Memarian, Derek Dreyer, and Deepak Garg. RefinedC: Automating the Foundational Verification of C Code with Refined Ownership Types. &lt;em&gt;Prog. Lang. Design and Impl.&lt;/em&gt; (2021). &lt;a href=&#34;https://doi.org/10.1145/3453483.3454036&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:13&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:14&#34;&gt;
+&lt;p&gt;Nikhil Swamy, Joel Weinberger, Cole Schlesinger, Juan Chen, and Benjamin Livshits. Verifying Higher-order Programs with the Dijkstra Monad. &lt;em&gt;Prog. Lang. Design and Impl.&lt;/em&gt; (2013). &lt;a href=&#34;https://doi.org/10.1145/2491956.2491978&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:14&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:15&#34;&gt;
+&lt;p&gt;Nikhil Swamy, Cătălin Hriţcu, Chantal Keller, Aseem Rastogi, Antoine Delignat-Lavaud, Simon Forest, Karthikeyan Bhargavan, Cédric Fournet, Pierre-Yves Strub, Markulf Kohlweiss, Jean-Karim Zinzindohoue, and Santiago Zanella-Béguelin. Dependent Types and Multi-monadic Effects in F*. &lt;em&gt;Princ. of Prog. Lang.&lt;/em&gt; (2016). &lt;a href=&#34;https://doi.org/10.1145/2837614.2837655&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:15&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:16&#34;&gt;
+&lt;p&gt;Patrick M. Rondon, Ming Kawaguci, and Ranjit Jhala. Liquid Types. &lt;em&gt;Prog. Lang. Design. and Impl.&lt;/em&gt; (2008). &lt;a href=&#34;https://doi.org/10.1145/1379022.1375602&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:16&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:17&#34;&gt;
+&lt;p&gt;Raven Beutner, Luke Ong, and Fabian Zaiser. Guaranteed Bounds for Posterior Inference in Universal Probabilistic Programming. &lt;em&gt;Prog. Lang. Design and Impl.&lt;/em&gt; (2022). &lt;a href=&#34;https://doi.org/10.1145/3519939.3523721&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:17&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:18&#34;&gt;
+&lt;p&gt;Marcel Hark, Benjamin Lucien Kaminski, Jürgen Giesl, and Joost-Pieter Katoen. Aiming Low Is Harder: Induction for Lower Bounds in Probabilistic Program Verification. &lt;em&gt;Princ. of Prog. Lang.&lt;/em&gt; (2020). &lt;a href=&#34;https://doi.org/10.1145/3371105&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:18&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:19&#34;&gt;
+&lt;p&gt;Zachary Kincaid, Jason Breck, Ashkan Forouhi Boroujeni, and Thomas Reps. Compositional Recurrence Analysis Revisited. &lt;em&gt;Prog. Lang. Design and Impl.&lt;/em&gt; (2017). &lt;a href=&#34;https://doi.org/10.1145/3062341.3062373&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:19&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:20&#34;&gt;
+&lt;p&gt;Daniel J. Fremont, Tommaso Dreossi, Shromona Ghosh, Xiangyu Yue, Alberto L. Sangiovanni-Vincentelli, and Sanjit A. Seshia. Scenic: A Language for Scenario Specification and Scene Generation. &lt;em&gt;Prog. Lang. Design and Impl.&lt;/em&gt; (2019). &lt;a href=&#34;https://doi.org/10.1145/3314221.3314633&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:20&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:21&#34;&gt;
+&lt;p&gt;Tejas D. Kulkarni, Pushmeet Kohli, Joshua B. Tenenbaum, and Vikash Mansinghka. Picture: A Probabilistic Programming Language for Scene Perception. &lt;em&gt;Comp. Vision and Pattern Recognition&lt;/em&gt; (2015). &lt;a href=&#34;https://doi.org/10.1109/CVPR.2015.7299068&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:21&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:22&#34;&gt;
 &lt;p&gt;Marco Cusumano-Towner, Alexander K. Lew, and Vikash K. Mansinghka. Automating Involutive MCMC using Probabilistic and
-Differentiable Programming. &lt;a href=&#34;https://arxiv.org/abs/2007.09871&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;arXiv&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:14&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+Differentiable Programming. &lt;a href=&#34;https://arxiv.org/abs/2007.09871&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;arXiv&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:22&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:23&#34;&gt;
+&lt;p&gt;Qinheping Hu, John Cyphert, Loris D’Antoni, and Thomas Reps. Synthesis with Asymptotic Resource Bounds. &lt;em&gt;Computer Aided Verif.&lt;/em&gt; (2021). &lt;a href=&#34;https://doi.org/10.1007/978-3-030-81685-8_37&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:23&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:24&#34;&gt;
+&lt;p&gt;Yican Sun, Xuanyu Peng, and Yingfei Xiong. Synthesizing Efficient Memoization Algorithms. &lt;em&gt;Object-Oriented Prog., Syst., Lang., and Applications&lt;/em&gt; (2023).&amp;#160;&lt;a href=&#34;#fnref:24&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:25&#34;&gt;
+&lt;p&gt;Martin Hofmann. Linear types and non-size-increasing polynomial time computation. &lt;em&gt;Logic in Computer Science&lt;/em&gt; (1999). &lt;a href=&#34;https://doi.org/10.1109/LICS.1999.782641&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:25&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:26&#34;&gt;
+&lt;p&gt;Arthur Charguéraud and François Pottier. Machine-Checked Verification of the Correctness and Amortized Complexity of an Efficient Union-Find Implementation. &lt;em&gt;Interactive Theorem Proving&lt;/em&gt; (2015). &lt;a href=&#34;https://doi.org/10.1007/978-3-319-22102-1_9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:26&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
@@ -782,7 +927,9 @@ Differentiable Programming. &lt;a href=&#34;https://arxiv.org/abs/2007.09871&#34
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://stonebuddha.github.io/zh/news_archive/</guid>
       <description>&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;[Nov 2020]&lt;/strong&gt; 预印本 &lt;a href=&#34;https://arxiv.org/pdf/2011.09037.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Probabilistic Resource-Aware Session Types&lt;/a&gt; 已上传至 arXiv。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Sep 2021]&lt;/strong&gt; 我开始找 2022 年入职的学术界工作！&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Feb 2021]&lt;/strong&gt; 两篇论文 &lt;a href=&#34;publication/wanghr21b&#34;&gt;Sound Probabilistic Inference via Guide Types&lt;/a&gt; 和 &lt;a href=&#34;publication/wanghr21a&#34;&gt;Central Moment Analysis for Cost Accumulators in Probabilistic Programs&lt;/a&gt; 被 PLDI 2021 接收。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Nov 2020]&lt;/strong&gt; 预印本 &lt;a href=&#34;https://arxiv.org/pdf/2011.09037&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Probabilistic Resource-Aware Session Types&lt;/a&gt; 已上传至 arXiv。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;[Jun 2020]&lt;/strong&gt; 两篇论文 &lt;a href=&#34;../publication/knothwr20&#34;&gt;Liquid Resource Types&lt;/a&gt; 和 &lt;a href=&#34;../publication/wangkh20&#34;&gt;Raising Expectations: Automating Expected Cost Analysis with Types&lt;/a&gt; 被 ICFP 2020 接收。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;[May 2019]&lt;/strong&gt; 论文 &lt;a href=&#34;../publication/wanghr19&#34;&gt;A Denotational Semantics for Low-Level Probabilistic Programs with Nondeterminism&lt;/a&gt; 被 MFPS 接收。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;[Feb 2019]&lt;/strong&gt; &lt;a href=&#34;../publication/knothwp19&#34;&gt;Resource-Guided Program Synthesis&lt;/a&gt; 被 PLDI 2019 接收。&lt;/li&gt;
