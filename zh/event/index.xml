@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Recent Talks | 王迪</title>
+    <link>https://stonebuddha.github.io/zh/event/</link>
+      <atom:link href="https://stonebuddha.github.io/zh/event/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent Talks</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh</language><lastBuildDate>Thu, 03 Jun 2021 10:00:00 -0400</lastBuildDate>
+    <image>
+      <url>https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png</url>
+      <title>Recent Talks</title>
+      <link>https://stonebuddha.github.io/zh/event/</link>
+    </image>
+    
+    <item>
+      <title>Type-Guided Worst-Case Input Generation</title>
+      <link>https://stonebuddha.github.io/zh/talk/type-guided-worst-case-input-generation/</link>
+      <pubDate>Thu, 03 Jun 2021 10:00:00 -0400</pubDate>
+      <guid>https://stonebuddha.github.io/zh/talk/type-guided-worst-case-input-generation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Type-Based Resource-Guided Search</title>
+      <link>https://stonebuddha.github.io/zh/talk/type-based-resource-guided-search/</link>
+      <pubDate>Fri, 16 Oct 2020 12:00:00 -0400</pubDate>
+      <guid>https://stonebuddha.github.io/zh/talk/type-based-resource-guided-search/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Resource-Guided Program Synthesis</title>
+      <link>https://stonebuddha.github.io/zh/talk/resource-guided-program-synthesis/</link>
+      <pubDate>Fri, 22 Nov 2019 12:00:00 -0500</pubDate>
+      <guid>https://stonebuddha.github.io/zh/talk/resource-guided-program-synthesis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PMAF: An Algebraic Framework for Static Analysis of Probabilistic Programs</title>
+      <link>https://stonebuddha.github.io/zh/talk/pmaf-an-algebraic-framework-for-static-analysis-of-probabilistic-programs/</link>
+      <pubDate>Fri, 20 Apr 2018 12:00:00 -0400</pubDate>
+      <guid>https://stonebuddha.github.io/zh/talk/pmaf-an-algebraic-framework-for-static-analysis-of-probabilistic-programs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TiML: A Functional Language for Practical Complexity Analysis with Invariants</title>
+      <link>https://stonebuddha.github.io/zh/talk/timl-a-functional-language-for-practical-complexity-analysis-with-invariants/</link>
+      <pubDate>Fri, 09 Feb 2018 12:00:00 -0500</pubDate>
+      <guid>https://stonebuddha.github.io/zh/talk/timl-a-functional-language-for-practical-complexity-analysis-with-invariants/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1413 @@
+<!DOCTYPE html><html lang="zh" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.5.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Alegreya&family=Alegreya+Sans:ital,wght@0,400;0,700;1,400&family=Overpass+Mono&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya&family=Alegreya+Sans:ital,wght@0,400;0,700;1,400&family=Overpass+Mono&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="王迪" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="In this post, we consider one-dimensional random walks: assume that $S_n = \sum_{i=1}^n X_i$ is a random walk on the integers with initial value $S_0 = 0$, where $X_i, i" />
+
+  
+    <link rel="alternate" hreflang="en" href="https://stonebuddha.github.io/post/termination-analysis-of-random-walks/" />
+  
+  <link rel="alternate" hreflang="zh" href="https://stonebuddha.github.io/zh/post/termination-analysis-of-random-walks/" />
+
+  
+  
+  
+    <meta name="theme-color" content="#435c85" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.c7b8d9abd591ba2253ea42747e3ac3f5.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css" integrity="" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.3e2eaa6fd06c912bbe9408ac70e50f22.css" />
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/zh/manifest.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://stonebuddha.github.io/zh/post/termination-analysis-of-random-walks/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="王迪" />
+  <meta property="og:url" content="https://stonebuddha.github.io/zh/post/termination-analysis-of-random-walks/" />
+  <meta property="og:title" content="随机游走的停时分析（英文） | 王迪" />
+  <meta property="og:description" content="In this post, we consider one-dimensional random walks: assume that $S_n = \sum_{i=1}^n X_i$ is a random walk on the integers with initial value $S_0 = 0$, where $X_i, i" /><meta property="og:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" />
+    <meta property="twitter:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="zh" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2021-02-15T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2021-09-14T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://stonebuddha.github.io/zh/post/termination-analysis-of-random-walks/"
+  },
+  "headline": "随机游走的停时分析（英文）",
+  
+  "datePublished": "2021-02-15T00:00:00Z",
+  "dateModified": "2021-09-14T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "王迪"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "王迪",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "In this post, we consider one-dimensional random walks: assume that $S_n = \\sum_{i=1}^n X_i$ is a random walk on the integers with initial value $S_0 = 0$, where $X_i, i"
+}
+</script>
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>随机游走的停时分析（英文） | 王迪</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="56ec80e9a94396e230a2275c9f568763" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.14a0ed61c6dbd594b9c75193b25be179.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>搜索</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="搜索...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/zh/">王迪</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="切换导航">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/zh/">王迪</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/zh/#about"><span>关于</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/zh/#publications"><span>论文</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/zh/#talks"><span>报告</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/zh/#posts"><span>博客</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/zh/#contact"><span>联系</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+
+        
+        
+        <li class="nav-item dropdown i18n-dropdown">
+          <a href="#" class="nav-link " data-toggle="dropdown"
+             aria-haspopup="true" aria-label="语言">
+            <i class="fas fa-globe mr-1" aria-hidden="true"></i></a>
+          <div class="dropdown-menu">
+            <div class="dropdown-item dropdown-item-active">
+              <span>中文 (简体)</span>
+            </div>
+            
+            <a class="dropdown-item" href="https://stonebuddha.github.io/post/termination-analysis-of-random-walks/">
+              <span>English</span>
+            </a>
+            
+          </div>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>随机游走的停时分析（英文）</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      王迪</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          最近更新于
+      
+    
+    9月 14, 2021
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    3 分钟阅读时长
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p>In this post, we consider one-dimensional random walks:
+assume that $S_n = \sum_{i=1}^n X_i$ is a random walk on the integers with
+initial value $S_0 = 0$, where $X_i, i \in \mathbb{N}$ are independent and
+identically distributed random variables.
+For termination analysis, we introduce a <i>stopping time</i>: a nonnegative
+integer-valued random variable $T$ such that for every integer $n \ge 0$, the
+indicator function of the event $\lbrace T = n \rbrace$ is a function of
+$S_1,S_2,\cdots,S_n$.</p>
+<h2 id="symmetric-random-walk">Symmetric Random Walk</h2>
+<p>For each $i \in \mathbb{N}$, we consider
+$X_i = \left\lbrace \begin{array}{ll}  1 &amp; \text{with prob.}~0.5 \\ -1 &amp; \text{with prob.}~0.5 \end{array} \right.$.
+Symmetric random walks are known to be <em>recurrent</em>, i.e., with probability
+one, any state is visited infinitely often.
+Let us consider the case where the random walk terminates when it reaches the
+level $1$, i.e., $T := \min\lbrace n \ge 0 : S_n = 1 \rbrace$, and $T$ is
+clearly a stopping time.
+How do we establish the recurrence property for $T$, i.e., $\mathbb{P}[T &lt; \infty] = 1$?
+Moreover, what can we say about $\mathbb{E}[T]$?</p>
+<p>One method is to derive $T$&rsquo;s <em>probability generating function</em>
+$G(z) := \mathbb{E}[z^T] = \sum_{n=0}^{\infty} z^n \mathbb{P}[T=n]$,
+which is defined for all real values of $z$ less than $1$ in absolute value.
+The strategy for the derivation is to condition on the first step of the random
+walk to obtain a functional equation for $G$; there are two possibilities:</p>
+<ul>
+<li>if $X_1 = 1$, then $S_1 = 1$ and $T = 1$; or</li>
+<li>if $X_1 = -1$, then $S_1 = -1$, and the random walk must first return to the
+origin, and the amount of time it takes to reach $0$ starting from $-1$ has the
+same distribution as&mdash;and is conditionally independent of&mdash;$T$ itself (i.e.,
+the amount of time to reach $1$ from $0$).</li>
+</ul>
+<p>Thus, $G(z) = 0.5z + 0.5z \cdot G(z) \cdot G(z) = (z + zG(z)^2) / 2$.
+This is a functional equation, whose solution is $G(z) = (1 \pm \sqrt{1 - z^2})/z$.
+Moreover, observing that $G(z)$ takes values between 0 and 1 when $z \in (0,1)$,
+we obtain the unique solution $G(z) = (1 - \sqrt{1- z ^2})/z$.</p>
+<p>Then, by the monotone convergence theorem, we have
+$$
+\mathbb{P}[T &lt; \infty] = \sum_{n=0}^\infty \mathbb{P}[T = n] = \lim_{z \to 1^-} G(z) = 1.
+$$
+Similarly, noting that $G&rsquo;(z) = \sum_{n=1}^{\infty} n z^{n-1} \mathbb{P}[T=n]$,
+we can express $\mathbb{E}[T]$ as $G&rsquo;(1^-)$.
+Because $G&rsquo;(z) = (-1 + 1/\sqrt{1 - z^2})/z^2$,
+we have $\mathbb{E}[T] = G&rsquo;(1^-) = \infty$, i.e., the expected termination time is infinity.</p>
+<h2 id="gamblers-ruin">Gambler&rsquo;s Ruin</h2>
+<p>Let us consider another termination criterion for symmetric random walks:
+it is set up so that Alice and Bob bet one dollar against each other on the
+results of a fair coin flip until one play runs out of money. Suppose that Alice
+starts with $A$ dollars and Bob starts with $B$ dollars.
+We define a termination time to model the gamble:
+$T := \min\lbrace n \ge 0: S_n = -A \vee S_n = B\rbrace$, which is clearly a stopping time.
+By a similar argument, we can show both $\mathbb{P}[T_A &lt; \infty] = 1$
+where $T_A := \min\lbrace n \ge 0: S_n = -A \rbrace$,
+and $\mathbb{P}[T_B &lt; \infty] = 1$ where $T_B := \min\lbrace n \ge 0: S_n = B\rbrace$.
+Thus, we know that $\mathbb{P}[T &lt; \infty] = 1$ as $T = \min(T_A,T_B)$.
+But what about $\mathbb{E}[T]$ in this case?</p>
+<p>We use another technique called <em>Wald identities</em>, two of which have the form below
+in a random-walk setting:</p>
+<ol>
+<li>If the step distribution has a finite first moment and the stopping
+time has a finite expectation, then $\mathbb{E}[S_T] = \mathbb{E}[X_1]\mathbb{E}[T]$.</li>
+<li>If the step distribution has a finite second moment and the stopping
+time has a finite expectation, then $\mathbb{E}[(S_T-\mathbb{E}[X_1]T)^2]=\mathbb{E}[(X_1-\mathbb{E}[X_1])^2]\mathbb{E}[T]$.</li>
+</ol>
+<p>Let us assume $\mathbb{E}[T] &lt; \infty$ first.
+By the definition of $X_1$, we know that $\mathbb{E}[X_1] = 0$ and $\mathbb{E}[X_1^2]=1$.
+By the first Wald identity, we have $\mathbb{E}[S_T]=0$.
+The random variable $S_T$ takes only two values, $-A$ and $B$, with probabilities
+$u$ and $1-u$ such that $u \cdot (-A) + (1-u) \cdot B = 0 \implies u = B/(A+B)$.
+By the second Wald identity, we know that $\mathbb{E}[S_T^2]=\mathbb{E}[T]$.
+Thus, we can compute $\mathbb{E}[T]$ from $S_T$&rsquo;s distribution:
+$ \frac{B}{A+B} \cdot (-A)^2 + \frac{A}{A+B} \cdot B^2 = A \cdot B$.</p>
+<p>To show $\mathbb{E}[T] &lt; \infty$ at the first place, we observe that if at any
+time during the gamble Alice wins consecutive $A+B$ rounds, then Bob must run out
+of money and the gamble must terminate. Thus,
+$$
+\mathbb{P}[T &gt; k(A+B)] \le (1 - \frac{1}{2^{A+B}})^k,
+$$
+and $\mathbb{E}[T] \le \sum_{k=0}^\infty (A+B)(1-\frac{1}{2^{A+B}})^k &lt; \infty$.</p>
+<h2 id="asymmetric-random-walk-uneven-steps">Asymmetric Random Walk (Uneven Steps)</h2>
+<p>For each $i \in \mathbb{N}$, we consider
+$X_i = \left\lbrace \begin{array}{ll}  2 &amp; \text{with prob.}~0.5 \\ -1 &amp; \text{with prob.}~0.5 \end{array} \right.$.
+For the termination criterion, we define $T(m) := \min\lbrace n \ge 0 : S_n \ge m\rbrace$ for any positive integer $m$.
+Let us fixed an $m$ and write $T = T(m)$.
+This time, we do not argue that $\mathbb{P}[T &lt; \infty] = 1$, but reason about $\mathbb{E}[T]$ directly.</p>
+<p>We want to construct a <em>martingale</em> $\lbrace Y_n \rbrace_{n \in \mathbb{N}_0}$,
+which is adapted to $\lbrace S_n \rbrace_{n \in \mathbb{N}_0}$, as follows:
+$$ Y_n := n + 2(m+1 - S_n), n \in \mathbb{N}_0. $$
+We can verify the martingale property by
+$$
+\begin{align}
+&amp; \mathbb{E}[Y_{n+1} \mid S_0,S_1,\cdots,S_n] \\
+={} &amp; n+1 + 2(m+1-S_n) - 2\mathbb{E}[X_{n+1} \mid S_0,S_1,\cdots,S_n] \\
+={} &amp; n+1 + 2(m+1-S_n) - 1 \\
+={} &amp; Y_n.
+\end{align}
+$$
+Then the stopped process $\lbrace Y_{T \wedge n} \rbrace_{n \in \mathbb{N}_0}$ is a nonnegative
+martingale, because $\mathbb{P}[S_n \le m + 1 \mid n \le T] = 1$.
+Therefore, by Doob&rsquo;s martingale convergence theorem, $Y_T := \lim_{n \to \infty} Y_{T \wedge n}$
+is almost-surely well-defined and $\mathbb{E}[Y_T] \le \mathbb{E}[Y_0] = 2(m+1)$.
+On the other hand, the random variable $S_T$ takes only two values, $m$ and $(m+1)$, so
+we have $Y_T = T + 2(m+1-S_T) \ge T$, thus $\mathbb{E}[T] \le 2(m+1)$.</p>
+<p>To obtain an exact result for $\mathbb{E}[T]$, we can reason about the distribution
+of $S_T$ (via recurrence solving) and apply the first Wald identity.
+The result is $\mathbb{E}[T] = 2(m+1 - \frac{2}{1+\sqrt{5}}( 1 - (\frac{1-\sqrt{5}}{2})^{m+1} ) )$.</p>
+<h2 id="asymmetric-random-walk-uneven-probabilities">Asymmetric Random Walk (Uneven Probabilities)</h2>
+<p>For each $i \in \mathbb{N}$, we consider
+$X_i = \left\lbrace \begin{array}{ll}  1 &amp; \text{with prob.}~0.75 \\ -1 &amp; \text{with prob.}~0.25 \end{array} \right.$.
+For the termination criterion, we define $T(m) := \min\lbrace n \ge 0 : S_n = m\rbrace$ for any positive integer $m$.
+This time, we want to reason about both $\mathbb{E}[T(m)]$ and $\mathbb{E}[T(m)^2]$.</p>
+<p>We can use the techniques in previous sections to derive that $\mathbb{P}[T(m) &lt; \infty] = 1$
+and $\mathbb{E}[T(m)] = 2m$.
+For second (or even higher) moments, we can again use probability generating functions
+$G_m(z) := \mathbb{E}[z^{T(m)}]$.
+Observing that a random walk with the target level $m$ can be decomposed into $m$
+independent random walks that reach $1$ starting from $0$,
+we have $G_m(z) = G_1(z)^m$.
+We follow the strategy that conditions on the first step of the random walk to obtain
+a functional equation for $G_1(z)$; there are two possibilities:</p>
+<ul>
+<li>if $X_1=1$, then $S_1=1$ and $T=1$; or</li>
+<li>if $X_1=-1$, then $S_1=-1$ and the problem can be reduced to reaching $2$ starting from $0$.</li>
+</ul>
+<p>Thus, $G_1(z) = 0.75z + 0.25z \cdot G_2(z) = 0.75z + 0.25zG_1(z)^2$.
+The solution is $G_1(z) = (2 \pm \sqrt{4 - 3z^2})/z$.
+Again, because $G_1(z)$ takes values between 0 and 1 when $z \in (0,1)$, we obtain the unique solution
+$G_1(z) = (2-\sqrt{4-3z^2})/z$.</p>
+<p>Let us write $T = T(m)$.
+By the property of probability generating functions, we have $\mathbb{E}[T(T-1)] = G_m&rsquo;&rsquo;(1^-) = 4m^2+4m$.
+Therefore, $\mathbb{E}[T^2] = \mathbb{E}[T(T-1)] + \mathbb{E}[T] = 4m^2+6m$.</p>
+<h2 id="whats-more">What&rsquo;s More</h2>
+<p>In <a href="../../publication/wanghr21a">our paper</a>, we present a systematic and automated
+framework for upper- and lower-bounding higher moments of cost accumulators (e.g., termination time)
+in probabilistic programs (e.g., random walks).</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://stonebuddha.github.io/zh/post/termination-analysis-of-random-walks/&amp;text=%e9%9a%8f%e6%9c%ba%e6%b8%b8%e8%b5%b0%e7%9a%84%e5%81%9c%e6%97%b6%e5%88%86%e6%9e%90%ef%bc%88%e8%8b%b1%e6%96%87%ef%bc%89" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://stonebuddha.github.io/zh/post/termination-analysis-of-random-walks/&amp;t=%e9%9a%8f%e6%9c%ba%e6%b8%b8%e8%b5%b0%e7%9a%84%e5%81%9c%e6%97%b6%e5%88%86%e6%9e%90%ef%bc%88%e8%8b%b1%e6%96%87%ef%bc%89" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=%e9%9a%8f%e6%9c%ba%e6%b8%b8%e8%b5%b0%e7%9a%84%e5%81%9c%e6%97%b6%e5%88%86%e6%9e%90%ef%bc%88%e8%8b%b1%e6%96%87%ef%bc%89&amp;body=https://stonebuddha.github.io/zh/post/termination-analysis-of-random-walks/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://stonebuddha.github.io/zh/post/termination-analysis-of-random-walks/&amp;title=%e9%9a%8f%e6%9c%ba%e6%b8%b8%e8%b5%b0%e7%9a%84%e5%81%9c%e6%97%b6%e5%88%86%e6%9e%90%ef%bc%88%e8%8b%b1%e6%96%87%ef%bc%89" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=%e9%9a%8f%e6%9c%ba%e6%b8%b8%e8%b5%b0%e7%9a%84%e5%81%9c%e6%97%b6%e5%88%86%e6%9e%90%ef%bc%88%e8%8b%b1%e6%96%87%ef%bc%89%20https://stonebuddha.github.io/zh/post/termination-analysis-of-random-walks/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://stonebuddha.github.io/zh/post/termination-analysis-of-random-walks/&amp;title=%e9%9a%8f%e6%9c%ba%e6%b8%b8%e8%b5%b0%e7%9a%84%e5%81%9c%e6%97%b6%e5%88%86%e6%9e%90%ef%bc%88%e8%8b%b1%e6%96%87%ef%bc%89" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://stonebuddha.github.io/"><img class="avatar mr-3 avatar-circle" src="/zh/authors/admin/avatar_hu9d530a7d46346135a5b497cb498a0a1a_1639432_270x270_fill_q75_lanczos_center.jpg" alt="王迪"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://stonebuddha.github.io/">王迪</a></h5>
+      <h6 class="card-subtitle">助理教授</h6>
+      <p class="card-text">朝着思想自由、兼容并包的计算机科学前进！</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/zh/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=cGE_IHMAAAAJ" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://dblp.org/pid/18/5410-17.html" target="_blank" rel="noopener">
+        <i class="ai ai-dblp"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/stonebuddha" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/files/cv_wang.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+  
+    
+  
+  
+    
+  
+
+  
+
+  
+  <p class="powered-by copyright-license-text">
+    © 2023 Di Wang. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
+  </p>
+  
+
+  <p class="powered-by footer-license-icons">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
+      <i class="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
+      <i class="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
+      
+        <i class="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
+      
+      
+        <i class="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>
+      
+    </a>
+  </p>
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      由<a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a>支持发布——免费<a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">开源</a>网站，为创作者赋能。
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+      
+
+    
+    <script src="/js/vendor-bundle.min.32ee83730ed883becad04bc5170512cc.js"></script>
+
+    
+    
+    
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js" integrity="sha512-Ypjm0o7jOxAd4hpdoppSEN0TQOC19UtPAqD+4s5AlXmUvbmmS/YMxYqAqarQYyxTnB6/rqip9qcxlNB/3U9Wdg==" crossorigin="anonymous"></script>
+        
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/ocaml.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/lisp.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/java.min.js" crossorigin="anonymous"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.js" integrity="" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+
+    
+    
+    
+    <script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+    
+    
+      <script src="/js/wowchemy-headroom.c251366b4128fd5e6b046d4c97a62a51.js" type="module"></script>
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/zh/js/wowchemy.min.b648f9dc35d49ef6719fbd6dc04d0743.js"></script>
+
+    
+    
+      <script src="/js/wowchemy-map.a26e9d2f7238ba5b868384f1c5bc6477.js" type="module"></script>
+    
+    
+    
+    
+      
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">引用</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> 复制
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> 下载
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+</body>
+</html>
