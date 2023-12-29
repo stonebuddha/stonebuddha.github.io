@@ -5,12 +5,28 @@
     <link>https://stonebuddha.github.io/event/</link>
       <atom:link href="https://stonebuddha.github.io/event/index.xml" rel="self" type="application/rss+xml" />
     <description>Talks</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 30 Jun 2023 15:15:00 +0800</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 16 Dec 2023 15:30:00 +0800</lastBuildDate>
     <image>
       <url>https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png</url>
       <title>Talks</title>
       <link>https://stonebuddha.github.io/event/</link>
     </image>
+    
+    <item>
+      <title>Exploration of New Designs for Programming Languages (In Chinese)</title>
+      <link>https://stonebuddha.github.io/talk/exploration-of-new-designs-for-programming-languages-in-chinese/</link>
+      <pubDate>Sat, 16 Dec 2023 15:30:00 +0800</pubDate>
+      <guid>https://stonebuddha.github.io/talk/exploration-of-new-designs-for-programming-languages-in-chinese/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Algebraic Program Analysis of Probabilistic Programs (New)</title>
+      <link>https://stonebuddha.github.io/talk/algebraic-program-analysis-of-probabilistic-programs-new/</link>
+      <pubDate>Sat, 02 Dec 2023 14:35:00 +0800</pubDate>
+      <guid>https://stonebuddha.github.io/talk/algebraic-program-analysis-of-probabilistic-programs-new/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Algebraic Program Analysis of Probabilistic Programs</title>
