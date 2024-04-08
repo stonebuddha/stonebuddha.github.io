@@ -824,18 +824,18 @@
 <p><strong>静态</strong>资源分析即在不实际运行程序的情况下对其进行资源分析。
 Facebook 出品的 Infer 工具提供了函数级的静态运行时间分析，其宗旨是在软件开发的过程中更早地指出性能问题（比方说，在 Code Review 阶段由工具自动反馈，而不是等到后面的性能回归测试）。
 下面这个例子来源于 Infer 的官方文档<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="p">){</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="na">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><p>Infer 通过静态分析对上面这个函数得出一个描述其运行时间的多项式（比如 $8|list|+16$），从而知道这个函数的时间复杂度和其输入列表的长度呈线性关系。
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">loop</span><span class="o">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++){</span>
+</span></span><span class="line"><span class="cl">  <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>Infer 通过静态分析对上面这个函数得出一个描述其运行时间的多项式（比如 $8|list|+16$），从而知道这个函数的时间复杂度和其输入列表的长度呈线性关系。
 如果某一次代码修改把这个函数更新为：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">list</span><span class="p">){</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">list</span><span class="p">.</span><span class="na">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">foo</span><span class="p">(</span><span class="n">i</span><span class="p">);</span><span class="w"> </span><span class="c1">// newly added function call</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><p>而此处的 <code>foo</code> 函数的时间复杂度也是与输入呈线性关系，那么 Infer 可以检测到 <code>loop</code> 函数的复杂度从 $O(|list|)$ 增长到了 $O(|list|^2)$，并向开发者发出警报。
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">loop</span><span class="o">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="n">i</span><span class="o">++){</span>
+</span></span><span class="line"><span class="cl">    <span class="n">foo</span><span class="o">(</span><span class="n">i</span><span class="o">);</span> <span class="c1">// newly added function call
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>而此处的 <code>foo</code> 函数的时间复杂度也是与输入呈线性关系，那么 Infer 可以检测到 <code>loop</code> 函数的复杂度从 $O(|list|)$ 增长到了 $O(|list|^2)$，并向开发者发出警报。
 （如果想要更深入了解 Infer 中的资源分析，可以参考<a href="https://youtu.be/-sqdJbvqeNQ" target="_blank" rel="noopener">这个视频</a>。）</p>
 <p>笼统地说，Infer 中的资源分析可以大致理解为对循环次数进行计数，从而将资源分析问题转化为程序变量数值关系的分析；这也是很多静态资源分析（比如 SPEED<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>）背后的原理。
 在这篇文章中，我们来聊另一种颇为有趣的静态资源分析：<strong>自动均摊资源分析</strong>（Automatic Amortized Resource Analysis，AARA）。
@@ -1203,7 +1203,7 @@ $$
       
 
     
-    <script src="/js/vendor-bundle.min.b4708d4364577c16ab7001b265a063a4.js"></script>
+    <script src="/js/vendor-bundle.min.32ee83730ed883becad04bc5170512cc.js"></script>
 
     
     
@@ -1302,7 +1302,7 @@ $$
       
     
     
-    <script src="/en/js/wowchemy.min.e621ca22b71fe422a443af00168d758e.js"></script>
+    <script src="/en/js/wowchemy.min.d66c8b3b4ad0f66a62428f6bc7cf477d.js"></script>
 
     
     
@@ -1337,7 +1337,7 @@ $$
   </div>
 </div>
 
-      <script src="/js/wowchemy-publication.af9327db0521d4a01354bfc8b77a4324.js" type="module"></script>
+      <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
 
 
 
