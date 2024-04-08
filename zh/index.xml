@@ -5,12 +5,28 @@
     <link>https://stonebuddha.github.io/zh/</link>
       <atom:link href="https://stonebuddha.github.io/zh/index.xml" rel="self" type="application/rss+xml" />
     <description>王迪</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh</language><lastBuildDate>Sat, 16 Dec 2023 15:30:00 +0800</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh</language><lastBuildDate>Wed, 27 Mar 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png</url>
       <title>王迪</title>
       <link>https://stonebuddha.github.io/zh/</link>
     </image>
+    
+    <item>
+      <title>Newtonian Program Analysis of Probabilistic Programs</title>
+      <link>https://stonebuddha.github.io/zh/publication/wangr24/</link>
+      <pubDate>Wed, 27 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/wangr24/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Decomposition-Based Synthesis for Applying Divide-and-Conquer-Like Algorithmic Paradigms</title>
+      <link>https://stonebuddha.github.io/zh/publication/jizx24/</link>
+      <pubDate>Wed, 14 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/jizx24/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>编程语言新范式初探</title>
@@ -25,14 +41,6 @@
       <link>https://stonebuddha.github.io/zh/talk/%E6%A6%82%E7%8E%87%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BB%A3%E6%95%B0%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90%E6%96%B0/</link>
       <pubDate>Sat, 02 Dec 2023 14:35:00 +0800</pubDate>
       <guid>https://stonebuddha.github.io/zh/talk/%E6%A6%82%E7%8E%87%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BB%A3%E6%95%B0%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90%E6%96%B0/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Newtonian Program Analysis of Probabilistic Programs</title>
-      <link>https://stonebuddha.github.io/zh/publication/wangr23/</link>
-      <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>https://stonebuddha.github.io/zh/publication/wangr23/</guid>
       <description></description>
     </item>
     

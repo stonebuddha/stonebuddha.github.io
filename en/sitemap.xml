@@ -4,7 +4,19 @@
   
   
   <url>
-    <loc>https://stonebuddha.github.io/</loc><lastmod>2023-12-16T15:30:00+08:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+    <loc></loc><lastmod>2024-03-27T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
+  <url>
+    <loc>https://stonebuddha.github.io/publication-type/1/</loc><lastmod>2024-03-27T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://stonebuddha.github.io/zh/publication-type/1/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://stonebuddha.github.io/publication-type/1/"
+    /></url>
+  <url>
+    <loc>https://stonebuddha.github.io/</loc><lastmod>2024-03-27T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
       rel="alternate"
       hreflang="zh"
       href="https://stonebuddha.github.io/zh/"
@@ -13,6 +25,70 @@
       hreflang="en"
       href="https://stonebuddha.github.io/"
     /></url>
+  <url>
+    <loc></loc><lastmod>2024-03-27T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
+  <url>
+    <loc>https://stonebuddha.github.io/publication/wangr24/</loc><lastmod>2024-03-27T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://stonebuddha.github.io/zh/publication/wangr24/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://stonebuddha.github.io/publication/wangr24/"
+    /></url>
+  <url>
+    <loc>https://stonebuddha.github.io/publication_types/</loc><lastmod>2024-03-27T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://stonebuddha.github.io/zh/publication_types/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://stonebuddha.github.io/publication_types/"
+    /></url>
+  <url>
+    <loc>https://stonebuddha.github.io/publication/</loc><lastmod>2024-03-27T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://stonebuddha.github.io/zh/publication/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://stonebuddha.github.io/publication/"
+    /></url>
+  <url>
+    <loc></loc><lastmod>2024-03-27T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
+  <url>
+    <loc>https://stonebuddha.github.io/publication-type/2/</loc><lastmod>2024-02-14T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://stonebuddha.github.io/zh/publication-type/2/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://stonebuddha.github.io/publication-type/2/"
+    /></url>
+  <url>
+    <loc>https://stonebuddha.github.io/publication/jizx24/</loc><lastmod>2024-02-14T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://stonebuddha.github.io/zh/publication/jizx24/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://stonebuddha.github.io/publication/jizx24/"
+    /></url>
+  <url>
+    <loc></loc><lastmod>2024-02-14T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
+  <url>
+    <loc></loc><lastmod>2024-02-14T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
+  <url>
+    <loc></loc><lastmod>2024-02-14T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
+  <url>
+    <loc></loc><lastmod>2024-02-14T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
+  <url>
+    <loc></loc><lastmod>2024-02-14T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
     <loc>https://stonebuddha.github.io/talk/exploration-of-new-designs-for-programming-languages-in-chinese/</loc><lastmod>2023-12-16T15:30:00+08:00</lastmod><changefreq>weekly</changefreq><xhtml:link
       rel="alternate"
@@ -43,52 +119,6 @@
       hreflang="en"
       href="https://stonebuddha.github.io/talk/algebraic-program-analysis-of-probabilistic-programs-new/"
     /></url>
-  <url>
-    <loc></loc><lastmod>2023-07-29T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
-  <url>
-    <loc>https://stonebuddha.github.io/publication-type/3/</loc><lastmod>2023-07-29T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
-      rel="alternate"
-      hreflang="zh"
-      href="https://stonebuddha.github.io/zh/publication-type/3/"
-    /><xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://stonebuddha.github.io/publication-type/3/"
-    /></url>
-  <url>
-    <loc></loc><lastmod>2023-07-29T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
-  <url>
-    <loc>https://stonebuddha.github.io/publication/wangr23/</loc><lastmod>2023-07-29T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
-      rel="alternate"
-      hreflang="zh"
-      href="https://stonebuddha.github.io/zh/publication/wangr23/"
-    /><xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://stonebuddha.github.io/publication/wangr23/"
-    /></url>
-  <url>
-    <loc>https://stonebuddha.github.io/publication_types/</loc><lastmod>2023-07-29T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
-      rel="alternate"
-      hreflang="zh"
-      href="https://stonebuddha.github.io/zh/publication_types/"
-    /><xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://stonebuddha.github.io/publication_types/"
-    /></url>
-  <url>
-    <loc>https://stonebuddha.github.io/publication/</loc><lastmod>2023-07-29T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
-      rel="alternate"
-      hreflang="zh"
-      href="https://stonebuddha.github.io/zh/publication/"
-    /><xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://stonebuddha.github.io/publication/"
-    /></url>
-  <url>
-    <loc></loc><lastmod>2023-07-29T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
     <loc>https://stonebuddha.github.io/talk/algebraic-program-analysis-of-probabilistic-programs/</loc><lastmod>2023-06-30T15:15:00+08:00</lastmod><changefreq>weekly</changefreq><xhtml:link
       rel="alternate"
@@ -128,16 +158,6 @@
       rel="alternate"
       hreflang="en"
       href="https://stonebuddha.github.io/talk/intuitionistic-logics-and-programing-languages-in-chinese/"
-    /></url>
-  <url>
-    <loc>https://stonebuddha.github.io/publication-type/1/</loc><lastmod>2023-01-15T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
-      rel="alternate"
-      hreflang="zh"
-      href="https://stonebuddha.github.io/zh/publication-type/1/"
-    /><xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://stonebuddha.github.io/publication-type/1/"
     /></url>
   <url>
     <loc></loc><lastmod>2023-01-15T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
@@ -262,6 +282,16 @@
       rel="alternate"
       hreflang="en"
       href="https://stonebuddha.github.io/talk/type-guided-worst-case-input-generation/"
+    /></url>
+  <url>
+    <loc>https://stonebuddha.github.io/publication-type/3/</loc><lastmod>2021-03-30T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://stonebuddha.github.io/zh/publication-type/3/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://stonebuddha.github.io/publication-type/3/"
     /></url>
   <url>
     <loc>https://stonebuddha.github.io/publication/wanghr21c/</loc><lastmod>2021-03-30T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
@@ -435,10 +465,6 @@
       hreflang="en"
       href="https://stonebuddha.github.io/publication/tangwx17/"
     /></url>
-  <url>
-    <loc></loc><lastmod>2017-04-22T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
-  <url>
-    <loc></loc><lastmod>2017-04-22T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
     <loc></loc><lastmod>2017-04-22T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>

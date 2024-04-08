@@ -64,14 +64,16 @@
   
     
   
-  <meta name="description" content="Due to their *quantitative* nature, probabilistic programs pose non-trivial challenges for designing compositional and efficient program analyses. Many analyses for probabilistic programs rely on *iterative* approximation. This article presents an interprocedural dataflow-analysis framework, called *NPA-PMA*, for designing and implementing (partially) *non-iterative* program analyses of probabilistic programs with unstructured control-flow, nondeterminism, and general recursion. NPA-PMA is based on Newtonian Program Analysis (NPA), a generalization of Newton&#39;s method to solve equation systems over semirings. The key challenge for developing NPA-PMA is to handle multiple kinds of *confluences* in both the algebraic structures that specify analyses and the equation systems that encode control flow: semirings support a single confluence operation, whereas NPA-PMA involves three confluence operations (conditional, probabilistic, and nondeterministic).
+  <meta name="description" content="Algorithmic paradigms such as divide-and-conquer (D&amp;C) are proposed to guide developers in designing efficient algorithms, but it can still be difficult to apply algorithmic paradigms to practical tasks. To ease the usage of paradigms, many research efforts have been devoted to the automatic application of algorithmic paradigms. However, most existing approaches to this problem rely on syntax-based program transformations and thus put significant restrictions on the original program.
 
- Our work introduces *$\omega$-continuous pre-Markov algebras* ( $\omega$PMAs) to factor out common parts of different analyses; adopts *regular infinite-tree expressions* to encode program-execution paths in control-flow hyper-graphs; and presents a *linearization* method that makes Newton&#39;s method applicable to the setting of regular-infinite-tree equations over $\omega$PMAs. NPA-PMA allows analyses to supply a non-iterative strategy to solve linearized equations. Our experimental evaluation demonstrates that (i) NPA-PMA holds considerable promise for outperforming Kleene iteration, and (ii) provides great generality for designing program analyses." />
+In this paper, we study the automatic application of D&amp;C and several similar paradigms, denoted as D&amp;C-like algorithmic paradigms, and aim to remove the restrictions from syntax-based transformations. To achieve this goal, we propose an efficient synthesizer, named *AutoLifter*, which does not depend on syntax-based transformations. Specifically, the main challenge of applying algorithmic paradigms is from the large scale of the synthesized programs, and *AutoLifter* addresses this challenge by applying two novel decomposition methods that do not depend on the syntax of the input program, *component elimination* and *variable elimination*, to soundly divide the whole problem into simpler subtasks, each synthesizing a sub-program of the final program and being tractable with existing synthesizers.
+
+We evaluate *AutoLifter* on 96 programming tasks related to 6 different algorithmic paradigms. *AutoLifter* solves 82/96 tasks with an average time cost of 20.17 seconds, significantly outperforming existing approaches." />
 
   
-    <link rel="alternate" hreflang="zh" href="https://stonebuddha.github.io/zh/publication/wangr23/" />
+    <link rel="alternate" hreflang="zh" href="https://stonebuddha.github.io/zh/publication/jizx24/" />
   
-  <link rel="alternate" hreflang="en-us" href="https://stonebuddha.github.io/publication/wangr23/" />
+  <link rel="alternate" hreflang="en-us" href="https://stonebuddha.github.io/publication/jizx24/" />
 
   
   
@@ -80,9 +82,6 @@
   
 
   
-  
-    
-    <script src="/js/mathjax-config.js"></script>
   
 
   
@@ -233,9 +232,9 @@
 
       
       
-
+        
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+
       
     
       
@@ -291,7 +290,7 @@
   <link rel="icon" type="image/png" href="/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="https://stonebuddha.github.io/publication/wangr23/" />
+  <link rel="canonical" href="https://stonebuddha.github.io/publication/jizx24/" />
 
   
   
@@ -314,20 +313,22 @@
   <meta property="twitter:card" content="summary" />
   
   <meta property="og:site_name" content="Di Wang" />
-  <meta property="og:url" content="https://stonebuddha.github.io/publication/wangr23/" />
-  <meta property="og:title" content="Newtonian Program Analysis of Probabilistic Programs | Di Wang" />
-  <meta property="og:description" content="Due to their *quantitative* nature, probabilistic programs pose non-trivial challenges for designing compositional and efficient program analyses. Many analyses for probabilistic programs rely on *iterative* approximation. This article presents an interprocedural dataflow-analysis framework, called *NPA-PMA*, for designing and implementing (partially) *non-iterative* program analyses of probabilistic programs with unstructured control-flow, nondeterminism, and general recursion. NPA-PMA is based on Newtonian Program Analysis (NPA), a generalization of Newton&#39;s method to solve equation systems over semirings. The key challenge for developing NPA-PMA is to handle multiple kinds of *confluences* in both the algebraic structures that specify analyses and the equation systems that encode control flow: semirings support a single confluence operation, whereas NPA-PMA involves three confluence operations (conditional, probabilistic, and nondeterministic).
+  <meta property="og:url" content="https://stonebuddha.github.io/publication/jizx24/" />
+  <meta property="og:title" content="Decomposition-Based Synthesis for Applying Divide-and-Conquer-Like Algorithmic Paradigms | Di Wang" />
+  <meta property="og:description" content="Algorithmic paradigms such as divide-and-conquer (D&amp;C) are proposed to guide developers in designing efficient algorithms, but it can still be difficult to apply algorithmic paradigms to practical tasks. To ease the usage of paradigms, many research efforts have been devoted to the automatic application of algorithmic paradigms. However, most existing approaches to this problem rely on syntax-based program transformations and thus put significant restrictions on the original program.
 
- Our work introduces *$\omega$-continuous pre-Markov algebras* ( $\omega$PMAs) to factor out common parts of different analyses; adopts *regular infinite-tree expressions* to encode program-execution paths in control-flow hyper-graphs; and presents a *linearization* method that makes Newton&#39;s method applicable to the setting of regular-infinite-tree equations over $\omega$PMAs. NPA-PMA allows analyses to supply a non-iterative strategy to solve linearized equations. Our experimental evaluation demonstrates that (i) NPA-PMA holds considerable promise for outperforming Kleene iteration, and (ii) provides great generality for designing program analyses." /><meta property="og:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" />
+In this paper, we study the automatic application of D&amp;C and several similar paradigms, denoted as D&amp;C-like algorithmic paradigms, and aim to remove the restrictions from syntax-based transformations. To achieve this goal, we propose an efficient synthesizer, named *AutoLifter*, which does not depend on syntax-based transformations. Specifically, the main challenge of applying algorithmic paradigms is from the large scale of the synthesized programs, and *AutoLifter* addresses this challenge by applying two novel decomposition methods that do not depend on the syntax of the input program, *component elimination* and *variable elimination*, to soundly divide the whole problem into simpler subtasks, each synthesizing a sub-program of the final program and being tractable with existing synthesizers.
+
+We evaluate *AutoLifter* on 96 programming tasks related to 6 different algorithmic paradigms. *AutoLifter* solves 82/96 tasks with an average time cost of 20.17 seconds, significantly outperforming existing approaches." /><meta property="og:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" />
     <meta property="twitter:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
       <meta
         property="article:published_time"
-        content="2023-07-29T11:57:39&#43;08:00"
+        content="2024-04-08T19:16:00&#43;08:00"
       />
     
-    <meta property="article:modified_time" content="2023-07-29T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2024-02-14T00:00:00&#43;00:00">
   
 
   
@@ -349,16 +350,16 @@
   "@type": "Article",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://stonebuddha.github.io/publication/wangr23/"
+    "@id": "https://stonebuddha.github.io/publication/jizx24/"
   },
-  "headline": "Newtonian Program Analysis of Probabilistic Programs",
+  "headline": "Decomposition-Based Synthesis for Applying Divide-and-Conquer-Like Algorithmic Paradigms",
   
-  "datePublished": "2023-07-29T11:57:39+08:00",
-  "dateModified": "2023-07-29T00:00:00Z",
+  "datePublished": "2024-04-08T19:16:00+08:00",
+  "dateModified": "2024-02-14T00:00:00Z",
   
   "author": {
     "@type": "Person",
-    "name": "Di Wang"
+    "name": "Ruyi Ji"
   },
   
   "publisher": {
@@ -369,7 +370,7 @@
       "url": "https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_192x192_fill_lanczos_center_3.png"
     }
   },
-  "description": "Due to their *quantitative* nature, probabilistic programs pose non-trivial challenges for designing compositional and efficient program analyses. Many analyses for probabilistic programs rely on *iterative* approximation. This article presents an interprocedural dataflow-analysis framework, called *NPA-PMA*, for designing and implementing (partially) *non-iterative* program analyses of probabilistic programs with unstructured control-flow, nondeterminism, and general recursion. NPA-PMA is based on Newtonian Program Analysis (NPA), a generalization of Newton's method to solve equation systems over semirings. The key challenge for developing NPA-PMA is to handle multiple kinds of *confluences* in both the algebraic structures that specify analyses and the equation systems that encode control flow: semirings support a single confluence operation, whereas NPA-PMA involves three confluence operations (conditional, probabilistic, and nondeterministic).\n\n Our work introduces *$\\omega$-continuous pre-Markov algebras* ( $\\omega$PMAs) to factor out common parts of different analyses; adopts *regular infinite-tree expressions* to encode program-execution paths in control-flow hyper-graphs; and presents a *linearization* method that makes Newton's method applicable to the setting of regular-infinite-tree equations over $\\omega$PMAs. NPA-PMA allows analyses to supply a non-iterative strategy to solve linearized equations. Our experimental evaluation demonstrates that (i) NPA-PMA holds considerable promise for outperforming Kleene iteration, and (ii) provides great generality for designing program analyses."
+  "description": "Algorithmic paradigms such as divide-and-conquer (D\u0026C) are proposed to guide developers in designing efficient algorithms, but it can still be difficult to apply algorithmic paradigms to practical tasks. To ease the usage of paradigms, many research efforts have been devoted to the automatic application of algorithmic paradigms. However, most existing approaches to this problem rely on syntax-based program transformations and thus put significant restrictions on the original program.\n\nIn this paper, we study the automatic application of D\u0026C and several similar paradigms, denoted as D\u0026C-like algorithmic paradigms, and aim to remove the restrictions from syntax-based transformations. To achieve this goal, we propose an efficient synthesizer, named *AutoLifter*, which does not depend on syntax-based transformations. Specifically, the main challenge of applying algorithmic paradigms is from the large scale of the synthesized programs, and *AutoLifter* addresses this challenge by applying two novel decomposition methods that do not depend on the syntax of the input program, *component elimination* and *variable elimination*, to soundly divide the whole problem into simpler subtasks, each synthesizing a sub-program of the final program and being tractable with existing synthesizers.\n\nWe evaluate *AutoLifter* on 96 programming tasks related to 6 different algorithmic paradigms. *AutoLifter* solves 82/96 tasks with an average time cost of 20.17 seconds, significantly outperforming existing approaches."
 }
 </script>
 
@@ -385,11 +386,11 @@
 
 
 
-  <title>Newtonian Program Analysis of Probabilistic Programs | Di Wang</title>
+  <title>Decomposition-Based Synthesis for Applying Divide-and-Conquer-Like Algorithmic Paradigms | Di Wang</title>
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="82d3777049f5cebd2c43b877f3deef1d" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="08d77cabf366c3afae89ffe2f4f168bd" >
 
   
   
@@ -709,7 +710,7 @@
               <span>English</span>
             </div>
             
-            <a class="dropdown-item" href="https://stonebuddha.github.io/zh/publication/wangr23/">
+            <a class="dropdown-item" href="https://stonebuddha.github.io/zh/publication/jizx24/">
               <span>中文 (简体)</span>
             </a>
             
@@ -761,7 +762,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>Newtonian Program Analysis of Probabilistic Programs</h1>
+  <h1>Decomposition-Based Synthesis for Applying Divide-and-Conquer-Like Algorithmic Paradigms</h1>
 
   
 
@@ -778,9 +779,13 @@
   <div>
     
 
-  <span class="author-highlighted">
+  <span >
+      Ruyi Ji</span>, <span >
+      Yuwei Zhao</span>, <span >
+      Yingfei Xiong</span>, <span class="author-highlighted">
       Di Wang</span>, <span >
-      Thomas Reps</span>
+      Lu Zhang</span>, <span >
+      Zhenjiang Hu</span>
   </div>
   
   
@@ -791,7 +796,7 @@
     
       
     
-    July, 2023
+    February, 2024
   </span>
   
 
@@ -831,8 +836,15 @@
 
 
 
-<a class="btn btn-outline-primary btn-page-header" href="https://arxiv.org/pdf/2307.09064" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary btn-page-header" href="https://arxiv.org/pdf/2202.12193" target="_blank" rel="noopener">
   TR
+</a>
+
+
+
+<a href="#" class="btn btn-outline-primary btn-page-header js-cite-modal"
+        data-filename="/publication/jizx24/cite.bib">
+  Cite
 </a>
 
 
@@ -847,7 +859,9 @@
 
 
 
-
+<a class="btn btn-outline-primary btn-page-header" href="https://doi.org/10.1145/3648440" target="_blank" rel="noopener">
+  DOI
+</a>
 
 
 
@@ -863,8 +877,9 @@
 
     
     <h3>Abstract</h3>
-    <p class="pub-abstract"><p>Due to their <em>quantitative</em> nature, probabilistic programs pose non-trivial challenges for designing compositional and efficient program analyses. Many analyses for probabilistic programs rely on <em>iterative</em> approximation. This article presents an interprocedural dataflow-analysis framework, called <em>NPA-PMA</em>, for designing and implementing (partially) <em>non-iterative</em> program analyses of probabilistic programs with unstructured control-flow, nondeterminism, and general recursion. NPA-PMA is based on Newtonian Program Analysis (NPA), a generalization of Newton&rsquo;s method to solve equation systems over semirings. The key challenge for developing NPA-PMA is to handle multiple kinds of <em>confluences</em> in both the algebraic structures that specify analyses and the equation systems that encode control flow: semirings support a single confluence operation, whereas NPA-PMA involves three confluence operations (conditional, probabilistic, and nondeterministic).</p>
-<p>Our work introduces <em>$\omega$-continuous pre-Markov algebras</em> ( $\omega$PMAs) to factor out common parts of different analyses; adopts <em>regular infinite-tree expressions</em> to encode program-execution paths in control-flow hyper-graphs; and presents a <em>linearization</em> method that makes Newton&rsquo;s method applicable to the setting of regular-infinite-tree equations over $\omega$PMAs. NPA-PMA allows analyses to supply a non-iterative strategy to solve linearized equations. Our experimental evaluation demonstrates that (i) NPA-PMA holds considerable promise for outperforming Kleene iteration, and (ii) provides great generality for designing program analyses.</p>
+    <p class="pub-abstract"><p>Algorithmic paradigms such as divide-and-conquer (D&amp;C) are proposed to guide developers in designing efficient algorithms, but it can still be difficult to apply algorithmic paradigms to practical tasks. To ease the usage of paradigms, many research efforts have been devoted to the automatic application of algorithmic paradigms. However, most existing approaches to this problem rely on syntax-based program transformations and thus put significant restrictions on the original program.</p>
+<p>In this paper, we study the automatic application of D&amp;C and several similar paradigms, denoted as D&amp;C-like algorithmic paradigms, and aim to remove the restrictions from syntax-based transformations. To achieve this goal, we propose an efficient synthesizer, named <em>AutoLifter</em>, which does not depend on syntax-based transformations. Specifically, the main challenge of applying algorithmic paradigms is from the large scale of the synthesized programs, and <em>AutoLifter</em> addresses this challenge by applying two novel decomposition methods that do not depend on the syntax of the input program, <em>component elimination</em> and <em>variable elimination</em>, to soundly divide the whole problem into simpler subtasks, each synthesizing a sub-program of the final program and being tractable with existing synthesizers.</p>
+<p>We evaluate <em>AutoLifter</em> on 96 programming tasks related to 6 different algorithmic paradigms. <em>AutoLifter</em> solves 82/96 tasks with an average time cost of 20.17 seconds, significantly outperforming existing approaches.</p>
 </p>
     
 
@@ -876,8 +891,8 @@
         <div class="row">
           <div class="col-12 col-md-3 pub-row-heading">Type</div>
           <div class="col-12 col-md-9">
-            <a href="/publication/#3">
-              Working paper
+            <a href="/publication/#2">
+              Journal article
             </a>
           </div>
         </div>
@@ -887,6 +902,18 @@
     <div class="d-md-none space-below"></div>
     
 
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Publication</div>
+          <div class="col-12 col-md-9">In <em>Transactions on Programming Languages and Systems</em></div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
     
 
     <div class="space-below"></div>
@@ -911,7 +938,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://stonebuddha.github.io/publication/wangr23/&amp;text=Newtonian%20Program%20Analysis%20of%20Probabilistic%20Programs" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://stonebuddha.github.io/publication/jizx24/&amp;text=Decomposition-Based%20Synthesis%20for%20Applying%20Divide-and-Conquer-Like%20Algorithmic%20Paradigms" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -924,7 +951,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://stonebuddha.github.io/publication/wangr23/&amp;t=Newtonian%20Program%20Analysis%20of%20Probabilistic%20Programs" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://stonebuddha.github.io/publication/jizx24/&amp;t=Decomposition-Based%20Synthesis%20for%20Applying%20Divide-and-Conquer-Like%20Algorithmic%20Paradigms" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -937,7 +964,7 @@
       
       
       <li>
-        <a href="mailto:?subject=Newtonian%20Program%20Analysis%20of%20Probabilistic%20Programs&amp;body=https://stonebuddha.github.io/publication/wangr23/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+        <a href="mailto:?subject=Decomposition-Based%20Synthesis%20for%20Applying%20Divide-and-Conquer-Like%20Algorithmic%20Paradigms&amp;body=https://stonebuddha.github.io/publication/jizx24/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -950,7 +977,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://stonebuddha.github.io/publication/wangr23/&amp;title=Newtonian%20Program%20Analysis%20of%20Probabilistic%20Programs" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+        <a href="https://www.linkedin.com/shareArticle?url=https://stonebuddha.github.io/publication/jizx24/&amp;title=Decomposition-Based%20Synthesis%20for%20Applying%20Divide-and-Conquer-Like%20Algorithmic%20Paradigms" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -963,7 +990,7 @@
       
       
       <li>
-        <a href="whatsapp://send?text=Newtonian%20Program%20Analysis%20of%20Probabilistic%20Programs%20https://stonebuddha.github.io/publication/wangr23/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+        <a href="whatsapp://send?text=Decomposition-Based%20Synthesis%20for%20Applying%20Divide-and-Conquer-Like%20Algorithmic%20Paradigms%20https://stonebuddha.github.io/publication/jizx24/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -976,7 +1003,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://stonebuddha.github.io/publication/wangr23/&amp;title=Newtonian%20Program%20Analysis%20of%20Probabilistic%20Programs" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://stonebuddha.github.io/publication/jizx24/&amp;title=Decomposition-Based%20Synthesis%20for%20Applying%20Divide-and-Conquer-Like%20Algorithmic%20Paradigms" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -995,6 +1022,24 @@
 
 
   
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
   
     
 
@@ -1111,6 +1156,12 @@
 
 
   
+    
+
+
+
+
+  
 
 
 
@@ -1171,7 +1222,7 @@
 
   
   <p class="powered-by copyright-license-text">
-    © 2023 Di Wang. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
+    © 2024 Di Wang. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
   </p>
   
 
@@ -1347,7 +1398,7 @@
   </div>
 </div>
 
-      <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+      <script src="/js/wowchemy-publication.af9327db0521d4a01354bfc8b77a4324.js" type="module"></script>
 
 
 

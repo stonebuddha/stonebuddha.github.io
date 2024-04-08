@@ -5,7 +5,7 @@
     <link>https://stonebuddha.github.io/zh/publication/</link>
       <atom:link href="https://stonebuddha.github.io/zh/publication/index.xml" rel="self" type="application/rss+xml" />
     <description>论文</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh</language><lastBuildDate>Sat, 29 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh</language><lastBuildDate>Wed, 27 Mar 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png</url>
       <title>论文</title>
@@ -14,9 +14,17 @@
     
     <item>
       <title>Newtonian Program Analysis of Probabilistic Programs</title>
-      <link>https://stonebuddha.github.io/zh/publication/wangr23/</link>
-      <pubDate>Sat, 29 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>https://stonebuddha.github.io/zh/publication/wangr23/</guid>
+      <link>https://stonebuddha.github.io/zh/publication/wangr24/</link>
+      <pubDate>Wed, 27 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/wangr24/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Decomposition-Based Synthesis for Applying Divide-and-Conquer-Like Algorithmic Paradigms</title>
+      <link>https://stonebuddha.github.io/zh/publication/jizx24/</link>
+      <pubDate>Wed, 14 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/jizx24/</guid>
       <description></description>
     </item>
     
