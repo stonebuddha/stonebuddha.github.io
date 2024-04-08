@@ -987,7 +987,7 @@ Therefore we use recursive types to model this mechanism.&lt;/p&gt;
       <link>https://stonebuddha.github.io/prospective-students/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://stonebuddha.github.io/prospective-students/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;(Last updated on Oct 2, 2023)&lt;/strong&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;(Last updated on Apr 8, 2024)&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;I am broadly interested in topics related to programming languages, especially
 formal verification, program analysis, and probabilistic programming.
 I am currently working on resource-safe system programming, programmable
@@ -1524,6 +1524,25 @@ readability. Is it possible to use a backward pattern in Coq proofs? If not, wou
 it be possible to have a backward-proof DSL that can be translated to Coq?&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Proposal&lt;/strong&gt;: Isabelle&amp;rsquo;s &lt;a href=&#34;https://isabelle.in.tum.de/Isar/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Isar&lt;/a&gt; might be a good starting point.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Follow-up&lt;/strong&gt;: What is the best proof interface for system programmers?&lt;/p&gt;
+  &lt;/span&gt;
+&lt;/details&gt;
+&lt;details class=&#34;spoiler&#34;&gt;
+  &lt;summary&gt;Refinement-based System Programming&lt;/summary&gt;
+  &lt;span style=&#34;display:inline-block;margin-left:1.5em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Problem&lt;/strong&gt;: Many verification projects (e.g., seL4) start from a high-level
+specification implemented in a functional language (e.g., Haskell) and then
+prove a concrete implementation in a system programming language (e.g., C) &lt;em&gt;refine&lt;/em&gt;
+the specification. From the perspective of software engineering, this suggests
+another way of system programming: first implement a functional specification
+and then (iteratively) refine it to build a concrete low-level implementation.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proposal&lt;/strong&gt;: Build a language where the high-level and low-level languages
+can &lt;em&gt;interoperate&lt;/em&gt; seamlessly, e.g. Haskell and C. Existing solutions are
+somehow quite complex, in the sense that they want to interoperate with a
+realistic C compiler directly. However, it would be nice enough for the development
+process if the C part is just supported partially, but with better support, e.g.,
+to be equipped with an interpreter.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Follow-up&lt;/strong&gt;: What is the best practice for multi-language (i.e., multilingual)
+software engineering?&lt;/p&gt;
   &lt;/span&gt;
 &lt;/details&gt;
 &lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;

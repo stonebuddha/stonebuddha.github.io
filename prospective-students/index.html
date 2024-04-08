@@ -64,7 +64,7 @@
   
     
   
-  <meta name="description" content="(Last updated on Oct 2, 2023)
+  <meta name="description" content="(Last updated on Apr 8, 2024)
 I am broadly interested in topics related to programming languages, especially formal verification, program analysis, and probabilistic programming. I am currently working on resource-safe system programming, programmable Bayesian inference, quantitative program analysis, and proof-oriented programming languages." />
 
   
@@ -315,7 +315,7 @@ I am broadly interested in topics related to programming languages, especially f
   <meta property="og:site_name" content="Di Wang" />
   <meta property="og:url" content="https://stonebuddha.github.io/prospective-students/" />
   <meta property="og:title" content="Resources for Prospective Students | Di Wang" />
-  <meta property="og:description" content="(Last updated on Oct 2, 2023)
+  <meta property="og:description" content="(Last updated on Apr 8, 2024)
 I am broadly interested in topics related to programming languages, especially formal verification, program analysis, and probabilistic programming. I am currently working on resource-safe system programming, programmable Bayesian inference, quantitative program analysis, and proof-oriented programming languages." /><meta property="og:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" />
     <meta property="twitter:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
@@ -757,7 +757,7 @@ I am broadly interested in topics related to programming languages, especially f
   <div class="article-container">
 
     <div class="article-style">
-      <p><strong>(Last updated on Oct 2, 2023)</strong></p>
+      <p><strong>(Last updated on Apr 8, 2024)</strong></p>
 <p>I am broadly interested in topics related to programming languages, especially
 formal verification, program analysis, and probabilistic programming.
 I am currently working on resource-safe system programming, programmable
@@ -1294,6 +1294,25 @@ readability. Is it possible to use a backward pattern in Coq proofs? If not, wou
 it be possible to have a backward-proof DSL that can be translated to Coq?</p>
 <p><strong>Proposal</strong>: Isabelle&rsquo;s <a href="https://isabelle.in.tum.de/Isar/" target="_blank" rel="noopener">Isar</a> might be a good starting point.</p>
 <p><strong>Follow-up</strong>: What is the best proof interface for system programmers?</p>
+  </span>
+</details>
+<details class="spoiler">
+  <summary>Refinement-based System Programming</summary>
+  <span style="display:inline-block;margin-left:1.5em;">
+<p><strong>Problem</strong>: Many verification projects (e.g., seL4) start from a high-level
+specification implemented in a functional language (e.g., Haskell) and then
+prove a concrete implementation in a system programming language (e.g., C) <em>refine</em>
+the specification. From the perspective of software engineering, this suggests
+another way of system programming: first implement a functional specification
+and then (iteratively) refine it to build a concrete low-level implementation.</p>
+<p><strong>Proposal</strong>: Build a language where the high-level and low-level languages
+can <em>interoperate</em> seamlessly, e.g. Haskell and C. Existing solutions are
+somehow quite complex, in the sense that they want to interoperate with a
+realistic C compiler directly. However, it would be nice enough for the development
+process if the C part is just supported partially, but with better support, e.g.,
+to be equipped with an interpreter.</p>
+<p><strong>Follow-up</strong>: What is the best practice for multi-language (i.e., multilingual)
+software engineering?</p>
   </span>
 </details>
 <div class="footnotes" role="doc-endnotes">
