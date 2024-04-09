@@ -1190,6 +1190,24 @@ programs by iteratively analyzing linear-recursive programs. Can we combine this
 to iteratively use AARA to solve linear recursion?</p>
   </span>
 </details>
+<details class="spoiler">
+  <summary>Worst-case Lower-bound Resource Analysis</summary>
+  <span style="display:inline-block;margin-left:1.5em;">
+<p><strong>Problem</strong>: Most work on resource analysis focuses on worst-case upper bounds,
+but in practice people also want to know worst-case lower bounds, i.e., whether
+there exists a realizable execution path leading to the bound. This could usually
+be done by testing techniques for worst-case analysis, e.g., fuzzing<sup id="fnref:20"><a href="#fn:20" class="footnote-ref" role="doc-noteref">20</a></sup>.
+Recent advances on incorrectness logic<sup id="fnref:21"><a href="#fn:21" class="footnote-ref" role="doc-noteref">21</a></sup> and coverage typing<sup id="fnref:22"><a href="#fn:22" class="footnote-ref" role="doc-noteref">22</a></sup>
+show the power of suhc realizability analysis. We want to follow those lines
+of work to build type systems or program logics to reason about worst-case
+lower bounds.</p>
+<p><strong>Proposal</strong>: From the perspective of incorrectness logic, one can extend
+separation logic with time credits. From the perspective of coverage typing,
+one can extend liquid resource types.</p>
+<p><strong>Follow-up</strong>: Is it possible to integrate such deductive analysis with
+fuzzing-based worst-case analysis?</p>
+  </span>
+</details>
 <h3 id="probabilistic-programming">Probabilistic Programming</h3>
 <details class="spoiler">
   <summary>Domain-specific Procedural Design</summary>
@@ -1198,7 +1216,7 @@ to iteratively use AARA to solve linear recursion?</p>
 probabilistic programming for procedural modeling and design (the use of random programs
 to generate visual content with respect to aesthetic or functional constraints).
 Such an approach has been rediscovered in several individual developments, such as
-Scenic<sup id="fnref:20"><a href="#fn:20" class="footnote-ref" role="doc-noteref">20</a></sup> and Picture<sup id="fnref:21"><a href="#fn:21" class="footnote-ref" role="doc-noteref">21</a></sup>. So instead of separate developments,
+Scenic<sup id="fnref:23"><a href="#fn:23" class="footnote-ref" role="doc-noteref">23</a></sup> and Picture<sup id="fnref:24"><a href="#fn:24" class="footnote-ref" role="doc-noteref">24</a></sup>. So instead of separate developments,
 we want to develop a framework to ease such domain-specific procedural design.</p>
 <p><strong>Proposal</strong>: This has something to do with the eDSL framework.</p>
 <p><strong>Follow-up</strong>: It might be interesting to see how such <strong>static</strong> procedural design
@@ -1210,7 +1228,7 @@ of the generated designs.</p>
 <details class="spoiler">
   <summary>Language Design for Sound Involutive MCMC</summary>
   <span style="display:inline-block;margin-left:1.5em;">
-<p><strong>Problem</strong>: A recent paper by Cusumano-Towner et al.<sup id="fnref:22"><a href="#fn:22" class="footnote-ref" role="doc-noteref">22</a></sup> studies
+<p><strong>Problem</strong>: A recent paper by Cusumano-Towner et al.<sup id="fnref:25"><a href="#fn:25" class="footnote-ref" role="doc-noteref">25</a></sup> studies
 how to ease the burden of implementing involutive MCMC by combining probabilistic
 programming and differentiable programming. It still remains a challenge (emm, you have to double check)
 to statically verify the correctness of a concrete implementation in their framework.</p>
@@ -1253,7 +1271,7 @@ investigate <a href="https://www.cs.cmu.edu/~NatProg/index.html" target="_blank"
   <summary>Resource-guided Synthesis and Implicit Computational Complexity</summary>
   <span style="display:inline-block;margin-left:1.5em;">
 <p><strong>Problem</strong>: Recently, resource-guided synthesis and algorithm synthesis have
-received considerable attention<sup id="fnref:23"><a href="#fn:23" class="footnote-ref" role="doc-noteref">23</a></sup> <sup id="fnref:24"><a href="#fn:24" class="footnote-ref" role="doc-noteref">24</a></sup>.
+received considerable attention<sup id="fnref:26"><a href="#fn:26" class="footnote-ref" role="doc-noteref">26</a></sup> <sup id="fnref:27"><a href="#fn:27" class="footnote-ref" role="doc-noteref">27</a></sup>.
 We also had published a related <a href="/publication/knothwp19" target="_blank">PLDI paper</a>.
 Those approaches can be categorized into two sorts: one develops a complex
 type system of program logic to enforce resource guarantees, the other proposes
@@ -1263,7 +1281,7 @@ which characterizes algorithms by constraints on the way in which they are const
 In other words, an ICC research usually provides a non-standard programming language,
 in which every legal program is guaranteed to have certain complexity.
 Can we generalize the template-based approach to ICC-based approach?</p>
-<p><strong>Proposal</strong>: A starting point could be non-size-increasing computaion<sup id="fnref:25"><a href="#fn:25" class="footnote-ref" role="doc-noteref">25</a></sup>.</p>
+<p><strong>Proposal</strong>: A starting point could be non-size-increasing computaion<sup id="fnref:28"><a href="#fn:28" class="footnote-ref" role="doc-noteref">28</a></sup>.</p>
 <p><strong>Follow-up</strong>: ICC seems to be not so fine-grained, e.g., usually researchers
 focus on whether the complexity is polynomial or not. How to make them finer-grained?
 For example, would it be possible to develop an ICC class for $O(n \log n)$ algorithms?</p>
@@ -1278,7 +1296,7 @@ functional correctness of C programs using Hoare logic and separation logic.
 I wonder if it is also convenient to verify resource-usage properties of C programs,
 like their time or memory complexities.</p>
 <p><strong>Proposal</strong>: It has been shown that separation logic naturally supports
-resource verification based on time credits<sup id="fnref:26"><a href="#fn:26" class="footnote-ref" role="doc-noteref">26</a></sup>. So conceptually it should
+resource verification based on time credits<sup id="fnref:29"><a href="#fn:29" class="footnote-ref" role="doc-noteref">29</a></sup>. So conceptually it should
 be possible to have that in VST.</p>
 <p><strong>Follow-up</strong>: Can we develop some general reasoning libraries for resource
 verification?</p>
@@ -1377,26 +1395,35 @@ Probabilistic Programming with Programmable Inference. <em>Prog. Lang. Design an
 <p>Zachary Kincaid, Jason Breck, Ashkan Forouhi Boroujeni, and Thomas Reps. Compositional Recurrence Analysis Revisited. <em>Prog. Lang. Design and Impl.</em> (2017). <a href="https://doi.org/10.1145/3062341.3062373" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:19" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:20">
-<p>Daniel J. Fremont, Tommaso Dreossi, Shromona Ghosh, Xiangyu Yue, Alberto L. Sangiovanni-Vincentelli, and Sanjit A. Seshia. Scenic: A Language for Scenario Specification and Scene Generation. <em>Prog. Lang. Design and Impl.</em> (2019). <a href="https://doi.org/10.1145/3314221.3314633" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:20" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Jiayi Wei, Jia Chen, Yu Feng, Kostas Ferles, and Isil Dillig. Singularity: Pattern Fuzzing for Worst Case Complexity. <em>Found. of Softw. Eng.</em> (2018). <a href="https://dl.acm.org/doi/10.1145/3236024.3236039" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:20" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:21">
-<p>Tejas D. Kulkarni, Pushmeet Kohli, Joshua B. Tenenbaum, and Vikash Mansinghka. Picture: A Probabilistic Programming Language for Scene Perception. <em>Comp. Vision and Pattern Recognition</em> (2015). <a href="https://doi.org/10.1109/CVPR.2015.7299068" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:21" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Peter W. O&rsquo;Hearn. Incorrectness Logic. <em>Princ. of Prog. Lang.</em> (2020). <a href="https://doi.org/10.1145/3371078" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:21" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:22">
-<p>Marco Cusumano-Towner, Alexander K. Lew, and Vikash K. Mansinghka. Automating Involutive MCMC using Probabilistic and
-Differentiable Programming. <a href="https://arxiv.org/abs/2007.09871" target="_blank" rel="noopener">arXiv</a>&#160;<a href="#fnref:22" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Zhe Zhou, Ashish Mishra, Benjamin Delaware, and Suresh Jagannathan. Covering All the Bases: Type-Based Verification of Test Input Generators. <em>Prog. Lang. Design and Impl.</em> (2023). <a href="https://doi.org/10.1145/3591271" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:22" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:23">
-<p>Qinheping Hu, John Cyphert, Loris D’Antoni, and Thomas Reps. Synthesis with Asymptotic Resource Bounds. <em>Computer Aided Verif.</em> (2021). <a href="https://doi.org/10.1007/978-3-030-81685-8_37" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:23" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Daniel J. Fremont, Tommaso Dreossi, Shromona Ghosh, Xiangyu Yue, Alberto L. Sangiovanni-Vincentelli, and Sanjit A. Seshia. Scenic: A Language for Scenario Specification and Scene Generation. <em>Prog. Lang. Design and Impl.</em> (2019). <a href="https://doi.org/10.1145/3314221.3314633" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:23" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:24">
-<p>Yican Sun, Xuanyu Peng, and Yingfei Xiong. Synthesizing Efficient Memoization Algorithms. <em>Object-Oriented Prog., Syst., Lang., and Applications</em> (2023).&#160;<a href="#fnref:24" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Tejas D. Kulkarni, Pushmeet Kohli, Joshua B. Tenenbaum, and Vikash Mansinghka. Picture: A Probabilistic Programming Language for Scene Perception. <em>Comp. Vision and Pattern Recognition</em> (2015). <a href="https://doi.org/10.1109/CVPR.2015.7299068" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:24" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:25">
-<p>Martin Hofmann. Linear types and non-size-increasing polynomial time computation. <em>Logic in Computer Science</em> (1999). <a href="https://doi.org/10.1109/LICS.1999.782641" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:25" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Marco Cusumano-Towner, Alexander K. Lew, and Vikash K. Mansinghka. Automating Involutive MCMC using Probabilistic and
+Differentiable Programming. <a href="https://arxiv.org/abs/2007.09871" target="_blank" rel="noopener">arXiv</a>&#160;<a href="#fnref:25" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:26">
-<p>Arthur Charguéraud and François Pottier. Machine-Checked Verification of the Correctness and Amortized Complexity of an Efficient Union-Find Implementation. <em>Interactive Theorem Proving</em> (2015). <a href="https://doi.org/10.1007/978-3-319-22102-1_9" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:26" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Qinheping Hu, John Cyphert, Loris D’Antoni, and Thomas Reps. Synthesis with Asymptotic Resource Bounds. <em>Computer Aided Verif.</em> (2021). <a href="https://doi.org/10.1007/978-3-030-81685-8_37" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:26" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:27">
+<p>Yican Sun, Xuanyu Peng, and Yingfei Xiong. Synthesizing Efficient Memoization Algorithms. <em>Object-Oriented Prog., Syst., Lang., and Applications</em> (2023).&#160;<a href="#fnref:27" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:28">
+<p>Martin Hofmann. Linear types and non-size-increasing polynomial time computation. <em>Logic in Computer Science</em> (1999). <a href="https://doi.org/10.1109/LICS.1999.782641" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:28" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:29">
+<p>Arthur Charguéraud and François Pottier. Machine-Checked Verification of the Correctness and Amortized Complexity of an Efficient Union-Find Implementation. <em>Interactive Theorem Proving</em> (2015). <a href="https://doi.org/10.1007/978-3-319-22102-1_9" target="_blank" rel="noopener">DOI</a>&#160;<a href="#fnref:29" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>

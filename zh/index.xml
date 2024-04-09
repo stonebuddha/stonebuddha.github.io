@@ -1329,6 +1329,24 @@ programs by iteratively analyzing linear-recursive programs. Can we combine this
 to iteratively use AARA to solve linear recursion?&lt;/p&gt;
   &lt;/span&gt;
 &lt;/details&gt;
+&lt;details class=&#34;spoiler&#34;&gt;
+  &lt;summary&gt;Worst-case Lower-bound Resource Analysis&lt;/summary&gt;
+  &lt;span style=&#34;display:inline-block;margin-left:1.5em;&#34;&gt;
+&lt;p&gt;&lt;strong&gt;Problem&lt;/strong&gt;: Most work on resource analysis focuses on worst-case upper bounds,
+but in practice people also want to know worst-case lower bounds, i.e., whether
+there exists a realizable execution path leading to the bound. This could usually
+be done by testing techniques for worst-case analysis, e.g., fuzzing&lt;sup id=&#34;fnref:20&#34;&gt;&lt;a href=&#34;#fn:20&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;20&lt;/a&gt;&lt;/sup&gt;.
+Recent advances on incorrectness logic&lt;sup id=&#34;fnref:21&#34;&gt;&lt;a href=&#34;#fn:21&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;21&lt;/a&gt;&lt;/sup&gt; and coverage typing&lt;sup id=&#34;fnref:22&#34;&gt;&lt;a href=&#34;#fn:22&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;22&lt;/a&gt;&lt;/sup&gt;
+show the power of suhc realizability analysis. We want to follow those lines
+of work to build type systems or program logics to reason about worst-case
+lower bounds.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proposal&lt;/strong&gt;: From the perspective of incorrectness logic, one can extend
+separation logic with time credits. From the perspective of coverage typing,
+one can extend liquid resource types.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Follow-up&lt;/strong&gt;: Is it possible to integrate such deductive analysis with
+fuzzing-based worst-case analysis?&lt;/p&gt;
+  &lt;/span&gt;
+&lt;/details&gt;
 &lt;h3 id=&#34;概率编程&#34;&gt;概率编程&lt;/h3&gt;
 &lt;details class=&#34;spoiler&#34;&gt;
   &lt;summary&gt;Domain-specific Procedural Design&lt;/summary&gt;
@@ -1337,7 +1355,7 @@ to iteratively use AARA to solve linear recursion?&lt;/p&gt;
 probabilistic programming for procedural modeling and design (the use of random programs
 to generate visual content with respect to aesthetic or functional constraints).
 Such an approach has been rediscovered in several individual developments, such as
-Scenic&lt;sup id=&#34;fnref:20&#34;&gt;&lt;a href=&#34;#fn:20&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;20&lt;/a&gt;&lt;/sup&gt; and Picture&lt;sup id=&#34;fnref:21&#34;&gt;&lt;a href=&#34;#fn:21&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;21&lt;/a&gt;&lt;/sup&gt;. So instead of separate developments,
+Scenic&lt;sup id=&#34;fnref:23&#34;&gt;&lt;a href=&#34;#fn:23&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;23&lt;/a&gt;&lt;/sup&gt; and Picture&lt;sup id=&#34;fnref:24&#34;&gt;&lt;a href=&#34;#fn:24&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;24&lt;/a&gt;&lt;/sup&gt;. So instead of separate developments,
 we want to develop a framework to ease such domain-specific procedural design.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Proposal&lt;/strong&gt;: This has something to do with the eDSL framework.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Follow-up&lt;/strong&gt;: It might be interesting to see how such &lt;strong&gt;static&lt;/strong&gt; procedural design
@@ -1349,7 +1367,7 @@ of the generated designs.&lt;/p&gt;
 &lt;details class=&#34;spoiler&#34;&gt;
   &lt;summary&gt;Language Design for Sound Involutive MCMC&lt;/summary&gt;
   &lt;span style=&#34;display:inline-block;margin-left:1.5em;&#34;&gt;
-&lt;p&gt;&lt;strong&gt;Problem&lt;/strong&gt;: A recent paper by Cusumano-Towner et al.&lt;sup id=&#34;fnref:22&#34;&gt;&lt;a href=&#34;#fn:22&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;22&lt;/a&gt;&lt;/sup&gt; studies
+&lt;p&gt;&lt;strong&gt;Problem&lt;/strong&gt;: A recent paper by Cusumano-Towner et al.&lt;sup id=&#34;fnref:25&#34;&gt;&lt;a href=&#34;#fn:25&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;25&lt;/a&gt;&lt;/sup&gt; studies
 how to ease the burden of implementing involutive MCMC by combining probabilistic
 programming and differentiable programming. It still remains a challenge (emm, you have to double check)
 to statically verify the correctness of a concrete implementation in their framework.&lt;/p&gt;
@@ -1392,7 +1410,7 @@ investigate &lt;a href=&#34;https://www.cs.cmu.edu/~NatProg/index.html&#34; targ
   &lt;summary&gt;Resource-guided Synthesis and Implicit Computational Complexity&lt;/summary&gt;
   &lt;span style=&#34;display:inline-block;margin-left:1.5em;&#34;&gt;
 &lt;p&gt;&lt;strong&gt;Problem&lt;/strong&gt;: Recently, resource-guided synthesis and algorithm synthesis have
-received considerable attention&lt;sup id=&#34;fnref:23&#34;&gt;&lt;a href=&#34;#fn:23&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;23&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:24&#34;&gt;&lt;a href=&#34;#fn:24&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;24&lt;/a&gt;&lt;/sup&gt;.
+received considerable attention&lt;sup id=&#34;fnref:26&#34;&gt;&lt;a href=&#34;#fn:26&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;26&lt;/a&gt;&lt;/sup&gt; &lt;sup id=&#34;fnref:27&#34;&gt;&lt;a href=&#34;#fn:27&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;27&lt;/a&gt;&lt;/sup&gt;.
 We also had published a related &lt;a href=&#34;https://stonebuddha.github.io/publication/knothwp19&#34; target=&#34;_blank&#34;&gt;PLDI paper&lt;/a&gt;.
 Those approaches can be categorized into two sorts: one develops a complex
 type system of program logic to enforce resource guarantees, the other proposes
@@ -1402,7 +1420,7 @@ which characterizes algorithms by constraints on the way in which they are const
 In other words, an ICC research usually provides a non-standard programming language,
 in which every legal program is guaranteed to have certain complexity.
 Can we generalize the template-based approach to ICC-based approach?&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Proposal&lt;/strong&gt;: A starting point could be non-size-increasing computaion&lt;sup id=&#34;fnref:25&#34;&gt;&lt;a href=&#34;#fn:25&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;25&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proposal&lt;/strong&gt;: A starting point could be non-size-increasing computaion&lt;sup id=&#34;fnref:28&#34;&gt;&lt;a href=&#34;#fn:28&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;28&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Follow-up&lt;/strong&gt;: ICC seems to be not so fine-grained, e.g., usually researchers
 focus on whether the complexity is polynomial or not. How to make them finer-grained?
 For example, would it be possible to develop an ICC class for $O(n \log n)$ algorithms?&lt;/p&gt;
@@ -1417,7 +1435,7 @@ functional correctness of C programs using Hoare logic and separation logic.
 I wonder if it is also convenient to verify resource-usage properties of C programs,
 like their time or memory complexities.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Proposal&lt;/strong&gt;: It has been shown that separation logic naturally supports
-resource verification based on time credits&lt;sup id=&#34;fnref:26&#34;&gt;&lt;a href=&#34;#fn:26&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;26&lt;/a&gt;&lt;/sup&gt;. So conceptually it should
+resource verification based on time credits&lt;sup id=&#34;fnref:29&#34;&gt;&lt;a href=&#34;#fn:29&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;29&lt;/a&gt;&lt;/sup&gt;. So conceptually it should
 be possible to have that in VST.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Follow-up&lt;/strong&gt;: Can we develop some general reasoning libraries for resource
 verification?&lt;/p&gt;
@@ -1516,26 +1534,35 @@ Probabilistic Programming with Programmable Inference. &lt;em&gt;Prog. Lang. Des
 &lt;p&gt;Zachary Kincaid, Jason Breck, Ashkan Forouhi Boroujeni, and Thomas Reps. Compositional Recurrence Analysis Revisited. &lt;em&gt;Prog. Lang. Design and Impl.&lt;/em&gt; (2017). &lt;a href=&#34;https://doi.org/10.1145/3062341.3062373&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:19&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:20&#34;&gt;
-&lt;p&gt;Daniel J. Fremont, Tommaso Dreossi, Shromona Ghosh, Xiangyu Yue, Alberto L. Sangiovanni-Vincentelli, and Sanjit A. Seshia. Scenic: A Language for Scenario Specification and Scene Generation. &lt;em&gt;Prog. Lang. Design and Impl.&lt;/em&gt; (2019). &lt;a href=&#34;https://doi.org/10.1145/3314221.3314633&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:20&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Jiayi Wei, Jia Chen, Yu Feng, Kostas Ferles, and Isil Dillig. Singularity: Pattern Fuzzing for Worst Case Complexity. &lt;em&gt;Found. of Softw. Eng.&lt;/em&gt; (2018). &lt;a href=&#34;https://dl.acm.org/doi/10.1145/3236024.3236039&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:20&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:21&#34;&gt;
-&lt;p&gt;Tejas D. Kulkarni, Pushmeet Kohli, Joshua B. Tenenbaum, and Vikash Mansinghka. Picture: A Probabilistic Programming Language for Scene Perception. &lt;em&gt;Comp. Vision and Pattern Recognition&lt;/em&gt; (2015). &lt;a href=&#34;https://doi.org/10.1109/CVPR.2015.7299068&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:21&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Peter W. O&amp;rsquo;Hearn. Incorrectness Logic. &lt;em&gt;Princ. of Prog. Lang.&lt;/em&gt; (2020). &lt;a href=&#34;https://doi.org/10.1145/3371078&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:21&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:22&#34;&gt;
-&lt;p&gt;Marco Cusumano-Towner, Alexander K. Lew, and Vikash K. Mansinghka. Automating Involutive MCMC using Probabilistic and
-Differentiable Programming. &lt;a href=&#34;https://arxiv.org/abs/2007.09871&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;arXiv&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:22&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Zhe Zhou, Ashish Mishra, Benjamin Delaware, and Suresh Jagannathan. Covering All the Bases: Type-Based Verification of Test Input Generators. &lt;em&gt;Prog. Lang. Design and Impl.&lt;/em&gt; (2023). &lt;a href=&#34;https://doi.org/10.1145/3591271&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:22&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:23&#34;&gt;
-&lt;p&gt;Qinheping Hu, John Cyphert, Loris D’Antoni, and Thomas Reps. Synthesis with Asymptotic Resource Bounds. &lt;em&gt;Computer Aided Verif.&lt;/em&gt; (2021). &lt;a href=&#34;https://doi.org/10.1007/978-3-030-81685-8_37&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:23&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Daniel J. Fremont, Tommaso Dreossi, Shromona Ghosh, Xiangyu Yue, Alberto L. Sangiovanni-Vincentelli, and Sanjit A. Seshia. Scenic: A Language for Scenario Specification and Scene Generation. &lt;em&gt;Prog. Lang. Design and Impl.&lt;/em&gt; (2019). &lt;a href=&#34;https://doi.org/10.1145/3314221.3314633&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:23&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:24&#34;&gt;
-&lt;p&gt;Yican Sun, Xuanyu Peng, and Yingfei Xiong. Synthesizing Efficient Memoization Algorithms. &lt;em&gt;Object-Oriented Prog., Syst., Lang., and Applications&lt;/em&gt; (2023).&amp;#160;&lt;a href=&#34;#fnref:24&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Tejas D. Kulkarni, Pushmeet Kohli, Joshua B. Tenenbaum, and Vikash Mansinghka. Picture: A Probabilistic Programming Language for Scene Perception. &lt;em&gt;Comp. Vision and Pattern Recognition&lt;/em&gt; (2015). &lt;a href=&#34;https://doi.org/10.1109/CVPR.2015.7299068&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:24&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:25&#34;&gt;
-&lt;p&gt;Martin Hofmann. Linear types and non-size-increasing polynomial time computation. &lt;em&gt;Logic in Computer Science&lt;/em&gt; (1999). &lt;a href=&#34;https://doi.org/10.1109/LICS.1999.782641&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:25&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Marco Cusumano-Towner, Alexander K. Lew, and Vikash K. Mansinghka. Automating Involutive MCMC using Probabilistic and
+Differentiable Programming. &lt;a href=&#34;https://arxiv.org/abs/2007.09871&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;arXiv&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:25&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:26&#34;&gt;
-&lt;p&gt;Arthur Charguéraud and François Pottier. Machine-Checked Verification of the Correctness and Amortized Complexity of an Efficient Union-Find Implementation. &lt;em&gt;Interactive Theorem Proving&lt;/em&gt; (2015). &lt;a href=&#34;https://doi.org/10.1007/978-3-319-22102-1_9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:26&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Qinheping Hu, John Cyphert, Loris D’Antoni, and Thomas Reps. Synthesis with Asymptotic Resource Bounds. &lt;em&gt;Computer Aided Verif.&lt;/em&gt; (2021). &lt;a href=&#34;https://doi.org/10.1007/978-3-030-81685-8_37&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:26&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:27&#34;&gt;
+&lt;p&gt;Yican Sun, Xuanyu Peng, and Yingfei Xiong. Synthesizing Efficient Memoization Algorithms. &lt;em&gt;Object-Oriented Prog., Syst., Lang., and Applications&lt;/em&gt; (2023).&amp;#160;&lt;a href=&#34;#fnref:27&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:28&#34;&gt;
+&lt;p&gt;Martin Hofmann. Linear types and non-size-increasing polynomial time computation. &lt;em&gt;Logic in Computer Science&lt;/em&gt; (1999). &lt;a href=&#34;https://doi.org/10.1109/LICS.1999.782641&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:28&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:29&#34;&gt;
+&lt;p&gt;Arthur Charguéraud and François Pottier. Machine-Checked Verification of the Correctness and Amortized Complexity of an Efficient Union-Find Implementation. &lt;em&gt;Interactive Theorem Proving&lt;/em&gt; (2015). &lt;a href=&#34;https://doi.org/10.1007/978-3-319-22102-1_9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DOI&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref:29&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
