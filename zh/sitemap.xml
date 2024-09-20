@@ -560,4 +560,14 @@
       rel="alternate"
       hreflang="zh"
       href="https://stonebuddha.github.io/zh/news_archive/"
+    /></url>
+  <url>
+    <loc>https://stonebuddha.github.io/zh/compiler24spring/</loc><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://stonebuddha.github.io/compiler24spring/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://stonebuddha.github.io/zh/compiler24spring/"
     /></url></urlset>

@@ -1613,5 +1613,24 @@ Differentiable Programming. &lt;a href=&#34;https://arxiv.org/abs/2007.09871&#34
 </description>
     </item>
     
+    <item>
+      <title>编译原理（2024春）</title>
+      <link>https://stonebuddha.github.io/zh/compiler24spring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/compiler24spring/</guid>
+      <description>&lt;p&gt;以下是理论部分的课件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第一讲：&lt;a href=&#34;https://stonebuddha.github.io/compiler/24s/lect01-intro.pdf&#34; target=&#34;_blank&#34;&gt;课程简介&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;第二讲：&lt;a href=&#34;https://stonebuddha.github.io/compiler/24s/lect02-lexical.pdf&#34; target=&#34;_blank&#34;&gt;词法分析&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;第三讲：&lt;a href=&#34;https://stonebuddha.github.io/compiler/24s/lect03-syntax.pdf&#34; target=&#34;_blank&#34;&gt;语法分析&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;第四讲：&lt;a href=&#34;https://stonebuddha.github.io/compiler/24s/lect04-semantic.pdf&#34; target=&#34;_blank&#34;&gt;语义分析&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;第五讲：&lt;a href=&#34;https://stonebuddha.github.io/compiler/24s/lect05-ir.pdf&#34; target=&#34;_blank&#34;&gt;中间表示&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;第六讲：&lt;a href=&#34;https://stonebuddha.github.io/compiler/24s/lect06-runtime.pdf&#34; target=&#34;_blank&#34;&gt;运行时环境&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;第七讲：&lt;a href=&#34;https://stonebuddha.github.io/compiler/24s/lect07-codegen.pdf&#34; target=&#34;_blank&#34;&gt;目标代码生成&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;第八讲：&lt;a href=&#34;https://stonebuddha.github.io/compiler/24s/lect08-optimization.pdf&#34; target=&#34;_blank&#34;&gt;代码优化&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

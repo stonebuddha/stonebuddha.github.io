@@ -532,6 +532,16 @@
       href="https://stonebuddha.github.io/categories/"
     /></url>
   <url>
+    <loc>https://stonebuddha.github.io/compiler24spring/</loc><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://stonebuddha.github.io/zh/compiler24spring/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://stonebuddha.github.io/compiler24spring/"
+    /></url>
+  <url>
     <loc>https://stonebuddha.github.io/news_archive/</loc><changefreq>weekly</changefreq><xhtml:link
       rel="alternate"
       hreflang="zh"
