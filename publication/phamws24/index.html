@@ -64,12 +64,12 @@
   
     
   
-  <meta name="description" content="Assistant Professor" />
+  <meta name="description" content="Probabilistic programming languages (PPLs) provide language support for expressing flexible probabilistic models and solving Bayesian inference problems. PPLs with *programmable inference* make it possible for users to obtain improved results by customizing inference engines using *guide* programs that are tailored to a corresponding *model* program. However, errors in guide programs can compromise the statistical soundness of the inference. This article introduces a novel coroutine-based framework for verifying the correctness of user-written guide programs for a broad class of Markov chain Monte Carlo (MCMC) inference algorithms. Our approach rests on a novel type system for describing communication protocols between a model program and a sequence of guides that each update only a subset of random variables. We prove that, by translating guide types to context-free processes with finite norms, it is possible to check structural type equality between models and guides in polynomial time. This connection gives rise to an efficient *type-inference algorithm* for probabilistic programs with flexible constructs such as general recursion and branching. We also contribute a *coverage-checking algorithm* that verifies the support of sequentially composed guide programs agrees with that of the model program, which is a key soundness condition for MCMC inference with multiple guides. Evaluations on diverse benchmarks show that our type-inference and coverage-checking algorithms efficiently infer types and detect sound and unsound guides for programs that existing static analyses cannot handle." />
 
   
-    <link rel="alternate" hreflang="zh" href="https://stonebuddha.github.io/zh/publication-type/1/" />
+    <link rel="alternate" hreflang="zh" href="https://stonebuddha.github.io/zh/publication/phamws24/" />
   
-  <link rel="alternate" hreflang="en-us" href="https://stonebuddha.github.io/publication-type/1/" />
+  <link rel="alternate" hreflang="en-us" href="https://stonebuddha.github.io/publication/phamws24/" />
 
   
   
@@ -78,6 +78,9 @@
   
 
   
+  
+    
+    <script src="/js/mathjax-config.js"></script>
   
 
   
@@ -228,9 +231,9 @@
 
       
       
-        
-      
 
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
       
     
       
@@ -278,8 +281,6 @@
   
 
   
-    <link rel="alternate" href="/publication-type/1/index.xml" type="application/rss+xml" title="Di Wang" />
-  
 
   
     <link rel="manifest" href="/manifest.webmanifest" />
@@ -288,7 +289,7 @@
   <link rel="icon" type="image/png" href="/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="https://stonebuddha.github.io/publication-type/1/" />
+  <link rel="canonical" href="https://stonebuddha.github.io/publication/phamws24/" />
 
   
   
@@ -311,33 +312,80 @@
   <meta property="twitter:card" content="summary" />
   
   <meta property="og:site_name" content="Di Wang" />
-  <meta property="og:url" content="https://stonebuddha.github.io/publication-type/1/" />
-  <meta property="og:title" content="1 | Di Wang" />
-  <meta property="og:description" content="Assistant Professor" /><meta property="og:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" />
+  <meta property="og:url" content="https://stonebuddha.github.io/publication/phamws24/" />
+  <meta property="og:title" content="Programmable MCMC with Soundly Composed Guide Programs | Di Wang" />
+  <meta property="og:description" content="Probabilistic programming languages (PPLs) provide language support for expressing flexible probabilistic models and solving Bayesian inference problems. PPLs with *programmable inference* make it possible for users to obtain improved results by customizing inference engines using *guide* programs that are tailored to a corresponding *model* program. However, errors in guide programs can compromise the statistical soundness of the inference. This article introduces a novel coroutine-based framework for verifying the correctness of user-written guide programs for a broad class of Markov chain Monte Carlo (MCMC) inference algorithms. Our approach rests on a novel type system for describing communication protocols between a model program and a sequence of guides that each update only a subset of random variables. We prove that, by translating guide types to context-free processes with finite norms, it is possible to check structural type equality between models and guides in polynomial time. This connection gives rise to an efficient *type-inference algorithm* for probabilistic programs with flexible constructs such as general recursion and branching. We also contribute a *coverage-checking algorithm* that verifies the support of sequentially composed guide programs agrees with that of the model program, which is a key soundness condition for MCMC inference with multiple guides. Evaluations on diverse benchmarks show that our type-inference and coverage-checking algorithms efficiently infer types and detect sound and unsound guides for programs that existing static analyses cannot handle." /><meta property="og:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" />
     <meta property="twitter:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
-      <meta property="og:updated_time" content="2024-10-20T00:00:00&#43;00:00" />
+      <meta
+        property="article:published_time"
+        content="2023-07-29T11:57:39&#43;08:00"
+      />
     
+    <meta property="article:modified_time" content="2024-10-20T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://stonebuddha.github.io/publication/phamws24/"
+  },
+  "headline": "Programmable MCMC with Soundly Composed Guide Programs",
+  
+  "datePublished": "2023-07-29T11:57:39+08:00",
+  "dateModified": "2024-10-20T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Long Pham"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Di Wang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "Probabilistic programming languages (PPLs) provide language support for expressing flexible probabilistic models and solving Bayesian inference problems. PPLs with *programmable inference* make it possible for users to obtain improved results by customizing inference engines using *guide* programs that are tailored to a corresponding *model* program. However, errors in guide programs can compromise the statistical soundness of the inference. This article introduces a novel coroutine-based framework for verifying the correctness of user-written guide programs for a broad class of Markov chain Monte Carlo (MCMC) inference algorithms. Our approach rests on a novel type system for describing communication protocols between a model program and a sequence of guides that each update only a subset of random variables. We prove that, by translating guide types to context-free processes with finite norms, it is possible to check structural type equality between models and guides in polynomial time. This connection gives rise to an efficient *type-inference algorithm* for probabilistic programs with flexible constructs such as general recursion and branching. We also contribute a *coverage-checking algorithm* that verifies the support of sequentially composed guide programs agrees with that of the model program, which is a key soundness condition for MCMC inference with multiple guides. Evaluations on diverse benchmarks show that our type-inference and coverage-checking algorithms efficiently infer types and detect sound and unsound guides for programs that existing static analyses cannot handle."
+}
+</script>
+
+  
+
+  
+
   
 
   
 
 
 
-  
-
-  
 
 
-
-
-
-  <title>1 | Di Wang</title>
+  <title>Programmable MCMC with Soundly Composed Guide Programs | Di Wang</title>
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   "  >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="92d4221a3b914f5c04fe1a0b181915ad" >
 
   
   
@@ -657,7 +705,7 @@
               <span>English</span>
             </div>
             
-            <a class="dropdown-item" href="https://stonebuddha.github.io/zh/publication-type/1/">
+            <a class="dropdown-item" href="https://stonebuddha.github.io/zh/publication/phamws24/">
               <span>中文 (简体)</span>
             </a>
             
@@ -688,6 +736,17 @@
 
 
 
+<div class="pub">
+
+  
+
+
+
+
+
+
+
+
 
 
 
@@ -696,229 +755,82 @@
 
   
   
+  
+<div class="article-container pt-3">
+  <h1>Programmable MCMC with Soundly Composed Guide Programs</h1>
+
+  
+
   
     
-  
-<div class="universal-wrapper pt-3">
-  <h1>1</h1>
-
-  
-
-  
-</div>
 
 
-
-<div class="universal-wrapper">
-  
+<div class="article-metadata">
 
   
   
+  
+  
+  <div>
     
 
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item view-compact">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/publication/wanghr19/" >A Denotational Semantics for Low-Level Probabilistic Programs with Nondeterminism</a>
-    </div>
-
-    
-    <a href="/publication/wanghr19/"  class="summary-link">
-      <div class="article-style">
-        Probabilistic programming is an increasingly popular formalism for modeling randomness and uncertainty. Designing semantic models for …
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-      <div>
-        
-
-  <span class="author-highlighted">
+  <span >
+      Long Pham</span>, <span class="author-highlighted">
       Di Wang</span>, <span >
-      Jan Hoffmann</span>, <span >
-      Thomas Reps</span>
-      </div>
-      
-    </div>
-
-    
-    <div class="btn-links">
-      
-
-
-
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="/papers/WangHR18-preprint.pdf" target="_blank" rel="noopener">
-  Preprint
-</a>
-
-
-
-
-  
-    
-  
-
-
-
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="/papers/WangHR18.pdf" target="_blank" rel="noopener">
-  TR
-</a>
-
-
-
-<a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
-        data-filename="/publication/wanghr19/cite.bib">
-  Cite
-</a>
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="/talks/mfps19.pdf" target="_blank" rel="noopener">
-  Slides
-</a>
-
-
-
-
-
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/10.1016/j.entcs.2019.09.016" target="_blank" rel="noopener">
-  DOI
-</a>
-
-
-
-    </div>
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-  
-    
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item view-compact">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/publication/wangh19/" >Type-Guided Worst-Case Input Generation</a>
-    </div>
-
-    
-    <a href="/publication/wangh19/"  class="summary-link">
-      <div class="article-style">
-        This paper presents a novel technique for type-guided worst-case input generation for functional programs. The technique builds on …
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-      <div>
-        
-
-  <span class="author-highlighted">
-      Di Wang</span>, <span >
+      Feras A. Saad</span>, <span >
       Jan Hoffmann</span>
-      </div>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
       
-    </div>
+    
+    October, 2024
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+  
+
+  
+  
+
+</div>
 
     
-    <div class="btn-links">
-      
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
 
 
 
 
 
   
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="/papers/WangH18-preprint.pdf" target="_blank" rel="noopener">
-  Preprint
-</a>
 
 
 
 
-  
-    
-  
 
-
-
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="/papers/WangH18.pdf" target="_blank" rel="noopener">
-  TR
-</a>
-
-
-
-<a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
-        data-filename="/publication/wangh19/cite.bib">
+<a href="#" class="btn btn-outline-primary btn-page-header js-cite-modal"
+        data-filename="/publication/phamws24/cite.bib">
   Cite
 </a>
 
@@ -930,19 +842,11 @@
 
 
 
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="/talks/popl19.pdf" target="_blank" rel="noopener">
-  Slides
-</a>
 
 
 
 
-
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/10.1145/3290326" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary btn-page-header" href="https://doi.org/10.1145/3689748" target="_blank" rel="noopener">
   DOI
 </a>
 
@@ -958,427 +862,309 @@
   
     
   
-  <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/10.1145/3291627" target="_blank" rel="noopener">
+  <a class="btn btn-outline-primary btn-page-header" href="https://doi.org/10.5281/zenodo.12669572" target="_blank" rel="noopener">
     Artifact</a>
 
 
-    </div>
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
 </div>
 
-  
-    
-
-
-
-
-
-
 
   
+</div>
 
 
 
-
-
-
-
-  
-
-
-<div class="media stream-item view-compact">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/publication/wanghr18/" >PMAF: An Algebraic Framework for Static Analysis of Probabilistic Programs</a>
-    </div>
+  <div class="article-container">
 
     
-    <a href="/publication/wanghr18/"  class="summary-link">
-      <div class="article-style">
-        Automatically establishing that a probabilistic program satisfies some property $\varphi$ is a challenging problem. While a …
+    <h3>Abstract</h3>
+    <p class="pub-abstract">Probabilistic programming languages (PPLs) provide language support for expressing flexible probabilistic models and solving Bayesian inference problems. PPLs with <em>programmable inference</em> make it possible for users to obtain improved results by customizing inference engines using <em>guide</em> programs that are tailored to a corresponding <em>model</em> program. However, errors in guide programs can compromise the statistical soundness of the inference. This article introduces a novel coroutine-based framework for verifying the correctness of user-written guide programs for a broad class of Markov chain Monte Carlo (MCMC) inference algorithms. Our approach rests on a novel type system for describing communication protocols between a model program and a sequence of guides that each update only a subset of random variables. We prove that, by translating guide types to context-free processes with finite norms, it is possible to check structural type equality between models and guides in polynomial time. This connection gives rise to an efficient <em>type-inference algorithm</em> for probabilistic programs with flexible constructs such as general recursion and branching. We also contribute a <em>coverage-checking algorithm</em> that verifies the support of sequentially composed guide programs agrees with that of the model program, which is a key soundness condition for MCMC inference with multiple guides. Evaluations on diverse benchmarks show that our type-inference and coverage-checking algorithms efficiently infer types and detect sound and unsound guides for programs that existing static analyses cannot handle.</p>
+    
+
+    
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Type</div>
+          <div class="col-12 col-md-9">
+            <a href="/publication/#1">
+              Conference paper
+            </a>
+          </div>
+        </div>
       </div>
-    </a>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
     
 
-    <div class="stream-meta article-metadata">
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Publication</div>
+          <div class="col-12 col-md-9">In <em>Object-oriented Programming, Systems, Languages, and Applications</em></div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
 
-      
+    <div class="space-below"></div>
 
+    <div class="article-style"></div>
+
+    
+
+
+
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
       
-      <div>
+      
+      
         
-
-  <span class="author-highlighted">
-      Di Wang</span>, <span >
-      Jan Hoffmann</span>, <span >
-      Thomas Reps</span>
-      </div>
       
-    </div>
-
-    
-    <div class="btn-links">
       
-
-
-
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="/papers/WangHR17-preprint.pdf" target="_blank" rel="noopener">
-  Preprint
-</a>
-
-
-
-
-  
-    
-  
-
-
-
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="/papers/WangHR17.pdf" target="_blank" rel="noopener">
-  TR
-</a>
-
-
-
-<a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
-        data-filename="/publication/wanghr18/cite.bib">
-  Cite
-</a>
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="/talks/pldi18.pdf" target="_blank" rel="noopener">
-  Slides
-</a>
-
-
-
-
-
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/10.1145/3192366.3192408" target="_blank" rel="noopener">
-  DOI
-</a>
-
-
-  
-  
-  
-    
-  
-  
-  
-  
-  
-    
-  
-  <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/10.1145/3211994" target="_blank" rel="noopener">
-    Artifact</a>
-
-
-    </div>
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-  
-    
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item view-compact">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/publication/wangwc17/" >TiML: A Functional Language for Practical Complexity Analysis with Invariants</a>
-    </div>
-
-    
-    <a href="/publication/wangwc17/"  class="summary-link">
-      <div class="article-style">
-        We present TiML (Timed ML), an ML-like functional language with time-complexity annotations in types. It uses indexed types to express …
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
       
-
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://stonebuddha.github.io/publication/phamws24/&amp;text=Programmable%20MCMC%20with%20Soundly%20Composed%20Guide%20Programs" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
       
-      <div>
+      
+      
         
-
-  <span >
-      Peng Wang</span>, <span class="author-highlighted">
-      Di Wang</span>, <span >
-      Adam Chlipala</span>
-      </div>
       
-    </div>
-
-    
-    <div class="btn-links">
       
-
-
-
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://people.csail.mit.edu/wangpeng/timl.pdf" target="_blank" rel="noopener">
-  Preprint
-</a>
-
-
-
-
-  
-
-
-
-
-
-<a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
-        data-filename="/publication/wangwc17/cite.bib">
-  Cite
-</a>
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/wangpengmit/timl" target="_blank" rel="noopener">
-  Code
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/10.1145/3133903" target="_blank" rel="noopener">
-  DOI
-</a>
-
-
-  
-  
-  
-    
-  
-  
-  
-  
-  
-    
-  
-  <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://people.csail.mit.edu/wangpeng/timl-oopsla-ae.tgz" target="_blank" rel="noopener">
-    Artifact</a>
-
-
-    </div>
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-  
-    
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item view-compact">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/publication/tangwx17/" >Conditional Dyck-CFL Reachability Analysis for Complete and Efficient Library Summarization</a>
-    </div>
-
-    
-    <a href="/publication/tangwx17/"  class="summary-link">
-      <div class="article-style">
-        Library summarization is an effective way to accelerate the analysis of client code. However, information about the client is unknown …
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
       
-
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://stonebuddha.github.io/publication/phamws24/&amp;t=Programmable%20MCMC%20with%20Soundly%20Composed%20Guide%20Programs" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
       
-      <div>
+      
+      
         
-
-  <span >
-      Hao Tang</span>, <span class="author-highlighted">
-      Di Wang</span>, <span >
-      Yingfei Xiong</span>, <span >
-      Lingming Zhang</span>, <span >
-      Xiaoyin Wang</span>, <span >
-      Lu Zhang</span>
-      </div>
       
-    </div>
-
-    
-    <div class="btn-links">
       
-
-
-
-
-
-  
-  
+      
+      <li>
+        <a href="mailto:?subject=Programmable%20MCMC%20with%20Soundly%20Composed%20Guide%20Programs&amp;body=https://stonebuddha.github.io/publication/phamws24/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
     
-  
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://xiongyingfei.github.io/papers/ESOP17.pdf" target="_blank" rel="noopener">
-  Preprint
-</a>
-
-
-
-
-  
-
-
-
-
-
-<a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
-        data-filename="/publication/tangwx17/cite.bib">
-  Cite
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/10.1007/978-3-662-54434-1_33" target="_blank" rel="noopener">
-  DOI
-</a>
-
-
-  
-  
-  
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://stonebuddha.github.io/publication/phamws24/&amp;title=Programmable%20MCMC%20with%20Soundly%20Composed%20Guide%20Programs" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
     
-  
-  
-  
-  
-  
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Programmable%20MCMC%20with%20Soundly%20Composed%20Guide%20Programs%20https://stonebuddha.github.io/publication/phamws24/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
     
-  
-  <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://xiongyingfei.github.io/papers/ESOP17-Artifact.tar" target="_blank" rel="noopener">
-    Artifact</a>
-
-
-    </div>
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-  
-
-  
-<nav class="mt-1">
-  <ul class="pagination justify-content-center">
-    
-    <li class="page-item"><a class="page-link" href="/publication-type/1/">&laquo;</a></li>
-    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://stonebuddha.github.io/publication/phamws24/&amp;title=Programmable%20MCMC%20with%20Soundly%20Composed%20Guide%20Programs" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
     
   </ul>
-</nav>
+</div>
 
 
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://stonebuddha.github.io/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu09aaeefd1d749d23465410d85e6504f9_5171477_270x270_fill_q75_lanczos_center.jpg" alt="Di Wang"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://stonebuddha.github.io/">Di Wang</a></h5>
+      <h6 class="card-subtitle">Assistant Professor</h6>
+      <p class="card-text">My heart is in the Principles of Programming.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=cGE_IHMAAAAJ" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://dblp.org/pid/18/5410-17.html" target="_blank" rel="noopener">
+        <i class="ai ai-dblp"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/stonebuddha" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/files/cv_wang.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
 </div>
   </div>
 

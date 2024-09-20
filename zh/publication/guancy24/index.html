@@ -64,12 +64,12 @@
   
     
   
-  <meta name="description" content="助理教授" />
+  <meta name="description" content="Syntactic sugar plays a crucial role in engineering programming languages. It offers convenient syntax and higher-level of abstractions, as witnessed by its pervasive use in both general-purpose and domain-specific contexts. Unfortunately, the traditional approach of translating programs containing syntactic sugars into the host language can lead to abstraction leakage, breaking the promise of convenience and hindering program comprehension. To address this challenge, we introduce the idea of semantics lifting that aims to statically derive self-contained evaluation rules for syntactic sugars. More specifically, we propose a semantics-lifting framework that consists of (i) a general algorithm for deriving host-independent semantics of syntactic sugars from the semantics of the host language and the desugaring rules, (ii) a formulation of the correctness and abstraction properties for a lifted semantics, and (iii) a systematic investigation of sufficient conditions that ensure a lifted semantics is provably correct and abstract. To evaluate our semantics-lifting framework, we have implemented a system named Osazone and conducted several case studies, demonstrating that our approach is flexible, effective, and practical for implementing domain-specific languages." />
 
   
-    <link rel="alternate" hreflang="en" href="https://stonebuddha.github.io/publication_types/" />
+    <link rel="alternate" hreflang="en" href="https://stonebuddha.github.io/publication/guancy24/" />
   
-  <link rel="alternate" hreflang="zh" href="https://stonebuddha.github.io/zh/publication_types/" />
+  <link rel="alternate" hreflang="zh" href="https://stonebuddha.github.io/zh/publication/guancy24/" />
 
   
   
@@ -78,6 +78,9 @@
   
 
   
+  
+    
+    <script src="/js/mathjax-config.js"></script>
   
 
   
@@ -228,9 +231,9 @@
 
       
       
-        
-      
 
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
       
     
       
@@ -278,8 +281,6 @@
   
 
   
-    <link rel="alternate" href="/zh/publication_types/index.xml" type="application/rss+xml" title="王迪" />
-  
 
   
     <link rel="manifest" href="/zh/manifest.webmanifest" />
@@ -288,7 +289,7 @@
   <link rel="icon" type="image/png" href="/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="https://stonebuddha.github.io/zh/publication_types/" />
+  <link rel="canonical" href="https://stonebuddha.github.io/zh/publication/guancy24/" />
 
   
   
@@ -311,33 +312,80 @@
   <meta property="twitter:card" content="summary" />
   
   <meta property="og:site_name" content="王迪" />
-  <meta property="og:url" content="https://stonebuddha.github.io/zh/publication_types/" />
-  <meta property="og:title" content="Publication_types | 王迪" />
-  <meta property="og:description" content="助理教授" /><meta property="og:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" />
+  <meta property="og:url" content="https://stonebuddha.github.io/zh/publication/guancy24/" />
+  <meta property="og:title" content="Semantics Lifting for Syntactic Sugar | 王迪" />
+  <meta property="og:description" content="Syntactic sugar plays a crucial role in engineering programming languages. It offers convenient syntax and higher-level of abstractions, as witnessed by its pervasive use in both general-purpose and domain-specific contexts. Unfortunately, the traditional approach of translating programs containing syntactic sugars into the host language can lead to abstraction leakage, breaking the promise of convenience and hindering program comprehension. To address this challenge, we introduce the idea of semantics lifting that aims to statically derive self-contained evaluation rules for syntactic sugars. More specifically, we propose a semantics-lifting framework that consists of (i) a general algorithm for deriving host-independent semantics of syntactic sugars from the semantics of the host language and the desugaring rules, (ii) a formulation of the correctness and abstraction properties for a lifted semantics, and (iii) a systematic investigation of sufficient conditions that ensure a lifted semantics is provably correct and abstract. To evaluate our semantics-lifting framework, we have implemented a system named Osazone and conducted several case studies, demonstrating that our approach is flexible, effective, and practical for implementing domain-specific languages." /><meta property="og:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" />
     <meta property="twitter:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="zh" />
   
     
-      <meta property="og:updated_time" content="2024-10-20T00:00:00&#43;00:00" />
+      <meta
+        property="article:published_time"
+        content="2023-07-29T11:57:39&#43;08:00"
+      />
     
+    <meta property="article:modified_time" content="2024-10-20T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://stonebuddha.github.io/zh/publication/guancy24/"
+  },
+  "headline": "Semantics Lifting for Syntactic Sugar",
+  
+  "datePublished": "2023-07-29T11:57:39+08:00",
+  "dateModified": "2024-10-20T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Zhichao Guan"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "王迪",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "Syntactic sugar plays a crucial role in engineering programming languages. It offers convenient syntax and higher-level of abstractions, as witnessed by its pervasive use in both general-purpose and domain-specific contexts. Unfortunately, the traditional approach of translating programs containing syntactic sugars into the host language can lead to abstraction leakage, breaking the promise of convenience and hindering program comprehension. To address this challenge, we introduce the idea of semantics lifting that aims to statically derive self-contained evaluation rules for syntactic sugars. More specifically, we propose a semantics-lifting framework that consists of (i) a general algorithm for deriving host-independent semantics of syntactic sugars from the semantics of the host language and the desugaring rules, (ii) a formulation of the correctness and abstraction properties for a lifted semantics, and (iii) a systematic investigation of sufficient conditions that ensure a lifted semantics is provably correct and abstract. To evaluate our semantics-lifting framework, we have implemented a system named Osazone and conducted several case studies, demonstrating that our approach is flexible, effective, and practical for implementing domain-specific languages."
+}
+</script>
+
+  
+
+  
+
   
 
   
 
 
 
-  
-
-  
 
 
-
-
-
-  <title>Publication_types | 王迪</title>
+  <title>Semantics Lifting for Syntactic Sugar | 王迪</title>
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   "  >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="e968f4bca348412210ea546c0dd33f9c" >
 
   
   
@@ -657,7 +705,7 @@
               <span>中文 (简体)</span>
             </div>
             
-            <a class="dropdown-item" href="https://stonebuddha.github.io/publication_types/">
+            <a class="dropdown-item" href="https://stonebuddha.github.io/publication/guancy24/">
               <span>English</span>
             </a>
             
@@ -688,6 +736,17 @@
 
 
 
+<div class="pub">
+
+  
+
+
+
+
+
+
+
+
 
 
 
@@ -696,58 +755,33 @@
 
   
   
+  
+<div class="article-container pt-3">
+  <h1>Semantics Lifting for Syntactic Sugar</h1>
+
+  
+
   
     
-  
-<div class="universal-wrapper pt-3">
-  <h1>Publication_types</h1>
-
-  
-
-  
-</div>
-
-
-
-<div class="universal-wrapper">
-  
-
-  
-  
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="media stream-item view-compact">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/zh/publication-type/1/" >1</a>
-    </div>
-
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
 
 
 <div class="article-metadata">
 
+  
+  
+  
+  
+  <div>
+    
+
+  <span >
+      Zhichao Guan</span>, <span >
+      Yiyuan Cao</span>, <span >
+      Tailai Yu</span>, <span >
+      Ziheng Wang</span>, <span class="author-highlighted">
+      王迪</span>, <span >
+      Zhenjiang Hu</span>
+  </div>
   
   
 
@@ -757,7 +791,7 @@
     
       
     
-    10月 20, 2024
+    十月, 2024
   </span>
   
 
@@ -775,170 +809,384 @@
 
 </div>
 
-      
-    </div>
-
     
 
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
 
   
+
+
+
+
+
+<a href="#" class="btn btn-outline-primary btn-page-header js-cite-modal"
+        data-filename="/zh/publication/guancy24/cite.bib">
+  引用
+</a>
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header" href="https://github.com/vbcpascal/Osazone-oopsla24" target="_blank" rel="noopener">
+  代码
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+<a class="btn btn-outline-primary btn-page-header" href="https://doi.org/10.1145/3689758" target="_blank" rel="noopener">
+  DOI
+</a>
+
+
+  
+  
+  
+    
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary btn-page-header" href="https://doi.org/10.5281/zenodo.13626469" target="_blank" rel="noopener">
+    Artifact</a>
+
+
+</div>
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    
+    <h3>摘要</h3>
+    <p class="pub-abstract">Syntactic sugar plays a crucial role in engineering programming languages. It offers convenient syntax and higher-level of abstractions, as witnessed by its pervasive use in both general-purpose and domain-specific contexts. Unfortunately, the traditional approach of translating programs containing syntactic sugars into the host language can lead to abstraction leakage, breaking the promise of convenience and hindering program comprehension. To address this challenge, we introduce the idea of semantics lifting that aims to statically derive self-contained evaluation rules for syntactic sugars. More specifically, we propose a semantics-lifting framework that consists of (i) a general algorithm for deriving host-independent semantics of syntactic sugars from the semantics of the host language and the desugaring rules, (ii) a formulation of the correctness and abstraction properties for a lifted semantics, and (iii) a systematic investigation of sufficient conditions that ensure a lifted semantics is provably correct and abstract. To evaluate our semantics-lifting framework, we have implemented a system named Osazone and conducted several case studies, demonstrating that our approach is flexible, effective, and practical for implementing domain-specific languages.</p>
     
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="media stream-item view-compact">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/zh/publication-type/2/" >2</a>
+    
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">类型</div>
+          <div class="col-12 col-md-9">
+            <a href="/zh/publication/#1">
+              会议文章
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
     </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">出版物</div>
+          <div class="col-12 col-md-9">In <em>Object-oriented Programming, Systems, Languages, and Applications</em></div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    <div class="space-below"></div>
+
+    <div class="article-style"></div>
 
     
 
-    <div class="stream-meta article-metadata">
 
+
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
       
-
+      
       
         
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://stonebuddha.github.io/zh/publication/guancy24/&amp;text=Semantics%20Lifting%20for%20Syntactic%20Sugar" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
     
       
-    
-    2月 14, 2024
-  </span>
-  
-
-  
-
-  
-
-  
-  
-  
-  
-
-  
-  
-
-</div>
-
       
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-  
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="media stream-item view-compact">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/zh/publication-type/3/" >3</a>
-    </div>
-
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
       
         
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://stonebuddha.github.io/zh/publication/guancy24/&amp;t=Semantics%20Lifting%20for%20Syntactic%20Sugar" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
     
       
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Semantics%20Lifting%20for%20Syntactic%20Sugar&amp;body=https://stonebuddha.github.io/zh/publication/guancy24/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
     
-    3月 30, 2021
-  </span>
-  
-
-  
-
-  
-
-  
-  
-  
-  
-
-  
-  
-
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://stonebuddha.github.io/zh/publication/guancy24/&amp;title=Semantics%20Lifting%20for%20Syntactic%20Sugar" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Semantics%20Lifting%20for%20Syntactic%20Sugar%20https://stonebuddha.github.io/zh/publication/guancy24/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://stonebuddha.github.io/zh/publication/guancy24/&amp;title=Semantics%20Lifting%20for%20Syntactic%20Sugar" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
 </div>
 
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
       
+      <a href="https://stonebuddha.github.io/"><img class="avatar mr-3 avatar-circle" src="/zh/authors/admin/avatar_hu09aaeefd1d749d23465410d85e6504f9_5171477_270x270_fill_q75_lanczos_center.jpg" alt="王迪"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://stonebuddha.github.io/">王迪</a></h5>
+      <h6 class="card-subtitle">助理教授</h6>
+      <p class="card-text">朝着思想自由、兼容并包的计算机科学前进！</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/zh/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=cGE_IHMAAAAJ" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://dblp.org/pid/18/5410-17.html" target="_blank" rel="noopener">
+        <i class="ai ai-dblp"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/stonebuddha" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/files/cv_wang.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
     </div>
-
-    
-
   </div>
-  <div class="ml-3">
+
+
+  
     
-    
-  </div>
-</div>
+
+
+
 
   
 
-  
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
 </div>
   </div>
 

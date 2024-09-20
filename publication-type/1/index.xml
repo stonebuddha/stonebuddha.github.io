@@ -5,12 +5,36 @@
     <link>https://stonebuddha.github.io/publication-type/1/</link>
       <atom:link href="https://stonebuddha.github.io/publication-type/1/index.xml" rel="self" type="application/rss+xml" />
     <description>1</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 27 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 20 Oct 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png</url>
       <title>1</title>
       <link>https://stonebuddha.github.io/publication-type/1/</link>
     </image>
+    
+    <item>
+      <title>Programmable MCMC with Soundly Composed Guide Programs</title>
+      <link>https://stonebuddha.github.io/publication/phamws24/</link>
+      <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/phamws24/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Semantics Lifting for Syntactic Sugar</title>
+      <link>https://stonebuddha.github.io/publication/guancy24/</link>
+      <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/guancy24/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Formalizing, Mechanizing, and Verifying Class-based Refinement Types</title>
+      <link>https://stonebuddha.github.io/publication/sunwc24/</link>
+      <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/sunwc24/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Newtonian Program Analysis of Probabilistic Programs</title>
