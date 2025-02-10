@@ -5,12 +5,20 @@
     <link>https://stonebuddha.github.io/</link>
       <atom:link href="https://stonebuddha.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Di Wang</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 20 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png</url>
       <title>Di Wang</title>
       <link>https://stonebuddha.github.io/</link>
     </image>
+    
+    <item>
+      <title>Automatic Linear Resource Bound Analysis for Rust via Prophecy Potentials</title>
+      <link>https://stonebuddha.github.io/publication/lianw25/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/lianw25/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Programmable MCMC with Soundly Composed Guide Programs</title>
@@ -1011,6 +1019,9 @@ Therefore we use recursive types to model this mechanism.&lt;/p&gt;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://stonebuddha.github.io/news_archive/</guid>
       <description>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;[Sep 2022]&lt;/strong&gt; Our paper on &lt;a href=&#34;publication/daswh23&#34;&gt;Probabilistic Resource-Aware Session Types&lt;/a&gt; (with Ankush and Jan)
+has been conditionally accepted to POPL 2023!&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[May 2022]&lt;/strong&gt; I successfully defended my thesis: &lt;a href=&#34;https://kilthub.cmu.edu/articles/thesis/Static_Analysis_of_Probabilistic_Programs_An_Algebraic_Approach/19803823&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Static Analysis of Probabilistic Programs: An Algebraic Approach&lt;/a&gt;. Cheers!&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;[Sep 2021]&lt;/strong&gt; I am on the academic job market for 2022 positions. Please reach out to me if you think I would be a good fit for your department.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;[Feb 2021]&lt;/strong&gt; I am excited that our papers &lt;a href=&#34;publication/wanghr21b&#34;&gt;Sound Probabilistic Inference via Guide Types&lt;/a&gt; and &lt;a href=&#34;publication/wanghr21a&#34;&gt;Central Moment Analysis for Cost Accumulators in Probabilistic Programs&lt;/a&gt; with Jan and Tom have been conditionally accepted to PLDI 2021.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;[Nov 2020]&lt;/strong&gt; Our technical report about &lt;a href=&#34;https://arxiv.org/pdf/2011.09037&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Probabilistic Resource-Aware Session Types&lt;/a&gt; is available on arXiv.&lt;/li&gt;

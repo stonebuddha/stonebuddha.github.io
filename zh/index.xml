@@ -5,12 +5,20 @@
     <link>https://stonebuddha.github.io/zh/</link>
       <atom:link href="https://stonebuddha.github.io/zh/index.xml" rel="self" type="application/rss+xml" />
     <description>王迪</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh</language><lastBuildDate>Sun, 20 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh</language><lastBuildDate>Wed, 01 Jan 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png</url>
       <title>王迪</title>
       <link>https://stonebuddha.github.io/zh/</link>
     </image>
+    
+    <item>
+      <title>Automatic Linear Resource Bound Analysis for Rust via Prophecy Potentials</title>
+      <link>https://stonebuddha.github.io/zh/publication/lianw25/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/zh/publication/lianw25/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Programmable MCMC with Soundly Composed Guide Programs</title>
@@ -1599,6 +1607,8 @@ Differentiable Programming. &lt;a href=&#34;https://arxiv.org/abs/2007.09871&#34
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://stonebuddha.github.io/zh/news_archive/</guid>
       <description>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;[Sep 2022]&lt;/strong&gt; &lt;a href=&#34;publication/daswh23&#34;&gt;Probabilistic Resource-Aware Session Types&lt;/a&gt; 被 POPL 2023 接收。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[May 2022]&lt;/strong&gt; 我完成了博士学位答辩。我的博士论文为 &lt;a href=&#34;https://kilthub.cmu.edu/articles/thesis/Static_Analysis_of_Probabilistic_Programs_An_Algebraic_Approach/19803823&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Static Analysis of Probabilistic Programs: An Algebraic Approach&lt;/a&gt;。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;[Sep 2021]&lt;/strong&gt; 我开始找 2022 年入职的学术界工作！&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;[Feb 2021]&lt;/strong&gt; 两篇论文 &lt;a href=&#34;publication/wanghr21b&#34;&gt;Sound Probabilistic Inference via Guide Types&lt;/a&gt; 和 &lt;a href=&#34;publication/wanghr21a&#34;&gt;Central Moment Analysis for Cost Accumulators in Probabilistic Programs&lt;/a&gt; 被 PLDI 2021 接收。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;[Nov 2020]&lt;/strong&gt; 预印本 &lt;a href=&#34;https://arxiv.org/pdf/2011.09037&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Probabilistic Resource-Aware Session Types&lt;/a&gt; 已上传至 arXiv。&lt;/li&gt;
