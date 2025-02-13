@@ -21,6 +21,22 @@
     </item>
     
     <item>
+      <title>Program Resource Analysis and Verification (In Chinese)</title>
+      <link>https://stonebuddha.github.io/talk/program-resource-analysis-and-verification-in-chinese/</link>
+      <pubDate>Sat, 30 Nov 2024 15:10:00 +0800</pubDate>
+      <guid>https://stonebuddha.github.io/talk/program-resource-analysis-and-verification-in-chinese/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programmable MCMC with Soundly Composed Guide Programs (In Chinese)</title>
+      <link>https://stonebuddha.github.io/talk/programmable-mcmc-with-soundly-composed-guide-programs-in-chinese/</link>
+      <pubDate>Fri, 15 Nov 2024 09:20:00 +0800</pubDate>
+      <guid>https://stonebuddha.github.io/talk/programmable-mcmc-with-soundly-composed-guide-programs-in-chinese/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Programmable MCMC with Soundly Composed Guide Programs</title>
       <link>https://stonebuddha.github.io/publication/phamws24/</link>
       <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
@@ -45,6 +61,54 @@
     </item>
     
     <item>
+      <title>A Paradigm that Unifies Programming and Verification (In Chinese)</title>
+      <link>https://stonebuddha.github.io/talk/a-paradigm-that-unifies-programming-and-verification-in-chinese/</link>
+      <pubDate>Tue, 03 Sep 2024 14:40:00 +0800</pubDate>
+      <guid>https://stonebuddha.github.io/talk/a-paradigm-that-unifies-programming-and-verification-in-chinese/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Proof-Oriented Programming Language (In Chinese)</title>
+      <link>https://stonebuddha.github.io/talk/a-proof-oriented-programming-language-in-chinese/</link>
+      <pubDate>Fri, 09 Aug 2024 16:30:00 +0800</pubDate>
+      <guid>https://stonebuddha.github.io/talk/a-proof-oriented-programming-language-in-chinese/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Newtonian Program Analysis of Probabilistic Programs</title>
+      <link>https://stonebuddha.github.io/talk/newtonian-program-analysis-of-probabilistic-programs/</link>
+      <pubDate>Tue, 02 Jul 2024 11:30:00 +0800</pubDate>
+      <guid>https://stonebuddha.github.io/talk/newtonian-program-analysis-of-probabilistic-programs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Exploration of New Designs for Programming Languages (In Chinese) [Ver 2]</title>
+      <link>https://stonebuddha.github.io/talk/exploration-of-new-designs-for-programming-languages-in-chinese-ver-2/</link>
+      <pubDate>Sat, 22 Jun 2024 15:20:00 +0800</pubDate>
+      <guid>https://stonebuddha.github.io/talk/exploration-of-new-designs-for-programming-languages-in-chinese-ver-2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Towards Next-Gen Programming Languages (In Chinese)</title>
+      <link>https://stonebuddha.github.io/talk/towards-next-gen-programming-languages-in-chinese/</link>
+      <pubDate>Sat, 22 Jun 2024 09:00:00 +0800</pubDate>
+      <guid>https://stonebuddha.github.io/talk/towards-next-gen-programming-languages-in-chinese/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Algebraic Program Analysis of Probabilistic Programs [Ver 3]</title>
+      <link>https://stonebuddha.github.io/talk/algebraic-program-analysis-of-probabilistic-programs-ver-3/</link>
+      <pubDate>Wed, 10 Apr 2024 22:00:00 +0800</pubDate>
+      <guid>https://stonebuddha.github.io/talk/algebraic-program-analysis-of-probabilistic-programs-ver-3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Newtonian Program Analysis of Probabilistic Programs</title>
       <link>https://stonebuddha.github.io/publication/wangr24/</link>
       <pubDate>Wed, 27 Mar 2024 00:00:00 +0000</pubDate>
@@ -61,26 +125,26 @@
     </item>
     
     <item>
-      <title>Exploration of New Designs for Programming Languages (In Chinese)</title>
-      <link>https://stonebuddha.github.io/talk/exploration-of-new-designs-for-programming-languages-in-chinese/</link>
+      <title>Exploration of New Designs for Programming Languages (In Chinese) [Ver 1]</title>
+      <link>https://stonebuddha.github.io/talk/exploration-of-new-designs-for-programming-languages-in-chinese-ver-1/</link>
       <pubDate>Sat, 16 Dec 2023 15:30:00 +0800</pubDate>
-      <guid>https://stonebuddha.github.io/talk/exploration-of-new-designs-for-programming-languages-in-chinese/</guid>
+      <guid>https://stonebuddha.github.io/talk/exploration-of-new-designs-for-programming-languages-in-chinese-ver-1/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Algebraic Program Analysis of Probabilistic Programs (New)</title>
-      <link>https://stonebuddha.github.io/talk/algebraic-program-analysis-of-probabilistic-programs-new/</link>
+      <title>Algebraic Program Analysis of Probabilistic Programs [Ver 2]</title>
+      <link>https://stonebuddha.github.io/talk/algebraic-program-analysis-of-probabilistic-programs-ver-2/</link>
       <pubDate>Sat, 02 Dec 2023 14:35:00 +0800</pubDate>
-      <guid>https://stonebuddha.github.io/talk/algebraic-program-analysis-of-probabilistic-programs-new/</guid>
+      <guid>https://stonebuddha.github.io/talk/algebraic-program-analysis-of-probabilistic-programs-ver-2/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Algebraic Program Analysis of Probabilistic Programs</title>
-      <link>https://stonebuddha.github.io/talk/algebraic-program-analysis-of-probabilistic-programs/</link>
+      <title>Algebraic Program Analysis of Probabilistic Programs [Ver 1]</title>
+      <link>https://stonebuddha.github.io/talk/algebraic-program-analysis-of-probabilistic-programs-ver-1/</link>
       <pubDate>Fri, 30 Jun 2023 15:15:00 +0800</pubDate>
-      <guid>https://stonebuddha.github.io/talk/algebraic-program-analysis-of-probabilistic-programs/</guid>
+      <guid>https://stonebuddha.github.io/talk/algebraic-program-analysis-of-probabilistic-programs-ver-1/</guid>
       <description></description>
     </item>
     

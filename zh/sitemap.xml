@@ -60,6 +60,36 @@
       href="https://stonebuddha.github.io/zh/publication/"
     /></url>
   <url>
+    <loc>https://stonebuddha.github.io/zh/event/</loc><lastmod>2024-11-30T15:10:00+08:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://stonebuddha.github.io/event/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://stonebuddha.github.io/zh/event/"
+    /></url>
+  <url>
+    <loc>https://stonebuddha.github.io/zh/talk/%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%B5%84%E6%BA%90%E5%88%86%E6%9E%90%E4%B8%8E%E9%AA%8C%E8%AF%81/</loc><lastmod>2024-11-30T15:10:00+08:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://stonebuddha.github.io/talk/program-resource-analysis-and-verification-in-chinese/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://stonebuddha.github.io/zh/talk/%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%B5%84%E6%BA%90%E5%88%86%E6%9E%90%E4%B8%8E%E9%AA%8C%E8%AF%81/"
+    /></url>
+  <url>
+    <loc>https://stonebuddha.github.io/zh/talk/%E4%BF%9D%E8%AF%81%E5%BC%95%E5%AF%BC%E7%A8%8B%E5%BA%8F%E7%BB%84%E5%90%88%E6%AD%A3%E7%A1%AE%E6%80%A7%E7%9A%84%E5%8F%AF%E7%BC%96%E7%A8%8B-mcmc/</loc><lastmod>2024-11-15T09:20:00+08:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://stonebuddha.github.io/talk/programmable-mcmc-with-soundly-composed-guide-programs-in-chinese/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://stonebuddha.github.io/zh/talk/%E4%BF%9D%E8%AF%81%E5%BC%95%E5%AF%BC%E7%A8%8B%E5%BA%8F%E7%BB%84%E5%90%88%E6%AD%A3%E7%A1%AE%E6%80%A7%E7%9A%84%E5%8F%AF%E7%BC%96%E7%A8%8B-mcmc/"
+    /></url>
+  <url>
     <loc></loc><lastmod>2024-10-20T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
     <loc></loc><lastmod>2024-10-20T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
@@ -114,6 +144,66 @@
   <url>
     <loc></loc><lastmod>2024-09-12T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
+    <loc>https://stonebuddha.github.io/zh/talk/%E5%BC%80%E5%8F%91%E4%B8%8E%E8%AF%81%E6%98%8E%E4%B8%80%E4%BD%93%E5%8C%96%E7%9A%84%E7%BC%96%E7%A8%8B%E8%8C%83%E5%BC%8F/</loc><lastmod>2024-09-03T14:40:00+08:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://stonebuddha.github.io/talk/a-paradigm-that-unifies-programming-and-verification-in-chinese/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://stonebuddha.github.io/zh/talk/%E5%BC%80%E5%8F%91%E4%B8%8E%E8%AF%81%E6%98%8E%E4%B8%80%E4%BD%93%E5%8C%96%E7%9A%84%E7%BC%96%E7%A8%8B%E8%8C%83%E5%BC%8F/"
+    /></url>
+  <url>
+    <loc>https://stonebuddha.github.io/zh/talk/%E9%9D%A2%E5%90%91%E5%BD%A2%E5%BC%8F%E5%8C%96%E8%AF%81%E6%98%8E%E7%9A%84%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80/</loc><lastmod>2024-08-09T16:30:00+08:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://stonebuddha.github.io/talk/a-proof-oriented-programming-language-in-chinese/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://stonebuddha.github.io/zh/talk/%E9%9D%A2%E5%90%91%E5%BD%A2%E5%BC%8F%E5%8C%96%E8%AF%81%E6%98%8E%E7%9A%84%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80/"
+    /></url>
+  <url>
+    <loc>https://stonebuddha.github.io/zh/talk/%E6%A6%82%E7%8E%87%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%89%9B%E9%A1%BF%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90/</loc><lastmod>2024-07-02T11:30:00+08:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://stonebuddha.github.io/talk/newtonian-program-analysis-of-probabilistic-programs/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://stonebuddha.github.io/zh/talk/%E6%A6%82%E7%8E%87%E7%A8%8B%E5%BA%8F%E7%9A%84%E7%89%9B%E9%A1%BF%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90/"
+    /></url>
+  <url>
+    <loc>https://stonebuddha.github.io/zh/talk/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%96%B0%E8%8C%83%E5%BC%8F%E5%88%9D%E6%8E%A2-ver-2/</loc><lastmod>2024-06-22T15:20:00+08:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://stonebuddha.github.io/talk/exploration-of-new-designs-for-programming-languages-in-chinese-ver-2/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://stonebuddha.github.io/zh/talk/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%96%B0%E8%8C%83%E5%BC%8F%E5%88%9D%E6%8E%A2-ver-2/"
+    /></url>
+  <url>
+    <loc>https://stonebuddha.github.io/zh/talk/%E4%B8%8B%E4%B8%80%E4%BB%A3%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84/</loc><lastmod>2024-06-22T09:00:00+08:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://stonebuddha.github.io/talk/towards-next-gen-programming-languages-in-chinese/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://stonebuddha.github.io/zh/talk/%E4%B8%8B%E4%B8%80%E4%BB%A3%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84/"
+    /></url>
+  <url>
+    <loc>https://stonebuddha.github.io/zh/talk/%E6%A6%82%E7%8E%87%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BB%A3%E6%95%B0%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90-ver-3/</loc><lastmod>2024-04-10T22:00:00+08:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://stonebuddha.github.io/talk/algebraic-program-analysis-of-probabilistic-programs-ver-3/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://stonebuddha.github.io/zh/talk/%E6%A6%82%E7%8E%87%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BB%A3%E6%95%B0%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90-ver-3/"
+    /></url>
+  <url>
     <loc>https://stonebuddha.github.io/zh/publication/wangr24/</loc><lastmod>2024-03-27T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
       rel="alternate"
       hreflang="en"
@@ -154,44 +244,34 @@
   <url>
     <loc></loc><lastmod>2024-02-14T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
-    <loc>https://stonebuddha.github.io/zh/event/</loc><lastmod>2023-12-16T15:30:00+08:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+    <loc>https://stonebuddha.github.io/zh/talk/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%96%B0%E8%8C%83%E5%BC%8F%E5%88%9D%E6%8E%A2-ver-1/</loc><lastmod>2023-12-16T15:30:00+08:00</lastmod><changefreq>weekly</changefreq><xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://stonebuddha.github.io/event/"
+      href="https://stonebuddha.github.io/talk/exploration-of-new-designs-for-programming-languages-in-chinese-ver-1/"
     /><xhtml:link
       rel="alternate"
       hreflang="zh"
-      href="https://stonebuddha.github.io/zh/event/"
+      href="https://stonebuddha.github.io/zh/talk/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%96%B0%E8%8C%83%E5%BC%8F%E5%88%9D%E6%8E%A2-ver-1/"
     /></url>
   <url>
-    <loc>https://stonebuddha.github.io/zh/talk/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%96%B0%E8%8C%83%E5%BC%8F%E5%88%9D%E6%8E%A2/</loc><lastmod>2023-12-16T15:30:00+08:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+    <loc>https://stonebuddha.github.io/zh/talk/%E6%A6%82%E7%8E%87%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BB%A3%E6%95%B0%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90-ver-2/</loc><lastmod>2023-12-02T14:35:00+08:00</lastmod><changefreq>weekly</changefreq><xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://stonebuddha.github.io/talk/exploration-of-new-designs-for-programming-languages-in-chinese/"
+      href="https://stonebuddha.github.io/talk/algebraic-program-analysis-of-probabilistic-programs-ver-2/"
     /><xhtml:link
       rel="alternate"
       hreflang="zh"
-      href="https://stonebuddha.github.io/zh/talk/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E6%96%B0%E8%8C%83%E5%BC%8F%E5%88%9D%E6%8E%A2/"
+      href="https://stonebuddha.github.io/zh/talk/%E6%A6%82%E7%8E%87%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BB%A3%E6%95%B0%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90-ver-2/"
     /></url>
   <url>
-    <loc>https://stonebuddha.github.io/zh/talk/%E6%A6%82%E7%8E%87%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BB%A3%E6%95%B0%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90%E6%96%B0/</loc><lastmod>2023-12-02T14:35:00+08:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+    <loc>https://stonebuddha.github.io/zh/talk/%E6%A6%82%E7%8E%87%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BB%A3%E6%95%B0%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90-ver-1/</loc><lastmod>2023-06-30T15:15:00+08:00</lastmod><changefreq>weekly</changefreq><xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://stonebuddha.github.io/talk/algebraic-program-analysis-of-probabilistic-programs-new/"
+      href="https://stonebuddha.github.io/talk/algebraic-program-analysis-of-probabilistic-programs-ver-1/"
     /><xhtml:link
       rel="alternate"
       hreflang="zh"
-      href="https://stonebuddha.github.io/zh/talk/%E6%A6%82%E7%8E%87%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BB%A3%E6%95%B0%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90%E6%96%B0/"
-    /></url>
-  <url>
-    <loc>https://stonebuddha.github.io/zh/talk/%E6%A6%82%E7%8E%87%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BB%A3%E6%95%B0%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90/</loc><lastmod>2023-06-30T15:15:00+08:00</lastmod><changefreq>weekly</changefreq><xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://stonebuddha.github.io/talk/algebraic-program-analysis-of-probabilistic-programs/"
-    /><xhtml:link
-      rel="alternate"
-      hreflang="zh"
-      href="https://stonebuddha.github.io/zh/talk/%E6%A6%82%E7%8E%87%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BB%A3%E6%95%B0%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90/"
+      href="https://stonebuddha.github.io/zh/talk/%E6%A6%82%E7%8E%87%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BB%A3%E6%95%B0%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90-ver-1/"
     /></url>
   <url>
     <loc>https://stonebuddha.github.io/zh/talk/%E7%B1%BB%E5%9E%8B%E4%B8%BB%E5%AF%BC%E7%9A%84%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E8%AE%BE%E8%AE%A1/</loc><lastmod>2023-06-17T09:00:00+08:00</lastmod><changefreq>weekly</changefreq><xhtml:link
@@ -336,14 +416,14 @@
       href="https://stonebuddha.github.io/zh/publication/wanghr21b/"
     /></url>
   <url>
-    <loc>https://stonebuddha.github.io/zh/talk/type-guided-worst-case-input-generation/</loc><lastmod>2021-06-03T10:00:00-04:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+    <loc>https://stonebuddha.github.io/zh/talk/%E7%B1%BB%E5%9E%8B%E5%BC%95%E5%AF%BC%E7%9A%84%E6%9C%80%E5%9D%8F%E6%83%85%E5%86%B5%E8%BE%93%E5%85%A5%E7%94%9F%E6%88%90/</loc><lastmod>2021-06-03T10:00:00-04:00</lastmod><changefreq>weekly</changefreq><xhtml:link
       rel="alternate"
       hreflang="en"
       href="https://stonebuddha.github.io/talk/type-guided-worst-case-input-generation/"
     /><xhtml:link
       rel="alternate"
       hreflang="zh"
-      href="https://stonebuddha.github.io/zh/talk/type-guided-worst-case-input-generation/"
+      href="https://stonebuddha.github.io/zh/talk/%E7%B1%BB%E5%9E%8B%E5%BC%95%E5%AF%BC%E7%9A%84%E6%9C%80%E5%9D%8F%E6%83%85%E5%86%B5%E8%BE%93%E5%85%A5%E7%94%9F%E6%88%90/"
     /></url>
   <url>
     <loc>https://stonebuddha.github.io/zh/publication-type/3/</loc><lastmod>2021-03-30T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
@@ -376,14 +456,14 @@
       href="https://stonebuddha.github.io/zh/post/termination-analysis-of-random-walks/"
     /></url>
   <url>
-    <loc>https://stonebuddha.github.io/zh/talk/type-based-resource-guided-search/</loc><lastmod>2020-10-16T12:00:00-04:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+    <loc>https://stonebuddha.github.io/zh/talk/%E5%9F%BA%E4%BA%8E%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%B5%84%E6%BA%90%E5%BC%95%E5%AF%BC%E6%90%9C%E7%B4%A2/</loc><lastmod>2020-10-16T12:00:00-04:00</lastmod><changefreq>weekly</changefreq><xhtml:link
       rel="alternate"
       hreflang="en"
       href="https://stonebuddha.github.io/talk/type-based-resource-guided-search/"
     /><xhtml:link
       rel="alternate"
       hreflang="zh"
-      href="https://stonebuddha.github.io/zh/talk/type-based-resource-guided-search/"
+      href="https://stonebuddha.github.io/zh/talk/%E5%9F%BA%E4%BA%8E%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%B5%84%E6%BA%90%E5%BC%95%E5%AF%BC%E6%90%9C%E7%B4%A2/"
     /></url>
   <url>
     <loc></loc><lastmod>2020-08-23T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
@@ -414,14 +494,14 @@
   <url>
     <loc></loc><lastmod>2020-08-23T00:00:00+00:00</lastmod><changefreq>weekly</changefreq></url>
   <url>
-    <loc>https://stonebuddha.github.io/zh/talk/resource-guided-program-synthesis/</loc><lastmod>2019-11-22T12:00:00-05:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+    <loc>https://stonebuddha.github.io/zh/talk/%E8%B5%84%E6%BA%90%E5%BC%95%E5%AF%BC%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%90%88%E6%88%90/</loc><lastmod>2019-11-22T12:00:00-05:00</lastmod><changefreq>weekly</changefreq><xhtml:link
       rel="alternate"
       hreflang="en"
       href="https://stonebuddha.github.io/talk/resource-guided-program-synthesis/"
     /><xhtml:link
       rel="alternate"
       hreflang="zh"
-      href="https://stonebuddha.github.io/zh/talk/resource-guided-program-synthesis/"
+      href="https://stonebuddha.github.io/zh/talk/%E8%B5%84%E6%BA%90%E5%BC%95%E5%AF%BC%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%90%88%E6%88%90/"
     /></url>
   <url>
     <loc>https://stonebuddha.github.io/zh/publication/knothwp19/</loc><lastmod>2019-06-22T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
@@ -474,24 +554,24 @@
       href="https://stonebuddha.github.io/zh/publication/wanghr18/"
     /></url>
   <url>
-    <loc>https://stonebuddha.github.io/zh/talk/pmaf-an-algebraic-framework-for-static-analysis-of-probabilistic-programs/</loc><lastmod>2018-04-20T12:00:00-04:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+    <loc>https://stonebuddha.github.io/zh/talk/pmaf%E9%92%88%E5%AF%B9%E6%A6%82%E7%8E%87%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BB%A3%E6%95%B0%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6/</loc><lastmod>2018-04-20T12:00:00-04:00</lastmod><changefreq>weekly</changefreq><xhtml:link
       rel="alternate"
       hreflang="en"
       href="https://stonebuddha.github.io/talk/pmaf-an-algebraic-framework-for-static-analysis-of-probabilistic-programs/"
     /><xhtml:link
       rel="alternate"
       hreflang="zh"
-      href="https://stonebuddha.github.io/zh/talk/pmaf-an-algebraic-framework-for-static-analysis-of-probabilistic-programs/"
+      href="https://stonebuddha.github.io/zh/talk/pmaf%E9%92%88%E5%AF%B9%E6%A6%82%E7%8E%87%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BB%A3%E6%95%B0%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6/"
     /></url>
   <url>
-    <loc>https://stonebuddha.github.io/zh/talk/timl-a-functional-language-for-practical-complexity-analysis-with-invariants/</loc><lastmod>2018-02-09T12:00:00-05:00</lastmod><changefreq>weekly</changefreq><xhtml:link
+    <loc>https://stonebuddha.github.io/zh/talk/timl%E4%B8%80%E4%B8%AA%E6%94%AF%E6%8C%81%E4%B8%8D%E5%8F%98%E5%BC%8F%E5%92%8C%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E8%AF%AD%E8%A8%80/</loc><lastmod>2018-02-09T12:00:00-05:00</lastmod><changefreq>weekly</changefreq><xhtml:link
       rel="alternate"
       hreflang="en"
       href="https://stonebuddha.github.io/talk/timl-a-functional-language-for-practical-complexity-analysis-with-invariants/"
     /><xhtml:link
       rel="alternate"
       hreflang="zh"
-      href="https://stonebuddha.github.io/zh/talk/timl-a-functional-language-for-practical-complexity-analysis-with-invariants/"
+      href="https://stonebuddha.github.io/zh/talk/timl%E4%B8%80%E4%B8%AA%E6%94%AF%E6%8C%81%E4%B8%8D%E5%8F%98%E5%BC%8F%E5%92%8C%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90%E7%9A%84%E5%87%BD%E6%95%B0%E5%BC%8F%E8%AF%AD%E8%A8%80/"
     /></url>
   <url>
     <loc>https://stonebuddha.github.io/zh/post/nondeterministic-interpretation/</loc><lastmod>2018-02-08T00:00:00+00:00</lastmod><changefreq>weekly</changefreq><xhtml:link
