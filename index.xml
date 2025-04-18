@@ -1083,6 +1083,11 @@ Therefore we use recursive types to model this mechanism.&lt;/p&gt;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://stonebuddha.github.io/news_archive/</guid>
       <description>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;[Dec 2023]&lt;/strong&gt; Our paper on &lt;a href=&#34;publication/wangr24&#34;&gt;Newtonian Program Analysis of Probabilistic Programs&lt;/a&gt; (with Tom Reps) has been accepted to OOPSLA 2024.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Sep 2023]&lt;/strong&gt; I will serve on &lt;a href=&#34;https://pldi24.sigplan.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PLDI 2024&lt;/a&gt; Program Committee.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[July 2023]&lt;/strong&gt; Our technical report about &lt;a href=&#34;https://arxiv.org/pdf/2307.09064&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Newtonian Program Analysis of Probabilistic Programs&lt;/a&gt; is available on arXiv.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[May 2023]&lt;/strong&gt; I will serve on &lt;a href=&#34;https://2024.splashcon.org/track/splash-2024-oopsla&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OOPSLA 2024&lt;/a&gt; Review Committee.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[May 2023]&lt;/strong&gt; I will serve on &lt;a href=&#34;https://conf.researchr.org/home/ase-2023&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ASE 2023&lt;/a&gt; Program Committee.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;[Sep 2022]&lt;/strong&gt; Our paper on &lt;a href=&#34;publication/daswh23&#34;&gt;Probabilistic Resource-Aware Session Types&lt;/a&gt; (with Ankush and Jan)
 has been conditionally accepted to POPL 2023!&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;[May 2022]&lt;/strong&gt; I successfully defended my thesis: &lt;a href=&#34;https://kilthub.cmu.edu/articles/thesis/Static_Analysis_of_Probabilistic_Programs_An_Algebraic_Approach/19803823&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Static Analysis of Probabilistic Programs: An Algebraic Approach&lt;/a&gt;. Cheers!&lt;/li&gt;
