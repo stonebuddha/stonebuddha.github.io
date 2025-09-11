@@ -64,12 +64,14 @@
   
     
   
-  <meta name="description" content="Assistant Professor" />
+  <meta name="description" content="The worst-case resource usage of a program can provide useful information for many software-engineering tasks, such as performance optimization and algorithmic-complexity-vulnerability discovery. This paper presents a generic, adaptive, and sound fuzzing framework, called DSE-SMC, for estimating worst-case resource usage. DSE-SMC is generic because it is black-box as long as the user provides an interface for retrieving resource-usage information on a given input; adaptive because it automatically balances between exploration and exploitation of candidate inputs; and sound because it is guaranteed to converge to the true resource-usage distribution of the analyzed program. 
+
+ DSE-SMC is built upon a key observation: resource accumulation in a program is isomorphic to the soft-conditioning mechanism in Bayesian probabilistic programming; thus, worst-case resource analysis is isomorphic to the maximum-a-posteriori-estimation problem of Bayesian statistics. DSE-SMC incorporates sequential Monte Carlo (SMC) -- a generic framework for Bayesian inference -- with adaptive evolutionary fuzzing algorithms, in a sound manner, i.e., DSE-SMC asymptotically converges to the posterior distribution induced by resource-usage behavior of the analyzed program. Experimental evaluation on Java applications demonstrates that DSE-SMC is significantly more effective than existing black-box fuzzing methods for worst-case analysis." />
 
   
-    <link rel="alternate" hreflang="zh" href="https://stonebuddha.github.io/zh/publication-type/3/" />
+    <link rel="alternate" hreflang="zh" href="https://stonebuddha.github.io/zh/publication/wuw23/" />
   
-  <link rel="alternate" hreflang="en-us" href="https://stonebuddha.github.io/publication-type/3/" />
+  <link rel="alternate" hreflang="en-us" href="https://stonebuddha.github.io/publication/wuw23/" />
 
   
   
@@ -278,8 +280,6 @@
   
 
   
-    <link rel="alternate" href="/publication-type/3/index.xml" type="application/rss+xml" title="Di Wang" />
-  
 
   
     <link rel="manifest" href="/manifest.webmanifest" />
@@ -288,7 +288,7 @@
   <link rel="icon" type="image/png" href="/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="https://stonebuddha.github.io/publication-type/3/" />
+  <link rel="canonical" href="https://stonebuddha.github.io/publication/wuw23/" />
 
   
   
@@ -311,33 +311,82 @@
   <meta property="twitter:card" content="summary" />
   
   <meta property="og:site_name" content="Di Wang" />
-  <meta property="og:url" content="https://stonebuddha.github.io/publication-type/3/" />
-  <meta property="og:title" content="3 | Di Wang" />
-  <meta property="og:description" content="Assistant Professor" /><meta property="og:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" />
+  <meta property="og:url" content="https://stonebuddha.github.io/publication/wuw23/" />
+  <meta property="og:title" content="Worst-Case Analysis is Maximum-A-Posteriori Estimation | Di Wang" />
+  <meta property="og:description" content="The worst-case resource usage of a program can provide useful information for many software-engineering tasks, such as performance optimization and algorithmic-complexity-vulnerability discovery. This paper presents a generic, adaptive, and sound fuzzing framework, called DSE-SMC, for estimating worst-case resource usage. DSE-SMC is generic because it is black-box as long as the user provides an interface for retrieving resource-usage information on a given input; adaptive because it automatically balances between exploration and exploitation of candidate inputs; and sound because it is guaranteed to converge to the true resource-usage distribution of the analyzed program. 
+
+ DSE-SMC is built upon a key observation: resource accumulation in a program is isomorphic to the soft-conditioning mechanism in Bayesian probabilistic programming; thus, worst-case resource analysis is isomorphic to the maximum-a-posteriori-estimation problem of Bayesian statistics. DSE-SMC incorporates sequential Monte Carlo (SMC) -- a generic framework for Bayesian inference -- with adaptive evolutionary fuzzing algorithms, in a sound manner, i.e., DSE-SMC asymptotically converges to the posterior distribution induced by resource-usage behavior of the analyzed program. Experimental evaluation on Java applications demonstrates that DSE-SMC is significantly more effective than existing black-box fuzzing methods for worst-case analysis." /><meta property="og:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" />
     <meta property="twitter:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
-      <meta property="og:updated_time" content="2023-10-15T00:00:00&#43;00:00" />
+      <meta
+        property="article:published_time"
+        content="2021-09-15T11:57:39&#43;08:00"
+      />
     
+    <meta property="article:modified_time" content="2023-10-15T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://stonebuddha.github.io/publication/wuw23/"
+  },
+  "headline": "Worst-Case Analysis is Maximum-A-Posteriori Estimation",
+  
+  "datePublished": "2021-09-15T11:57:39+08:00",
+  "dateModified": "2023-10-15T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Hongjun Wu"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Di Wang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "The worst-case resource usage of a program can provide useful information for many software-engineering tasks, such as performance optimization and algorithmic-complexity-vulnerability discovery. This paper presents a generic, adaptive, and sound fuzzing framework, called DSE-SMC, for estimating worst-case resource usage. DSE-SMC is generic because it is black-box as long as the user provides an interface for retrieving resource-usage information on a given input; adaptive because it automatically balances between exploration and exploitation of candidate inputs; and sound because it is guaranteed to converge to the true resource-usage distribution of the analyzed program. \n\n DSE-SMC is built upon a key observation: resource accumulation in a program is isomorphic to the soft-conditioning mechanism in Bayesian probabilistic programming; thus, worst-case resource analysis is isomorphic to the maximum-a-posteriori-estimation problem of Bayesian statistics. DSE-SMC incorporates sequential Monte Carlo (SMC) -- a generic framework for Bayesian inference -- with adaptive evolutionary fuzzing algorithms, in a sound manner, i.e., DSE-SMC asymptotically converges to the posterior distribution induced by resource-usage behavior of the analyzed program. Experimental evaluation on Java applications demonstrates that DSE-SMC is significantly more effective than existing black-box fuzzing methods for worst-case analysis."
+}
+</script>
+
+  
+
+  
+
   
 
   
 
 
 
-  
-
-  
 
 
-
-
-
-  <title>3 | Di Wang</title>
+  <title>Worst-Case Analysis is Maximum-A-Posteriori Estimation | Di Wang</title>
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   "  >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="c17c788c8f25f00c569e68a681380019" >
 
   
   
@@ -657,7 +706,7 @@
               <span>English</span>
             </div>
             
-            <a class="dropdown-item" href="https://stonebuddha.github.io/zh/publication-type/3/">
+            <a class="dropdown-item" href="https://stonebuddha.github.io/zh/publication/wuw23/">
               <span>中文 (简体)</span>
             </a>
             
@@ -688,6 +737,17 @@
 
 
 
+<div class="pub">
+
+  
+
+
+
+
+
+
+
+
 
 
 
@@ -696,76 +756,64 @@
 
   
   
+  
+<div class="article-container pt-3">
+  <h1>Worst-Case Analysis is Maximum-A-Posteriori Estimation</h1>
+
+  
+
   
     
-  
-<div class="universal-wrapper pt-3">
-  <h1>3</h1>
-
-  
-
-  
-</div>
 
 
-
-<div class="universal-wrapper">
-  
+<div class="article-metadata">
 
   
   
+  
+  
+  <div>
     
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item view-compact">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/publication/wuw23/" >Worst-Case Analysis is Maximum-A-Posteriori Estimation</a>
-    </div>
-
-    
-    <a href="/publication/wuw23/"  class="summary-link">
-      <div class="article-style">
-        <p>The worst-case resource usage of a program can provide useful information for many software-engineering tasks, such as performance …</p>
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-      <div>
-        
 
   <span >
       Hongjun Wu</span>, <span class="author-highlighted">
       Di Wang</span>
-      </div>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
       
-    </div>
+    
+    October, 2023
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+  
+
+  
+  
+
+</div>
 
     
-    <div class="btn-links">
-      
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
 
 
 
@@ -780,7 +828,7 @@
 
 
 
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/pdf/2310.09774" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary btn-page-header" href="https://arxiv.org/pdf/2310.09774" target="_blank" rel="noopener">
   TR
 </a>
 
@@ -800,118 +848,283 @@
 
 
 
-    </div>
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
 </div>
 
-  
-    
-
-
-
-
-
-
 
   
+</div>
 
 
 
-
-
-
-
-  
-
-
-<div class="media stream-item view-compact">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/publication/wanghr21c/" >Expected-Cost Analysis for Probabilistic Programs and Semantics-Level Adaption of Optional Stopping Theorems</a>
-    </div>
+  <div class="article-container">
 
     
-    <a href="/publication/wanghr21c/"  class="summary-link">
-      <div class="article-style">
-        In this article, we present a semantics-level adaption of the Optional Stopping Theorem, sketch an expected-cost analysis as its …
+    <h3>Abstract</h3>
+    <p class="pub-abstract"><p>The worst-case resource usage of a program can provide useful information for many software-engineering tasks, such as performance optimization and algorithmic-complexity-vulnerability discovery. This paper presents a generic, adaptive, and sound fuzzing framework, called DSE-SMC, for estimating worst-case resource usage. DSE-SMC is generic because it is black-box as long as the user provides an interface for retrieving resource-usage information on a given input; adaptive because it automatically balances between exploration and exploitation of candidate inputs; and sound because it is guaranteed to converge to the true resource-usage distribution of the analyzed program.</p>
+<p>DSE-SMC is built upon a key observation: resource accumulation in a program is isomorphic to the soft-conditioning mechanism in Bayesian probabilistic programming; thus, worst-case resource analysis is isomorphic to the maximum-a-posteriori-estimation problem of Bayesian statistics. DSE-SMC incorporates sequential Monte Carlo (SMC) &ndash; a generic framework for Bayesian inference &ndash; with adaptive evolutionary fuzzing algorithms, in a sound manner, i.e., DSE-SMC asymptotically converges to the posterior distribution induced by resource-usage behavior of the analyzed program. Experimental evaluation on Java applications demonstrates that DSE-SMC is significantly more effective than existing black-box fuzzing methods for worst-case analysis.</p>
+</p>
+    
+
+    
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Type</div>
+          <div class="col-12 col-md-9">
+            <a href="/publication/#3">
+              Working paper
+            </a>
+          </div>
+        </div>
       </div>
-    </a>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
     
 
-    <div class="stream-meta article-metadata">
+    
 
-      
+    <div class="space-below"></div>
 
+    <div class="article-style"></div>
+
+    
+
+
+
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
       
-      <div>
+      
+      
         
-
-  <span class="author-highlighted">
-      Di Wang</span>, <span >
-      Jan Hoffmann</span>, <span >
-      Thomas Reps</span>
-      </div>
       
-    </div>
-
-    
-    <div class="btn-links">
       
-
-
-
-
-
-
-
-
-  
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://stonebuddha.github.io/publication/wuw23/&amp;text=Worst-Case%20Analysis%20is%20Maximum-A-Posteriori%20Estimation" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
     
-  
-
-
-
-<a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/pdf/2103.16105" target="_blank" rel="noopener">
-  TR
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://stonebuddha.github.io/publication/wuw23/&amp;t=Worst-Case%20Analysis%20is%20Maximum-A-Posteriori%20Estimation" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
     
-
-  </div>
-  <div class="ml-3">
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Worst-Case%20Analysis%20is%20Maximum-A-Posteriori%20Estimation&amp;body=https://stonebuddha.github.io/publication/wuw23/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
     
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://stonebuddha.github.io/publication/wuw23/&amp;title=Worst-Case%20Analysis%20is%20Maximum-A-Posteriori%20Estimation" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
     
-  </div>
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Worst-Case%20Analysis%20is%20Maximum-A-Posteriori%20Estimation%20https://stonebuddha.github.io/publication/wuw23/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://stonebuddha.github.io/publication/wuw23/&amp;title=Worst-Case%20Analysis%20is%20Maximum-A-Posteriori%20Estimation" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
 </div>
 
+
+
+
+
+
+
+
+
+
+
   
+  
+    
+
+
+
+
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://stonebuddha.github.io/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu09aaeefd1d749d23465410d85e6504f9_5171477_270x270_fill_q75_lanczos_center.jpg" alt="Di Wang"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://stonebuddha.github.io/">Di Wang</a></h5>
+      <h6 class="card-subtitle">Assistant Professor</h6>
+      <p class="card-text">My heart is in the Principles of Programming.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=CzEw-tYAAAAJ" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://dblp.org/pid/18/5410-17.html" target="_blank" rel="noopener">
+        <i class="ai ai-dblp"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/stonebuddha" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/files/cv_wang.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
 
   
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
 </div>
   </div>
 
