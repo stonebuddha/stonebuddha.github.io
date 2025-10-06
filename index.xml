@@ -1102,6 +1102,31 @@ Therefore we use recursive types to model this mechanism.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Compiler Principles Honor Track (Spring 2025)</title>
+      <link>https://stonebuddha.github.io/compiler25spring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/compiler25spring/</guid>
+      <description>&lt;p&gt;Below are the slides for the theoretical part (in Chinese).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lecture 1: &lt;a href=&#34;https://stonebuddha.github.io/compiler/25s/lect01-intro.pdf&#34; target=&#34;_blank&#34;&gt;Course Introduction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Lecture 2: &lt;a href=&#34;https://stonebuddha.github.io/compiler/25s/lect02-lexical.pdf&#34; target=&#34;_blank&#34;&gt;Lexical Analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Lecture 3: &lt;a href=&#34;https://stonebuddha.github.io/compiler/25s/lect03-syntax.pdf&#34; target=&#34;_blank&#34;&gt;Syntax Analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Lecture 4: &lt;a href=&#34;https://stonebuddha.github.io/compiler/25s/lect04-semantic.pdf&#34; target=&#34;_blank&#34;&gt;Semantic Analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Lecture 5: &lt;a href=&#34;https://stonebuddha.github.io/compiler/25s/lect05-ir.pdf&#34; target=&#34;_blank&#34;&gt;Intermediate Representations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Lecture 6: &lt;a href=&#34;https://stonebuddha.github.io/compiler/25s/lect06-runtime.pdf&#34; target=&#34;_blank&#34;&gt;Runtime Environments&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Lecture 7: &lt;a href=&#34;https://stonebuddha.github.io/compiler/25s/lect07-codegen.pdf&#34; target=&#34;_blank&#34;&gt;Target Code Generation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Lecture 8: &lt;a href=&#34;https://stonebuddha.github.io/compiler/25s/lect08-optimization.pdf&#34; target=&#34;_blank&#34;&gt;Code Optimization&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Lecture 9: &lt;a href=&#34;https://stonebuddha.github.io/compiler/25s/lect09-syntax-adv.pdf&#34; target=&#34;_blank&#34;&gt;Advanced Topics in Syntax Analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Lecture 10: &lt;a href=&#34;https://stonebuddha.github.io/compiler/25s/lect10-semantic-adv.pdf&#34; target=&#34;_blank&#34;&gt;Advanced Topics in Semantic Analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Lecture 11: &lt;a href=&#34;https://stonebuddha.github.io/compiler/25s/lect11-functional.pdf&#34; target=&#34;_blank&#34;&gt;Compilation of Functional Languages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Lecture 12: &lt;a href=&#34;https://stonebuddha.github.io/compiler/25s/lect12-ir-adv.pdf&#34; target=&#34;_blank&#34;&gt;Advanced Topics in Intermediate Representations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Lecture 13: &lt;a href=&#34;https://stonebuddha.github.io/compiler/25s/lect13-misc.pdf&#34; target=&#34;_blank&#34;&gt;Miscellaneous Topics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Lecture 14: &lt;a href=&#34;https://stonebuddha.github.io/compiler/25s/lect14-type.pdf&#34; target=&#34;_blank&#34;&gt;Type Systems&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>News Archive</title>
       <link>https://stonebuddha.github.io/news_archive/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

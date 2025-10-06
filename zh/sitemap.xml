@@ -730,4 +730,14 @@
       rel="alternate"
       hreflang="zh"
       href="https://stonebuddha.github.io/zh/compiler24spring/"
+    /></url>
+  <url>
+    <loc>https://stonebuddha.github.io/zh/compiler25spring/</loc><changefreq>weekly</changefreq><xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://stonebuddha.github.io/compiler25spring/"
+    /><xhtml:link
+      rel="alternate"
+      hreflang="zh"
+      href="https://stonebuddha.github.io/zh/compiler25spring/"
     /></url></urlset>
