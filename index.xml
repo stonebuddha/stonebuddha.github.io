@@ -5,12 +5,22 @@
     <link>https://stonebuddha.github.io/</link>
       <atom:link href="https://stonebuddha.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Di Wang</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 10 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 18 Oct 2025 14:11:00 +0800</lastBuildDate>
     <image>
       <url>https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png</url>
       <title>Di Wang</title>
       <link>https://stonebuddha.github.io/</link>
     </image>
+    
+    <item>
+      <title>CStar: Unifying Programming and Verification in C</title>
+      <link>https://stonebuddha.github.io/talk/cstar-unifying-programming-and-verification-in-c/</link>
+      <pubDate>Sat, 18 Oct 2025 14:11:00 +0800</pubDate>
+      <guid>https://stonebuddha.github.io/talk/cstar-unifying-programming-and-verification-in-c/</guid>
+      <description>&lt;p&gt;Ensuring the correct functionality of systems software, given its safety-critical and low-level nature, is a primary focus in formal verification research and applications. Despite advances in verification tooling, conventional programmers are rarely involved in the verification of their own code, resulting in higher development and maintenance costs for verified software. A key barrier to programmer participation in verification practices is the disconnect of environments and paradigms between programming and verification practices, which limits accessibility and real-time verification.&lt;/p&gt;
+&lt;p&gt;We introduce CStar, a proof-integrated language design for C programming. CStar extends C with verification capabilities, powered by a symbolic execution engine and an LCF-style proof kernel. It enables real-time verification by allowing programmers to embed proof-code blocks alongside implementation code, facilitating interactive updates to the current proof state. Its expressive and extensible proof support allows users to build reusable libraries of logical definitions, theorems, and programmable proof automation. Crucially, CStar unifies implementation and proof code development by using C as the common language.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Composable Effect Handling for Programming LLM-Integrated Scripts</title>
@@ -25,6 +35,22 @@
       <link>https://stonebuddha.github.io/publication/zhangxz25/</link>
       <pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate>
       <guid>https://stonebuddha.github.io/publication/zhangxz25/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Algebraic Program Analysis of Probabilistic Programs [Ver 4]</title>
+      <link>https://stonebuddha.github.io/talk/algebraic-program-analysis-of-probabilistic-programs-ver-4/</link>
+      <pubDate>Sat, 14 Jun 2025 14:00:00 +0800</pubDate>
+      <guid>https://stonebuddha.github.io/talk/algebraic-program-analysis-of-probabilistic-programs-ver-4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>From Simulated Annealing to Probabilistic Programming (In Chinese)</title>
+      <link>https://stonebuddha.github.io/talk/from-simulated-annealing-to-probabilistic-programming-in-chinese/</link>
+      <pubDate>Wed, 22 Jan 2025 14:00:00 +0800</pubDate>
+      <guid>https://stonebuddha.github.io/talk/from-simulated-annealing-to-probabilistic-programming-in-chinese/</guid>
       <description></description>
     </item>
     

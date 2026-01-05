@@ -5,12 +5,22 @@
     <link>https://stonebuddha.github.io/zh/</link>
       <atom:link href="https://stonebuddha.github.io/zh/index.xml" rel="self" type="application/rss+xml" />
     <description>王迪</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh</language><lastBuildDate>Wed, 10 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>zh</language><lastBuildDate>Sat, 18 Oct 2025 14:11:00 +0800</lastBuildDate>
     <image>
       <url>https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png</url>
       <title>王迪</title>
       <link>https://stonebuddha.github.io/zh/</link>
     </image>
+    
+    <item>
+      <title>CStar：在 C 语言中实现开发与证明的一体化</title>
+      <link>https://stonebuddha.github.io/zh/talk/cstar%E5%9C%A8-c-%E8%AF%AD%E8%A8%80%E4%B8%AD%E5%AE%9E%E7%8E%B0%E5%BC%80%E5%8F%91%E4%B8%8E%E8%AF%81%E6%98%8E%E7%9A%84%E4%B8%80%E4%BD%93%E5%8C%96/</link>
+      <pubDate>Sat, 18 Oct 2025 14:11:00 +0800</pubDate>
+      <guid>https://stonebuddha.github.io/zh/talk/cstar%E5%9C%A8-c-%E8%AF%AD%E8%A8%80%E4%B8%AD%E5%AE%9E%E7%8E%B0%E5%BC%80%E5%8F%91%E4%B8%8E%E8%AF%81%E6%98%8E%E7%9A%84%E4%B8%80%E4%BD%93%E5%8C%96/</guid>
+      <description>&lt;p&gt;Ensuring the correct functionality of systems software, given its safety-critical and low-level nature, is a primary focus in formal verification research and applications. Despite advances in verification tooling, conventional programmers are rarely involved in the verification of their own code, resulting in higher development and maintenance costs for verified software. A key barrier to programmer participation in verification practices is the disconnect of environments and paradigms between programming and verification practices, which limits accessibility and real-time verification.&lt;/p&gt;
+&lt;p&gt;We introduce CStar, a proof-integrated language design for C programming. CStar extends C with verification capabilities, powered by a symbolic execution engine and an LCF-style proof kernel. It enables real-time verification by allowing programmers to embed proof-code blocks alongside implementation code, facilitating interactive updates to the current proof state. Its expressive and extensible proof support allows users to build reusable libraries of logical definitions, theorems, and programmable proof automation. Crucially, CStar unifies implementation and proof code development by using C as the common language.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Composable Effect Handling for Programming LLM-Integrated Scripts</title>
@@ -25,6 +35,22 @@
       <link>https://stonebuddha.github.io/zh/publication/zhangxz25/</link>
       <pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate>
       <guid>https://stonebuddha.github.io/zh/publication/zhangxz25/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>概率程序的代数程序分析 [Ver 4]</title>
+      <link>https://stonebuddha.github.io/zh/talk/%E6%A6%82%E7%8E%87%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BB%A3%E6%95%B0%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90-ver-4/</link>
+      <pubDate>Sat, 14 Jun 2025 14:00:00 +0800</pubDate>
+      <guid>https://stonebuddha.github.io/zh/talk/%E6%A6%82%E7%8E%87%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BB%A3%E6%95%B0%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90-ver-4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>从模拟退火到概率编程</title>
+      <link>https://stonebuddha.github.io/zh/talk/%E4%BB%8E%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E5%88%B0%E6%A6%82%E7%8E%87%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Wed, 22 Jan 2025 14:00:00 +0800</pubDate>
+      <guid>https://stonebuddha.github.io/zh/talk/%E4%BB%8E%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB%E5%88%B0%E6%A6%82%E7%8E%87%E7%BC%96%E7%A8%8B/</guid>
       <description></description>
     </item>
     
