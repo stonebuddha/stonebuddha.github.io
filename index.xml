@@ -5,12 +5,20 @@
     <link>https://stonebuddha.github.io/</link>
       <atom:link href="https://stonebuddha.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Di Wang</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 18 Oct 2025 14:11:00 +0800</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 15 Jan 2026 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png</url>
       <title>Di Wang</title>
       <link>https://stonebuddha.github.io/</link>
     </image>
+    
+    <item>
+      <title>Inferring Typing Rules for Contextual Sugars</title>
+      <link>https://stonebuddha.github.io/publication/yugw26/</link>
+      <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/yugw26/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>CStar: Unifying Programming and Verification in C</title>
@@ -25,7 +33,7 @@
     <item>
       <title>Composable Effect Handling for Programming LLM-Integrated Scripts</title>
       <link>https://stonebuddha.github.io/publication/wang25/</link>
-      <pubDate>Wed, 10 Sep 2025 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 10 Oct 2025 00:00:00 +0000</pubDate>
       <guid>https://stonebuddha.github.io/publication/wang25/</guid>
       <description></description>
     </item>
@@ -33,7 +41,7 @@
     <item>
       <title>CortenMM: Efficient Memory Management with Strong Correctness Guarantees</title>
       <link>https://stonebuddha.github.io/publication/zhangxz25/</link>
-      <pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 04 Oct 2025 00:00:00 +0000</pubDate>
       <guid>https://stonebuddha.github.io/publication/zhangxz25/</guid>
       <description></description>
     </item>
@@ -47,18 +55,18 @@
     </item>
     
     <item>
-      <title>From Simulated Annealing to Probabilistic Programming (In Chinese)</title>
-      <link>https://stonebuddha.github.io/talk/from-simulated-annealing-to-probabilistic-programming-in-chinese/</link>
-      <pubDate>Wed, 22 Jan 2025 14:00:00 +0800</pubDate>
-      <guid>https://stonebuddha.github.io/talk/from-simulated-annealing-to-probabilistic-programming-in-chinese/</guid>
+      <title>Automatic Linear Resource Bound Analysis for Rust via Prophecy Potentials</title>
+      <link>https://stonebuddha.github.io/publication/lianw25/</link>
+      <pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://stonebuddha.github.io/publication/lianw25/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Automatic Linear Resource Bound Analysis for Rust via Prophecy Potentials</title>
-      <link>https://stonebuddha.github.io/publication/lianw25/</link>
-      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>https://stonebuddha.github.io/publication/lianw25/</guid>
+      <title>From Simulated Annealing to Probabilistic Programming (In Chinese)</title>
+      <link>https://stonebuddha.github.io/talk/from-simulated-annealing-to-probabilistic-programming-in-chinese/</link>
+      <pubDate>Wed, 22 Jan 2025 14:00:00 +0800</pubDate>
+      <guid>https://stonebuddha.github.io/talk/from-simulated-annealing-to-probabilistic-programming-in-chinese/</guid>
       <description></description>
     </item>
     

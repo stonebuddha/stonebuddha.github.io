@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh" >
+<!DOCTYPE html><html lang="en-us" >
 
 
 <head>
@@ -57,19 +57,19 @@
   
   
 
-  <meta name="author" content="王迪" />
+  <meta name="author" content="Di Wang" />
 
   
   
   
     
   
-  <meta name="description" content="Implementing LLM-integrated scripts introduces challenges in modularity and performance, as scripts are often coupled to specific LLM implementations and fail to exploit parallelization opportunities. This paper proposes using composable effect handling to separate workflow logic from effectful operations, such as LLM calls, I/O, and concurrency, enabling modularity without sacrificing the opportunity for performance optimization. By treating these operations as abstract interfaces and discharging them via effect handlers, this paper shows that scripts can achieve significant speedups (e.g., 10× in a Tree-of-Thoughts case study) without compromising modularity. This paper aims to promote composable effect handling as a programming style for LLM scripting." />
+  <meta name="description" content="Syntactic sugars ease the definition of new language constructs by transforming them into an existing core language. Previous works lift independent typing rules and other semantics for these new constructs from the core language. The lifted semantics preserve the abstraction boundary of syntactic sugars, freeing users from inspecting desugared code that they did not write. While sugars may interact with contextual information during desugaring in general, these works are limited to simple sugars that do not. We identify a class of contextual sugars and present an extended algorithm for lifting their typing rules. With the addition of contexts, naïvely representing desugaring results in the core language may cause unexpected behavior and break hygiene. We introduce anchored terms that can point to the provenance of their contexts to represent desugaring results, which is similar to mechanisms used in Racket macros. Anchored terms need not concern authors or users of contextual sugars, but enable local reasoning. The lifted typing rules are sound with respect to the typing of anchored core language terms." />
 
   
-    <link rel="alternate" hreflang="en" href="https://stonebuddha.github.io/publication/wang25/" />
+    <link rel="alternate" hreflang="zh" href="https://stonebuddha.github.io/zh/publication/yugw26/" />
   
-  <link rel="alternate" hreflang="zh" href="https://stonebuddha.github.io/zh/publication/wang25/" />
+  <link rel="alternate" hreflang="en-us" href="https://stonebuddha.github.io/publication/yugw26/" />
 
   
   
@@ -283,13 +283,13 @@
   
 
   
-    <link rel="manifest" href="/zh/manifest.webmanifest" />
+    <link rel="manifest" href="/manifest.webmanifest" />
   
 
   <link rel="icon" type="image/png" href="/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="https://stonebuddha.github.io/zh/publication/wang25/" />
+  <link rel="canonical" href="https://stonebuddha.github.io/publication/yugw26/" />
 
   
   
@@ -311,11 +311,11 @@
   
   <meta property="twitter:card" content="summary" />
   
-  <meta property="og:site_name" content="王迪" />
-  <meta property="og:url" content="https://stonebuddha.github.io/zh/publication/wang25/" />
-  <meta property="og:title" content="Composable Effect Handling for Programming LLM-Integrated Scripts | 王迪" />
-  <meta property="og:description" content="Implementing LLM-integrated scripts introduces challenges in modularity and performance, as scripts are often coupled to specific LLM implementations and fail to exploit parallelization opportunities. This paper proposes using composable effect handling to separate workflow logic from effectful operations, such as LLM calls, I/O, and concurrency, enabling modularity without sacrificing the opportunity for performance optimization. By treating these operations as abstract interfaces and discharging them via effect handlers, this paper shows that scripts can achieve significant speedups (e.g., 10× in a Tree-of-Thoughts case study) without compromising modularity. This paper aims to promote composable effect handling as a programming style for LLM scripting." /><meta property="og:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" />
-    <meta property="twitter:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="zh" />
+  <meta property="og:site_name" content="Di Wang" />
+  <meta property="og:url" content="https://stonebuddha.github.io/publication/yugw26/" />
+  <meta property="og:title" content="Inferring Typing Rules for Contextual Sugars | Di Wang" />
+  <meta property="og:description" content="Syntactic sugars ease the definition of new language constructs by transforming them into an existing core language. Previous works lift independent typing rules and other semantics for these new constructs from the core language. The lifted semantics preserve the abstraction boundary of syntactic sugars, freeing users from inspecting desugared code that they did not write. While sugars may interact with contextual information during desugaring in general, these works are limited to simple sugars that do not. We identify a class of contextual sugars and present an extended algorithm for lifting their typing rules. With the addition of contexts, naïvely representing desugaring results in the core language may cause unexpected behavior and break hygiene. We introduce anchored terms that can point to the provenance of their contexts to represent desugaring results, which is similar to mechanisms used in Racket macros. Anchored terms need not concern authors or users of contextual sugars, but enable local reasoning. The lifted typing rules are sound with respect to the typing of anchored core language terms." /><meta property="og:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" />
+    <meta property="twitter:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
       <meta
@@ -323,7 +323,7 @@
         content="2023-07-29T11:57:39&#43;08:00"
       />
     
-    <meta property="article:modified_time" content="2025-10-10T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2026-01-15T00:00:00&#43;00:00">
   
 
   
@@ -345,27 +345,27 @@
   "@type": "Article",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://stonebuddha.github.io/zh/publication/wang25/"
+    "@id": "https://stonebuddha.github.io/publication/yugw26/"
   },
-  "headline": "Composable Effect Handling for Programming LLM-Integrated Scripts",
+  "headline": "Inferring Typing Rules for Contextual Sugars",
   
   "datePublished": "2023-07-29T11:57:39+08:00",
-  "dateModified": "2025-10-10T00:00:00Z",
+  "dateModified": "2026-01-15T00:00:00Z",
   
   "author": {
     "@type": "Person",
-    "name": "王迪"
+    "name": "Tailai Yu"
   },
   
   "publisher": {
     "@type": "Organization",
-    "name": "王迪",
+    "name": "Di Wang",
     "logo": {
       "@type": "ImageObject",
       "url": "https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_192x192_fill_lanczos_center_3.png"
     }
   },
-  "description": "Implementing LLM-integrated scripts introduces challenges in modularity and performance, as scripts are often coupled to specific LLM implementations and fail to exploit parallelization opportunities. This paper proposes using composable effect handling to separate workflow logic from effectful operations, such as LLM calls, I/O, and concurrency, enabling modularity without sacrificing the opportunity for performance optimization. By treating these operations as abstract interfaces and discharging them via effect handlers, this paper shows that scripts can achieve significant speedups (e.g., 10× in a Tree-of-Thoughts case study) without compromising modularity. This paper aims to promote composable effect handling as a programming style for LLM scripting."
+  "description": "Syntactic sugars ease the definition of new language constructs by transforming them into an existing core language. Previous works lift independent typing rules and other semantics for these new constructs from the core language. The lifted semantics preserve the abstraction boundary of syntactic sugars, freeing users from inspecting desugared code that they did not write. While sugars may interact with contextual information during desugaring in general, these works are limited to simple sugars that do not. We identify a class of contextual sugars and present an extended algorithm for lifting their typing rules. With the addition of contexts, naïvely representing desugaring results in the core language may cause unexpected behavior and break hygiene. We introduce anchored terms that can point to the provenance of their contexts to represent desugaring results, which is similar to mechanisms used in Racket macros. Anchored terms need not concern authors or users of contextual sugars, but enable local reasoning. The lifted typing rules are sound with respect to the typing of anchored core language terms."
 }
 </script>
 
@@ -381,11 +381,11 @@
 
 
 
-  <title>Composable Effect Handling for Programming LLM-Integrated Scripts | 王迪</title>
+  <title>Inferring Typing Rules for Contextual Sugars | Di Wang</title>
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="cd6e8053fa4c9f73da8a46c4628d18ff" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="094d26284f893468f99d255c067f9c87" >
 
   
   
@@ -407,7 +407,7 @@
 
       <div class="row no-gutters justify-content-between mb-3">
         <div class="col-6">
-          <h1>搜索</h1>
+          <h1>Search</h1>
         </div>
         <div class="col-6 col-search-close">
           <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
@@ -416,9 +416,9 @@
 
       <div id="search-box">
         
-        <input name="q" id="search-query" placeholder="搜索..." autocapitalize="off"
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
         autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
-        aria-label="搜索...">
+        aria-label="Search...">
         
       </div>
 
@@ -460,20 +460,20 @@
 
       
       <div class="d-none d-lg-inline-flex">
-        <a class="navbar-brand" href="/zh/">王迪</a>
+        <a class="navbar-brand" href="/">Di Wang</a>
       </div>
       
 
       
       <button type="button" class="navbar-toggler" data-toggle="collapse"
-              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="切换导航">
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
       <span><i class="fas fa-bars"></i></span>
       </button>
       
 
       
       <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-        <a class="navbar-brand" href="/zh/">王迪</a>
+        <a class="navbar-brand" href="/">Di Wang</a>
       </div>
       
 
@@ -516,7 +516,7 @@
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/zh/#about"><span>关于</span></a>
+            <a class="nav-link " href="/#about"><span>Home</span></a>
           </li>
 
           
@@ -553,7 +553,7 @@
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/zh/#publications"><span>论文</span></a>
+            <a class="nav-link " href="/#publications"><span>Publications</span></a>
           </li>
 
           
@@ -590,7 +590,7 @@
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/zh/#talks"><span>报告</span></a>
+            <a class="nav-link " href="/#talks"><span>Talks</span></a>
           </li>
 
           
@@ -627,7 +627,7 @@
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/zh/#posts"><span>博客</span></a>
+            <a class="nav-link " href="/#posts"><span>Posts</span></a>
           </li>
 
           
@@ -664,7 +664,7 @@
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/zh/#contact"><span>联系</span></a>
+            <a class="nav-link " href="/#contact"><span>Contact</span></a>
           </li>
 
           
@@ -686,7 +686,7 @@
         
         
         <li class="nav-item">
-          <a class="nav-link js-search" href="#" aria-label="搜索"><i class="fas fa-search" aria-hidden="true"></i></a>
+          <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
         </li>
         
 
@@ -698,15 +698,15 @@
         
         <li class="nav-item dropdown i18n-dropdown">
           <a href="#" class="nav-link " data-toggle="dropdown"
-             aria-haspopup="true" aria-label="语言">
+             aria-haspopup="true" aria-label="Languages">
             <i class="fas fa-globe mr-1" aria-hidden="true"></i></a>
           <div class="dropdown-menu">
             <div class="dropdown-item dropdown-item-active">
-              <span>中文 (简体)</span>
+              <span>English</span>
             </div>
             
-            <a class="dropdown-item" href="https://stonebuddha.github.io/publication/wang25/">
-              <span>English</span>
+            <a class="dropdown-item" href="https://stonebuddha.github.io/zh/publication/yugw26/">
+              <span>中文 (简体)</span>
             </a>
             
           </div>
@@ -757,7 +757,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>Composable Effect Handling for Programming LLM-Integrated Scripts</h1>
+  <h1>Inferring Typing Rules for Contextual Sugars</h1>
 
   
 
@@ -774,8 +774,11 @@
   <div>
     
 
-  <span class="author-highlighted">
-      王迪</span>
+  <span >
+      Tailai Yu</span>, <span >
+      Zhichao Guan</span>, <span class="author-highlighted">
+      Di Wang</span>, <span >
+      Zhenjiang Hu</span>
   </div>
   
   
@@ -786,7 +789,7 @@
     
       
     
-    十月, 2025
+    January, 2026
   </span>
   
 
@@ -826,15 +829,15 @@
 
 
 
-<a class="btn btn-outline-primary btn-page-header" href="https://arxiv.org/pdf/2507.22048" target="_blank" rel="noopener">
-  技术报告
+<a class="btn btn-outline-primary btn-page-header" href="https://doi.org/10.5281/zenodo.17925336" target="_blank" rel="noopener">
+  TR
 </a>
 
 
 
 <a href="#" class="btn btn-outline-primary btn-page-header js-cite-modal"
-        data-filename="/zh/publication/wang25/cite.bib">
-  引用
+        data-filename="/publication/yugw26/cite.bib">
+  Cite
 </a>
 
 
@@ -845,19 +848,11 @@
 
 
 
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header" href="/talks/lmpl25.pdf" target="_blank" rel="noopener">
-  演示文稿
-</a>
 
 
 
 
-
-<a class="btn btn-outline-primary btn-page-header" href="https://doi.org/10.1145/3759425.3763396" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary btn-page-header" href="https://doi.org/10.1145/3779209.3779538" target="_blank" rel="noopener">
   DOI
 </a>
 
@@ -874,8 +869,8 @@
   <div class="article-container">
 
     
-    <h3>摘要</h3>
-    <p class="pub-abstract">Implementing LLM-integrated scripts introduces challenges in modularity and performance, as scripts are often coupled to specific LLM implementations and fail to exploit parallelization opportunities. This paper proposes using composable effect handling to separate workflow logic from effectful operations, such as LLM calls, I/O, and concurrency, enabling modularity without sacrificing the opportunity for performance optimization. By treating these operations as abstract interfaces and discharging them via effect handlers, this paper shows that scripts can achieve significant speedups (e.g., 10× in a Tree-of-Thoughts case study) without compromising modularity. This paper aims to promote composable effect handling as a programming style for LLM scripting.</p>
+    <h3>Abstract</h3>
+    <p class="pub-abstract">Syntactic sugars ease the definition of new language constructs by transforming them into an existing core language. Previous works lift independent typing rules and other semantics for these new constructs from the core language. The lifted semantics preserve the abstraction boundary of syntactic sugars, freeing users from inspecting desugared code that they did not write. While sugars may interact with contextual information during desugaring in general, these works are limited to simple sugars that do not. We identify a class of contextual sugars and present an extended algorithm for lifting their typing rules. With the addition of contexts, naïvely representing desugaring results in the core language may cause unexpected behavior and break hygiene. We introduce anchored terms that can point to the provenance of their contexts to represent desugaring results, which is similar to mechanisms used in Racket macros. Anchored terms need not concern authors or users of contextual sugars, but enable local reasoning. The lifted typing rules are sound with respect to the typing of anchored core language terms.</p>
     
 
     
@@ -884,10 +879,10 @@
       <div class="col-md-1"></div>
       <div class="col-md-10">
         <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">类型</div>
+          <div class="col-12 col-md-3 pub-row-heading">Type</div>
           <div class="col-12 col-md-9">
-            <a href="/zh/publication/#1">
-              会议文章
+            <a href="/publication/#1">
+              Conference paper
             </a>
           </div>
         </div>
@@ -902,8 +897,8 @@
       <div class="col-md-1"></div>
       <div class="col-md-10">
         <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">出版物</div>
-          <div class="col-12 col-md-9">In <em>Language Models and Programming Languages</em></div>
+          <div class="col-12 col-md-3 pub-row-heading">Publication</div>
+          <div class="col-12 col-md-9">In <em>Partial Evaluation and Program Manipulation</em></div>
         </div>
       </div>
       <div class="col-md-1"></div>
@@ -933,7 +928,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://stonebuddha.github.io/zh/publication/wang25/&amp;text=Composable%20Effect%20Handling%20for%20Programming%20LLM-Integrated%20Scripts" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://stonebuddha.github.io/publication/yugw26/&amp;text=Inferring%20Typing%20Rules%20for%20Contextual%20Sugars" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -946,7 +941,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://stonebuddha.github.io/zh/publication/wang25/&amp;t=Composable%20Effect%20Handling%20for%20Programming%20LLM-Integrated%20Scripts" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://stonebuddha.github.io/publication/yugw26/&amp;t=Inferring%20Typing%20Rules%20for%20Contextual%20Sugars" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -959,7 +954,7 @@
       
       
       <li>
-        <a href="mailto:?subject=Composable%20Effect%20Handling%20for%20Programming%20LLM-Integrated%20Scripts&amp;body=https://stonebuddha.github.io/zh/publication/wang25/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+        <a href="mailto:?subject=Inferring%20Typing%20Rules%20for%20Contextual%20Sugars&amp;body=https://stonebuddha.github.io/publication/yugw26/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -972,7 +967,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://stonebuddha.github.io/zh/publication/wang25/&amp;title=Composable%20Effect%20Handling%20for%20Programming%20LLM-Integrated%20Scripts" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+        <a href="https://www.linkedin.com/shareArticle?url=https://stonebuddha.github.io/publication/yugw26/&amp;title=Inferring%20Typing%20Rules%20for%20Contextual%20Sugars" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -985,7 +980,7 @@
       
       
       <li>
-        <a href="whatsapp://send?text=Composable%20Effect%20Handling%20for%20Programming%20LLM-Integrated%20Scripts%20https://stonebuddha.github.io/zh/publication/wang25/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+        <a href="whatsapp://send?text=Inferring%20Typing%20Rules%20for%20Contextual%20Sugars%20https://stonebuddha.github.io/publication/yugw26/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -998,7 +993,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://stonebuddha.github.io/zh/publication/wang25/&amp;title=Composable%20Effect%20Handling%20for%20Programming%20LLM-Integrated%20Scripts" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://stonebuddha.github.io/publication/yugw26/&amp;title=Inferring%20Typing%20Rules%20for%20Contextual%20Sugars" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -1022,6 +1017,18 @@
 
 
 
+
+  
+    
+
+
+
+
+  
+    
+
+
+
   
   
   
@@ -1032,13 +1039,13 @@
   <div class="media author-card content-widget-hr">
     
       
-      <a href="https://stonebuddha.github.io/"><img class="avatar mr-3 avatar-circle" src="/zh/authors/admin/avatar_hu09aaeefd1d749d23465410d85e6504f9_5171477_270x270_fill_q75_lanczos_center.jpg" alt="王迪"></a>
+      <a href="https://stonebuddha.github.io/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu09aaeefd1d749d23465410d85e6504f9_5171477_270x270_fill_q75_lanczos_center.jpg" alt="Di Wang"></a>
     
 
     <div class="media-body">
-      <h5 class="card-title"><a href="https://stonebuddha.github.io/">王迪</a></h5>
-      <h6 class="card-subtitle">助理教授</h6>
-      <p class="card-text">朝着思想自由、兼容并包的计算机科学前进！</p>
+      <h5 class="card-title"><a href="https://stonebuddha.github.io/">Di Wang</a></h5>
+      <h6 class="card-subtitle">Assistant Professor</h6>
+      <p class="card-text">My heart is in the Principles of Programming.</p>
       <ul class="network-icon" aria-hidden="true">
   
     
@@ -1053,7 +1060,7 @@
       
     
     <li>
-      <a href="/zh/#contact" >
+      <a href="/#contact" >
         <i class="fas fa-envelope"></i>
       </a>
     </li>
@@ -1124,6 +1131,12 @@
 
     </div>
   </div>
+
+
+  
+    
+
+
 
 
   
@@ -1217,7 +1230,7 @@
       
       
       
-      由<a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a>支持发布——免费<a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">开源</a>网站，为创作者赋能。
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
     
   </p>
 </footer>
@@ -1328,7 +1341,7 @@
       
     
     
-    <script src="/zh/js/wowchemy.min.b648f9dc35d49ef6719fbd6dc04d0743.js"></script>
+    <script src="/en/js/wowchemy.min.d66c8b3b4ad0f66a62428f6bc7cf477d.js"></script>
 
     
     
@@ -1342,7 +1355,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">引用</h5>
+        <h5 class="modal-title">Cite</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -1352,10 +1365,10 @@
       </div>
       <div class="modal-footer">
         <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> 复制
+          <i class="fas fa-copy"></i> Copy
         </a>
         <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
-          <i class="fas fa-download"></i> 下载
+          <i class="fas fa-download"></i> Download
         </a>
         <div id="modal-error"></div>
       </div>
