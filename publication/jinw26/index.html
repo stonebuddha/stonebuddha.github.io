@@ -64,12 +64,12 @@
   
     
   
-  <meta name="description" content="[Dec 2024] Our paper on Automatic Linear Resource Bound Analysis for Rust via Prophecy Potentials (with Qihao Lian) has been accepted to OOPSLA 2025. Cheers! [Jun 2024] Our papers on Programmable MCMC with Soundly Composed Guide Programs (with Long Pham, Feras Saad, and Jan Hoffmann) and Semantics Lifting for Syntactic Sugar (with Zhichao Guan, Yiyuan Cao, Tailai Yu, Ziheng Wang, and Zhenjiang Hu) has been conditionally accepted to OOPSLA 2024." />
+  <meta name="description" content="Understanding and predicting the worst-case resource usage is crucial for software quality; however, existing methods either over-approximate with potentially loose bounds or under-approximate without asymptotic guarantees. This paper presents a program logic to under-approximate worst-case resource usage, adapting incorrectness logic (IL) to reason quantitatively about resource consumption. We propose quantitative forward and backward under-approximate (QFUA and QBUA) triples, which generalize IL to identify execution paths leading to high resource usage. We also introduce a variant of QBUA that supports reasoning about high-water marks. Our logic is proven sound and complete with respect to a simple IMP-like language, and all meta-theoretical results are mechanized and verified in Rocq. We implement a prototype checker for all three variants of our logic and demonstrate its utility through a few examples and four case studies." />
 
   
-    <link rel="alternate" hreflang="zh" href="https://stonebuddha.github.io/zh/news_archive/" />
+    <link rel="alternate" hreflang="zh" href="https://stonebuddha.github.io/zh/publication/jinw26/" />
   
-  <link rel="alternate" hreflang="en-us" href="https://stonebuddha.github.io/news_archive/" />
+  <link rel="alternate" hreflang="en-us" href="https://stonebuddha.github.io/publication/jinw26/" />
 
   
   
@@ -78,6 +78,9 @@
   
 
   
+  
+    
+    <script src="/js/mathjax-config.js"></script>
   
 
   
@@ -228,9 +231,9 @@
 
       
       
-        
-      
 
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
       
     
       
@@ -286,7 +289,7 @@
   <link rel="icon" type="image/png" href="/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="https://stonebuddha.github.io/news_archive/" />
+  <link rel="canonical" href="https://stonebuddha.github.io/publication/jinw26/" />
 
   
   
@@ -309,34 +312,80 @@
   <meta property="twitter:card" content="summary" />
   
   <meta property="og:site_name" content="Di Wang" />
-  <meta property="og:url" content="https://stonebuddha.github.io/news_archive/" />
-  <meta property="og:title" content="News Archive | Di Wang" />
-  <meta property="og:description" content="[Dec 2024] Our paper on Automatic Linear Resource Bound Analysis for Rust via Prophecy Potentials (with Qihao Lian) has been accepted to OOPSLA 2025. Cheers! [Jun 2024] Our papers on Programmable MCMC with Soundly Composed Guide Programs (with Long Pham, Feras Saad, and Jan Hoffmann) and Semantics Lifting for Syntactic Sugar (with Zhichao Guan, Yiyuan Cao, Tailai Yu, Ziheng Wang, and Zhenjiang Hu) has been conditionally accepted to OOPSLA 2024." /><meta property="og:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" />
+  <meta property="og:url" content="https://stonebuddha.github.io/publication/jinw26/" />
+  <meta property="og:title" content="A Program Logic for Under-approximating Worst-case Resource Usage | Di Wang" />
+  <meta property="og:description" content="Understanding and predicting the worst-case resource usage is crucial for software quality; however, existing methods either over-approximate with potentially loose bounds or under-approximate without asymptotic guarantees. This paper presents a program logic to under-approximate worst-case resource usage, adapting incorrectness logic (IL) to reason quantitatively about resource consumption. We propose quantitative forward and backward under-approximate (QFUA and QBUA) triples, which generalize IL to identify execution paths leading to high resource usage. We also introduce a variant of QBUA that supports reasoning about high-water marks. Our logic is proven sound and complete with respect to a simple IMP-like language, and all meta-theoretical results are mechanized and verified in Rocq. We implement a prototype checker for all three variants of our logic and demonstrate its utility through a few examples and four case studies." /><meta property="og:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" />
     <meta property="twitter:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
+      <meta
+        property="article:published_time"
+        content="2023-07-29T11:57:39&#43;08:00"
+      />
     
+    <meta property="article:modified_time" content="2026-04-10T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://stonebuddha.github.io/publication/jinw26/"
+  },
+  "headline": "A Program Logic for Under-approximating Worst-case Resource Usage",
+  
+  "datePublished": "2023-07-29T11:57:39+08:00",
+  "dateModified": "2026-04-10T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Ziyue Jin"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Di Wang",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "Understanding and predicting the worst-case resource usage is crucial for software quality; however, existing methods either over-approximate with potentially loose bounds or under-approximate without asymptotic guarantees. This paper presents a program logic to under-approximate worst-case resource usage, adapting incorrectness logic (IL) to reason quantitatively about resource consumption. We propose quantitative forward and backward under-approximate (QFUA and QBUA) triples, which generalize IL to identify execution paths leading to high resource usage. We also introduce a variant of QBUA that supports reasoning about high-water marks. Our logic is proven sound and complete with respect to a simple IMP-like language, and all meta-theoretical results are mechanized and verified in Rocq. We implement a prototype checker for all three variants of our logic and demonstrate its utility through a few examples and four case studies."
+}
+</script>
+
+  
+
+  
+
   
 
   
 
 
 
-  
-
-  
-
-  
 
 
-
-
-
-  <title>News Archive | Di Wang</title>
+  <title>A Program Logic for Under-approximating Worst-case Resource Usage | Di Wang</title>
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="52d880278beeb7d6fedf412fe0ffeb77" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="dfc01b78dcb4060a2f17d0a6a4327229" >
 
   
   
@@ -656,7 +705,7 @@
               <span>English</span>
             </div>
             
-            <a class="dropdown-item" href="https://stonebuddha.github.io/zh/news_archive/">
+            <a class="dropdown-item" href="https://stonebuddha.github.io/zh/publication/jinw26/">
               <span>中文 (简体)</span>
             </a>
             
@@ -678,7 +727,16 @@
     
     
 
-    <article class="article">
+    
+
+
+
+
+
+
+
+
+<div class="pub">
 
   
 
@@ -699,7 +757,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>News Archive</h1>
+  <h1>A Program Logic for Under-approximating Worst-case Resource Usage</h1>
 
   
 
@@ -716,12 +774,21 @@
   <div>
     
 
-  <span class="author-highlighted">
+  <span >
+      Ziyue Jin</span>, <span class="author-highlighted">
       Di Wang</span>
   </div>
   
   
 
+  
+  <span class="article-date">
+    
+    
+      
+    
+    April, 2026
+  </span>
   
 
   
@@ -743,6 +810,54 @@
 
 
 
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+<a class="btn btn-outline-primary btn-page-header" href="https://arxiv.org/pdf/2502.11091" target="_blank" rel="noopener">
+  TR
+</a>
+
+
+
+<a href="#" class="btn btn-outline-primary btn-page-header js-cite-modal"
+        data-filename="/publication/jinw26/cite.bib">
+  Cite
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a class="btn btn-outline-primary btn-page-header" href="https://doi.org/10.1007/978-3-032-22720-1_13" target="_blank" rel="noopener">
+  DOI
+</a>
+
+
+
+</div>
+
 
   
 </div>
@@ -751,33 +866,47 @@
 
   <div class="article-container">
 
-    <div class="article-style">
-      <ul>
-<li><strong>[Dec 2024]</strong> Our paper on <a href="publication/lianw25">Automatic Linear Resource Bound Analysis for Rust via Prophecy Potentials</a> (with Qihao Lian) has been accepted to OOPSLA 2025. Cheers!</li>
-<li><strong>[Jun 2024]</strong> Our papers on <a href="publication/phamws24">Programmable MCMC with Soundly Composed Guide Programs</a> (with Long Pham, Feras Saad, and Jan Hoffmann) and <a href="publication/guancy24">Semantics Lifting for Syntactic Sugar</a> (with Zhichao Guan, Yiyuan Cao, Tailai Yu, Ziheng Wang, and Zhenjiang Hu) has been conditionally accepted to OOPSLA 2024.</li>
-<li><strong>[Jun 2024]</strong> Our paper on <a href="publication/sunwc24">Formalizing, Mechanizing, and Verifying Class-based Refinement Types</a> (with Ke Sun, Sheng Chen, Meng Wang, and Dan Hao) has been accepted to ECOOP 2024.</li>
-<li><strong>[Jan 2024]</strong> Our article on <a href="publication/jizx24">Decomposition-Based Synthesis for Applying D&amp;C-Like Algorithmic Paradigms</a> has been accepted to TOPLAS.</li>
-<li><strong>[Dec 2023]</strong> Our paper on <a href="publication/wangr24">Newtonian Program Analysis of Probabilistic Programs</a> (with Tom Reps) has been accepted to OOPSLA 2024.</li>
-<li><strong>[Sep 2023]</strong> I will serve on <a href="https://pldi24.sigplan.org/" target="_blank" rel="noopener">PLDI 2024</a> Program Committee.</li>
-<li><strong>[July 2023]</strong> Our technical report about <a href="https://arxiv.org/pdf/2307.09064" target="_blank" rel="noopener">Newtonian Program Analysis of Probabilistic Programs</a> is available on arXiv.</li>
-<li><strong>[May 2023]</strong> I will serve on <a href="https://2024.splashcon.org/track/splash-2024-oopsla" target="_blank" rel="noopener">OOPSLA 2024</a> Review Committee.</li>
-<li><strong>[May 2023]</strong> I will serve on <a href="https://conf.researchr.org/home/ase-2023" target="_blank" rel="noopener">ASE 2023</a> Program Committee.</li>
-<li><strong>[Sep 2022]</strong> Our paper on <a href="publication/daswh23">Probabilistic Resource-Aware Session Types</a> (with Ankush and Jan)
-has been conditionally accepted to POPL 2023!</li>
-<li><strong>[May 2022]</strong> I successfully defended my thesis: <a href="https://kilthub.cmu.edu/articles/thesis/Static_Analysis_of_Probabilistic_Programs_An_Algebraic_Approach/19803823" target="_blank" rel="noopener">Static Analysis of Probabilistic Programs: An Algebraic Approach</a>. Cheers!</li>
-<li><strong>[Sep 2021]</strong> I am on the academic job market for 2022 positions. Please reach out to me if you think I would be a good fit for your department.</li>
-<li><strong>[Feb 2021]</strong> I am excited that our papers <a href="publication/wanghr21b">Sound Probabilistic Inference via Guide Types</a> and <a href="publication/wanghr21a">Central Moment Analysis for Cost Accumulators in Probabilistic Programs</a> with Jan and Tom have been conditionally accepted to PLDI 2021.</li>
-<li><strong>[Nov 2020]</strong> Our technical report about <a href="https://arxiv.org/pdf/2011.09037" target="_blank" rel="noopener">Probabilistic Resource-Aware Session Types</a> is available on arXiv.</li>
-<li><strong>[Jun 2020]</strong> Our articles <a href="../publication/knothwr20">Liquid Resource Types</a> and <a href="../publication/wangkh20">Raising Expectations: Automating Expected Cost Analysis with Types</a> have been accepted to ICFP 2020.</li>
-<li><strong>[May 2019]</strong> Check out our recent MFPS paper on <a href="../publication/wanghr19">A Denotational Semantics for Low-Level Probabilistic Programs with Nondeterminism</a> with Jan and Tom.</li>
-<li><strong>[Feb 2019]</strong> Great news: Our paper on <a href="../publication/knothwp19">Resource-Guided Program Synthesis</a> has been conditionally accepted to PLDI 2019.</li>
-<li><strong>[Nov 2018]</strong> I am excited that our paper <a href="../publication/wangh19">Type-Guided Worst-Case Input Generation</a> with Jan Hoffmann has been accepted to POPL 2019.</li>
-<li><strong>[Mar 2018]</strong> Check out my talent show <a href="https://www.youtube.com/watch?v=zNxltZhPIG0" target="_blank" rel="noopener">Chengdu</a> on SCS Day 2018!</li>
-<li><strong>[Feb 2018]</strong> I am excited that our paper <a href="../publication/wanghr18">PMAF: An Algebraic Framework for Static Analysis of Probabilistic Programs</a> (with Jan Hoffmann and Tom Reps) has been conditionally accepted to PLDI 2018.</li>
-<li><strong>[Jun 2017]</strong> I graduated from Peking University! My diploma thesis is about <a href="../files/wang17thesis.pdf">Accelerating Program Analyses by Conditional Summarization with Datalog</a>.</li>
-</ul>
+    
+    <h3>Abstract</h3>
+    <p class="pub-abstract">Understanding and predicting the worst-case resource usage is crucial for software quality; however, existing methods either over-approximate with potentially loose bounds or under-approximate without asymptotic guarantees. This paper presents a program logic to under-approximate worst-case resource usage, adapting incorrectness logic (IL) to reason quantitatively about resource consumption. We propose quantitative forward and backward under-approximate (QFUA and QBUA) triples, which generalize IL to identify execution paths leading to high resource usage. We also introduce a variant of QBUA that supports reasoning about high-water marks. Our logic is proven sound and complete with respect to a simple IMP-like language, and all meta-theoretical results are mechanized and verified in Rocq. We implement a prototype checker for all three variants of our logic and demonstrate its utility through a few examples and four case studies.</p>
+    
 
+    
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Type</div>
+          <div class="col-12 col-md-9">
+            <a href="/publication/#1">
+              Conference paper
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
     </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Publication</div>
+          <div class="col-12 col-md-9">In <em>European Symposium on Programming</em></div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    <div class="space-below"></div>
+
+    <div class="article-style"></div>
 
     
 
@@ -797,7 +926,7 @@ has been conditionally accepted to POPL 2023!</li>
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://stonebuddha.github.io/news_archive/&amp;text=News%20Archive" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://stonebuddha.github.io/publication/jinw26/&amp;text=A%20Program%20Logic%20for%20Under-approximating%20Worst-case%20Resource%20Usage" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -810,7 +939,7 @@ has been conditionally accepted to POPL 2023!</li>
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://stonebuddha.github.io/news_archive/&amp;t=News%20Archive" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://stonebuddha.github.io/publication/jinw26/&amp;t=A%20Program%20Logic%20for%20Under-approximating%20Worst-case%20Resource%20Usage" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -823,7 +952,7 @@ has been conditionally accepted to POPL 2023!</li>
       
       
       <li>
-        <a href="mailto:?subject=News%20Archive&amp;body=https://stonebuddha.github.io/news_archive/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+        <a href="mailto:?subject=A%20Program%20Logic%20for%20Under-approximating%20Worst-case%20Resource%20Usage&amp;body=https://stonebuddha.github.io/publication/jinw26/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -836,7 +965,7 @@ has been conditionally accepted to POPL 2023!</li>
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://stonebuddha.github.io/news_archive/&amp;title=News%20Archive" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+        <a href="https://www.linkedin.com/shareArticle?url=https://stonebuddha.github.io/publication/jinw26/&amp;title=A%20Program%20Logic%20for%20Under-approximating%20Worst-case%20Resource%20Usage" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -849,7 +978,7 @@ has been conditionally accepted to POPL 2023!</li>
       
       
       <li>
-        <a href="whatsapp://send?text=News%20Archive%20https://stonebuddha.github.io/news_archive/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+        <a href="whatsapp://send?text=A%20Program%20Logic%20for%20Under-approximating%20Worst-case%20Resource%20Usage%20https://stonebuddha.github.io/publication/jinw26/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -862,7 +991,7 @@ has been conditionally accepted to POPL 2023!</li>
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://stonebuddha.github.io/news_archive/&amp;title=News%20Archive" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://stonebuddha.github.io/publication/jinw26/&amp;title=A%20Program%20Logic%20for%20Under-approximating%20Worst-case%20Resource%20Usage" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -880,6 +1009,131 @@ has been conditionally accepted to POPL 2023!</li>
 
 
 
+  
+  
+    
+
+
+
+
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://stonebuddha.github.io/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu09aaeefd1d749d23465410d85e6504f9_5171477_270x270_fill_q75_lanczos_center.jpg" alt="Di Wang"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://stonebuddha.github.io/">Di Wang</a></h5>
+      <h6 class="card-subtitle">Assistant Professor</h6>
+      <p class="card-text">My heart is in the Principles of Programming.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=CzEw-tYAAAAJ" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://dblp.org/pid/18/5410-17.html" target="_blank" rel="noopener">
+        <i class="ai ai-dblp"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/stonebuddha" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/files/cv_wang.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
 
 
 
@@ -889,7 +1143,7 @@ has been conditionally accepted to POPL 2023!</li>
 
 
   </div>
-</article>
+</div>
   </div>
 
   <div class="page-footer">

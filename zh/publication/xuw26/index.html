@@ -64,12 +64,14 @@
   
     
   
-  <meta name="description" content="[Dec 2024] Automatic Linear Resource Bound Analysis for Rust via Prophecy Potentials 被 OOPSLA 2025 接收。 [Jun 2024] Programmable MCMC with Soundly Composed Guide Programs 和 Semantics Lifting" />
+  <meta name="description" content="Static resource analysis determines the resource consumption (e.g., time complexity) of a program without executing it. Among the numerous existing approaches for resource analysis, affine type systems have been one dominant approach. However, these affine type systems fall short of deriving precise resource behavior of higher-order programs, particularly in cases that involve partial applications.
+
+This article presents $\lambda_{\mathsf{amor}}^{\mathsf{na}}$, a non-affine AARA-style dependent type system for resource reasoning about higher-order functional programs. The key observation is that the main issue in previous approaches comes from (i) the close coupling of types and resources, and (ii) the conflict between affine and higher-order typing mechanisms. To derive precise resource behavior of higher-order functions, $\lambda_{\mathsf{amor}}^{\mathsf{na}}$ decouples resources from types and follows a non-affine typing mechanism. The non-affine type system of $\lambda_{\mathsf{amor}}^{\mathsf{na}}$ achieves this by using dependent types, which allow expressing type-level potential functions separate from ordinary types. This article formalizes $\lambda_{\mathsf{amor}}^{\mathsf{na}}$’s syntax and semantics, and proves its soundness, which guarantees the correctness of resource bounds. Several challenging classic and higher-order examples are presented to demonstrate the expressiveness and compositionality of $\lambda_{\mathsf{amor}}^{\mathsf{na}}$’s reasoning capability. This article also includes an algorithmic variant of $\lambda_{\mathsf{amor}}^{\mathsf{na}}$’s type system and a discussion of the automation of type checking and inference for $\lambda_{\mathsf{amor}}^{\mathsf{na}}$." />
 
   
-    <link rel="alternate" hreflang="en" href="https://stonebuddha.github.io/news_archive/" />
+    <link rel="alternate" hreflang="en" href="https://stonebuddha.github.io/publication/xuw26/" />
   
-  <link rel="alternate" hreflang="zh" href="https://stonebuddha.github.io/zh/news_archive/" />
+  <link rel="alternate" hreflang="zh" href="https://stonebuddha.github.io/zh/publication/xuw26/" />
 
   
   
@@ -78,6 +80,9 @@
   
 
   
+  
+    
+    <script src="/js/mathjax-config.js"></script>
   
 
   
@@ -228,9 +233,9 @@
 
       
       
-        
-      
 
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
       
     
       
@@ -286,7 +291,7 @@
   <link rel="icon" type="image/png" href="/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="https://stonebuddha.github.io/zh/news_archive/" />
+  <link rel="canonical" href="https://stonebuddha.github.io/zh/publication/xuw26/" />
 
   
   
@@ -309,34 +314,82 @@
   <meta property="twitter:card" content="summary" />
   
   <meta property="og:site_name" content="王迪" />
-  <meta property="og:url" content="https://stonebuddha.github.io/zh/news_archive/" />
-  <meta property="og:title" content="新闻归档 | 王迪" />
-  <meta property="og:description" content="[Dec 2024] Automatic Linear Resource Bound Analysis for Rust via Prophecy Potentials 被 OOPSLA 2025 接收。 [Jun 2024] Programmable MCMC with Soundly Composed Guide Programs 和 Semantics Lifting" /><meta property="og:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" />
+  <meta property="og:url" content="https://stonebuddha.github.io/zh/publication/xuw26/" />
+  <meta property="og:title" content="Dependently-Typed AARA: A Non-Affine Approach for Resource Analysis of Higher-Order Programs | 王迪" />
+  <meta property="og:description" content="Static resource analysis determines the resource consumption (e.g., time complexity) of a program without executing it. Among the numerous existing approaches for resource analysis, affine type systems have been one dominant approach. However, these affine type systems fall short of deriving precise resource behavior of higher-order programs, particularly in cases that involve partial applications.
+
+This article presents $\lambda_{\mathsf{amor}}^{\mathsf{na}}$, a non-affine AARA-style dependent type system for resource reasoning about higher-order functional programs. The key observation is that the main issue in previous approaches comes from (i) the close coupling of types and resources, and (ii) the conflict between affine and higher-order typing mechanisms. To derive precise resource behavior of higher-order functions, $\lambda_{\mathsf{amor}}^{\mathsf{na}}$ decouples resources from types and follows a non-affine typing mechanism. The non-affine type system of $\lambda_{\mathsf{amor}}^{\mathsf{na}}$ achieves this by using dependent types, which allow expressing type-level potential functions separate from ordinary types. This article formalizes $\lambda_{\mathsf{amor}}^{\mathsf{na}}$’s syntax and semantics, and proves its soundness, which guarantees the correctness of resource bounds. Several challenging classic and higher-order examples are presented to demonstrate the expressiveness and compositionality of $\lambda_{\mathsf{amor}}^{\mathsf{na}}$’s reasoning capability. This article also includes an algorithmic variant of $\lambda_{\mathsf{amor}}^{\mathsf{na}}$’s type system and a discussion of the automation of type checking and inference for $\lambda_{\mathsf{amor}}^{\mathsf{na}}$." /><meta property="og:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" />
     <meta property="twitter:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="zh" />
   
     
+      <meta
+        property="article:published_time"
+        content="2023-07-29T11:57:39&#43;08:00"
+      />
     
+    <meta property="article:modified_time" content="2026-04-10T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://stonebuddha.github.io/zh/publication/xuw26/"
+  },
+  "headline": "Dependently-Typed AARA: A Non-Affine Approach for Resource Analysis of Higher-Order Programs",
+  
+  "datePublished": "2023-07-29T11:57:39+08:00",
+  "dateModified": "2026-04-10T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Han Xu"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "王迪",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "Static resource analysis determines the resource consumption (e.g., time complexity) of a program without executing it. Among the numerous existing approaches for resource analysis, affine type systems have been one dominant approach. However, these affine type systems fall short of deriving precise resource behavior of higher-order programs, particularly in cases that involve partial applications.\n\nThis article presents $\\lambda_{\\mathsf{amor}}^{\\mathsf{na}}$, a non-affine AARA-style dependent type system for resource reasoning about higher-order functional programs. The key observation is that the main issue in previous approaches comes from (i) the close coupling of types and resources, and (ii) the conflict between affine and higher-order typing mechanisms. To derive precise resource behavior of higher-order functions, $\\lambda_{\\mathsf{amor}}^{\\mathsf{na}}$ decouples resources from types and follows a non-affine typing mechanism. The non-affine type system of $\\lambda_{\\mathsf{amor}}^{\\mathsf{na}}$ achieves this by using dependent types, which allow expressing type-level potential functions separate from ordinary types. This article formalizes $\\lambda_{\\mathsf{amor}}^{\\mathsf{na}}$’s syntax and semantics, and proves its soundness, which guarantees the correctness of resource bounds. Several challenging classic and higher-order examples are presented to demonstrate the expressiveness and compositionality of $\\lambda_{\\mathsf{amor}}^{\\mathsf{na}}$’s reasoning capability. This article also includes an algorithmic variant of $\\lambda_{\\mathsf{amor}}^{\\mathsf{na}}$’s type system and a discussion of the automation of type checking and inference for $\\lambda_{\\mathsf{amor}}^{\\mathsf{na}}$."
+}
+</script>
+
+  
+
+  
+
   
 
   
 
 
 
-  
-
-  
-
-  
 
 
-
-
-
-  <title>新闻归档 | 王迪</title>
+  <title>Dependently-Typed AARA: A Non-Affine Approach for Resource Analysis of Higher-Order Programs | 王迪</title>
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="52d880278beeb7d6fedf412fe0ffeb77" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="ae30165c5b111442c73580b6036022ef" >
 
   
   
@@ -656,7 +709,7 @@
               <span>中文 (简体)</span>
             </div>
             
-            <a class="dropdown-item" href="https://stonebuddha.github.io/news_archive/">
+            <a class="dropdown-item" href="https://stonebuddha.github.io/publication/xuw26/">
               <span>English</span>
             </a>
             
@@ -678,7 +731,16 @@
     
     
 
-    <article class="article">
+    
+
+
+
+
+
+
+
+
+<div class="pub">
 
   
 
@@ -699,7 +761,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>新闻归档</h1>
+  <h1>Dependently-Typed AARA: A Non-Affine Approach for Resource Analysis of Higher-Order Programs</h1>
 
   
 
@@ -716,12 +778,21 @@
   <div>
     
 
-  <span class="author-highlighted">
+  <span >
+      Han Xu</span>, <span class="author-highlighted">
       王迪</span>
   </div>
   
   
 
+  
+  <span class="article-date">
+    
+    
+      
+    
+    四月, 2026
+  </span>
   
 
   
@@ -743,6 +814,54 @@
 
 
 
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+<a class="btn btn-outline-primary btn-page-header" href="https://arxiv.org/pdf/2601.12943" target="_blank" rel="noopener">
+  技术报告
+</a>
+
+
+
+<a href="#" class="btn btn-outline-primary btn-page-header js-cite-modal"
+        data-filename="/zh/publication/xuw26/cite.bib">
+  引用
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a class="btn btn-outline-primary btn-page-header" href="https://doi.org/10.1007/978-3-032-22723-2_13" target="_blank" rel="noopener">
+  DOI
+</a>
+
+
+
+</div>
+
 
   
 </div>
@@ -751,32 +870,49 @@
 
   <div class="article-container">
 
-    <div class="article-style">
-      <ul>
-<li><strong>[Dec 2024]</strong> <a href="publication/lianw25">Automatic Linear Resource Bound Analysis for Rust via Prophecy Potentials</a> 被 OOPSLA 2025 接收。</li>
-<li><strong>[Jun 2024]</strong> <a href="publication/phamws24">Programmable MCMC with Soundly Composed Guide Programs</a> 和 <a href="publication/guancy24">Semantics Lifting for Syntactic Sugar</a> 被 OOPSLA 2024 条件接收。</li>
-<li><strong>[Jun 2024]</strong> <a href="publication/sunwc24">Formalizing, Mechanizing, and Verifying Class-based Refinement Types</a> 被 ECOOP 2024 接收。</li>
-<li><strong>[Jan 2024]</strong> <a href="publication/jizx24">Decomposition-Based Synthesis for Applying D&amp;C-Like Algorithmic Paradigms</a> 被 TOPLAS 接收。</li>
-<li><strong>[Dec 2023]</strong> <a href="publication/wangr24">Newtonian Program Analysis of Probabilistic Programs</a> 被 OOPSLA 2024 接收。</li>
-<li><strong>[Sep 2023]</strong> 我将担任 <a href="https://pldi24.sigplan.org/" target="_blank" rel="noopener">PLDI 2024</a> 程序委员会成员。</li>
-<li><strong>[July 2023]</strong> 预印本 <a href="https://arxiv.org/pdf/2307.09064" target="_blank" rel="noopener">Newtonian Program Analysis of Probabilistic Programs</a> 已上传至 arXiv。</li>
-<li><strong>[May 2023]</strong> 我将担任 <a href="https://2024.splashcon.org/track/splash-2024-oopsla" target="_blank" rel="noopener">OOPSLA 2024</a> 审稿委员会成员。</li>
-<li><strong>[May 2023]</strong> 我将担任 <a href="https://conf.researchr.org/home/ase-2023" target="_blank" rel="noopener">ASE 2023</a> 程序委员会成员。</li>
-<li><strong>[Sep 2022]</strong> <a href="publication/daswh23">Probabilistic Resource-Aware Session Types</a> 被 POPL 2023 接收。</li>
-<li><strong>[May 2022]</strong> 我完成了博士学位答辩。我的博士论文为 <a href="https://kilthub.cmu.edu/articles/thesis/Static_Analysis_of_Probabilistic_Programs_An_Algebraic_Approach/19803823" target="_blank" rel="noopener">Static Analysis of Probabilistic Programs: An Algebraic Approach</a>。</li>
-<li><strong>[Sep 2021]</strong> 我开始找 2022 年入职的学术界工作！</li>
-<li><strong>[Feb 2021]</strong> 两篇论文 <a href="publication/wanghr21b">Sound Probabilistic Inference via Guide Types</a> 和 <a href="publication/wanghr21a">Central Moment Analysis for Cost Accumulators in Probabilistic Programs</a> 被 PLDI 2021 接收。</li>
-<li><strong>[Nov 2020]</strong> 预印本 <a href="https://arxiv.org/pdf/2011.09037" target="_blank" rel="noopener">Probabilistic Resource-Aware Session Types</a> 已上传至 arXiv。</li>
-<li><strong>[Jun 2020]</strong> 两篇论文 <a href="../publication/knothwr20">Liquid Resource Types</a> 和 <a href="../publication/wangkh20">Raising Expectations: Automating Expected Cost Analysis with Types</a> 被 ICFP 2020 接收。</li>
-<li><strong>[May 2019]</strong> 论文 <a href="../publication/wanghr19">A Denotational Semantics for Low-Level Probabilistic Programs with Nondeterminism</a> 被 MFPS 接收。</li>
-<li><strong>[Feb 2019]</strong> <a href="../publication/knothwp19">Resource-Guided Program Synthesis</a> 被 PLDI 2019 接收。</li>
-<li><strong>[Nov 2018]</strong> <a href="../publication/wangh19">Type-Guided Worst-Case Input Generation</a> 被 POPL 2019 接收。</li>
-<li><strong>[Mar 2018]</strong> 这是我在 SCS Day 2018 上的表演：<a href="https://www.youtube.com/watch?v=zNxltZhPIG0" target="_blank" rel="noopener">Chengdu</a>。</li>
-<li><strong>[Feb 2018]</strong> <a href="../publication/wanghr18">PMAF: An Algebraic Framework for Static Analysis of Probabilistic Programs</a> 被 PLDI 2018 接收。</li>
-<li><strong>[Jun 2017]</strong> 我从北京大学毕业了。我的学位论文为<a href="../../files/wang17thesis.pdf">基于 Datalog 条件摘要的程序分析加速技术</a>。</li>
-</ul>
+    
+    <h3>摘要</h3>
+    <p class="pub-abstract"><p>Static resource analysis determines the resource consumption (e.g., time complexity) of a program without executing it. Among the numerous existing approaches for resource analysis, affine type systems have been one dominant approach. However, these affine type systems fall short of deriving precise resource behavior of higher-order programs, particularly in cases that involve partial applications.</p>
+<p>This article presents $\lambda_{\mathsf{amor}}^{\mathsf{na}}$, a non-affine AARA-style dependent type system for resource reasoning about higher-order functional programs. The key observation is that the main issue in previous approaches comes from (i) the close coupling of types and resources, and (ii) the conflict between affine and higher-order typing mechanisms. To derive precise resource behavior of higher-order functions, $\lambda_{\mathsf{amor}}^{\mathsf{na}}$ decouples resources from types and follows a non-affine typing mechanism. The non-affine type system of $\lambda_{\mathsf{amor}}^{\mathsf{na}}$ achieves this by using dependent types, which allow expressing type-level potential functions separate from ordinary types. This article formalizes $\lambda_{\mathsf{amor}}^{\mathsf{na}}$’s syntax and semantics, and proves its soundness, which guarantees the correctness of resource bounds. Several challenging classic and higher-order examples are presented to demonstrate the expressiveness and compositionality of $\lambda_{\mathsf{amor}}^{\mathsf{na}}$’s reasoning capability. This article also includes an algorithmic variant of $\lambda_{\mathsf{amor}}^{\mathsf{na}}$’s type system and a discussion of the automation of type checking and inference for $\lambda_{\mathsf{amor}}^{\mathsf{na}}$.</p>
+</p>
+    
 
+    
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">类型</div>
+          <div class="col-12 col-md-9">
+            <a href="/zh/publication/#1">
+              会议文章
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
     </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">出版物</div>
+          <div class="col-12 col-md-9">In <em>European Symposium on Programming</em></div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    <div class="space-below"></div>
+
+    <div class="article-style"></div>
 
     
 
@@ -796,7 +932,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://stonebuddha.github.io/zh/news_archive/&amp;text=%e6%96%b0%e9%97%bb%e5%bd%92%e6%a1%a3" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://stonebuddha.github.io/zh/publication/xuw26/&amp;text=Dependently-Typed%20AARA:%20A%20Non-Affine%20Approach%20for%20Resource%20Analysis%20of%20Higher-Order%20Programs" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -809,7 +945,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://stonebuddha.github.io/zh/news_archive/&amp;t=%e6%96%b0%e9%97%bb%e5%bd%92%e6%a1%a3" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://stonebuddha.github.io/zh/publication/xuw26/&amp;t=Dependently-Typed%20AARA:%20A%20Non-Affine%20Approach%20for%20Resource%20Analysis%20of%20Higher-Order%20Programs" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -822,7 +958,7 @@
       
       
       <li>
-        <a href="mailto:?subject=%e6%96%b0%e9%97%bb%e5%bd%92%e6%a1%a3&amp;body=https://stonebuddha.github.io/zh/news_archive/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+        <a href="mailto:?subject=Dependently-Typed%20AARA:%20A%20Non-Affine%20Approach%20for%20Resource%20Analysis%20of%20Higher-Order%20Programs&amp;body=https://stonebuddha.github.io/zh/publication/xuw26/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -835,7 +971,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://stonebuddha.github.io/zh/news_archive/&amp;title=%e6%96%b0%e9%97%bb%e5%bd%92%e6%a1%a3" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+        <a href="https://www.linkedin.com/shareArticle?url=https://stonebuddha.github.io/zh/publication/xuw26/&amp;title=Dependently-Typed%20AARA:%20A%20Non-Affine%20Approach%20for%20Resource%20Analysis%20of%20Higher-Order%20Programs" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -848,7 +984,7 @@
       
       
       <li>
-        <a href="whatsapp://send?text=%e6%96%b0%e9%97%bb%e5%bd%92%e6%a1%a3%20https://stonebuddha.github.io/zh/news_archive/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+        <a href="whatsapp://send?text=Dependently-Typed%20AARA:%20A%20Non-Affine%20Approach%20for%20Resource%20Analysis%20of%20Higher-Order%20Programs%20https://stonebuddha.github.io/zh/publication/xuw26/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -861,7 +997,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://stonebuddha.github.io/zh/news_archive/&amp;title=%e6%96%b0%e9%97%bb%e5%bd%92%e6%a1%a3" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://stonebuddha.github.io/zh/publication/xuw26/&amp;title=Dependently-Typed%20AARA:%20A%20Non-Affine%20Approach%20for%20Resource%20Analysis%20of%20Higher-Order%20Programs" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -879,6 +1015,131 @@
 
 
 
+  
+  
+    
+
+
+
+
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://stonebuddha.github.io/"><img class="avatar mr-3 avatar-circle" src="/zh/authors/admin/avatar_hu09aaeefd1d749d23465410d85e6504f9_5171477_270x270_fill_q75_lanczos_center.jpg" alt="王迪"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://stonebuddha.github.io/">王迪</a></h5>
+      <h6 class="card-subtitle">助理教授</h6>
+      <p class="card-text">朝着思想自由、兼容并包的计算机科学前进！</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/zh/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=CzEw-tYAAAAJ" target="_blank" rel="noopener">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://dblp.org/pid/18/5410-17.html" target="_blank" rel="noopener">
+        <i class="ai ai-dblp"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/stonebuddha" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/files/cv_wang.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+
 
 
 
@@ -888,7 +1149,7 @@
 
 
   </div>
-</article>
+</div>
   </div>
 
   <div class="page-footer">
