@@ -1,0 +1,1 @@
+let n=!1;function r(){n||(n=!0,document.addEventListener("click",async i=>{const t=i.target.closest(".cite-copy");if(!t)return;const e=t.closest(".cite-pop")?.querySelector("pre");if(e)try{await navigator.clipboard.writeText(e.textContent??"");const o=t.textContent;t.textContent="✓",setTimeout(()=>{t.textContent=o},1200)}catch{}}))}export{r as i};

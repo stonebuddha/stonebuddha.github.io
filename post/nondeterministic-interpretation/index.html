@@ -1,834 +1,15 @@
-<!DOCTYPE html><html lang="en-us" >
-
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  
-  
-  
-    <meta name="generator" content="Wowchemy 5.5.0 for Hugo" />
-  
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-  
-  
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  
-
-  
-  
-  
-    
-      
-      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Alegreya&family=Alegreya+Sans:ital,wght@0,400;0,700;1,400&family=Overpass+Mono&display=swap">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya&family=Alegreya+Sans:ital,wght@0,400;0,700;1,400&family=Overpass+Mono&display=swap" media="print" onload="this.media='all'">
-    
-  
-
-  
-  
-  
-  
-  
-    
-    
-    
-  
-  
-
-  <meta name="author" content="Di Wang" />
-
-  
-  
-  
-    
-  
-  <meta name="description" content="Suppose you have a toy specification with built-in nondeterminism, and you want to generate answers with respect to the specification:
-type exp = EInt of int | EPair of exp * exp | ENdet of exp * exp type ans = VInt of int | VPair of ans * ans For example, from the following specification" />
-
-  
-    <link rel="alternate" hreflang="zh" href="https://stonebuddha.github.io/zh/post/nondeterministic-interpretation/" />
-  
-  <link rel="alternate" hreflang="en-us" href="https://stonebuddha.github.io/post/nondeterministic-interpretation/" />
-
-  
-  
-  
-    <meta name="theme-color" content="#435c85" />
-  
-
-  
-  
-    
-    <script src="/js/mathjax-config.js"></script>
-  
-
-  
-
-  <link rel="stylesheet" href="/css/vendor-bundle.min.c7b8d9abd591ba2253ea42747e3ac3f5.css" media="print" onload="this.media='all'">
-
-  
-  
-  
-    
-    
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
-    
-
-    
-    
-    
-    
-      
-      
-    
-    
-    
-
-    
-    
-    
-      
-    
-    
-      
-      
-        
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
-        
-      
-    
-
-    
-    
-    
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css" integrity="" crossorigin="anonymous" media="print" onload="this.media='all'">
-    
-
-    
-
-    
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-  
-
-  
-  
-  
-  
-  
-  <link rel="stylesheet" href="/css/wowchemy.3e2eaa6fd06c912bbe9408ac70e50f22.css" />
-
-  
-
-
-
-  
-
-
-  
-
-
-  
-
-
-
-
-  
-  
-  
-
-  
-
-  
-    <link rel="manifest" href="/manifest.webmanifest" />
-  
-
-  <link rel="icon" type="image/png" href="/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_32x32_fill_lanczos_center_3.png" />
-  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_180x180_fill_lanczos_center_3.png" />
-
-  <link rel="canonical" href="https://stonebuddha.github.io/post/nondeterministic-interpretation/" />
-
-  
-  
-  
-  
-  
-  
-  
-  
-    
-    
-  
-  
-
-  
-  
-    
-    
-  
-  <meta property="twitter:card" content="summary" />
-  
-  <meta property="og:site_name" content="Di Wang" />
-  <meta property="og:url" content="https://stonebuddha.github.io/post/nondeterministic-interpretation/" />
-  <meta property="og:title" content="Nondeterministic Interpretation | Di Wang" />
-  <meta property="og:description" content="Suppose you have a toy specification with built-in nondeterminism, and you want to generate answers with respect to the specification:
-type exp = EInt of int | EPair of exp * exp | ENdet of exp * exp type ans = VInt of int | VPair of ans * ans For example, from the following specification" /><meta property="og:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" />
-    <meta property="twitter:image" content="https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
-  
-    
-      <meta
-        property="article:published_time"
-        content="2018-02-08T00:00:00&#43;00:00"
-      />
-    
-    <meta property="article:modified_time" content="2018-02-08T00:00:00&#43;00:00">
-  
-
-  
-
-
-    
-
-
-
-
-
-
-  
-
-
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://stonebuddha.github.io/post/nondeterministic-interpretation/"
-  },
-  "headline": "Nondeterministic Interpretation",
-  
-  "datePublished": "2018-02-08T00:00:00Z",
-  "dateModified": "2018-02-08T00:00:00Z",
-  
-  "author": {
-    "@type": "Person",
-    "name": "Di Wang"
-  },
-  
-  "publisher": {
-    "@type": "Organization",
-    "name": "Di Wang",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://stonebuddha.github.io/media/icon_hub0ca2310ff82550007847b11be674ab8_14787_192x192_fill_lanczos_center_3.png"
-    }
-  },
-  "description": "Suppose you have a toy specification with built-in nondeterminism, and you want to generate answers with respect to the specification:\ntype exp = EInt of int | EPair of exp * exp | ENdet of exp * exp type ans = VInt of int | VPair of ans * ans For example, from the following specification"
-}
-</script>
-
-  
-
-  
-
-  
-
-  
-
-
-
-
-
-  <title>Nondeterministic Interpretation | Di Wang</title>
-</head>
-
-
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="bdf032f7d4b3913f7157dc7ec6f50582" >
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <script src="/js/wowchemy-init.min.14a0ed61c6dbd594b9c75193b25be179.js"></script>
-
-  
-
-
-<aside class="search-modal" id="search">
-  <div class="container">
-    <section class="search-header">
-
-      <div class="row no-gutters justify-content-between mb-3">
-        <div class="col-6">
-          <h1>Search</h1>
-        </div>
-        <div class="col-6 col-search-close">
-          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
-        </div>
-      </div>
-
-      <div id="search-box">
-        
-        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
-        aria-label="Search...">
-        
-      </div>
-
-      
-      
-
-      
-
-    </section>
-    <section class="section-search-results">
-
-      <div id="search-hits">
-        
-      </div>
-
-    </section>
-  </div>
-</aside>
-
-
-
-  <div class="page-header">
-    
-
-
-
-
-
-
-
-
-
-
-
-
-<header class="header--fixed">
-  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
-    <div class="container-xl">
-
-      
-      <div class="d-none d-lg-inline-flex">
-        <a class="navbar-brand" href="/">Di Wang</a>
-      </div>
-      
-
-      
-      <button type="button" class="navbar-toggler" data-toggle="collapse"
-              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-      <span><i class="fas fa-bars"></i></span>
-      </button>
-      
-
-      
-      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-        <a class="navbar-brand" href="/">Di Wang</a>
-      </div>
-      
-
-      
-      
-      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
-
-        
-        <ul class="navbar-nav d-md-inline-flex">
-          
-
-          
-
-          
-          
-          
-            
-          
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
-            <a class="nav-link " href="/#about"><span>Home</span></a>
-          </li>
-
-          
-          
-
-          
-
-          
-          
-          
-            
-          
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
-            <a class="nav-link " href="/#publications"><span>Publications</span></a>
-          </li>
-
-          
-          
-
-          
-
-          
-          
-          
-            
-          
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
-            <a class="nav-link " href="/#talks"><span>Talks</span></a>
-          </li>
-
-          
-          
-
-          
-
-          
-          
-          
-            
-          
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
-            <a class="nav-link " href="/#posts"><span>Posts</span></a>
-          </li>
-
-          
-          
-
-          
-
-          
-          
-          
-            
-          
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
-            <a class="nav-link " href="/#contact"><span>Contact</span></a>
-          </li>
-
-          
-          
-
-        
-
-          
-        </ul>
-      </div>
-
-      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
-
-        
-        
-          
-        
-
-        
-        
-        <li class="nav-item">
-          <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
-        </li>
-        
-
-        
-        
-        
-
-        
-        
-        <li class="nav-item dropdown i18n-dropdown">
-          <a href="#" class="nav-link " data-toggle="dropdown"
-             aria-haspopup="true" aria-label="Languages">
-            <i class="fas fa-globe mr-1" aria-hidden="true"></i></a>
-          <div class="dropdown-menu">
-            <div class="dropdown-item dropdown-item-active">
-              <span>English</span>
-            </div>
-            
-            <a class="dropdown-item" href="https://stonebuddha.github.io/zh/post/nondeterministic-interpretation/">
-              <span>中文 (简体)</span>
-            </a>
-            
-          </div>
-        </li>
-        
-
-      </ul>
-
-    </div>
-  </nav>
-</header>
-
-
-  </div>
-
-  <div class="page-body">
-    
-    
-    
-
-    <article class="article">
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-  
-  
-<div class="article-container pt-3">
-  <h1>Nondeterministic Interpretation</h1>
-
-  
-
-  
-    
-
-
-<div class="article-metadata">
-
-  
-  
-  
-  
-  <div>
-    
-
-  <span class="author-highlighted">
-      Di Wang</span>
-  </div>
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    Feb 8, 2018
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    3 min read
-  </span>
-  
-
-  
-  
-  
-  
-
-  
-  
-
-</div>
-
-    
-
-
-
-
-
-  
-</div>
-
-
-
-  <div class="article-container">
-
-    <div class="article-style">
-      <p>Suppose you have a toy specification with built-in nondeterminism, and you want to generate answers with respect to the specification:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ocaml" data-lang="ocaml"><span class="line"><span class="cl"><span class="k">type</span> <span class="n">exp</span> <span class="o">=</span> <span class="nc">EInt</span> <span class="k">of</span> <span class="kt">int</span> <span class="o">|</span> <span class="nc">EPair</span> <span class="k">of</span> <span class="n">exp</span> <span class="o">*</span> <span class="n">exp</span> <span class="o">|</span> <span class="nc">ENdet</span> <span class="k">of</span> <span class="n">exp</span> <span class="o">*</span> <span class="n">exp</span>
-</span></span><span class="line"><span class="cl"><span class="k">type</span> <span class="n">ans</span> <span class="o">=</span> <span class="nc">VInt</span> <span class="k">of</span> <span class="kt">int</span> <span class="o">|</span> <span class="nc">VPair</span> <span class="k">of</span> <span class="n">ans</span> <span class="o">*</span> <span class="n">ans</span>
-</span></span></code></pre></div><p>For example, from the following specification</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ocaml" data-lang="ocaml"><span class="line"><span class="cl"><span class="nc">EPair</span> <span class="o">(</span><span class="nc">ENdet</span> <span class="o">(</span><span class="nc">EInt</span> <span class="n">5</span><span class="o">)</span> <span class="o">(</span><span class="nc">EInt</span> <span class="n">6</span><span class="o">))</span> <span class="o">(</span><span class="nc">ENdet</span> <span class="o">(</span><span class="nc">EInt</span> <span class="n">7</span><span class="o">)</span> <span class="o">(</span><span class="nc">EInt</span> <span class="n">8</span><span class="o">))</span>
-</span></span></code></pre></div><p>you might want to generate a bunch of possible answers:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ocaml" data-lang="ocaml"><span class="line"><span class="cl"><span class="nc">VPair</span> <span class="o">(</span><span class="nc">VInt</span> <span class="n">5</span><span class="o">)</span> <span class="o">(</span><span class="nc">VInt</span> <span class="n">7</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl"><span class="nc">VPair</span> <span class="o">(</span><span class="nc">VInt</span> <span class="n">5</span><span class="o">)</span> <span class="o">(</span><span class="nc">VInt</span> <span class="n">8</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl"><span class="nc">VPair</span> <span class="o">(</span><span class="nc">VInt</span> <span class="n">6</span><span class="o">)</span> <span class="o">(</span><span class="nc">VInt</span> <span class="n">7</span><span class="o">)</span>
-</span></span><span class="line"><span class="cl"><span class="nc">VPair</span> <span class="o">(</span><span class="nc">VInt</span> <span class="n">6</span><span class="o">)</span> <span class="o">(</span><span class="nc">VInt</span> <span class="n">8</span><span class="o">)</span>
-</span></span></code></pre></div><p>The scene might be where you want to specify something with multiple sites of nondeterminism, ask the generator to come up with an answer, and successively give you other answers until you are satisfied.</p>
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/png" href="/favicon.png"><title>Nondeterministic Interpretation · Di Wang</title><style>@font-face{font-family:"Noto Sans-1159818e0b468742";src:url("/_astro/fonts/190f8cf059e0f931.woff2") format("woff2");font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-weight:100 900;font-style:italic;}@font-face{font-family:"Noto Sans-1159818e0b468742";src:url("/_astro/fonts/1d7aab50fda97bb3.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:100 900;font-style:italic;}@font-face{font-family:"Noto Sans-1159818e0b468742";src:url("/_astro/fonts/ad35ff1453ab1728.woff2") format("woff2");font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-weight:100 900;font-style:normal;}@font-face{font-family:"Noto Sans-1159818e0b468742";src:url("/_astro/fonts/1e5097bbf9c9d577.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:100 900;font-style:normal;}@font-face{font-family:"Noto Sans-1159818e0b468742 fallback: Arial";src:local("Arial");font-display:swap;font-weight:100 900;font-style:italic;size-adjust:122.9249%;ascent-override:86.9637%;descent-override:23.8357%;line-gap-override:0%;}@font-face{font-family:"Noto Sans-1159818e0b468742 fallback: Arial";src:local("Arial");font-display:swap;font-weight:100 900;font-style:italic;size-adjust:122.9249%;ascent-override:86.9637%;descent-override:23.8357%;line-gap-override:0%;}@font-face{font-family:"Noto Sans-1159818e0b468742 fallback: Arial";src:local("Arial");font-display:swap;font-weight:100 900;font-style:normal;size-adjust:122.9249%;ascent-override:86.9637%;descent-override:23.8357%;line-gap-override:0%;}@font-face{font-family:"Noto Sans-1159818e0b468742 fallback: Arial";src:local("Arial");font-display:swap;font-weight:100 900;font-style:normal;size-adjust:122.9249%;ascent-override:86.9637%;descent-override:23.8357%;line-gap-override:0%;}:root{--font-sans:"Noto Sans-1159818e0b468742","Noto Sans-1159818e0b468742 fallback: Arial","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;}</style><link rel="preload" href="/_astro/fonts/190f8cf059e0f931.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/fonts/1d7aab50fda97bb3.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/fonts/ad35ff1453ab1728.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/fonts/1e5097bbf9c9d577.woff2" as="font" type="font/woff2" crossorigin><link rel="alternate" hreflang="zh" href="/zh/post/nondeterministic-interpretation/"><link rel="stylesheet" href="/_astro/Moonpad.DXKYakTQ.css">
+<link rel="stylesheet" href="/_astro/Base.VyE-VZA6.css"></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site"> <div class="container"> <a class="brand" href="/">Di Wang</a> <nav> <a href="/">Home</a><a href="/publication/">Publications</a><a href="/event/">Talks</a><a href="/post/">Blog</a><a href="/courses/">Courses</a><a href="/prospective-students/">Prospective Students</a> </nav> <a class="lang-switch" href="/zh/post/nondeterministic-interpretation/">中文</a> </div> </header> <main id="main" class="container">  <article class="prose"> <h1>Nondeterministic Interpretation</h1> <p class="item-meta">Feb 8, 2018</p> <p>Suppose you have a toy specification with built-in nondeterminism, and you want to generate answers with respect to the specification:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ocaml"><code><span class="line"><span style="color:#F97583;text-decoration:underline">type</span><span style="color:#B392F0"> exp</span><span style="color:#79B8FF"> =</span><span style="color:#B392F0"> EInt</span><span style="color:#E1E4E8"> of int </span><span style="color:#79B8FF">|</span><span style="color:#B392F0"> EPair</span><span style="color:#E1E4E8"> of exp </span><span style="color:#DBEDFF">*</span><span style="color:#E1E4E8"> exp </span><span style="color:#79B8FF">|</span><span style="color:#B392F0"> ENdet</span><span style="color:#E1E4E8"> of exp </span><span style="color:#DBEDFF">*</span><span style="color:#E1E4E8"> exp</span></span>
+<span class="line"><span style="color:#F97583;text-decoration:underline">type</span><span style="color:#B392F0"> ans</span><span style="color:#79B8FF"> =</span><span style="color:#B392F0"> VInt</span><span style="color:#E1E4E8"> of int </span><span style="color:#79B8FF">|</span><span style="color:#B392F0"> VPair</span><span style="color:#E1E4E8"> of ans </span><span style="color:#DBEDFF">*</span><span style="color:#E1E4E8"> ans</span></span></code></pre>
+<p>For example, from the following specification</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ocaml"><code><span class="line"><span style="color:#E1E4E8">EPair (ENdet (EInt 5) (EInt 6)) (ENdet (EInt 7) (EInt 8))</span></span></code></pre>
+<p>you might want to generate a bunch of possible answers:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ocaml"><code><span class="line"><span style="color:#E1E4E8">VPair (VInt 5) (VInt 7)</span></span>
+<span class="line"><span style="color:#E1E4E8">VPair (VInt 5) (VInt 8)</span></span>
+<span class="line"><span style="color:#E1E4E8">VPair (VInt 6) (VInt 7)</span></span>
+<span class="line"><span style="color:#E1E4E8">VPair (VInt 6) (VInt 8)</span></span></code></pre>
+<p>The scene might be where you want to specify something with multiple sites of nondeterminism, ask the generator to come up with an answer, and successively give you other answers until you are satisfied.</p>
 <p>The basic methodology is search.
 We want to construct a recursive procedure on the structure of a specification.
 For a sub-specification, it should know two sorts of computation:</p>
@@ -836,487 +17,144 @@ For a sub-specification, it should know two sorts of computation:</p>
 <li>the computation that completes a whole answer and constructs a procedure for next whole answers, given the current sub-answer for the sub-specification and a procedure for next whole answers if the current sub-answer would leads to a subsequent unsatisfactoriness; and</li>
 <li>the computation to find next whole answers.</li>
 </ul>
-<p>In this sense, the first computation has type $\mathsf{ans} \to \mathsf{next} \to \mathsf{ans} \times \mathsf{next}$, and the second one should be typed $\mathsf{next}$.
-A computation of type $\mathsf{next}$ is supposed to (i) either fail, or (ii) take no arguments, and when invoked it should return the next whole answer as well as a new $\mathsf{next}$ computation.
-Thus we have $\mathsf{next} \equiv \mathbf{1} + \mathbf{1} \to (\mathsf{ans} \times \mathsf{next})$.
+<p>In this sense, the first computation has type <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="24.121ex" height="1.317ex" role="img" focusable="false" viewBox="0 -571 10661.6 582" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="MJX-1-TEX-SS-1D5BA" d="M236 387Q209 387 184 382T141 370T111 355T91 342T83 337L82 355Q80 373 79 393T77 417Q77 419 81 421Q86 423 91 426Q155 460 227 460H238Q319 460 368 400Q393 371 400 341T408 252Q408 240 408 207T407 152V0H317V39L306 32Q244 -10 159 -10H152Q109 -10 77 22Q38 61 38 126Q38 142 39 146Q55 199 130 223T295 252H314V277Q314 305 313 310Q308 342 287 364T236 387ZM303 186Q124 180 124 126Q124 105 144 86T208 66Q284 66 309 124Q314 137 314 166V186H303Z"></path><path id="MJX-1-TEX-SS-1D5C7" d="M160 392Q214 446 283 454Q285 454 292 454T303 455H306Q417 455 438 354Q442 331 443 164V0H350V157Q349 315 348 320Q334 378 259 378H253Q224 378 204 358Q180 334 173 301T165 209Q165 198 165 172T166 129V0H73V450H160V392Z"></path><path id="MJX-1-TEX-SS-1D5CC" d="M33 326Q33 376 60 408T117 450T175 460H190Q245 460 272 454T345 429Q345 428 338 388L331 349Q278 386 188 386H183Q119 386 119 336Q119 307 142 295T210 276T278 256Q360 213 360 130Q360 108 354 88T332 43T281 5T195 -10Q152 -10 111 1T49 22T28 35Q29 36 32 56T39 95T43 115T51 110T72 99T102 85T143 73T193 68Q274 68 274 123Q274 152 248 167Q234 178 187 186T115 207Q66 229 46 273Q33 298 33 326Z"></path><path id="MJX-1-TEX-N-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path><path id="MJX-1-TEX-SS-1D5BE" d="M28 226Q28 329 91 395T235 461Q258 461 279 456T325 436T368 397T399 332T415 238V219H113V215Q113 163 151 114T248 65Q273 65 298 70T341 82T373 96T396 108L403 113Q403 106 406 76T409 38Q409 34 408 33T393 24Q325 -10 252 -10Q155 -10 92 59T28 226ZM340 289L338 297Q335 305 333 310T327 326T317 343T304 358T286 372T263 381T233 385Q212 385 193 376T162 353T140 325T127 301T123 289H340Z"></path><path id="MJX-1-TEX-SS-1D5D1" d="M187 229L6 444H107L227 294L344 444H393L442 443Q439 437 299 268L267 229L460 0H359L294 88Q280 107 262 131T236 166L227 177L100 0H0Q1 1 47 58T140 171T187 229Z"></path><path id="MJX-1-TEX-SS-1D5CD" d="M333 27Q333 24 314 16T257 -1T184 -10H172Q146 -10 128 14T105 58T99 91Q95 113 95 251V371H18V444H98V571H182V444H316V371H182V253Q183 128 189 104Q199 68 234 68Q277 72 314 98Q315 93 323 61T333 27Z"></path><path id="MJX-1-TEX-N-D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D5BA" xlink:href="#MJX-1-TEX-SS-1D5BA"></use><use data-c="1D5C7" xlink:href="#MJX-1-TEX-SS-1D5C7" transform="translate(481,0)"></use><use data-c="1D5CC" xlink:href="#MJX-1-TEX-SS-1D5CC" transform="translate(998,0)"></use></g></g><g data-mml-node="mo" transform="translate(1658.8,0)"><use data-c="2192" xlink:href="#MJX-1-TEX-N-2192"></use></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(2936.6,0)"><g data-mml-node="mi"><use data-c="1D5C7" xlink:href="#MJX-1-TEX-SS-1D5C7"></use><use data-c="1D5BE" xlink:href="#MJX-1-TEX-SS-1D5BE" transform="translate(517,0)"></use><use data-c="1D5D1" xlink:href="#MJX-1-TEX-SS-1D5D1" transform="translate(961,0)"></use><use data-c="1D5CD" xlink:href="#MJX-1-TEX-SS-1D5CD" transform="translate(1422,0)"></use></g></g><g data-mml-node="mo" transform="translate(4997.3,0)"><use data-c="2192" xlink:href="#MJX-1-TEX-N-2192"></use></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(6275.1,0)"><g data-mml-node="mi"><use data-c="1D5BA" xlink:href="#MJX-1-TEX-SS-1D5BA"></use><use data-c="1D5C7" xlink:href="#MJX-1-TEX-SS-1D5C7" transform="translate(481,0)"></use><use data-c="1D5CC" xlink:href="#MJX-1-TEX-SS-1D5CC" transform="translate(998,0)"></use></g></g><g data-mml-node="mo" transform="translate(7878.3,0)"><use data-c="D7" xlink:href="#MJX-1-TEX-N-D7"></use></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(8878.6,0)"><g data-mml-node="mi"><use data-c="1D5C7" xlink:href="#MJX-1-TEX-SS-1D5C7"></use><use data-c="1D5BE" xlink:href="#MJX-1-TEX-SS-1D5BE" transform="translate(517,0)"></use><use data-c="1D5D1" xlink:href="#MJX-1-TEX-SS-1D5D1" transform="translate(961,0)"></use><use data-c="1D5CD" xlink:href="#MJX-1-TEX-SS-1D5CD" transform="translate(1422,0)"></use></g></g></g></g></svg></mjx-container>, and the second one should be typed <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.023ex;" xmlns="http://www.w3.org/2000/svg" width="4.034ex" height="1.314ex" role="img" focusable="false" viewBox="0 -571 1783 581" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="MJX-2-TEX-SS-1D5C7" d="M160 392Q214 446 283 454Q285 454 292 454T303 455H306Q417 455 438 354Q442 331 443 164V0H350V157Q349 315 348 320Q334 378 259 378H253Q224 378 204 358Q180 334 173 301T165 209Q165 198 165 172T166 129V0H73V450H160V392Z"></path><path id="MJX-2-TEX-SS-1D5BE" d="M28 226Q28 329 91 395T235 461Q258 461 279 456T325 436T368 397T399 332T415 238V219H113V215Q113 163 151 114T248 65Q273 65 298 70T341 82T373 96T396 108L403 113Q403 106 406 76T409 38Q409 34 408 33T393 24Q325 -10 252 -10Q155 -10 92 59T28 226ZM340 289L338 297Q335 305 333 310T327 326T317 343T304 358T286 372T263 381T233 385Q212 385 193 376T162 353T140 325T127 301T123 289H340Z"></path><path id="MJX-2-TEX-SS-1D5D1" d="M187 229L6 444H107L227 294L344 444H393L442 443Q439 437 299 268L267 229L460 0H359L294 88Q280 107 262 131T236 166L227 177L100 0H0Q1 1 47 58T140 171T187 229Z"></path><path id="MJX-2-TEX-SS-1D5CD" d="M333 27Q333 24 314 16T257 -1T184 -10H172Q146 -10 128 14T105 58T99 91Q95 113 95 251V371H18V444H98V571H182V444H316V371H182V253Q183 128 189 104Q199 68 234 68Q277 72 314 98Q315 93 323 61T333 27Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D5C7" xlink:href="#MJX-2-TEX-SS-1D5C7"></use><use data-c="1D5BE" xlink:href="#MJX-2-TEX-SS-1D5BE" transform="translate(517,0)"></use><use data-c="1D5D1" xlink:href="#MJX-2-TEX-SS-1D5D1" transform="translate(961,0)"></use><use data-c="1D5CD" xlink:href="#MJX-2-TEX-SS-1D5CD" transform="translate(1422,0)"></use></g></g></g></g></svg></mjx-container>.
+A computation of type <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.023ex;" xmlns="http://www.w3.org/2000/svg" width="4.034ex" height="1.314ex" role="img" focusable="false" viewBox="0 -571 1783 581" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="MJX-3-TEX-SS-1D5C7" d="M160 392Q214 446 283 454Q285 454 292 454T303 455H306Q417 455 438 354Q442 331 443 164V0H350V157Q349 315 348 320Q334 378 259 378H253Q224 378 204 358Q180 334 173 301T165 209Q165 198 165 172T166 129V0H73V450H160V392Z"></path><path id="MJX-3-TEX-SS-1D5BE" d="M28 226Q28 329 91 395T235 461Q258 461 279 456T325 436T368 397T399 332T415 238V219H113V215Q113 163 151 114T248 65Q273 65 298 70T341 82T373 96T396 108L403 113Q403 106 406 76T409 38Q409 34 408 33T393 24Q325 -10 252 -10Q155 -10 92 59T28 226ZM340 289L338 297Q335 305 333 310T327 326T317 343T304 358T286 372T263 381T233 385Q212 385 193 376T162 353T140 325T127 301T123 289H340Z"></path><path id="MJX-3-TEX-SS-1D5D1" d="M187 229L6 444H107L227 294L344 444H393L442 443Q439 437 299 268L267 229L460 0H359L294 88Q280 107 262 131T236 166L227 177L100 0H0Q1 1 47 58T140 171T187 229Z"></path><path id="MJX-3-TEX-SS-1D5CD" d="M333 27Q333 24 314 16T257 -1T184 -10H172Q146 -10 128 14T105 58T99 91Q95 113 95 251V371H18V444H98V571H182V444H316V371H182V253Q183 128 189 104Q199 68 234 68Q277 72 314 98Q315 93 323 61T333 27Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D5C7" xlink:href="#MJX-3-TEX-SS-1D5C7"></use><use data-c="1D5BE" xlink:href="#MJX-3-TEX-SS-1D5BE" transform="translate(517,0)"></use><use data-c="1D5D1" xlink:href="#MJX-3-TEX-SS-1D5D1" transform="translate(961,0)"></use><use data-c="1D5CD" xlink:href="#MJX-3-TEX-SS-1D5CD" transform="translate(1422,0)"></use></g></g></g></g></svg></mjx-container> is supposed to (i) either fail, or (ii) take no arguments, and when invoked it should return the next whole answer as well as a new <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.023ex;" xmlns="http://www.w3.org/2000/svg" width="4.034ex" height="1.314ex" role="img" focusable="false" viewBox="0 -571 1783 581" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="MJX-4-TEX-SS-1D5C7" d="M160 392Q214 446 283 454Q285 454 292 454T303 455H306Q417 455 438 354Q442 331 443 164V0H350V157Q349 315 348 320Q334 378 259 378H253Q224 378 204 358Q180 334 173 301T165 209Q165 198 165 172T166 129V0H73V450H160V392Z"></path><path id="MJX-4-TEX-SS-1D5BE" d="M28 226Q28 329 91 395T235 461Q258 461 279 456T325 436T368 397T399 332T415 238V219H113V215Q113 163 151 114T248 65Q273 65 298 70T341 82T373 96T396 108L403 113Q403 106 406 76T409 38Q409 34 408 33T393 24Q325 -10 252 -10Q155 -10 92 59T28 226ZM340 289L338 297Q335 305 333 310T327 326T317 343T304 358T286 372T263 381T233 385Q212 385 193 376T162 353T140 325T127 301T123 289H340Z"></path><path id="MJX-4-TEX-SS-1D5D1" d="M187 229L6 444H107L227 294L344 444H393L442 443Q439 437 299 268L267 229L460 0H359L294 88Q280 107 262 131T236 166L227 177L100 0H0Q1 1 47 58T140 171T187 229Z"></path><path id="MJX-4-TEX-SS-1D5CD" d="M333 27Q333 24 314 16T257 -1T184 -10H172Q146 -10 128 14T105 58T99 91Q95 113 95 251V371H18V444H98V571H182V444H316V371H182V253Q183 128 189 104Q199 68 234 68Q277 72 314 98Q315 93 323 61T333 27Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D5C7" xlink:href="#MJX-4-TEX-SS-1D5C7"></use><use data-c="1D5BE" xlink:href="#MJX-4-TEX-SS-1D5BE" transform="translate(517,0)"></use><use data-c="1D5D1" xlink:href="#MJX-4-TEX-SS-1D5D1" transform="translate(961,0)"></use><use data-c="1D5CD" xlink:href="#MJX-4-TEX-SS-1D5CD" transform="translate(1422,0)"></use></g></g></g></g></svg></mjx-container> computation.
+Thus we have <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="27.622ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 12209 1000" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="MJX-5-TEX-SS-1D5C7" d="M160 392Q214 446 283 454Q285 454 292 454T303 455H306Q417 455 438 354Q442 331 443 164V0H350V157Q349 315 348 320Q334 378 259 378H253Q224 378 204 358Q180 334 173 301T165 209Q165 198 165 172T166 129V0H73V450H160V392Z"></path><path id="MJX-5-TEX-SS-1D5BE" d="M28 226Q28 329 91 395T235 461Q258 461 279 456T325 436T368 397T399 332T415 238V219H113V215Q113 163 151 114T248 65Q273 65 298 70T341 82T373 96T396 108L403 113Q403 106 406 76T409 38Q409 34 408 33T393 24Q325 -10 252 -10Q155 -10 92 59T28 226ZM340 289L338 297Q335 305 333 310T327 326T317 343T304 358T286 372T263 381T233 385Q212 385 193 376T162 353T140 325T127 301T123 289H340Z"></path><path id="MJX-5-TEX-SS-1D5D1" d="M187 229L6 444H107L227 294L344 444H393L442 443Q439 437 299 268L267 229L460 0H359L294 88Q280 107 262 131T236 166L227 177L100 0H0Q1 1 47 58T140 171T187 229Z"></path><path id="MJX-5-TEX-SS-1D5CD" d="M333 27Q333 24 314 16T257 -1T184 -10H172Q146 -10 128 14T105 58T99 91Q95 113 95 251V371H18V444H98V571H182V444H316V371H182V253Q183 128 189 104Q199 68 234 68Q277 72 314 98Q315 93 323 61T333 27Z"></path><path id="MJX-5-TEX-N-2261" d="M56 444Q56 457 70 464H707Q722 456 722 444Q722 430 706 424H72Q56 429 56 444ZM56 237T56 250T70 270H707Q722 262 722 250T707 230H70Q56 237 56 250ZM56 56Q56 71 72 76H706Q722 70 722 56Q722 44 707 36H70Q56 43 56 56Z"></path><path id="MJX-5-TEX-B-1D7CF" d="M481 0L294 3Q136 3 109 0H96V62H227V304Q227 546 225 546Q169 529 97 529H80V591H97Q231 591 308 647L319 655H333Q355 655 359 644Q361 640 361 351V62H494V0H481Z"></path><path id="MJX-5-TEX-N-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path id="MJX-5-TEX-N-2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path><path id="MJX-5-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJX-5-TEX-SS-1D5BA" d="M236 387Q209 387 184 382T141 370T111 355T91 342T83 337L82 355Q80 373 79 393T77 417Q77 419 81 421Q86 423 91 426Q155 460 227 460H238Q319 460 368 400Q393 371 400 341T408 252Q408 240 408 207T407 152V0H317V39L306 32Q244 -10 159 -10H152Q109 -10 77 22Q38 61 38 126Q38 142 39 146Q55 199 130 223T295 252H314V277Q314 305 313 310Q308 342 287 364T236 387ZM303 186Q124 180 124 126Q124 105 144 86T208 66Q284 66 309 124Q314 137 314 166V186H303Z"></path><path id="MJX-5-TEX-SS-1D5CC" d="M33 326Q33 376 60 408T117 450T175 460H190Q245 460 272 454T345 429Q345 428 338 388L331 349Q278 386 188 386H183Q119 386 119 336Q119 307 142 295T210 276T278 256Q360 213 360 130Q360 108 354 88T332 43T281 5T195 -10Q152 -10 111 1T49 22T28 35Q29 36 32 56T39 95T43 115T51 110T72 99T102 85T143 73T193 68Q274 68 274 123Q274 152 248 167Q234 178 187 186T115 207Q66 229 46 273Q33 298 33 326Z"></path><path id="MJX-5-TEX-N-D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path><path id="MJX-5-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><use data-c="1D5C7" xlink:href="#MJX-5-TEX-SS-1D5C7"></use><use data-c="1D5BE" xlink:href="#MJX-5-TEX-SS-1D5BE" transform="translate(517,0)"></use><use data-c="1D5D1" xlink:href="#MJX-5-TEX-SS-1D5D1" transform="translate(961,0)"></use><use data-c="1D5CD" xlink:href="#MJX-5-TEX-SS-1D5CD" transform="translate(1422,0)"></use></g></g><g data-mml-node="mo" transform="translate(2060.8,0)"><use data-c="2261" xlink:href="#MJX-5-TEX-N-2261"></use></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(3116.6,0)"><g data-mml-node="mn"><use data-c="1D7CF" xlink:href="#MJX-5-TEX-B-1D7CF"></use></g></g><g data-mml-node="mo" transform="translate(3913.8,0)"><use data-c="2B" xlink:href="#MJX-5-TEX-N-2B"></use></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(4914,0)"><g data-mml-node="mn"><use data-c="1D7CF" xlink:href="#MJX-5-TEX-B-1D7CF"></use></g></g><g data-mml-node="mo" transform="translate(5766.8,0)"><use data-c="2192" xlink:href="#MJX-5-TEX-N-2192"></use></g><g data-mml-node="mo" transform="translate(7044.6,0)"><use data-c="28" xlink:href="#MJX-5-TEX-N-28"></use></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(7433.6,0)"><g data-mml-node="mi"><use data-c="1D5BA" xlink:href="#MJX-5-TEX-SS-1D5BA"></use><use data-c="1D5C7" xlink:href="#MJX-5-TEX-SS-1D5C7" transform="translate(481,0)"></use><use data-c="1D5CC" xlink:href="#MJX-5-TEX-SS-1D5CC" transform="translate(998,0)"></use></g></g><g data-mml-node="mo" transform="translate(9036.8,0)"><use data-c="D7" xlink:href="#MJX-5-TEX-N-D7"></use></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(10037,0)"><g data-mml-node="mi"><use data-c="1D5C7" xlink:href="#MJX-5-TEX-SS-1D5C7"></use><use data-c="1D5BE" xlink:href="#MJX-5-TEX-SS-1D5BE" transform="translate(517,0)"></use><use data-c="1D5D1" xlink:href="#MJX-5-TEX-SS-1D5D1" transform="translate(961,0)"></use><use data-c="1D5CD" xlink:href="#MJX-5-TEX-SS-1D5CD" transform="translate(1422,0)"></use></g></g><g data-mml-node="mo" transform="translate(11820,0)"><use data-c="29" xlink:href="#MJX-5-TEX-N-29"></use></g></g></g></svg></mjx-container>.
 Therefore we use recursive types to model this mechanism.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ocaml" data-lang="ocaml"><span class="line"><span class="cl"><span class="k">type</span> <span class="n">next</span> <span class="o">=</span> <span class="nc">NFail</span> <span class="o">|</span> <span class="nc">NCont</span> <span class="k">of</span> <span class="o">(</span><span class="kt">unit</span> <span class="o">-&gt;</span> <span class="n">ans</span> <span class="o">*</span> <span class="n">next</span><span class="o">)</span>
-</span></span></code></pre></div><p>Then it is straightforward to implement an interpreter:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ocaml" data-lang="ocaml"><span class="line"><span class="cl"><span class="k">let</span> <span class="k">rec</span> <span class="n">interp</span> <span class="n">exp</span> <span class="n">cont</span> <span class="n">fail</span> <span class="o">=</span>
-</span></span><span class="line"><span class="cl">  <span class="k">match</span> <span class="n">exp</span> <span class="k">with</span>
-</span></span><span class="line"><span class="cl">  <span class="o">|</span> <span class="nc">EInt</span> <span class="n">n</span> <span class="o">-&gt;</span> <span class="n">cont</span> <span class="o">(</span><span class="nc">VInt</span> <span class="n">n</span><span class="o">)</span> <span class="n">fail</span>
-</span></span><span class="line"><span class="cl">  <span class="o">|</span> <span class="nc">EPair</span> <span class="o">(</span><span class="n">e</span><span class="o">,</span> <span class="n">e&#39;</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">interp</span> <span class="n">e</span> <span class="o">(</span><span class="k">fun</span> <span class="n">v</span> <span class="n">fail&#39;</span> <span class="o">-&gt;</span> <span class="n">interp</span> <span class="n">e&#39;</span> <span class="o">(</span><span class="k">fun</span> <span class="n">v&#39;</span> <span class="n">fail&#39;&#39;</span> <span class="o">-&gt;</span> <span class="n">cont</span> <span class="o">(</span><span class="nc">VPair</span> <span class="o">(</span><span class="n">v</span><span class="o">,</span> <span class="n">v&#39;</span><span class="o">))</span> <span class="n">fail&#39;&#39;</span><span class="o">)</span> <span class="n">fail&#39;</span><span class="o">)</span> <span class="n">fail</span>
-</span></span><span class="line"><span class="cl">  <span class="o">|</span> <span class="nc">ENdet</span> <span class="o">(</span><span class="n">e1</span><span class="o">,</span> <span class="n">e2</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">interp</span> <span class="n">e1</span> <span class="n">cont</span> <span class="o">(</span><span class="nc">NCont</span> <span class="o">(</span><span class="k">fun</span> <span class="bp">()</span> <span class="o">-&gt;</span> <span class="n">interp</span> <span class="n">e2</span> <span class="n">cont</span> <span class="n">fail</span><span class="o">))</span>
-</span></span></code></pre></div><p>The execution should be the following:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ocaml" data-lang="ocaml"><span class="line"><span class="cl"><span class="k">let</span> <span class="o">(</span><span class="n">ans1</span><span class="o">,</span> <span class="n">next1</span><span class="o">)</span> <span class="o">=</span> <span class="n">interp</span> <span class="o">(</span><span class="nc">EPair</span> <span class="o">(</span><span class="nc">ENdet</span> <span class="o">(</span><span class="nc">EInt</span> <span class="n">5</span><span class="o">)</span> <span class="o">(</span><span class="nc">EInt</span> <span class="n">6</span><span class="o">))</span> <span class="o">(</span><span class="nc">ENdet</span> <span class="o">(</span><span class="nc">EInt</span> <span class="n">7</span><span class="o">)</span> <span class="o">(</span><span class="nc">EInt</span> <span class="n">8</span><span class="o">)))</span> <span class="o">(</span><span class="k">fun</span> <span class="n">v</span> <span class="n">fail</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">v</span><span class="o">,</span> <span class="n">fail</span><span class="o">))</span> <span class="nc">NFail</span><span class="o">;;</span>
-</span></span><span class="line"><span class="cl"><span class="c">(* val ans1 : ans = VPair (VInt 5, VInt 7) *)</span>
-</span></span><span class="line"><span class="cl"><span class="c">(* val next1 : next = NCont &lt;fun&gt; *)</span>
-</span></span><span class="line"><span class="cl"><span class="k">let</span> <span class="o">(</span><span class="n">ans2</span><span class="o">,</span> <span class="n">next2</span><span class="o">)</span> <span class="o">=</span> <span class="k">match</span> <span class="n">next1</span> <span class="k">with</span> <span class="nc">NCont</span> <span class="n">f</span> <span class="o">-&gt;</span> <span class="n">f</span> <span class="bp">()</span><span class="o">;;</span>
-</span></span><span class="line"><span class="cl"><span class="c">(* val ans2 : ans = VPair (VInt 5, VInt 8) *)</span>
-</span></span><span class="line"><span class="cl"><span class="c">(* val next2 : next = NCont &lt;fun&gt; *)</span>
-</span></span><span class="line"><span class="cl"><span class="k">let</span> <span class="o">(</span><span class="n">ans3</span><span class="o">,</span> <span class="n">next3</span><span class="o">)</span> <span class="o">=</span> <span class="k">match</span> <span class="n">next2</span> <span class="k">with</span> <span class="nc">NCont</span> <span class="n">f</span> <span class="o">-&gt;</span> <span class="n">f</span> <span class="bp">()</span><span class="o">;;</span>
-</span></span><span class="line"><span class="cl"><span class="c">(* val ans3 : ans = VPair (VInt 6, VInt 7) *)</span>
-</span></span><span class="line"><span class="cl"><span class="c">(* val next3 : next = NCont &lt;fun&gt; *)</span>
-</span></span><span class="line"><span class="cl"><span class="k">let</span> <span class="o">(</span><span class="n">ans4</span><span class="o">,</span> <span class="n">next4</span><span class="o">)</span> <span class="o">=</span> <span class="k">match</span> <span class="n">next3</span> <span class="k">with</span> <span class="nc">NCont</span> <span class="n">f</span> <span class="o">-&gt;</span> <span class="n">f</span> <span class="bp">()</span><span class="o">;;</span>
-</span></span><span class="line"><span class="cl"><span class="c">(* val ans4 : ans = VPair (VInt 6, VInt 8) *)</span>
-</span></span><span class="line"><span class="cl"><span class="c">(* val next4 : next = NFail *)</span>
-</span></span></code></pre></div>
-    </div>
-
-    
-
-
-
-
-
-
-<div class="share-box">
-  <ul class="share">
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://twitter.com/intent/tweet?url=https://stonebuddha.github.io/post/nondeterministic-interpretation/&amp;text=Nondeterministic%20Interpretation" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://stonebuddha.github.io/post/nondeterministic-interpretation/&amp;t=Nondeterministic%20Interpretation" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
-          <i class="fab fa-facebook"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="mailto:?subject=Nondeterministic%20Interpretation&amp;body=https://stonebuddha.github.io/post/nondeterministic-interpretation/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
-          <i class="fas fa-envelope"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://stonebuddha.github.io/post/nondeterministic-interpretation/&amp;title=Nondeterministic%20Interpretation" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="whatsapp://send?text=Nondeterministic%20Interpretation%20https://stonebuddha.github.io/post/nondeterministic-interpretation/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://stonebuddha.github.io/post/nondeterministic-interpretation/&amp;title=Nondeterministic%20Interpretation" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
-          <i class="fab fa-weibo"></i>
-        </a>
-      </li>
-    
-  </ul>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-
-
-
-  
-  
-  
-    
-  
-  
-  
-  <div class="media author-card content-widget-hr">
-    
-      
-      <a href="https://stonebuddha.github.io/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu09aaeefd1d749d23465410d85e6504f9_5171477_270x270_fill_q75_lanczos_center.jpg" alt="Di Wang"></a>
-    
-
-    <div class="media-body">
-      <h5 class="card-title"><a href="https://stonebuddha.github.io/">Di Wang</a></h5>
-      <h6 class="card-subtitle">Assistant Professor</h6>
-      <p class="card-text">My heart is in the Principles of Programming.</p>
-      <ul class="network-icon" aria-hidden="true">
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="/#contact" >
-        <i class="fas fa-envelope"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://scholar.google.com/citations?user=CzEw-tYAAAAJ" target="_blank" rel="noopener">
-        <i class="ai ai-google-scholar"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://dblp.org/pid/18/5410-17.html" target="_blank" rel="noopener">
-        <i class="ai ai-dblp"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://github.com/stonebuddha" target="_blank" rel="noopener">
-        <i class="fab fa-github"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="/files/cv_wang.pdf" >
-        <i class="ai ai-cv"></i>
-      </a>
-    </li>
-  
-</ul>
-
-    </div>
-  </div>
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-</article>
-  </div>
-
-  <div class="page-footer">
-    
-    
-    <div class="container">
-      <footer class="site-footer">
-
-  
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-
-
-
-
-
-  
-  
-  
-
-  
-  
-    
-  
-  
-    
-  
-
-  
-
-  
-  <p class="powered-by copyright-license-text">
-    © 2026 Di Wang. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank">CC BY NC ND 4.0</a>
-  </p>
-  
-
-  <p class="powered-by footer-license-icons">
-    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
-      <i class="fab fa-creative-commons fa-2x" aria-hidden="true"></i>
-      <i class="fab fa-creative-commons-by fa-2x" aria-hidden="true"></i>
-      
-        <i class="fab fa-creative-commons-nc fa-2x" aria-hidden="true"></i>
-      
-      
-        <i class="fab fa-creative-commons-nd fa-2x" aria-hidden="true"></i>
-      
-    </a>
-  </p>
-
-
-
-
-  <p class="powered-by">
-    
-    
-    
-      
-      
-      
-      
-      
-      
-      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
-    
-  </p>
-</footer>
-
-    </div>
-    
-  </div>
-
-      
-
-    
-    <script src="/js/vendor-bundle.min.32ee83730ed883becad04bc5170512cc.js"></script>
-
-    
-    
-    
-      
-
-      
-      
-
-      
-
-      
-        
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js" integrity="sha512-Ypjm0o7jOxAd4hpdoppSEN0TQOC19UtPAqD+4s5AlXmUvbmmS/YMxYqAqarQYyxTnB6/rqip9qcxlNB/3U9Wdg==" crossorigin="anonymous"></script>
-        
-        
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/ocaml.min.js" crossorigin="anonymous"></script>
-        
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
-        
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/lisp.min.js" crossorigin="anonymous"></script>
-        
-        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/java.min.js" crossorigin="anonymous"></script>
-        
-      
-
-    
-
-    
-    
-    
-      <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.js" integrity="" crossorigin="anonymous"></script>
-    
-
-    
-    
-
-    
-    
-    
-      
-      <script id="search-hit-fuse-template" type="text/x-template">
-        <div class="search-hit" id="summary-{{key}}">
-          <div class="search-hit-content">
-            <div class="search-hit-name">
-              <a href="{{relpermalink}}">{{title}}</a>
-              <div class="article-metadata search-hit-type">{{type}}</div>
-              <p class="search-hit-description">{{snippet}}</p>
-            </div>
-          </div>
-        </div>
-      </script>
-      
-        <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-
-    
-    
-      
-      
-      
-      
-      
-      
-      
-    
-
-    
-
-    
-    
-    
-    <script id="page-data" type="application/json">{"use_headroom":true}</script>
-
-    
-    
-      <script src="/js/wowchemy-headroom.c251366b4128fd5e6b046d4c97a62a51.js" type="module"></script>
-    
-    
-    
-    
-    
-    
-    
-      
-      
-    
-    
-    <script src="/en/js/wowchemy.min.d66c8b3b4ad0f66a62428f6bc7cf477d.js"></script>
-
-    
-    
-      <script src="/js/wowchemy-map.a26e9d2f7238ba5b868384f1c5bc6477.js" type="module"></script>
-    
-    
-    
-    
-      
-<div id="modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Cite</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <pre><code class="tex hljs"></code></pre>
-      </div>
-      <div class="modal-footer">
-        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> Copy
-        </a>
-        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
-          <i class="fas fa-download"></i> Download
-        </a>
-        <div id="modal-error"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-      <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
-
-
-
-
-
-
-</body>
-</html>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ocaml"><code><span class="line"><span style="color:#F97583;text-decoration:underline">type</span><span style="color:#B392F0"> next</span><span style="color:#79B8FF"> =</span><span style="color:#B392F0"> NFail</span><span style="color:#79B8FF"> |</span><span style="color:#B392F0"> NCont</span><span style="color:#E1E4E8"> of (unit </span><span style="color:#DBEDFF">-></span><span style="color:#E1E4E8"> ans </span><span style="color:#DBEDFF">*</span><span style="color:#E1E4E8"> next)</span></span></code></pre>
+<p>Then it is straightforward to implement an interpreter:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ocaml"><code><span class="line"><span style="color:#F97583;text-decoration:underline">let</span><span style="color:#DBEDFF"> rec</span><span style="color:#B392F0"> interp</span><span> </span><span style="color:#79B8FF;text-decoration:underline">exp</span><span> </span><span style="color:#79B8FF;text-decoration:underline">cont</span><span> </span><span style="color:#79B8FF;text-decoration:underline">fail</span><span style="color:#79B8FF"> =</span></span>
+<span class="line"><span style="color:#F97583">  match</span><span style="color:#E1E4E8"> exp </span><span style="color:#F97583">with</span></span>
+<span class="line"><span style="color:#79B8FF">  |</span><span style="color:#B392F0"> EInt</span><span> </span><span style="color:#79B8FF;text-decoration:underline">n</span><span style="color:#79B8FF"> -></span><span style="color:#E1E4E8"> cont (</span><span style="color:#B392F0">VInt</span><span style="color:#E1E4E8"> n) fail</span></span>
+<span class="line"><span style="color:#79B8FF">  |</span><span style="color:#B392F0"> EPair</span><span style="color:#E1E4E8"> (</span><span style="color:#79B8FF;text-decoration:underline">e</span><span style="color:#DBEDFF">,</span><span> </span><span style="color:#79B8FF;text-decoration:underline">e'</span><span style="color:#E1E4E8">) </span><span style="color:#79B8FF">-></span><span style="color:#E1E4E8"> interp e (</span><span style="color:#F97583">fun</span><span> </span><span style="color:#79B8FF;text-decoration:underline">v</span><span> </span><span style="color:#79B8FF;text-decoration:underline">fail'</span><span style="color:#79B8FF"> -></span><span style="color:#E1E4E8"> interp e' (</span><span style="color:#F97583">fun</span><span> </span><span style="color:#79B8FF;text-decoration:underline">v'</span><span> </span><span style="color:#79B8FF;text-decoration:underline">fail''</span><span style="color:#79B8FF"> -></span><span style="color:#E1E4E8"> cont (</span><span style="color:#B392F0">VPair</span><span style="color:#E1E4E8"> (v</span><span style="color:#DBEDFF">,</span><span style="color:#E1E4E8"> v')) fail'') fail') fail</span></span>
+<span class="line"><span style="color:#79B8FF">  |</span><span style="color:#B392F0"> ENdet</span><span style="color:#E1E4E8"> (</span><span style="color:#79B8FF;text-decoration:underline">e1</span><span style="color:#DBEDFF">,</span><span> </span><span style="color:#79B8FF;text-decoration:underline">e2</span><span style="color:#E1E4E8">) </span><span style="color:#79B8FF">-></span><span style="color:#E1E4E8"> interp e1 cont (</span><span style="color:#B392F0">NCont</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">fun</span><span style="color:#B392F0"> ()</span><span style="color:#79B8FF"> -></span><span style="color:#E1E4E8"> interp e2 cont fail))</span></span></code></pre>
+<p>The execution should be the following:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ocaml"><code><span class="line"><span style="color:#F97583;text-decoration:underline">let</span><span style="color:#E1E4E8"> (</span><span style="color:#79B8FF;text-decoration:underline">ans1</span><span style="color:#DBEDFF">,</span><span> </span><span style="color:#79B8FF;text-decoration:underline">next1</span><span style="color:#E1E4E8">) </span><span style="color:#79B8FF">=</span><span style="color:#E1E4E8"> interp (</span><span style="color:#B392F0">EPair</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">ENdet</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">EInt</span><span style="color:#79B8FF"> 5</span><span style="color:#E1E4E8">) (</span><span style="color:#B392F0">EInt</span><span style="color:#79B8FF"> 6</span><span style="color:#E1E4E8">)) (</span><span style="color:#B392F0">ENdet</span><span style="color:#E1E4E8"> (</span><span style="color:#B392F0">EInt</span><span style="color:#79B8FF"> 7</span><span style="color:#E1E4E8">) (</span><span style="color:#B392F0">EInt</span><span style="color:#79B8FF"> 8</span><span style="color:#E1E4E8">))) (</span><span style="color:#F97583">fun</span><span> </span><span style="color:#79B8FF;text-decoration:underline">v</span><span> </span><span style="color:#79B8FF;text-decoration:underline">fail</span><span style="color:#79B8FF"> -></span><span style="color:#E1E4E8"> (v</span><span style="color:#DBEDFF">,</span><span style="color:#E1E4E8"> fail)) </span><span style="color:#B392F0">NFail</span><span style="color:#E1E4E8">;;</span></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">(* val ans1 : ans = VPair (VInt 5, VInt 7) *)</span></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">(* val next1 : next = NCont &#x3C;fun> *)</span></span>
+<span class="line"><span style="color:#F97583;text-decoration:underline">let</span><span style="color:#E1E4E8"> (</span><span style="color:#79B8FF;text-decoration:underline">ans2</span><span style="color:#DBEDFF">,</span><span> </span><span style="color:#79B8FF;text-decoration:underline">next2</span><span style="color:#E1E4E8">) </span><span style="color:#79B8FF">=</span><span style="color:#F97583"> match</span><span style="color:#E1E4E8"> next1 </span><span style="color:#F97583">with</span><span style="color:#B392F0"> NCont</span><span> </span><span style="color:#79B8FF;text-decoration:underline">f</span><span style="color:#79B8FF"> -></span><span style="color:#E1E4E8"> f </span><span style="color:#B392F0">()</span><span style="color:#E1E4E8">;;</span></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">(* val ans2 : ans = VPair (VInt 5, VInt 8) *)</span></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">(* val next2 : next = NCont &#x3C;fun> *)</span></span>
+<span class="line"><span style="color:#F97583;text-decoration:underline">let</span><span style="color:#E1E4E8"> (</span><span style="color:#79B8FF;text-decoration:underline">ans3</span><span style="color:#DBEDFF">,</span><span> </span><span style="color:#79B8FF;text-decoration:underline">next3</span><span style="color:#E1E4E8">) </span><span style="color:#79B8FF">=</span><span style="color:#F97583"> match</span><span style="color:#E1E4E8"> next2 </span><span style="color:#F97583">with</span><span style="color:#B392F0"> NCont</span><span> </span><span style="color:#79B8FF;text-decoration:underline">f</span><span style="color:#79B8FF"> -></span><span style="color:#E1E4E8"> f </span><span style="color:#B392F0">()</span><span style="color:#E1E4E8">;;</span></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">(* val ans3 : ans = VPair (VInt 6, VInt 7) *)</span></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">(* val next3 : next = NCont &#x3C;fun> *)</span></span>
+<span class="line"><span style="color:#F97583;text-decoration:underline">let</span><span style="color:#E1E4E8"> (</span><span style="color:#79B8FF;text-decoration:underline">ans4</span><span style="color:#DBEDFF">,</span><span> </span><span style="color:#79B8FF;text-decoration:underline">next4</span><span style="color:#E1E4E8">) </span><span style="color:#79B8FF">=</span><span style="color:#F97583"> match</span><span style="color:#E1E4E8"> next3 </span><span style="color:#F97583">with</span><span style="color:#B392F0"> NCont</span><span> </span><span style="color:#79B8FF;text-decoration:underline">f</span><span style="color:#79B8FF"> -></span><span style="color:#E1E4E8"> f </span><span style="color:#B392F0">()</span><span style="color:#E1E4E8">;;</span></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">(* val ans4 : ans = VPair (VInt 6, VInt 8) *)</span></span>
+<span class="line"><span style="color:#79B8FF;font-weight:bold">(* val next4 : next = NFail *)</span></span></code></pre><style>
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+  stroke-width: 3;
+}
+</style> </article>  </main> <footer class="site"> <div class="container"> <div class="colophon">
+© 2026 Di Wang · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a> <br><em>My heart is in the Principles of Programming.</em> </div> </div> </footer> </body></html>

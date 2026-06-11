@@ -1,0 +1,119 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/png" href="/favicon.png"><title>编程语言新范式初探 · 王迪</title><style>@font-face{font-family:"Noto Sans-1159818e0b468742";src:url("/_astro/fonts/190f8cf059e0f931.woff2") format("woff2");font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-weight:100 900;font-style:italic;}@font-face{font-family:"Noto Sans-1159818e0b468742";src:url("/_astro/fonts/1d7aab50fda97bb3.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:100 900;font-style:italic;}@font-face{font-family:"Noto Sans-1159818e0b468742";src:url("/_astro/fonts/ad35ff1453ab1728.woff2") format("woff2");font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-weight:100 900;font-style:normal;}@font-face{font-family:"Noto Sans-1159818e0b468742";src:url("/_astro/fonts/1e5097bbf9c9d577.woff2") format("woff2");font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-weight:100 900;font-style:normal;}@font-face{font-family:"Noto Sans-1159818e0b468742 fallback: Arial";src:local("Arial");font-display:swap;font-weight:100 900;font-style:italic;size-adjust:122.9249%;ascent-override:86.9637%;descent-override:23.8357%;line-gap-override:0%;}@font-face{font-family:"Noto Sans-1159818e0b468742 fallback: Arial";src:local("Arial");font-display:swap;font-weight:100 900;font-style:italic;size-adjust:122.9249%;ascent-override:86.9637%;descent-override:23.8357%;line-gap-override:0%;}@font-face{font-family:"Noto Sans-1159818e0b468742 fallback: Arial";src:local("Arial");font-display:swap;font-weight:100 900;font-style:normal;size-adjust:122.9249%;ascent-override:86.9637%;descent-override:23.8357%;line-gap-override:0%;}@font-face{font-family:"Noto Sans-1159818e0b468742 fallback: Arial";src:local("Arial");font-display:swap;font-weight:100 900;font-style:normal;size-adjust:122.9249%;ascent-override:86.9637%;descent-override:23.8357%;line-gap-override:0%;}:root{--font-sans:"Noto Sans-1159818e0b468742","Noto Sans-1159818e0b468742 fallback: Arial","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;}</style><link rel="preload" href="/_astro/fonts/190f8cf059e0f931.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/fonts/1d7aab50fda97bb3.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/fonts/ad35ff1453ab1728.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/_astro/fonts/1e5097bbf9c9d577.woff2" as="font" type="font/woff2" crossorigin><link rel="alternate" hreflang="en" href="/event/plnd1/"><link rel="stylesheet" href="/_astro/Moonpad.DXKYakTQ.css">
+<link rel="stylesheet" href="/_astro/Base.VyE-VZA6.css"></head> <body> <a class="skip-link" href="#main">Skip to content</a> <header class="site"> <div class="container"> <a class="brand" href="/zh/">王迪</a> <nav> <a href="/zh/">主页</a><a href="/zh/publication/">论文</a><a href="/zh/event/">报告</a><a href="/zh/post/">博客</a><a href="/zh/courses/">课程</a><a href="/zh/prospective-students/">招生信息</a> </nav> <a class="lang-switch" href="/event/plnd1/">English</a> </div> </header> <main id="main" class="container">  <article class="prose"> <h1>编程语言新范式初探</h1> <p class="item-meta"> 活动: 江苏省软件学术年会优秀青年学者论坛<br> 地点: 南京<br> 2023年12月16日 </p> <p class="item-links"><a href="/talks/plnd1.pdf">胶片</a></p> <div class="talk-summary"> <p class="aigc-note">以下摘要由 AI 根据胶片自动生成。</p> <p>编程语言新范式的两大驱动力是程序安全和驾驭智能计算：以 B→C→Rust 演进说明类型系统如何从无安全保证进化到涵盖类型、内存与并发安全；以 Infer 静态分析工具为例，展示如何在代码审查阶段自动检测 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="8.682ex" height="2.452ex" role="img" focusable="false" viewBox="0 -833.9 3837.6 1083.9" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="MJX-1-TEX-I-1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path id="MJX-1-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJX-1-TEX-N-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path id="MJX-1-TEX-MI-6C" d="M162 61Q162 26 183 26Q211 26 239 131Q245 151 249 152Q252 153 261 153H266H271Q288 153 288 144Q288 143 286 129Q276 91 266 65T232 14T179 -11Q144 -11 116 12T87 81Q87 96 88 102L216 616Q216 629 209 632T170 637H149Q143 643 143 645T145 664Q150 683 158 683Q163 683 223 688T300 694Q312 694 312 686Q312 676 240 389L164 86Q162 74 162 61Z"></path><path id="MJX-1-TEX-MI-69" d="M234 599Q234 620 251 638T292 656Q306 656 319 647T332 617Q332 594 313 577T273 560Q260 560 247 569T234 599ZM75 287Q75 292 82 313T103 362T142 413T196 441H214Q248 441 270 419T293 357Q292 338 289 330T245 208Q193 72 193 46Q193 26 209 26Q228 26 247 43Q273 71 292 136Q295 148 297 150T311 153H317Q327 153 330 153T337 150T340 143Q340 133 330 105T292 41T228 -8Q220 -10 204 -10Q160 -10 141 15T122 71Q122 98 171 227T221 384Q221 396 218 400T203 405Q175 403 156 374T128 312T116 279Q115 278 97 278H81Q75 284 75 287Z"></path><path id="MJX-1-TEX-MI-73" d="M153 285Q153 349 197 395T311 442Q355 442 386 420T418 356Q418 321 401 308T365 294Q336 294 331 326Q331 336 334 345T343 359T353 368T362 374L366 376Q365 379 362 383T344 396T308 404Q265 404 246 377T226 325T244 289T287 275T339 258T383 212Q395 188 395 163Q395 132 379 95T333 32Q279 -11 207 -11Q154 -11 115 13T76 86Q76 108 83 123T102 145T121 153T135 156Q154 156 164 145T175 117Q175 82 142 66L132 62Q131 62 131 61Q131 57 139 49T166 34T210 26Q250 26 277 44T312 83T321 123Q321 153 301 166T248 185T204 198Q176 211 162 241Q153 258 153 285Z"></path><path id="MJX-1-TEX-MI-74" d="M94 385Q87 392 87 395Q87 399 90 411T95 425Q97 430 103 430T149 431H196L215 511Q218 521 222 539T228 565T234 585T242 603T251 615T264 623T281 626Q311 626 315 597Q315 591 296 513T275 433Q275 431 320 431H366Q373 424 373 420Q373 398 360 385H263L189 86Q188 80 188 61V54Q188 29 201 27Q213 23 229 30Q253 37 276 66T316 138Q321 149 324 151T342 153H347Q364 153 364 146T360 130Q331 63 290 26T202 -11Q158 -11 135 18T111 81Q111 93 129 168T166 314L184 383Q184 385 139 385H94Z"></path><path id="MJX-1-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path id="MJX-1-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D442" xlink:href="#MJX-1-TEX-I-1D442"></use></g><g data-mml-node="mo" transform="translate(763,0)"><use data-c="28" xlink:href="#MJX-1-TEX-N-28"></use></g><g data-mml-node="mo" transform="translate(1152,0) translate(0 -0.5)"><use data-c="7C" xlink:href="#MJX-1-TEX-N-7C"></use></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(1430,0)"><g data-mml-node="mi"><use data-c="6C" xlink:href="#MJX-1-TEX-MI-6C"></use><use data-c="69" xlink:href="#MJX-1-TEX-MI-69" transform="translate(256,0)"></use><use data-c="73" xlink:href="#MJX-1-TEX-MI-73" transform="translate(563,0)"></use><use data-c="74" xlink:href="#MJX-1-TEX-MI-74" transform="translate(972,0)"></use></g></g><g data-mml-node="msup" transform="translate(2734,0)"><g data-mml-node="mo" transform="translate(0 -0.5)"><use data-c="7C" xlink:href="#MJX-1-TEX-N-7C"></use></g><g data-mml-node="mn" transform="translate(311,363) scale(0.707)"><use data-c="32" xlink:href="#MJX-1-TEX-N-32"></use></g></g><g data-mml-node="mo" transform="translate(3448.6,0)"><use data-c="29" xlink:href="#MJX-1-TEX-N-29"></use></g></g></g></svg></mjx-container> 级复杂度缺陷、智能合约 gas 预测以及 PHP CVE-2011-4885 哈希表 DoS 漏洞，说明静态分析优于性能测试的时机优势。第二条主线介绍概率编程作为驾驭智能计算的新范式，以及 Curry-Howard 同构对函数式编程语言设计的理论指导意义。</p><style>
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+  stroke-width: 3;
+}
+</style> </div> </article>  </main> <footer class="site"> <div class="container"> <div class="colophon">
+© 2026 王迪 · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a> <br><em>My heart is in the Principles of Programming.</em> </div> </div> </footer> </body></html>
