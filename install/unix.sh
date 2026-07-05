@@ -3,12 +3,13 @@
 # cstar installer for macOS and Linux.
 #
 # Usage:
-#   curl -fsSL https://cli.cstarlang.com/install/unix.sh | bash
-#   curl -fsSL https://cli.cstarlang.com/install/unix.sh | bash -s -- v0.5.0rc1
+#   curl -fsSL https://stonebuddha.github.io/install/unix.sh | bash
+#   curl -fsSL https://stonebuddha.github.io/install/unix.sh | bash -s -- v0.5.0rc1
 #
 # Environment variables:
 #   CSTAR_INSTALL_VERSION   Version to install, e.g. "v0.5.0rc1" (overridden by the first argument; defaults to "latest").
 #   CSTAR_INSTALL_BASE_URL  Base URL that hosts the release tarballs.
+#   CSTAR_INSTALL_LATEST_URL  URL of a file containing the latest version number (used when installing "latest").
 #   CSTAR_HOME              Install location (defaults to ~/.cstar).
 
 set -euo pipefail
@@ -88,16 +89,25 @@ esac
 ######## resolve version and download url ########
 
 # Version can be passed as the first argument or via CSTAR_INSTALL_VERSION.
-# Defaults to "latest", which resolves to the newest release on the host.
+# Defaults to "latest", which resolves to the newest release.
 version="${1:-${CSTAR_INSTALL_VERSION:-latest}}"
 
-# Accept both "0.5.0rc1" and "v0.5.0rc1"; normalize to a leading "v".
-# "latest" is passed through as-is.
-if [[ $version != "latest" ]]; then
-    version="v${version#v}"
+# The release host (Gitee) has no "latest" alias, so "latest" is resolved to a
+# concrete version number published at a well-known URL.
+latest_url="${CSTAR_INSTALL_LATEST_URL:-https://stonebuddha.github.io/install/latest}"
+
+if [[ $version == "latest" ]]; then
+    info "Resolving the latest version ..."
+    version=$(curl --fail --silent --show-error --location "$latest_url" | tr -d '[:space:]') ||
+        error "Failed to resolve the latest version from \"$latest_url\""
+    [[ -n $version ]] ||
+        error "The latest version file at \"$latest_url\" is empty"
 fi
 
-base_url="${CSTAR_INSTALL_BASE_URL:-https://stonebuddha.github.io/binaries}"
+# Accept both "0.5.0rc1" and "v0.5.0rc1"; normalize to a leading "v".
+version="v${version#v}"
+
+base_url="${CSTAR_INSTALL_BASE_URL:-https://gitee.com/cstarlang/cstar_ide/releases/download}"
 archive_name="cstar_${target}.tar.gz"
 download_url="$base_url/$version/$archive_name"
 
