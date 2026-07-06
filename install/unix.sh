@@ -108,7 +108,7 @@ fi
 version="v${version#v}"
 
 base_url="${CSTAR_INSTALL_BASE_URL:-https://gitee.com/cstarlang/cstar_ide/releases/download}"
-archive_name="cstar_${target}.tar.gz"
+archive_name="cstar_${target}.tar.xz"
 download_url="$base_url/$version/$archive_name"
 
 ######## download and extract ########
@@ -128,7 +128,7 @@ curl --fail --location --progress-bar --output "$archive_path" "$download_url" |
 
 info "Extracting ..."
 
-tar -xzf "$archive_path" -C "$tmp_dir" ||
+tar -xJf "$archive_path" -C "$tmp_dir" ||
     error "Failed to extract \"$archive_path\""
 
 ######## run the bundled install.sh ########
