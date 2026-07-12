@@ -107,7 +107,7 @@ fi
 # Accept both "0.5.0rc1" and "v0.5.0rc1"; normalize to a leading "v".
 version="v${version#v}"
 
-base_url="${CSTAR_INSTALL_BASE_URL:-https://gitee.com/cstarlang/cstar_ide/releases/download}"
+base_url="${CSTAR_INSTALL_BASE_URL:-https://gitee.com/cstarlang/cstar_docs/releases/download}"
 archive_name="cstar_${target}.tar.xz"
 download_url="$base_url/$version/$archive_name"
 
